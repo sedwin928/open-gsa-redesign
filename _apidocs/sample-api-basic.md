@@ -31,7 +31,7 @@ After registration, you will need to provide this API key in the `x-api-key` HTT
 
 This API has two primary endpoints:
 
-**Endpoint 1:** https://api.gsa/gov/travel/citypairs/v0/airfares
+**Endpoint 1:** https://api.gsa.gov/travel/citypairs/v0/airfares
 
 **Description**   Negotiated airfares
 
