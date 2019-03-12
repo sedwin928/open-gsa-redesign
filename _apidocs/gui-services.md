@@ -67,7 +67,8 @@ if the record exists and ‘false’ if the return does not exist.
 
 ## API Description
 ### Contract Data Web Services EndPoints
-**Endpoint:** https://www.fpds.gov/FPDS/BusinessServices/DataCollection/contracts/1.5/Award
+
+**Endpoint:** https://www.api.sam.gov/prod/FPDS/BusinessServices/DataCollection/contracts/1.5/Award 
 <details>
 <summary><b>Award get Request</b></summary>
 <p>
@@ -362,7 +363,7 @@ if the record exists and ‘false’ if the return does not exist.
 </pre></code></p>
 </details>
 
-**Endpoint:** https://www.fpds.gov/FPDS/BusinessServices/DataCollection/contracts/1.5/IDV
+**Endpoint:** https://www.api.sam.gov/prod/FPDS/BusinessServices/DataCollection/contracts/1.5/IDV 
 <details>
 <summary><b>IDV getList  Request</b></summary>
 <p>
@@ -434,7 +435,7 @@ if the record exists and ‘false’ if the return does not exist.
 </details>
 
 
-**Endpoint:** https://www.fpds.gov/FPDS/BusinessServices/DataCollection/contracts/1.5/OtherTransactionAward
+**Endpoint:** https://www.api.sam.gov/prod/FPDS/BusinessServices/DataCollection/contracts/1.5/OtherTransactionAward 
 <details>
 <summary><b>Other Transaction Award getVersion Request</b></summary>
 <p>
@@ -480,7 +481,7 @@ if the record exists and ‘false’ if the return does not exist.
 </details>
 
 
-**Endpoint:** https://www.fpds.gov/FPDS/BusinessServices/DataCollection/contracts/1.5/OtherTransactionIDV
+**Endpoint:** https://www.api.sam.gov/prod/FPDS/BusinessServices/DataCollection/contracts/1.5/OtherTransactionIDV
 <details>
 <summary><b>Other Transaction IDV exists  Request</b></summary>
 <p>
@@ -522,23 +523,24 @@ if the record exists and ‘false’ if the return does not exist.
 
 
 ### Referential Data Web Services EndPoints
-https://www.fpds.gov/FPDS/BusinessServices/DataCollection/ServiceClassifications/1.0/PSC 
-https://www.fpds.gov/FPDS/BusinessServices/DataCollection/ServiceClassifications/1.0/NAICS
-https://www.fpds.gov/FPDS/BusinessServices/DataCollection/ServiceClassifications/1.0/ClaimantProgramCode 
-https://www.fpds.gov/FPDS/BusinessServices/DataCollection/ServiceClassifications/1.0/SystemEquipmentCode
-https://www.fpds.gov/FPDS/BusinessServices/DataCollection/locations/1.0/Country 
-https://www.fpds.gov/FPDS/BusinessServices/DataCollection/locations/1.0/State 
-https://www.fpds.gov/FPDS/BusinessServices/DataCollection/locations/1.0/Place 
-https://www.fpds.gov/FPDS/BusinessServices/DataCollection/locations/1.0/ZIP
-https://www.fpds.gov/OrganizationalHierarchy/BusinessServices/Organization/1.0/Organization
-https://www.fpds.gov/FPDS/BusinessServices/DataCollection/organizations/1.0/Department
-https://www.fpds.gov/FPDS/BusinessServices/DataCollection/organizations/1.0/Agency
-https://www.fpds.gov/FPDS/BusinessServices/DataCollection/organizations/1.0/ContractingOffice
-https://www.fpds.gov/FPDS/BusinessServices/DataCollection/organizations/1.2/GovernmentOffice
-https://www.fpds.gov/FPDS/BusinessServices/DataCollection/vendors/1.0/Vendor
+https://www.api.sam.gov/prod/FPDS/BusinessServices/DataCollection/ServiceClassifications/1.0/PSC 
+https://www.api.sam.gov/prod/FPDS/BusinessServices/DataCollection/ServiceClassifications/1.0/NAICS
+https://www.api.sam.gov/prod/FPDS/BusinessServices/DataCollection/ServiceClassifications/1.0/ClaimantProgramCode 
+https://www.api.sam.gov/prod/FPDS/BusinessServices/DataCollection/ServiceClassifications/1.0/SystemEquipmentCode
+https://www.api.sam.gov/prod/FPDS/BusinessServices/DataCollection/locations/1.0/Country 
+https://www.api.sam.gov/prod/FPDS/BusinessServices/DataCollection/locations/1.0/State 
+https://www.api.sam.gov/prod/FPDS/BusinessServices/DataCollection/locations/1.0/Place 
+https://www.api.sam.gov/prod/FPDS/BusinessServices/DataCollection/locations/1.0/ZIP
+https://www.api.sam.gov/prod/OrganizationalHierarchy/BusinessServices/Organization/1.0/Organization
+https://www.api.sam.gov/prod/FPDS/BusinessServices/DataCollection/organizations/1.0/Department
+https://www.api.sam.gov/prod/FPDS/BusinessServices/DataCollection/organizations/1.0/Agency
+https://www.api.sam.gov/prod/FPDS/BusinessServices/DataCollection/organizations/1.0/ContractingOffice
+https://www.api.sam.gov/prod/FPDS/BusinessServices/DataCollection/organizations/1.2/GovernmentOffice
+https://www.api.sam.gov/prod/FPDS/BusinessServices/DataCollection/vendors/1.0/Vendor
 
 
-**Endpoint:** https://www.fpds.gov/FPDS/BusinessServices/DataCollection/vendors/1.0/Vendor
+
+**Endpoint:** https://www.api.sam.gov/prod/FPDS/BusinessServices/DataCollection/vendors/1.0/Vendor
 <details>
 <summary><b>Vendor getList  Request</b></summary>
 <p>
@@ -603,7 +605,7 @@ https://www.fpds.gov/FPDS/BusinessServices/DataCollection/vendors/1.0/Vendor
 </pre></code></p>
 </details>
 
-**Endpoint:** https://www.fpds.gov/FPDS/BusinessServices/DataCollection/ServiceClassifications/1.0/SystemEquipmentCode
+**Endpoint:** https://www.api.sam.gov/prod/FPDS/BusinessServices/DataCollection/ServiceClassifications/1.0/SystemEquipmentCode
 <details>
 <summary><b>System Equipment Code exists  Request</b></summary>
 <p>
@@ -637,7 +639,7 @@ https://www.fpds.gov/FPDS/BusinessServices/DataCollection/vendors/1.0/Vendor
 </pre></code></p>
 </details>
 
-**Endpoint:** https://www.fpds.gov/FPDS/BusinessServices/DataCollection/organizations/1.0/Department
+**Endpoint:** https://www.api.sam.gov/prod/FPDS/BusinessServices/DataCollection/organizations/1.0/Department
 <details>
 <summary><b>Department get Request</b></summary>
 <p>
