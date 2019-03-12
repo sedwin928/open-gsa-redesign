@@ -6,9 +6,9 @@ banner-heading: Drive-thru API
 
 ## Overview
 
-GSA Fleet has an innovative mileage reporting and fleet analysis tool called GSA Fleet Drive-thru. By using the applications within <p><small><a href="https://drivethru.gsa.gov">Fleet Drive-thru</a></small></p>, customer agencies have access to key components to efficiently manage their fleets.
+GSA Fleet has an innovative mileage reporting and fleet analysis tool called GSA Fleet Drive-thru. By using the applications within <a href="https://drivethru.gsa.gov">Fleet Drive-thru</a>, customer agencies have access to key components to efficiently manage their fleets.
 
-Fuel Use Report: Allows Agency Fleet Managers the ability to monitor fuel use down to the vehicle and transaction level. Managers also have the ability to look at summarized data by vehicle and by reporting level.
+<strong>Fuel Use Report:</strong> Allows Agency Fleet Managers the ability to monitor fuel use down to the vehicle and transaction level. Managers also have the ability to look at summarized data by vehicle and by reporting level.
 
 Preformatted Inventory Report: Allows users to select a preformatted report to review inventory.
 
