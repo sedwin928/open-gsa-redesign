@@ -10,7 +10,7 @@ GSA Fleet has an innovative mileage reporting and fleet analysis tool called GSA
 
 <strong>Fuel Use Report:</strong> Allows Agency Fleet Managers the ability to monitor fuel use down to the vehicle and transaction level. Managers also have the ability to look at summarized data by vehicle and by reporting level.
 
-Preformatted Inventory Report: Allows users to select a preformatted report to review inventory.
+<string>Preformatted Inventory Report</strong>: Allows users to select a preformatted report to review inventory.
 
 
 <p><small><a href="#">Back to top</a></small></p>
