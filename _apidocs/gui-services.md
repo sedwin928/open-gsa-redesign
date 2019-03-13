@@ -255,14 +255,14 @@ You can view the full details of this API in the OpenAPI Specification file avai
 
 Referential Data GUI Services:
 
-* <a href="v1/gui/department.yaml">Open API specification file for the IDV</a>
-* <a href="v1/gui/agency.yaml">Open API specification file for the Other Transaction Award</a>
-* <a href="v1/gui/contractingOffice.yaml">Open API specification file for the Other Transaction IDV</a>
-* <a href="v1/gui/governmentOffice.yaml">Open API specification file for the Award</a>
-* <a href="v1/gui/country.yaml">Open API specification file for the IDV</a>
-* <a href="v1/gui/place.yaml">Open API specification file for the Other Transaction Award</a>
-* <a href="v1/gui/psc.yaml">Open API specification file for the Other Transaction IDV</a>
-* <a href="v1/gui/naics.yaml">Open API specification file for the Other Transaction IDV</a>
+* <a href="v1/department.yaml">Open API specification file for the IDV</a>
+* <a href="v1/agency.yaml">Open API specification file for the Other Transaction Award</a>
+* <a href="v1/contractingOffice.yaml">Open API specification file for the Other Transaction IDV</a>
+* <a href="v1/governmentOffice.yaml">Open API specification file for the Award</a>
+* <a href="v1/country.yaml">Open API specification file for the IDV</a>
+* <a href="v1/place.yaml">Open API specification file for the Other Transaction Award</a>
+* <a href="v1/psc.yaml">Open API specification file for the Other Transaction IDV</a>
+* <a href="v1/naics.yaml">Open API specification file for the Other Transaction IDV</a>
 
 
 ## HTTP Response Codes

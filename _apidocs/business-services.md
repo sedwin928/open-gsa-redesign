@@ -701,26 +701,26 @@ You can view the full details of this API in the OpenAPI Specification file avai
 
 Contract Data Web Services:
 
-* <a href="v1/business/award.yaml">Open API specification file for the Award</a>
-* <a href="v1/business/idv.yaml">Open API specification file for the IDV</a>
-* <a href="v1/business/otherTransactionAward.yaml">Open API specification file for the Other Transaction Award</a>
-* <a href="v1/business/otherTransactionIDV.yaml">Open API specification file for the Other Transaction IDV</a>
+* <a href="v1/award.yaml">Open API specification file for the Award</a>
+* <a href="v1/idv.yaml">Open API specification file for the IDV</a>
+* <a href="v1/otherTransactionAward.yaml">Open API specification file for the Other Transaction Award</a>
+* <a href="v1/otherTransactionIDV.yaml">Open API specification file for the Other Transaction IDV</a>
 
 Referential Data Web Services:
 
-* <a href="v1/business/department.yaml">Open API specification file for the Department</a>
-* <a href="v1/business/agency.yaml">Open API specification file for the Agency</a>
-* <a href="v1/business/contractingOffice.yaml">Open API specification file for the Contracting Office</a>
-* <a href="v1/business/governmentOffice.yaml">Open API specification file for the Government Office</a>
-* <a href="v1/business/psc.yaml">Open API specification file for the PSC</a>
-* <a href="v1/business/naics.yaml">Open API specification file for the NAICS</a>
-* <a href="v1/business/systemEquipmentCode.yaml">Open API specification file for the System Equipment Code</a>
-* <a href="v1/business/claimantProgramCode.yaml">Open API specification file for the Claimant Program Code</a>
-* <a href="v1/business/country.yaml">Open API specification file for the Countries</a>
-* <a href="v1/business/state.yaml">Open API specification file for the State</a>
-* <a href="v1/business/place.yaml">Open API specification file for the Place</a>
-* <a href="v1/business/zip.yaml">Open API specification file for the Zip</a>
-* <a href="v1/business/vendor.yaml">Open API specification file for the Vendor</a>
+* <a href="v1/department.yaml">Open API specification file for the Department</a>
+* <a href="v1/agency.yaml">Open API specification file for the Agency</a>
+* <a href="v1/contractingOffice.yaml">Open API specification file for the Contracting Office</a>
+* <a href="v1/governmentOffice.yaml">Open API specification file for the Government Office</a>
+* <a href="v1/psc.yaml">Open API specification file for the PSC</a>
+* <a href="v1/naics.yaml">Open API specification file for the NAICS</a>
+* <a href="v1/systemEquipmentCode.yaml">Open API specification file for the System Equipment Code</a>
+* <a href="v1/claimantProgramCode.yaml">Open API specification file for the Claimant Program Code</a>
+* <a href="v1/country.yaml">Open API specification file for the Countries</a>
+* <a href="v1/state.yaml">Open API specification file for the State</a>
+* <a href="v1/place.yaml">Open API specification file for the Place</a>
+* <a href="v1/zip.yaml">Open API specification file for the Zip</a>
+* <a href="v1/vendor.yaml">Open API specification file for the Vendor</a>
 
 
 ## HTTP Response Codes
@@ -728,7 +728,6 @@ Referential Data Web Services:
 | HTTP Response Code | Description |
 | ---- | ----------- |
 | 200 | Successful. |
-| 400 | Application Level Error Messages:  |
 | 403 | API key is not correct or was not provided. |
 
 
