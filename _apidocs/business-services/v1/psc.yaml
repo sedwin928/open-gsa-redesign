@@ -1,0 +1,414 @@
+openapi: 3.0.0
+info:
+  title: Award
+  contact: {}
+  version: '1.0'
+servers:
+- url: https://www.fpds.gov/FPDS/BusinessServices/DataCollection/ServiceClassifications/1.0/PSC
+  variables: {}
+paths:
+  /create:
+    post:
+      tags:
+      - PSCBinding
+      summary: create
+      operationId: Create
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/createInput'
+        required: true
+      responses:
+        200:
+          description: ''
+          headers: {}
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/createOutput'
+      deprecated: false
+  /update:
+    post:
+      tags:
+      - PSCBinding
+      summary: update
+      operationId: Update
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/updateInput'
+        required: true
+      responses:
+        200:
+          description: ''
+          headers: {}
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/updateOutput'
+      deprecated: false
+  /get:
+    post:
+      tags:
+      - PSCBinding
+      summary: get
+      operationId: Get
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/getInput'
+        required: true
+      responses:
+        200:
+          description: ''
+          headers: {}
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/getOutput'
+      deprecated: false
+  /getList:
+    post:
+      tags:
+      - PSCBinding
+      summary: getList
+      operationId: GetList
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/getListInput'
+        required: true
+      responses:
+        200:
+          description: ''
+          headers: {}
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/getListOutput'
+      deprecated: false
+  /exists:
+    post:
+      tags:
+      - PSCBinding
+      summary: exists
+      operationId: Exists
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/existsInput'
+        required: true
+      responses:
+        200:
+          description: ''
+          headers: {}
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/existsOutput'
+      deprecated: false
+  /delete:
+    post:
+      tags:
+      - PSCBinding
+      summary: delete
+      operationId: Delete
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/deleteInput'
+        required: true
+      responses:
+        200:
+          description: ''
+          headers: {}
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/deleteOutput'
+      deprecated: false
+  /disable:
+    post:
+      tags:
+      - PSCBinding
+      summary: disable
+      operationId: Disable
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/disableInput'
+        required: true
+      responses:
+        200:
+          description: ''
+          headers: {}
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/disableOutput'
+      deprecated: false
+  /enable:
+    post:
+      tags:
+      - PSCBinding
+      summary: enable
+      operationId: Enable
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/enableInput'
+        required: true
+      responses:
+        200:
+          description: ''
+          headers: {}
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/enableOutput'
+      deprecated: false
+components:
+  schemas:
+    createPSCResponseType:
+      title: createPSCResponseType
+      type: object
+      properties:
+        PSC:
+          type: string
+          nullable: true
+      description: ''
+    updatePSCResponseType:
+      title: updatePSCResponseType
+      type: object
+      properties:
+        PSC:
+          type: string
+          nullable: true
+      description: ''
+    getPSCResponseType:
+      title: getPSCResponseType
+      type: object
+      properties:
+        PSC:
+          type: string
+          nullable: true
+      description: ''
+    deletePSCResponseType:
+      title: deletePSCResponseType
+      type: object
+      properties:
+        isDeleted:
+          type: boolean
+          nullable: true
+      description: ''
+    enablePSCResponseType:
+      title: enablePSCResponseType
+      type: object
+      properties:
+        isEnabled:
+          type: boolean
+          nullable: true
+      description: ''
+    disablePSCResponseType:
+      title: disablePSCResponseType
+      type: object
+      properties:
+        isDisabled:
+          type: boolean
+          nullable: true
+      description: ''
+    existsPSCResponseType:
+      title: existsPSCResponseType
+      type: object
+      properties:
+        isExists:
+          type: boolean
+          nullable: true
+      description: ''
+    getListPSCResponseType:
+      title: getListPSCResponseType
+      type: object
+      properties:
+        listOfPSCs:
+          type: string
+          nullable: true
+      description: ''
+    createInput:
+      title: createInput
+      required:
+      - authenticationKey
+      - PSC
+      type: object
+      properties:
+        authenticationKey:
+          type: string
+        PSC:
+          type: string
+    createOutput:
+      title: createOutput
+      required:
+      - createPSCResponse
+      type: object
+      properties:
+        createPSCResponse:
+          $ref: '#/components/schemas/createPSCResponseType'
+    deleteInput:
+      title: deleteInput
+      required:
+      - authenticationKey
+      - PSCCode
+      type: object
+      properties:
+        authenticationKey:
+          type: string
+        PSCCode:
+          type: string
+    deleteOutput:
+      title: deleteOutput
+      required:
+      - deletePSCResponse
+      type: object
+      properties:
+        deletePSCResponse:
+          $ref: '#/components/schemas/deletePSCResponseType'
+    disableInput:
+      title: disableInput
+      required:
+      - authenticationKey
+      - PSCCode
+      type: object
+      properties:
+        authenticationKey:
+          type: string
+        PSCCode:
+          type: string
+    disableOutput:
+      title: disableOutput
+      required:
+      - disablePSCResponse
+      type: object
+      properties:
+        disablePSCResponse:
+          $ref: '#/components/schemas/disablePSCResponseType'
+    enableInput:
+      title: enableInput
+      required:
+      - authenticationKey
+      - PSCCode
+      type: object
+      properties:
+        authenticationKey:
+          type: string
+        PSCCode:
+          type: string
+    enableOutput:
+      title: enableOutput
+      required:
+      - enablePSCResponse
+      type: object
+      properties:
+        enablePSCResponse:
+          $ref: '#/components/schemas/enablePSCResponseType'
+    existsInput:
+      title: existsInput
+      required:
+      - authenticationKey
+      - PSCCode
+      type: object
+      properties:
+        authenticationKey:
+          type: string
+        PSCCode:
+          type: string
+    existsOutput:
+      title: existsOutput
+      required:
+      - existsPSCResponse
+      type: object
+      properties:
+        existsPSCResponse:
+          $ref: '#/components/schemas/existsPSCResponseType'
+    getInput:
+      title: getInput
+      required:
+      - authenticationKey
+      - PSCCode
+      type: object
+      properties:
+        authenticationKey:
+          type: string
+        PSCCode:
+          type: string
+    getListInput:
+      title: getListInput
+      required:
+      - authenticationKey
+      - PSCSearchCriteria
+      type: object
+      properties:
+        authenticationKey:
+          type: string
+        PSCSearchCriteria:
+          type: string
+    getListOutput:
+      title: getListOutput
+      required:
+      - getListPSCResponse
+      type: object
+      properties:
+        getListPSCResponse:
+          $ref: '#/components/schemas/getListPSCResponseType'
+    getOutput:
+      title: getOutput
+      required:
+      - getPSCResponse
+      type: object
+      properties:
+        getPSCResponse:
+          $ref: '#/components/schemas/getPSCResponseType'
+    updateInput:
+      title: updateInput
+      required:
+      - authenticationKey
+      - PSC
+      type: object
+      properties:
+        authenticationKey:
+          type: string
+        PSC:
+          type: string
+    updateOutput:
+      title: updateOutput
+      required:
+      - updatePSCResponse
+      type: object
+      properties:
+        updatePSCResponse:
+          $ref: '#/components/schemas/updatePSCResponseType'
+tags:
+- name: PSCBinding
+  description: ''

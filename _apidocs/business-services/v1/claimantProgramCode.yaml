@@ -1,0 +1,414 @@
+openapi: 3.0.0
+info:
+  title: Award
+  contact: {}
+  version: '1.0'
+servers:
+- url: https://www.fpds.gov/FPDS/BusinessServices/DataCollection/ServiceClassifications/1.0/ClaimantProgramCode
+  variables: {}
+paths:
+  /create:
+    post:
+      tags:
+      - claimantProgramCodeBinding
+      summary: create
+      operationId: Create
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/createInput'
+        required: true
+      responses:
+        200:
+          description: ''
+          headers: {}
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/createOutput'
+      deprecated: false
+  /update:
+    post:
+      tags:
+      - claimantProgramCodeBinding
+      summary: update
+      operationId: Update
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/updateInput'
+        required: true
+      responses:
+        200:
+          description: ''
+          headers: {}
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/updateOutput'
+      deprecated: false
+  /delete:
+    post:
+      tags:
+      - claimantProgramCodeBinding
+      summary: delete
+      operationId: Delete
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/deleteInput'
+        required: true
+      responses:
+        200:
+          description: ''
+          headers: {}
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/deleteOutput'
+      deprecated: false
+  /get:
+    post:
+      tags:
+      - claimantProgramCodeBinding
+      summary: get
+      operationId: Get
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/getInput'
+        required: true
+      responses:
+        200:
+          description: ''
+          headers: {}
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/getOutput'
+      deprecated: false
+  /getList:
+    post:
+      tags:
+      - claimantProgramCodeBinding
+      summary: getList
+      operationId: GetList
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/getListInput'
+        required: true
+      responses:
+        200:
+          description: ''
+          headers: {}
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/getListOutput'
+      deprecated: false
+  /exists:
+    post:
+      tags:
+      - claimantProgramCodeBinding
+      summary: exists
+      operationId: Exists
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/existsInput'
+        required: true
+      responses:
+        200:
+          description: ''
+          headers: {}
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/existsOutput'
+      deprecated: false
+  /disable:
+    post:
+      tags:
+      - claimantProgramCodeBinding
+      summary: disable
+      operationId: Disable
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/disableInput'
+        required: true
+      responses:
+        200:
+          description: ''
+          headers: {}
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/disableOutput'
+      deprecated: false
+  /enable:
+    post:
+      tags:
+      - claimantProgramCodeBinding
+      summary: enable
+      operationId: Enable
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/enableInput'
+        required: true
+      responses:
+        200:
+          description: ''
+          headers: {}
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/enableOutput'
+      deprecated: false
+components:
+  schemas:
+    createClaimantProgramCodeResponseType:
+      title: createClaimantProgramCodeResponseType
+      type: object
+      properties:
+        claimantProgram:
+          type: string
+          nullable: true
+      description: ''
+    updateClaimantProgramCodeResponseType:
+      title: updateClaimantProgramCodeResponseType
+      type: object
+      properties:
+        claimantProgram:
+          type: string
+          nullable: true
+      description: ''
+    deleteClaimantProgramCodeResponseType:
+      title: deleteClaimantProgramCodeResponseType
+      type: object
+      properties:
+        isDeleted:
+          type: boolean
+          nullable: true
+      description: ''
+    getClaimantProgramCodeResponseType:
+      title: getClaimantProgramCodeResponseType
+      type: object
+      properties:
+        claimantProgram:
+          type: string
+          nullable: true
+      description: ''
+    enableClaimantProgramCodeResponseType:
+      title: enableClaimantProgramCodeResponseType
+      type: object
+      properties:
+        isEnabled:
+          type: boolean
+          nullable: true
+      description: ''
+    disableClaimantProgramCodeResponseType:
+      title: disableClaimantProgramCodeResponseType
+      type: object
+      properties:
+        isDisabled:
+          type: boolean
+          nullable: true
+      description: ''
+    existsClaimantProgramCodeResponseType:
+      title: existsClaimantProgramCodeResponseType
+      type: object
+      properties:
+        isExists:
+          type: boolean
+          nullable: true
+      description: ''
+    getListClaimantProgramCodeResponseType:
+      title: getListClaimantProgramCodeResponseType
+      type: object
+      properties:
+        listOfClaimantProgramCodes:
+          type: string
+          nullable: true
+      description: ''
+    createInput:
+      title: createInput
+      required:
+      - authenticationKey
+      - claimantProgram
+      type: object
+      properties:
+        authenticationKey:
+          type: string
+        claimantProgram:
+          type: string
+    createOutput:
+      title: createOutput
+      required:
+      - createClaimantProgramCodeResponse
+      type: object
+      properties:
+        createClaimantProgramCodeResponse:
+          $ref: '#/components/schemas/createClaimantProgramCodeResponseType'
+    deleteInput:
+      title: deleteInput
+      required:
+      - authenticationKey
+      - claimantProgram
+      type: object
+      properties:
+        authenticationKey:
+          type: string
+        claimantProgram:
+          type: string
+    deleteOutput:
+      title: deleteOutput
+      required:
+      - deleteClaimantProgramCodeResponse
+      type: object
+      properties:
+        deleteClaimantProgramCodeResponse:
+          $ref: '#/components/schemas/deleteClaimantProgramCodeResponseType'
+    disableInput:
+      title: disableInput
+      required:
+      - authenticationKey
+      - claimantProgram
+      type: object
+      properties:
+        authenticationKey:
+          type: string
+        claimantProgram:
+          type: string
+    disableOutput:
+      title: disableOutput
+      required:
+      - disableClaimantProgramCodeResponse
+      type: object
+      properties:
+        disableClaimantProgramCodeResponse:
+          $ref: '#/components/schemas/disableClaimantProgramCodeResponseType'
+    enableInput:
+      title: enableInput
+      required:
+      - authenticationKey
+      - claimantProgram
+      type: object
+      properties:
+        authenticationKey:
+          type: string
+        claimantProgram:
+          type: string
+    enableOutput:
+      title: enableOutput
+      required:
+      - enableClaimantProgramCodeResponse
+      type: object
+      properties:
+        enableClaimantProgramCodeResponse:
+          $ref: '#/components/schemas/enableClaimantProgramCodeResponseType'
+    existsInput:
+      title: existsInput
+      required:
+      - authenticationKey
+      - claimantProgram
+      type: object
+      properties:
+        authenticationKey:
+          type: string
+        claimantProgram:
+          type: string
+    existsOutput:
+      title: existsOutput
+      required:
+      - existsClaimantProgramCodeResponse
+      type: object
+      properties:
+        existsClaimantProgramCodeResponse:
+          $ref: '#/components/schemas/existsClaimantProgramCodeResponseType'
+    getInput:
+      title: getInput
+      required:
+      - authenticationKey
+      - claimantProgram
+      type: object
+      properties:
+        authenticationKey:
+          type: string
+        claimantProgram:
+          type: string
+    getListInput:
+      title: getListInput
+      required:
+      - authenticationKey
+      - claimantProgramSearchCriteria
+      type: object
+      properties:
+        authenticationKey:
+          type: string
+        claimantProgramSearchCriteria:
+          type: string
+    getListOutput:
+      title: getListOutput
+      required:
+      - getListClaimantProgramCodeResponse
+      type: object
+      properties:
+        getListClaimantProgramCodeResponse:
+          $ref: '#/components/schemas/getListClaimantProgramCodeResponseType'
+    getOutput:
+      title: getOutput
+      required:
+      - getClaimantProgramCodeResponse
+      type: object
+      properties:
+        getClaimantProgramCodeResponse:
+          $ref: '#/components/schemas/getClaimantProgramCodeResponseType'
+    updateInput:
+      title: updateInput
+      required:
+      - authenticationKey
+      - claimantProgram
+      type: object
+      properties:
+        authenticationKey:
+          type: string
+        claimantProgram:
+          type: string
+    updateOutput:
+      title: updateOutput
+      required:
+      - updateClaimantProgramCodeResponse
+      type: object
+      properties:
+        updateClaimantProgramCodeResponse:
+          $ref: '#/components/schemas/updateClaimantProgramCodeResponseType'
+tags:
+- name: claimantProgramCodeBinding
+  description: ''

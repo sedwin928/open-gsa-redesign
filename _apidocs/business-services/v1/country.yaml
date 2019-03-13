@@ -1,0 +1,414 @@
+openapi: 3.0.0
+info:
+  title: Award
+  contact: {}
+  version: '1.0'
+servers:
+- url: https://www.fpds.gov/FPDS/BusinessServices/DataCollection/locations/1.0/Country
+  variables: {}
+paths:
+  /create:
+    post:
+      tags:
+      - CountryBinding
+      summary: create
+      operationId: Create
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/createInput'
+        required: true
+      responses:
+        200:
+          description: ''
+          headers: {}
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/createOutput'
+      deprecated: false
+  /update:
+    post:
+      tags:
+      - CountryBinding
+      summary: update
+      operationId: Update
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/updateInput'
+        required: true
+      responses:
+        200:
+          description: ''
+          headers: {}
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/updateOutput'
+      deprecated: false
+  /get:
+    post:
+      tags:
+      - CountryBinding
+      summary: get
+      operationId: Get
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/getInput'
+        required: true
+      responses:
+        200:
+          description: ''
+          headers: {}
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/getOutput'
+      deprecated: false
+  /getList:
+    post:
+      tags:
+      - CountryBinding
+      summary: getList
+      operationId: GetList
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/getListInput'
+        required: true
+      responses:
+        200:
+          description: ''
+          headers: {}
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/getListOutput'
+      deprecated: false
+  /exists:
+    post:
+      tags:
+      - CountryBinding
+      summary: exists
+      operationId: Exists
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/existsInput'
+        required: true
+      responses:
+        200:
+          description: ''
+          headers: {}
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/existsOutput'
+      deprecated: false
+  /delete:
+    post:
+      tags:
+      - CountryBinding
+      summary: delete
+      operationId: Delete
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/deleteInput'
+        required: true
+      responses:
+        200:
+          description: ''
+          headers: {}
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/deleteOutput'
+      deprecated: false
+  /disable:
+    post:
+      tags:
+      - CountryBinding
+      summary: disable
+      operationId: Disable
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/disableInput'
+        required: true
+      responses:
+        200:
+          description: ''
+          headers: {}
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/disableOutput'
+      deprecated: false
+  /enable:
+    post:
+      tags:
+      - CountryBinding
+      summary: enable
+      operationId: Enable
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/enableInput'
+        required: true
+      responses:
+        200:
+          description: ''
+          headers: {}
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/enableOutput'
+      deprecated: false
+components:
+  schemas:
+    createCountryResponseType:
+      title: createCountryResponseType
+      type: object
+      properties:
+        country:
+          type: string
+          nullable: true
+      description: ''
+    updateCountryResponseType:
+      title: updateCountryResponseType
+      type: object
+      properties:
+        country:
+          type: string
+          nullable: true
+      description: ''
+    getCountryResponseType:
+      title: getCountryResponseType
+      type: object
+      properties:
+        country:
+          type: string
+          nullable: true
+      description: ''
+    deleteCountryResponseType:
+      title: deleteCountryResponseType
+      type: object
+      properties:
+        isDeleted:
+          type: boolean
+          nullable: true
+      description: ''
+    enableCountryResponseType:
+      title: enableCountryResponseType
+      type: object
+      properties:
+        isEnabled:
+          type: boolean
+          nullable: true
+      description: ''
+    disableCountryResponseType:
+      title: disableCountryResponseType
+      type: object
+      properties:
+        isDisabled:
+          type: boolean
+          nullable: true
+      description: ''
+    existsCountryResponseType:
+      title: existsCountryResponseType
+      type: object
+      properties:
+        isExists:
+          type: boolean
+          nullable: true
+      description: ''
+    getListCountryResponseType:
+      title: getListCountryResponseType
+      type: object
+      properties:
+        listOfCountries:
+          type: string
+          nullable: true
+      description: ''
+    createInput:
+      title: createInput
+      required:
+      - authenticationKey
+      - country
+      type: object
+      properties:
+        authenticationKey:
+          type: string
+        country:
+          type: string
+    createOutput:
+      title: createOutput
+      required:
+      - createCountryResponse
+      type: object
+      properties:
+        createCountryResponse:
+          $ref: '#/components/schemas/createCountryResponseType'
+    deleteInput:
+      title: deleteInput
+      required:
+      - authenticationKey
+      - countryKey
+      type: object
+      properties:
+        authenticationKey:
+          type: string
+        countryKey:
+          type: string
+    deleteOutput:
+      title: deleteOutput
+      required:
+      - deleteCountryResponse
+      type: object
+      properties:
+        deleteCountryResponse:
+          $ref: '#/components/schemas/deleteCountryResponseType'
+    disableInput:
+      title: disableInput
+      required:
+      - authenticationKey
+      - countryKey
+      type: object
+      properties:
+        authenticationKey:
+          type: string
+        countryKey:
+          type: string
+    disableOutput:
+      title: disableOutput
+      required:
+      - disableCountryResponse
+      type: object
+      properties:
+        disableCountryResponse:
+          $ref: '#/components/schemas/disableCountryResponseType'
+    enableInput:
+      title: enableInput
+      required:
+      - authenticationKey
+      - countryKey
+      type: object
+      properties:
+        authenticationKey:
+          type: string
+        countryKey:
+          type: string
+    enableOutput:
+      title: enableOutput
+      required:
+      - enableCountryResponse
+      type: object
+      properties:
+        enableCountryResponse:
+          $ref: '#/components/schemas/enableCountryResponseType'
+    existsInput:
+      title: existsInput
+      required:
+      - authenticationKey
+      - countryKey
+      type: object
+      properties:
+        authenticationKey:
+          type: string
+        countryKey:
+          type: string
+    existsOutput:
+      title: existsOutput
+      required:
+      - existsCountryResponse
+      type: object
+      properties:
+        existsCountryResponse:
+          $ref: '#/components/schemas/existsCountryResponseType'
+    getInput:
+      title: getInput
+      required:
+      - authenticationKey
+      - countryKey
+      type: object
+      properties:
+        authenticationKey:
+          type: string
+        countryKey:
+          type: string
+    getListInput:
+      title: getListInput
+      required:
+      - authenticationKey
+      - countrySearchCriteria
+      type: object
+      properties:
+        authenticationKey:
+          type: string
+        countrySearchCriteria:
+          type: string
+    getListOutput:
+      title: getListOutput
+      required:
+      - getListCountryResponse
+      type: object
+      properties:
+        getListCountryResponse:
+          $ref: '#/components/schemas/getListCountryResponseType'
+    getOutput:
+      title: getOutput
+      required:
+      - getCountryResponse
+      type: object
+      properties:
+        getCountryResponse:
+          $ref: '#/components/schemas/getCountryResponseType'
+    updateInput:
+      title: updateInput
+      required:
+      - authenticationKey
+      - country
+      type: object
+      properties:
+        authenticationKey:
+          type: string
+        country:
+          type: string
+    updateOutput:
+      title: updateOutput
+      required:
+      - updateCountryResponse
+      type: object
+      properties:
+        updateCountryResponse:
+          $ref: '#/components/schemas/updateCountryResponseType'
+tags:
+- name: CountryBinding
+  description: ''

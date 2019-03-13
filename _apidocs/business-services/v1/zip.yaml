@@ -1,0 +1,245 @@
+openapi: 3.0.0
+info:
+  title: Award
+  contact: {}
+  version: '1.0'
+servers:
+- url: https://www.fpds.gov/FPDS/BusinessServices/DataCollection/locations/1.0/ZIP
+  variables: {}
+paths:
+  /getList:
+    post:
+      tags:
+      - ZIPBinding
+      summary: getList
+      operationId: GetList
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/getListInput'
+        required: true
+      responses:
+        200:
+          description: ''
+          headers: {}
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/getListOutput'
+      deprecated: false
+  /get:
+    post:
+      tags:
+      - ZIPBinding
+      summary: get
+      operationId: Get
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/getInput'
+        required: true
+      responses:
+        200:
+          description: ''
+          headers: {}
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/getOutput'
+      deprecated: false
+  /create:
+    post:
+      tags:
+      - ZIPBinding
+      summary: create
+      operationId: Create
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/createInput'
+        required: true
+      responses:
+        200:
+          description: ''
+          headers: {}
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/createOutput'
+      deprecated: false
+  /update:
+    post:
+      tags:
+      - ZIPBinding
+      summary: update
+      operationId: Update
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/createInput'
+        required: true
+      responses:
+        200:
+          description: ''
+          headers: {}
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/createOutput'
+      deprecated: false
+  /exists:
+    post:
+      tags:
+      - ZIPBinding
+      summary: exists
+      operationId: Exists
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/existsInput'
+        required: true
+      responses:
+        200:
+          description: ''
+          headers: {}
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/existsOutput'
+      deprecated: false
+components:
+  schemas:
+    getListZIPResponseType:
+      title: getListZIPResponseType
+      type: object
+      properties:
+        listOfZIPCodes:
+          type: string
+          nullable: true
+      description: ''
+    getZIPResponseType:
+      title: getZIPResponseType
+      type: object
+      properties:
+        zip:
+          type: string
+          nullable: true
+      description: ''
+    createZIPResponseType:
+      title: createZIPResponseType
+      type: object
+      properties:
+        zip:
+          type: string
+          nullable: true
+      description: ''
+    updateZIPResponseType:
+      title: updateZIPResponseType
+      type: object
+      properties:
+        zip:
+          type: string
+          nullable: true
+      description: ''
+    existsZIPResponseType:
+      title: existsZIPResponseType
+      type: object
+      properties:
+        isExists:
+          type: boolean
+          nullable: true
+      description: ''
+    createInput:
+      title: createInput
+      required:
+      - authenticationKey
+      - ZIP
+      type: object
+      properties:
+        authenticationKey:
+          type: string
+        ZIP:
+          type: string
+    createOutput:
+      title: createOutput
+      required:
+      - createZIPResponse
+      type: object
+      properties:
+        createZIPResponse:
+          $ref: '#/components/schemas/createZIPResponseType'
+    existsInput:
+      title: existsInput
+      required:
+      - authenticationKey
+      - ZIP
+      type: object
+      properties:
+        authenticationKey:
+          type: string
+        ZIP:
+          type: string
+    existsOutput:
+      title: existsOutput
+      required:
+      - existsZIPResponse
+      type: object
+      properties:
+        existsZIPResponse:
+          $ref: '#/components/schemas/existsZIPResponseType'
+    getInput:
+      title: getInput
+      required:
+      - authenticationKey
+      - ZIP
+      type: object
+      properties:
+        authenticationKey:
+          type: string
+        ZIP:
+          type: string
+    getListInput:
+      title: getListInput
+      required:
+      - authenticationKey
+      - ZIPCodeSearchCriteria
+      type: object
+      properties:
+        authenticationKey:
+          type: string
+        ZIPCodeSearchCriteria:
+          type: string
+    getListOutput:
+      title: getListOutput
+      required:
+      - getListZIPResponse
+      type: object
+      properties:
+        getListZIPResponse:
+          $ref: '#/components/schemas/getListZIPResponseType'
+    getOutput:
+      title: getOutput
+      required:
+      - getZIPResponse
+      type: object
+      properties:
+        getZIPResponse:
+          $ref: '#/components/schemas/getZIPResponseType'
+tags:
+- name: ZIPBinding
+  description: ''

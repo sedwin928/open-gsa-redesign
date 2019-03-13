@@ -1,0 +1,64 @@
+openapi: 3.0.0
+info:
+  title: Award
+  contact: {}
+  version: '1.0'
+servers:
+- url: https://www.fpds.gov/FPDS/BusinessServices/DataCollection/locations/1.0/State
+  variables: {}
+paths:
+  /getList:
+    post:
+      tags:
+      - StateBinding
+      summary: getList
+      operationId: GetList
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/getListInput'
+        required: true
+      responses:
+        200:
+          description: ''
+          headers: {}
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/getListOutput'
+      deprecated: false
+components:
+  schemas:
+    getListStateResponseType:
+      title: getListStateResponseType
+      type: object
+      properties:
+        listOfStateCodes:
+          type: string
+          nullable: true
+      description: ''
+    getListInput:
+      title: getListInput
+      required:
+      - authenticationKey
+      - stateCodeSearchCriteria
+      type: object
+      properties:
+        authenticationKey:
+          type: string
+        stateCodeSearchCriteria:
+          type: string
+    getListOutput:
+      title: getListOutput
+      required:
+      - getListStateResponse
+      type: object
+      properties:
+        getListStateResponse:
+          $ref: '#/components/schemas/getListStateResponseType'
+tags:
+- name: StateBinding
+  description: ''

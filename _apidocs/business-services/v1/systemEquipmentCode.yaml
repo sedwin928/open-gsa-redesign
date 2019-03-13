@@ -1,0 +1,364 @@
+openapi: 3.0.0
+info:
+  title: Award
+  contact: {}
+  version: '1.0'
+servers:
+- url: https://www.fpds.gov/FPDS/BusinessServices/DataCollection/ServiceClassifications/1.0/SystemEquipmentCode
+  variables: {}
+paths:
+  /create:
+    post:
+      tags:
+      - systemEquipmentBinding
+      summary: create
+      operationId: Create
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/createInput'
+        required: true
+      responses:
+        200:
+          description: ''
+          headers: {}
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/createOutput'
+      deprecated: false
+  /update:
+    post:
+      tags:
+      - systemEquipmentBinding
+      summary: update
+      operationId: Update
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/updateInput'
+        required: true
+      responses:
+        200:
+          description: ''
+          headers: {}
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/updateOutput'
+      deprecated: false
+  /get:
+    post:
+      tags:
+      - systemEquipmentBinding
+      summary: get
+      operationId: Get
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/getInput'
+        required: true
+      responses:
+        200:
+          description: ''
+          headers: {}
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/getOutput'
+      deprecated: false
+  /getList:
+    post:
+      tags:
+      - systemEquipmentBinding
+      summary: getList
+      operationId: GetList
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/getListInput'
+        required: true
+      responses:
+        200:
+          description: ''
+          headers: {}
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/getListOutput'
+      deprecated: false
+  /exists:
+    post:
+      tags:
+      - systemEquipmentBinding
+      summary: exists
+      operationId: Exists
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/existsInput'
+        required: true
+      responses:
+        200:
+          description: ''
+          headers: {}
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/existsOutput'
+      deprecated: false
+  /disable:
+    post:
+      tags:
+      - systemEquipmentBinding
+      summary: disable
+      operationId: Disable
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/disableInput'
+        required: true
+      responses:
+        200:
+          description: ''
+          headers: {}
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/disableOutput'
+      deprecated: false
+  /enable:
+    post:
+      tags:
+      - systemEquipmentBinding
+      summary: enable
+      operationId: Enable
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/enableInput'
+        required: true
+      responses:
+        200:
+          description: ''
+          headers: {}
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/enableOutput'
+      deprecated: false
+components:
+  schemas:
+    createSystemEquipmentResponseType:
+      title: createSystemEquipmentResponseType
+      type: object
+      properties:
+        systemEquipment:
+          type: string
+          nullable: true
+      description: ''
+    updateSystemEquipmentResponseType:
+      title: updateSystemEquipmentResponseType
+      type: object
+      properties:
+        systemEquipment:
+          type: string
+          nullable: true
+      description: ''
+    getSystemEquipmentResponseType:
+      title: getSystemEquipmentResponseType
+      type: object
+      properties:
+        systemEquipment:
+          type: string
+          nullable: true
+      description: ''
+    enableSystemEquipmentResponseType:
+      title: enableSystemEquipmentResponseType
+      type: object
+      properties:
+        isEnabled:
+          type: boolean
+          nullable: true
+      description: ''
+    disableSystemEquipmentResponseType:
+      title: disableSystemEquipmentResponseType
+      type: object
+      properties:
+        isDisabled:
+          type: boolean
+          nullable: true
+      description: ''
+    existsSystemEquipmentResponseType:
+      title: existsSystemEquipmentResponseType
+      type: object
+      properties:
+        isExists:
+          type: boolean
+          nullable: true
+      description: ''
+    getListSystemEquipmentResponseType:
+      title: getListSystemEquipmentResponseType
+      type: object
+      properties:
+        listOfSystemEquipment:
+          type: string
+          nullable: true
+      description: ''
+    createInput:
+      title: createInput
+      required:
+      - authenticationKey
+      - systemEquipment
+      type: object
+      properties:
+        authenticationKey:
+          type: string
+        systemEquipment:
+          type: string
+    createOutput:
+      title: createOutput
+      required:
+      - createSystemEquipmentResponse
+      type: object
+      properties:
+        createSystemEquipmentResponse:
+          $ref: '#/components/schemas/createSystemEquipmentResponseType'
+    disableInput:
+      title: disableInput
+      required:
+      - authenticationKey
+      - systemEquipmentCode
+      type: object
+      properties:
+        authenticationKey:
+          type: string
+        systemEquipmentCode:
+          type: string
+    disableOutput:
+      title: disableOutput
+      required:
+      - disableSystemEquipmentResponse
+      type: object
+      properties:
+        disableSystemEquipmentResponse:
+          $ref: '#/components/schemas/disableSystemEquipmentResponseType'
+    enableInput:
+      title: enableInput
+      required:
+      - authenticationKey
+      - systemEquipmentCode
+      type: object
+      properties:
+        authenticationKey:
+          type: string
+        systemEquipmentCode:
+          type: string
+    enableOutput:
+      title: enableOutput
+      required:
+      - enableSystemEquipmentResponse
+      type: object
+      properties:
+        enableSystemEquipmentResponse:
+          $ref: '#/components/schemas/enableSystemEquipmentResponseType'
+    existsInput:
+      title: existsInput
+      required:
+      - authenticationKey
+      - systemEquipmentCode
+      type: object
+      properties:
+        authenticationKey:
+          type: string
+        systemEquipmentCode:
+          type: string
+    existsOutput:
+      title: existsOutput
+      required:
+      - existsSystemEquipmentResponse
+      type: object
+      properties:
+        existsSystemEquipmentResponse:
+          $ref: '#/components/schemas/existsSystemEquipmentResponseType'
+    getInput:
+      title: getInput
+      required:
+      - authenticationKey
+      - systemEquipmentCode
+      type: object
+      properties:
+        authenticationKey:
+          type: string
+        systemEquipmentCode:
+          type: string
+    getListInput:
+      title: getListInput
+      required:
+      - authenticationKey
+      - systemEquipmentSearchCriteria
+      type: object
+      properties:
+        authenticationKey:
+          type: string
+        systemEquipmentSearchCriteria:
+          type: string
+    getListOutput:
+      title: getListOutput
+      required:
+      - getListSystemEquipmentResponse
+      type: object
+      properties:
+        getListSystemEquipmentResponse:
+          $ref: '#/components/schemas/getListSystemEquipmentResponseType'
+    getOutput:
+      title: getOutput
+      required:
+      - getSystemEquipmentResponse
+      type: object
+      properties:
+        getSystemEquipmentResponse:
+          $ref: '#/components/schemas/getSystemEquipmentResponseType'
+    updateInput:
+      title: updateInput
+      required:
+      - authenticationKey
+      - systemEquipment
+      type: object
+      properties:
+        authenticationKey:
+          type: string
+        systemEquipment:
+          type: string
+    updateOutput:
+      title: updateOutput
+      required:
+      - updateSystemEquipmentResponse
+      type: object
+      properties:
+        updateSystemEquipmentResponse:
+          $ref: '#/components/schemas/updateSystemEquipmentResponseType'
+tags:
+- name: systemEquipmentBinding
+  description: ''

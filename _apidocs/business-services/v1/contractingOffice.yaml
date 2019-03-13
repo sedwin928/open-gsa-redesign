@@ -1,0 +1,414 @@
+openapi: 3.0.0
+info:
+  title: Award
+  contact: {}
+  version: '1.0'
+servers:
+- url: https://www.fpds.gov/FPDS/BusinessServices/DataCollection/organizations/1.0/ContractingOffice
+  variables: {}
+paths:
+  /create:
+    post:
+      tags:
+      - ContractingOfficeBinding
+      summary: create
+      operationId: Create
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/createInput'
+        required: true
+      responses:
+        200:
+          description: ''
+          headers: {}
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/createOutput'
+      deprecated: false
+  /update:
+    post:
+      tags:
+      - ContractingOfficeBinding
+      summary: update
+      operationId: Update
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/updateInput'
+        required: true
+      responses:
+        200:
+          description: ''
+          headers: {}
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/updateOutput'
+      deprecated: false
+  /get:
+    post:
+      tags:
+      - ContractingOfficeBinding
+      summary: get
+      operationId: Get
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/getInput'
+        required: true
+      responses:
+        200:
+          description: ''
+          headers: {}
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/getOutput'
+      deprecated: false
+  /getList:
+    post:
+      tags:
+      - ContractingOfficeBinding
+      summary: getList
+      operationId: GetList
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/getListInput'
+        required: true
+      responses:
+        200:
+          description: ''
+          headers: {}
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/getListOutput'
+      deprecated: false
+  /exists:
+    post:
+      tags:
+      - ContractingOfficeBinding
+      summary: exists
+      operationId: Exists
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/existsInput'
+        required: true
+      responses:
+        200:
+          description: ''
+          headers: {}
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/existsOutput'
+      deprecated: false
+  /delete:
+    post:
+      tags:
+      - ContractingOfficeBinding
+      summary: delete
+      operationId: Delete
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/deleteInput'
+        required: true
+      responses:
+        200:
+          description: ''
+          headers: {}
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/deleteOutput'
+      deprecated: false
+  /disable:
+    post:
+      tags:
+      - ContractingOfficeBinding
+      summary: disable
+      operationId: Disable
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/disableInput'
+        required: true
+      responses:
+        200:
+          description: ''
+          headers: {}
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/disableOutput'
+      deprecated: false
+  /enable:
+    post:
+      tags:
+      - ContractingOfficeBinding
+      summary: enable
+      operationId: Enable
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/enableInput'
+        required: true
+      responses:
+        200:
+          description: ''
+          headers: {}
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/enableOutput'
+      deprecated: false
+components:
+  schemas:
+    createContractingOfficeResponseType:
+      title: createContractingOfficeResponseType
+      type: object
+      properties:
+        contractingOffice:
+          type: string
+          nullable: true
+      description: ''
+    updateContractingOfficeResponseType:
+      title: updateContractingOfficeResponseType
+      type: object
+      properties:
+        contractingOffice:
+          type: string
+          nullable: true
+      description: ''
+    getContractingOfficeResponseType:
+      title: getContractingOfficeResponseType
+      type: object
+      properties:
+        contractingOffice:
+          type: string
+          nullable: true
+      description: ''
+    deleteContractingOfficeResponseType:
+      title: deleteContractingOfficeResponseType
+      type: object
+      properties:
+        isDeleted:
+          type: boolean
+          nullable: true
+      description: ''
+    enableContractingOfficeResponseType:
+      title: enableContractingOfficeResponseType
+      type: object
+      properties:
+        isEnabled:
+          type: boolean
+          nullable: true
+      description: ''
+    disableContractingOfficeResponseType:
+      title: disableContractingOfficeResponseType
+      type: object
+      properties:
+        isDisabled:
+          type: boolean
+          nullable: true
+      description: ''
+    existsContractingOfficeResponseType:
+      title: existsContractingOfficeResponseType
+      type: object
+      properties:
+        isExists:
+          type: boolean
+          nullable: true
+      description: ''
+    getListContractingOfficeResponseType:
+      title: getListContractingOfficeResponseType
+      type: object
+      properties:
+        listOfContractingOffices:
+          type: string
+          nullable: true
+      description: ''
+    createInput:
+      title: createInput
+      required:
+      - authenticationKey
+      - contractingOffice
+      type: object
+      properties:
+        authenticationKey:
+          type: string
+        contractingOffice:
+          type: string
+    createOutput:
+      title: createOutput
+      required:
+      - createContractingOfficeResponse
+      type: object
+      properties:
+        createContractingOfficeResponse:
+          $ref: '#/components/schemas/createContractingOfficeResponseType'
+    deleteInput:
+      title: deleteInput
+      required:
+      - authenticationKey
+      - contractingOfficeKey
+      type: object
+      properties:
+        authenticationKey:
+          type: string
+        contractingOfficeKey:
+          type: string
+    deleteOutput:
+      title: deleteOutput
+      required:
+      - deleteContractingOfficeResponse
+      type: object
+      properties:
+        deleteContractingOfficeResponse:
+          $ref: '#/components/schemas/deleteContractingOfficeResponseType'
+    disableInput:
+      title: disableInput
+      required:
+      - authenticationKey
+      - contractingOfficeKey
+      type: object
+      properties:
+        authenticationKey:
+          type: string
+        contractingOfficeKey:
+          type: string
+    disableOutput:
+      title: disableOutput
+      required:
+      - disableContractingOfficeResponse
+      type: object
+      properties:
+        disableContractingOfficeResponse:
+          $ref: '#/components/schemas/disableContractingOfficeResponseType'
+    enableInput:
+      title: enableInput
+      required:
+      - authenticationKey
+      - contractingOfficeKey
+      type: object
+      properties:
+        authenticationKey:
+          type: string
+        contractingOfficeKey:
+          type: string
+    enableOutput:
+      title: enableOutput
+      required:
+      - enableContractingOfficeResponse
+      type: object
+      properties:
+        enableContractingOfficeResponse:
+          $ref: '#/components/schemas/enableContractingOfficeResponseType'
+    existsInput:
+      title: existsInput
+      required:
+      - authenticationKey
+      - contractingOfficeKey
+      type: object
+      properties:
+        authenticationKey:
+          type: string
+        contractingOfficeKey:
+          type: string
+    existsOutput:
+      title: existsOutput
+      required:
+      - existsContractingOfficeResponse
+      type: object
+      properties:
+        existsContractingOfficeResponse:
+          $ref: '#/components/schemas/existsContractingOfficeResponseType'
+    getInput:
+      title: getInput
+      required:
+      - authenticationKey
+      - contractingOfficeKey
+      type: object
+      properties:
+        authenticationKey:
+          type: string
+        contractingOfficeKey:
+          type: string
+    getListInput:
+      title: getListInput
+      required:
+      - authenticationKey
+      - contractingOfficeSearchCriteria
+      type: object
+      properties:
+        authenticationKey:
+          type: string
+        contractingOfficeSearchCriteria:
+          type: string
+    getListOutput:
+      title: getListOutput
+      required:
+      - getListContractingOfficeResponse
+      type: object
+      properties:
+        getListContractingOfficeResponse:
+          $ref: '#/components/schemas/getListContractingOfficeResponseType'
+    getOutput:
+      title: getOutput
+      required:
+      - getContractingOfficeResponse
+      type: object
+      properties:
+        getContractingOfficeResponse:
+          $ref: '#/components/schemas/getContractingOfficeResponseType'
+    updateInput:
+      title: updateInput
+      required:
+      - authenticationKey
+      - contractingOffice
+      type: object
+      properties:
+        authenticationKey:
+          type: string
+        contractingOffice:
+          type: string
+    updateOutput:
+      title: updateOutput
+      required:
+      - updateContractingOfficeResponse
+      type: object
+      properties:
+        updateContractingOfficeResponse:
+          $ref: '#/components/schemas/updateContractingOfficeResponseType'
+tags:
+- name: ContractingOfficeBinding
+  description: ''

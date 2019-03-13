@@ -1,0 +1,164 @@
+openapi: 3.0.0
+info:
+  title: Award
+  contact: {}
+  version: '1.0'
+servers:
+- url: https://www.fpds.gov/FPDS/BusinessServices/DataCollection/vendors/1.0/Vendor
+  variables: {}
+paths:
+  /get:
+    post:
+      tags:
+      - VendorBinding
+      summary: get
+      operationId: Get
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/getInput'
+        required: true
+      responses:
+        200:
+          description: ''
+          headers: {}
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/getOutput'
+      deprecated: false
+  /getList:
+    post:
+      tags:
+      - VendorBinding
+      summary: getList
+      operationId: GetList
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/getListInput'
+        required: true
+      responses:
+        200:
+          description: ''
+          headers: {}
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/getListOutput'
+      deprecated: false
+  /exists:
+    post:
+      tags:
+      - VendorBinding
+      summary: exists
+      operationId: Exists
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/existsInput'
+        required: true
+      responses:
+        200:
+          description: ''
+          headers: {}
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/existsOutput'
+      deprecated: false
+components:
+  schemas:
+    getVendorResponseType:
+      title: getVendorResponseType
+      type: object
+      properties:
+        vendor:
+          type: string
+          nullable: true
+      description: ''
+    existsVendorResponseType:
+      title: existsVendorResponseType
+      type: object
+      properties:
+        isExists:
+          type: boolean
+          nullable: true
+      description: ''
+    getListVendorResponseType:
+      title: getListVendorResponseType
+      type: object
+      properties:
+        listOfVendors:
+          type: string
+          nullable: true
+      description: ''
+    existsInput:
+      title: existsInput
+      required:
+      - authenticationKey
+      - DUNSNumber
+      type: object
+      properties:
+        authenticationKey:
+          type: string
+        DUNSNumber:
+          type: string
+    existsOutput:
+      title: existsOutput
+      required:
+      - existsVendorResponse
+      type: object
+      properties:
+        existsVendorResponse:
+          $ref: '#/components/schemas/existsVendorResponseType'
+    getInput:
+      title: getInput
+      required:
+      - authenticationKey
+      - vendorSearchCriteria
+      type: object
+      properties:
+        authenticationKey:
+          type: string
+        vendorSearchCriteria:
+          type: string
+    getListInput:
+      title: getListInput
+      required:
+      - authenticationKey
+      - vendorSearchCriteria
+      type: object
+      properties:
+        authenticationKey:
+          type: string
+        vendorSearchCriteria:
+          type: string
+    getListOutput:
+      title: getListOutput
+      required:
+      - getListVendorResponse
+      type: object
+      properties:
+        getListVendorResponse:
+          $ref: '#/components/schemas/getListVendorResponseType'
+    getOutput:
+      title: getOutput
+      required:
+      - getVendorResponse
+      type: object
+      properties:
+        getVendorResponse:
+          $ref: '#/components/schemas/getVendorResponseType'
+tags:
+- name: VendorBinding
+  description: ''
