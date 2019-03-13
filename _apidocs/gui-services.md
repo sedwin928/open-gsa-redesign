@@ -679,6 +679,7 @@ https://www.api.sam.gov/prod/FPDS/BusinessServices/DataCollection/vendors/1.0/Ve
 
 ## OpenAPI Specification File 
 You can view the full details of this API in the OpenAPI Specification file available here: 
+
 Contract Data Web Services:
 
 * <a href="v1/openapi.yaml">Open API specification file for the Award</a>
