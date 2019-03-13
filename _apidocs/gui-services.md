@@ -678,6 +678,29 @@ https://www.api.sam.gov/prod/FPDS/BusinessServices/DataCollection/vendors/1.0/Ve
 
 
 ## OpenAPI Specification File 
+You can view the full details of this API in the OpenAPI Specification file available here: 
+Contract Data Web Services:
+
+* <a href="v1/openapi.yaml">Open API specification file for the Award</a>
+* <a href="v1/openapi.yaml">Open API specification file for the IDV</a>
+* <a href="v1/openapi.yaml">Open API specification file for the NASA Specific Award</a>
+* <a href="v1/openapi.yaml">Open API specification file for the Other Transaction Award</a>
+* <a href="v1/openapi.yaml">Open API specification file for the Other Transaction IDV</a>
+
+Referential Data Web Services:
+
+* <a href="v1/openapi.yaml">Open API specification file for the Department</a>
+* <a href="v1/openapi.yaml">Open API specification file for the Agency</a>
+* <a href="v1/openapi.yaml">Open API specification file for the Contracting Office</a>
+* <a href="v1/openapi.yaml">Open API specification file for the Government Office</a>
+* <a href="v1/openapi.yaml">Open API specification file for the PSC</a>
+* <a href="v1/openapi.yaml">Open API specification file for the NAICS</a>
+* <a href="v1/openapi.yaml">Open API specification file for the System Equipment Code</a>
+* <a href="v1/openapi.yaml">Open API specification file for the Claimant Program Code</a>
+* <a href="v1/openapi.yaml">Open API specification file for the Locations</a>
+* <a href="v1/openapi.yaml">Open API specification file for the Vendor</a>
+
+
 
 ## HTTP Response Codes
 

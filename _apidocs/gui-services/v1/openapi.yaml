@@ -1,0 +1,4908 @@
+openapi: 3.0.0
+info:
+  title: Award
+  contact: {}
+  version: '1.0'
+servers:
+  - url: https://www.fpds.gov/FPDS/BusinessServices/DataCollection/contracts/1.5/Award
+    variables: {}
+paths:
+  /get:
+    post:
+      tags:
+        - AwardBinding
+      summary: get
+      operationId: Get
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/getInput'
+        required: true
+      responses:
+        200:
+          description: ''
+          headers: {}
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/getOutput'
+      deprecated: false
+  /getList:
+    post:
+      tags:
+        - AwardBinding
+      summary: getList
+      operationId: GetList
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/getListInput'
+        required: true
+      responses:
+        200:
+          description: ''
+          headers: {}
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/getListOutput'
+      deprecated: false
+  /create:
+    post:
+      tags:
+        - AwardBinding
+      summary: create
+      operationId: Create
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/createInput'
+        required: true
+      responses:
+        200:
+          description: ''
+          headers: {}
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/createOutput'
+      deprecated: false
+  /createFromTemplate:
+    post:
+      tags:
+        - AwardBinding
+      summary: createFromTemplate
+      operationId: CreateFromTemplate
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/createFromTemplateInput'
+        required: true
+      responses:
+        200:
+          description: ''
+          headers: {}
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/createFromTemplateOutput'
+      deprecated: false
+  /exists:
+    post:
+      tags:
+        - AwardBinding
+      summary: exists
+      operationId: Exists
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/existsInput'
+        required: true
+      responses:
+        200:
+          description: ''
+          headers: {}
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/existsOutput'
+      deprecated: false
+  /approve:
+    post:
+      tags:
+        - AwardBinding
+      summary: approve
+      operationId: Approve
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/approveInput'
+        required: true
+      responses:
+        200:
+          description: ''
+          headers: {}
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/approveOutput'
+      deprecated: false
+  /delete:
+    post:
+      tags:
+        - AwardBinding
+      summary: delete
+      operationId: Delete
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/deleteInput'
+        required: true
+      responses:
+        200:
+          description: ''
+          headers: {}
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/deleteOutput'
+      deprecated: false
+  /isComplete:
+    post:
+      tags:
+        - AwardBinding
+      summary: isComplete
+      operationId: IsComplete
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/isCompleteInput'
+        required: true
+      responses:
+        200:
+          description: ''
+          headers: {}
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/isCompleteOutput'
+      deprecated: false
+  /isExistingAwardComplete:
+    post:
+      tags:
+        - AwardBinding
+      summary: isExistingAwardComplete
+      operationId: IsExistingAwardComplete
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/isExistingAwardCompleteInput'
+        required: true
+      responses:
+        200:
+          description: ''
+          headers: {}
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/isExistingAwardCompleteOutput'
+      deprecated: false
+  /update:
+    post:
+      tags:
+        - AwardBinding
+      summary: update
+      operationId: Update
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/updateInput'
+        required: true
+      responses:
+        200:
+          description: ''
+          headers: {}
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/updateOutput'
+      deprecated: false
+  /correct:
+    post:
+      tags:
+        - AwardBinding
+      summary: correct
+      operationId: Correct
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/correctInput'
+        required: true
+      responses:
+        200:
+          description: ''
+          headers: {}
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/correctOutput'
+      deprecated: false
+  /voidContract:
+    post:
+      tags:
+        - AwardBinding
+      summary: voidContract
+      operationId: VoidContract
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/voidContractInput'
+        required: true
+      responses:
+        200:
+          description: ''
+          headers: {}
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/voidContractOutput'
+      deprecated: false
+  /getVersion:
+    post:
+      tags:
+        - AwardBinding
+      summary: getVersion
+      operationId: GetVersion
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/getVersionInput'
+        required: true
+      responses:
+        200:
+          description: ''
+          headers: {}
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/getVersionOutput'
+      deprecated: false
+components:
+  schemas:
+    warningType:
+      title: warningType
+      required:
+        - warningMessage
+      type: object
+      properties:
+        elementName:
+          type: array
+          items:
+            maxLength: 256
+            minLength: 1
+            type: string
+          description: ''
+        warningCode:
+          type: string
+          nullable: true
+        warningMessage:
+          maxLength: 4096
+          type: string
+      description: ''
+    errorType:
+      title: errorType
+      required:
+        - errorMessage
+      type: object
+      properties:
+        elementName:
+          type: array
+          items:
+            maxLength: 256
+            minLength: 1
+            type: string
+          description: ''
+        errorCode:
+          type: string
+          nullable: true
+        errorMessage:
+          maxLength: 4096
+          type: string
+      description: ''
+    infoType:
+      title: infoType
+      required:
+        - infoMessage
+      type: object
+      properties:
+        elementName:
+          type: array
+          items:
+            maxLength: 256
+            minLength: 1
+            type: string
+          description: ''
+        infoCode:
+          type: string
+          nullable: true
+        infoMessage:
+          maxLength: 4096
+          type: string
+      description: ''
+    listOfErrorsType:
+      title: listOfErrorsType
+      type: object
+      properties:
+        error:
+          type: array
+          items:
+            $ref: '#/components/schemas/errorType'
+          description: ''
+      description: ''
+    listOfWarningsType:
+      title: listOfWarningsType
+      type: object
+      properties:
+        warning:
+          type: array
+          items:
+            $ref: '#/components/schemas/warningType'
+          description: ''
+      description: ''
+    listOfInfoMessagesType:
+      title: listOfInfoMessagesType
+      type: object
+      properties:
+        info:
+          type: array
+          items:
+            $ref: '#/components/schemas/infoType'
+          description: ''
+      description: ''
+    parameterType:
+      title: parameterType
+      required:
+        - parameterName
+        - parameterType
+        - parameterValue
+      type: object
+      properties:
+        parameterName:
+          type: string
+        parameterType:
+          type: string
+        parameterValue:
+          type: string
+        requirementState:
+          maxLength: 1
+          type: string
+          nullable: true
+      description: ''
+    listOfParametersType:
+      title: listOfParametersType
+      type: object
+      properties:
+        parameter:
+          type: array
+          items:
+            $ref: '#/components/schemas/parameterType'
+          description: ''
+      description: ''
+    outputMessagesType:
+      title: outputMessagesType
+      type: object
+      properties:
+        listOfErrors:
+          $ref: '#/components/schemas/listOfErrorsType'
+        listOfWarnings:
+          $ref: '#/components/schemas/listOfWarningsType'
+        listOfInfoMessages:
+          $ref: '#/components/schemas/listOfInfoMessagesType'
+      description: ''
+    responseType:
+      title: responseType
+      required:
+        - requestNumber
+      type: object
+      properties:
+        requestNumber:
+          type: integer
+          format: int32
+        confirmationNumber:
+          type: integer
+          format: int32
+          nullable: true
+        listOfParameters:
+          $ref: '#/components/schemas/listOfParametersType'
+        outputMessages:
+          $ref: '#/components/schemas/outputMessagesType'
+      description: ''
+    userAuthenticationKeyType:
+      title: userAuthenticationKeyType
+      required:
+        - userID
+        - password
+        - serviceOriginatorID
+      type: object
+      properties:
+        userID:
+          maxLength: 50
+          type: string
+        password:
+          maxLength: 20
+          type: string
+        serviceOriginatorID:
+          maxLength: 50
+          type: string
+      description: ''
+    serviceProviderType:
+      title: serviceProviderType
+      type: object
+      properties:
+        providerName:
+          maxLength: 512
+          type: string
+          nullable: true
+        location:
+          maxLength: 512
+          type: string
+          nullable: true
+        description:
+          maxLength: 1024
+          type: string
+          nullable: true
+      description: ''
+    serviceConfigurationType:
+      title: serviceConfigurationType
+      type: object
+      properties:
+        serviceProvider:
+          $ref: '#/components/schemas/serviceProviderType'
+        serviceName:
+          maxLength: 512
+          type: string
+          nullable: true
+        isEnabled:
+          type: boolean
+          nullable: true
+        description:
+          maxLength: 1024
+          type: string
+          nullable: true
+        auditInformation:
+          $ref: '#/components/schemas/auditInformationType'
+        isDefault:
+          type: boolean
+          nullable: true
+      description: ''
+    serviceKeyType:
+      title: serviceKeyType
+      type: object
+      properties:
+        providerName:
+          maxLength: 512
+          type: string
+          nullable: true
+        serviceName:
+          maxLength: 512
+          type: string
+          nullable: true
+      description: ''
+    detailedMessageType:
+      title: detailedMessageType
+      type: object
+      properties:
+        detailedMessageCode:
+          type: string
+          nullable: true
+      description: ''
+    listOfDetailMesssagesType:
+      title: listOfDetailMesssagesType
+      type: object
+      properties:
+        Detail:
+          type: array
+          items:
+            $ref: '#/components/schemas/detailedMessageType'
+          description: ''
+      description: ''
+    auditInformationType:
+      title: auditInformationType
+      type: object
+      properties:
+        createdBy:
+          maxLength: 50
+          type: string
+          nullable: true
+        createdDate:
+          pattern: ([0-9]{4}(-[0-9]{2})(-[0-9]{2}) ([0-9]{2})(:[0-9]{2})(:[0-9]{2}))?
+          type: string
+          nullable: true
+        lastModifiedBy:
+          maxLength: 50
+          type: string
+          nullable: true
+        lastModifiedDate:
+          pattern: ([0-9]{4}(-[0-9]{2})(-[0-9]{2}) ([0-9]{2})(:[0-9]{2})(:[0-9]{2}))?
+          type: string
+          description: NonOT
+          nullable: true
+      description: ''
+    countType:
+      title: countType
+      required:
+        - total
+        - fetched
+      type: object
+      properties:
+        total:
+          type: integer
+          format: int32
+        fetched:
+          type: integer
+          format: int32
+      description: ''
+    listOfSearchResults:
+      title: listOfSearchResults
+      required:
+        - count
+      type: object
+      properties:
+        count:
+          $ref: '#/components/schemas/countType'
+      description: ''
+    listOfAdministratorsType:
+      title: listOfAdministratorsType
+      type: object
+      properties:
+        administrator:
+          type: array
+          items:
+            maxLength: 50
+            type: string
+          description: ''
+      description: ''
+    awardRelevantContractDatesType:
+      title: awardRelevantContractDatesType
+      allOf:
+        - $ref: '#/components/schemas/relevantContractDatesType'
+        - type: object
+          properties:
+            currentCompletionDate:
+              pattern: ([0-9]{4}(-[0-9]{2})(-[0-9]{2}) ([0-9]{2})(:[0-9]{2})(:[0-9]{2}))?
+              type: string
+              description: Both
+              nullable: true
+            ultimateCompletionDate:
+              pattern: ([0-9]{4}(-[0-9]{2})(-[0-9]{2}) ([0-9]{2})(:[0-9]{2})(:[0-9]{2}))?
+              type: string
+              description: Both
+              nullable: true
+      description: ''
+    awardDollarValuesType:
+      title: awardDollarValuesType
+      type: object
+      properties:
+        obligatedAmount:
+          type: number
+          description: Both
+          nullable: true
+        baseAndExercisedOptionsValue:
+          type: number
+          nullable: true
+        baseAndAllOptionsValue:
+          type: number
+          description: Both
+          nullable: true
+      description: ''
+    awardTotalDollarValuesType:
+      title: awardTotalDollarValuesType
+      type: object
+      properties:
+        totalObligatedAmount:
+          type: number
+          description: Both
+          nullable: true
+        totalBaseAndExercisedOptionsValue:
+          type: number
+          description: Both
+          nullable: true
+        totalBaseAndAllOptionsValue:
+          type: number
+          description: Both
+          nullable: true
+      description: ''
+    awardContractDataType:
+      title: awardContractDataType
+      allOf:
+        - $ref: '#/components/schemas/contractDataType'
+        - type: object
+          properties:
+            contractFinancing:
+              $ref: '#/components/schemas/financingType'
+            purchaseCardAsPaymentMethod:
+              $ref: '#/components/schemas/purchaseCardAsPaymentMethodType'
+            numberOfActions:
+              type: integer
+              description: NonOT
+              format: int32
+              nullable: true
+      description: ''
+    awardLegislativeMandatesType:
+      title: awardLegislativeMandatesType
+      allOf:
+        - $ref: '#/components/schemas/legislativeMandatesType'
+        - type: object
+      description: ''
+    awardProductOrServiceInformationType:
+      title: awardProductOrServiceInformationType
+      allOf:
+        - $ref: '#/components/schemas/productOrServiceInformationType'
+        - type: object
+          properties:
+            systemEquipmentCode:
+              $ref: '#/components/schemas/systemEquipmentCodeType'
+            informationTechnologyCommercialItemCategory:
+              $ref: '#/components/schemas/infoTechCategoryType'
+            useOfEPADesignatedProducts:
+              $ref: '#/components/schemas/EPADesignationType'
+            countryOfOrigin:
+              $ref: '#/components/schemas/countryShortCodeType'
+            placeOfManufacture:
+              $ref: '#/components/schemas/placeOfManufactureType'
+      description: ''
+    awardPlaceOfPerformanceType:
+      title: awardPlaceOfPerformanceType
+      type: object
+      properties:
+        principalPlaceOfPerformance:
+          $ref: '#/components/schemas/placeCodeType'
+        placeOfPerformanceZIPCode:
+          $ref: '#/components/schemas/ZIPCodeType'
+        placeOfPerformanceCongressionalDistrict:
+          maxLength: 6
+          type: string
+          description: Both
+          nullable: true
+      description: ''
+    awardCompetitionType:
+      title: awardCompetitionType
+      allOf:
+        - $ref: '#/components/schemas/competitionType'
+        - type: object
+          properties:
+            preAwardSynopsisRequirement:
+              type: boolean
+            priceEvaluationPercentDifference:
+              maximum: 100
+              minimum: 0
+              type: number
+              description: NonOT
+              nullable: true
+            synopsisWaiverException:
+              type: boolean
+            alternativeAdvertising:
+              type: boolean
+      description: ''
+    awardPurchaserInformationType:
+      title: awardPurchaserInformationType
+      allOf:
+        - $ref: '#/components/schemas/purchaserInformationType'
+        - type: object
+          properties:
+            purchaseReason:
+              $ref: '#/components/schemas/purchaseReasonType'
+      description: ''
+    awardContractMarketingDataType:
+      title: awardContractMarketingDataType
+      type: object
+      properties:
+        feePaidForUseOfService:
+          type: number
+          description: NonOT
+          nullable: true
+      description: ''
+    listOfAwardIDsType:
+      title: listOfAwardIDsType
+      type: object
+      properties:
+        awardID:
+          type: array
+          items:
+            $ref: '#/components/schemas/awardIDType'
+          description: ''
+      description: ''
+    awardType:
+      title: awardType
+      type: object
+      properties:
+        version:
+          type: string
+          xml:
+            attribute: true
+            wrapped: false
+        awardID:
+          $ref: '#/components/schemas/awardIDType'
+        listOfOtherIDsForThisAward:
+          $ref: '#/components/schemas/listOfAwardIDsType'
+        relevantContractDates:
+          $ref: '#/components/schemas/awardRelevantContractDatesType'
+        dollarValues:
+          $ref: '#/components/schemas/awardDollarValuesType'
+        totalDollarValues:
+          $ref: '#/components/schemas/awardTotalDollarValuesType'
+        purchaserInformation:
+          $ref: '#/components/schemas/awardPurchaserInformationType'
+        contractMarketingData:
+          $ref: '#/components/schemas/awardContractMarketingDataType'
+        contractData:
+          $ref: '#/components/schemas/awardContractDataType'
+        legislativeMandates:
+          $ref: '#/components/schemas/awardLegislativeMandatesType'
+        productOrServiceInformation:
+          $ref: '#/components/schemas/awardProductOrServiceInformationType'
+        vendor:
+          $ref: '#/components/schemas/contractVendorType'
+        placeOfPerformance:
+          $ref: '#/components/schemas/awardPlaceOfPerformanceType'
+        competition:
+          $ref: '#/components/schemas/awardCompetitionType'
+        preferencePrograms:
+          $ref: '#/components/schemas/preferenceProgramsType'
+        transactionInformation:
+          $ref: '#/components/schemas/transactionInformationType'
+        agencySpecificAwardElements:
+          $ref: '#/components/schemas/agencySpecificAwardElementsType'
+        genericTags:
+          $ref: '#/components/schemas/genericTagsType'
+      description: ''
+    listOfAwardsType:
+      title: listOfAwardsType
+      allOf:
+        - $ref: '#/components/schemas/listOfSearchResults'
+        - type: object
+          properties:
+            award:
+              type: array
+              items:
+                $ref: '#/components/schemas/awardType'
+              description: ''
+      description: ''
+    awardSearchCriteriaType:
+      title: awardSearchCriteriaType
+      allOf:
+        - $ref: '#/components/schemas/contractSearchCriteriaType'
+        - type: object
+      description: ''
+    awardSummaryType:
+      title: awardSummaryType
+      required:
+        - awardID
+      type: object
+      properties:
+        awardID:
+          $ref: '#/components/schemas/awardIDType'
+        listOfOtherIDsForThisAward:
+          $ref: '#/components/schemas/listOfAwardIDsType'
+        contractActionType:
+          $ref: '#/components/schemas/contractActionTypeType'
+        agencyName:
+          maxLength: 100
+          type: string
+          nullable: true
+        officeName:
+          maxLength: 100
+          type: string
+          nullable: true
+        officeCode:
+          $ref: '#/components/schemas/officeIDType'
+        vendorName:
+          maxLength: 400
+          type: string
+          description: Both
+          nullable: true
+        NAICSCode:
+          $ref: '#/components/schemas/NAICSCodeType'
+        signedDate:
+          pattern: ([0-9]{4}(-[0-9]{2})(-[0-9]{2}) ([0-9]{2})(:[0-9]{2})(:[0-9]{2}))?
+          type: string
+          description: Both
+          nullable: true
+        baseAndAllOptionsValue:
+          type: number
+        baseAndExercisedOptionsValue:
+          type: number
+          description: Both
+          nullable: true
+        obligatedAmount:
+          type: number
+        transactionInformation:
+          $ref: '#/components/schemas/transactionInformationType'
+        version:
+          type: string
+          nullable: true
+      description: ''
+    listOfAwardSummariesType:
+      title: listOfAwardSummariesType
+      allOf:
+        - $ref: '#/components/schemas/listOfSearchResults'
+        - type: object
+          properties:
+            awardSummary:
+              type: array
+              items:
+                $ref: '#/components/schemas/awardSummaryType'
+              description: ''
+      description: ''
+    awardContractIDType:
+      title: awardContractIDType
+      allOf:
+        - $ref: '#/components/schemas/contractIDType'
+        - type: object
+          properties:
+            transactionNumber:
+              maximum: 999999
+              type: integer
+              format: int32
+              example: 0
+      description: ''
+    additionalReportingValueType:
+      title: additionalReportingValueType
+      type: object
+      properties:
+        description:
+          type: string
+          xml:
+            attribute: true
+            wrapped: false
+      description: ''
+    listOfAdditionalReportingValuesType:
+      title: listOfAdditionalReportingValuesType
+      type: object
+      properties:
+        additionalReportingValue:
+          type: array
+          items:
+            $ref: '#/components/schemas/additionalReportingValueType'
+          description: ''
+      description: NonOT
+    inherentlyGovernmentalFunctionType:
+      title: inherentlyGovernmentalFunctionType
+      type: object
+      properties:
+        description:
+          maxLength: 50
+          type: string
+          xml:
+            attribute: true
+            wrapped: false
+      description: NonOT
+    nationalInterestActionType:
+      title: nationalInterestActionType
+      type: object
+      properties:
+        description:
+          type: string
+          xml:
+            attribute: true
+            wrapped: false
+      description: NonOT
+    contingencyHumanitarianPeacekeepingOperationType:
+      title: contingencyHumanitarianPeacekeepingOperationType
+      type: object
+      properties:
+        description:
+          type: string
+          xml:
+            attribute: true
+            wrapped: false
+      description: NonOT
+    CCRExceptionType:
+      title: CCRExceptionType
+      type: object
+      properties:
+        description:
+          type: string
+          xml:
+            attribute: true
+            wrapped: false
+      description: NonOT
+    performanceBasedServiceContractType:
+      title: performanceBasedServiceContractType
+      type: object
+      properties:
+        description:
+          type: string
+          xml:
+            attribute: true
+            wrapped: false
+      description: NonOT
+    reasonForModificationType:
+      title: reasonForModificationType
+      type: object
+      properties:
+        description:
+          type: string
+          xml:
+            attribute: true
+            wrapped: false
+      description: Both
+    placeOfManufactureType:
+      title: placeOfManufactureType
+      type: object
+      properties:
+        description:
+          type: string
+          xml:
+            attribute: true
+            wrapped: false
+      description: NonOT
+    EPADesignationType:
+      title: EPADesignationType
+      type: object
+      properties:
+        description:
+          type: string
+          xml:
+            attribute: true
+            wrapped: false
+      description: ''
+    recoveredMaterialClausesType:
+      title: recoveredMaterialClausesType
+      type: object
+      properties:
+        description:
+          type: string
+          xml:
+            attribute: true
+            wrapped: false
+      description: NonOT
+    seaTransportationType:
+      title: seaTransportationType
+      type: object
+      properties:
+        description:
+          type: string
+          xml:
+            attribute: true
+            wrapped: false
+      description: NonOT
+    extentCompetedType:
+      title: extentCompetedType
+      type: object
+      properties:
+        description:
+          type: string
+          xml:
+            attribute: true
+            wrapped: false
+      description: Both
+    subcontractPlanType:
+      title: subcontractPlanType
+      type: object
+      properties:
+        description:
+          type: string
+          xml:
+            attribute: true
+            wrapped: false
+      description: NonOT
+    contractingOfficerBusinessSizeDeterminationType:
+      title: contractingOfficerBusinessSizeDeterminationType
+      type: object
+      properties:
+        description:
+          type: string
+          xml:
+            attribute: true
+            wrapped: false
+      description: NonOT
+    solicitationProceduresType:
+      title: solicitationProceduresType
+      type: object
+      properties:
+        description:
+          type: string
+          xml:
+            attribute: true
+            wrapped: false
+      description: Both
+    typeOfSetAsideType:
+      title: typeOfSetAsideType
+      type: object
+      properties:
+        description:
+          type: string
+          xml:
+            attribute: true
+            wrapped: false
+      description: NonOT
+    evaluatedPreferenceType:
+      title: evaluatedPreferenceType
+      type: object
+      properties:
+        description:
+          type: string
+          xml:
+            attribute: true
+            wrapped: false
+      description: NonOT
+    researchType:
+      title: researchType
+      type: object
+      properties:
+        description:
+          type: string
+          xml:
+            attribute: true
+            wrapped: false
+      description: NonOT
+    reasonNotCompetedType:
+      title: reasonNotCompetedType
+      type: object
+      properties:
+        description:
+          type: string
+          xml:
+            attribute: true
+            wrapped: false
+      description: NonOT
+    statutoryExceptionToFairOpportunityType:
+      title: statutoryExceptionToFairOpportunityType
+      type: object
+      properties:
+        description:
+          type: string
+          xml:
+            attribute: true
+            wrapped: false
+      description: NonOT
+    systemEquipmentCodeType:
+      title: systemEquipmentCodeType
+      type: object
+      properties:
+        description:
+          type: string
+          xml:
+            attribute: true
+            wrapped: false
+      description: NonOT
+    financingType:
+      title: financingType
+      type: object
+      properties:
+        description:
+          type: string
+          xml:
+            attribute: true
+            wrapped: false
+      description: ''
+    pricingDataType:
+      title: pricingDataType
+      type: object
+      properties:
+        description:
+          type: string
+          xml:
+            attribute: true
+            wrapped: false
+      description: ''
+    typeOfContractType:
+      title: typeOfContractType
+      type: object
+      properties:
+        description:
+          type: string
+          xml:
+            attribute: true
+            wrapped: false
+      description: ''
+    reasonNotAwardedType:
+      title: reasonNotAwardedType
+      type: object
+      properties:
+        description:
+          type: string
+          xml:
+            attribute: true
+            wrapped: false
+      description: ''
+    purchaseReasonType:
+      title: purchaseReasonType
+      type: object
+      properties:
+        description:
+          type: string
+          xml:
+            attribute: true
+            wrapped: false
+      description: ''
+    foreignFundingType:
+      title: foreignFundingType
+      type: object
+      properties:
+        description:
+          type: string
+          xml:
+            attribute: true
+            wrapped: false
+      description: NonOT
+    manufacturingOrganizationTypeType:
+      title: manufacturingOrganizationTypeType
+      type: object
+      properties:
+        description:
+          type: string
+          xml:
+            attribute: true
+            wrapped: false
+      description: NonOT
+    undefinitizedActionType:
+      title: undefinitizedActionType
+      type: object
+      properties:
+        description:
+          type: string
+          xml:
+            attribute: true
+            wrapped: false
+      description: NonOT
+    multiYearContractType:
+      title: multiYearContractType
+      type: object
+      properties:
+        description:
+          type: string
+          xml:
+            attribute: true
+            wrapped: false
+      description: NonOT
+    costAccountingStandardsClauseType:
+      title: costAccountingStandardsClauseType
+      type: object
+      properties:
+        description:
+          type: string
+          xml:
+            attribute: true
+            wrapped: false
+      description: NonOT
+    purchaseCardAsPaymentMethodType:
+      title: purchaseCardAsPaymentMethodType
+      type: object
+      properties:
+        description:
+          type: string
+          xml:
+            attribute: true
+            wrapped: false
+      description: NonOT
+    ClingerCohenActType:
+      title: ClingerCohenActType
+      type: object
+      properties:
+        description:
+          type: string
+          xml:
+            attribute: true
+            wrapped: false
+      description: NonOT
+    materialsSuppliesArticlesEquipmentType:
+      title: materialsSuppliesArticlesEquipmentType
+      type: object
+      properties:
+        description:
+          type: string
+          xml:
+            attribute: true
+            wrapped: false
+      description: NonOT
+    laborStandardsType:
+      title: laborStandardsType
+      type: object
+      properties:
+        description:
+          type: string
+          xml:
+            attribute: true
+            wrapped: false
+      description: NonOT
+    constructionWageRateRequirementsType:
+      title: constructionWageRateRequirementsType
+      type: object
+      properties:
+        description:
+          type: string
+          xml:
+            attribute: true
+            wrapped: false
+      description: NonOT
+    interagencyContractingAuthorityType:
+      title: interagencyContractingAuthorityType
+      type: object
+      properties:
+        description:
+          type: string
+          xml:
+            attribute: true
+            wrapped: false
+      description: NonOT
+    GFE-GFPType:
+      title: GFE-GFPType
+      type: object
+      properties:
+        description:
+          type: string
+          xml:
+            attribute: true
+            wrapped: false
+      description: NonOT
+    consolidatedContractType:
+      title: consolidatedContractType
+      type: object
+      properties:
+        description:
+          type: string
+          xml:
+            attribute: true
+            wrapped: false
+      description: NonOT
+    fedBizOppsType:
+      title: fedBizOppsType
+      type: object
+      properties:
+        description:
+          type: string
+          xml:
+            attribute: true
+            wrapped: false
+      description: NonOT
+    A76ActionType:
+      title: A76ActionType
+      type: object
+      properties:
+        description:
+          type: string
+          xml:
+            attribute: true
+            wrapped: false
+      description: NonOT
+    commercialItemAcquisitionProceduresType:
+      title: commercialItemAcquisitionProceduresType
+      type: object
+      properties:
+        description:
+          type: string
+          xml:
+            attribute: true
+            wrapped: false
+      description: NonOT
+    contractBundlingType:
+      title: contractBundlingType
+      type: object
+      properties:
+        description:
+          type: string
+          xml:
+            attribute: true
+            wrapped: false
+      description: NonOT
+    infoTechCategoryType:
+      title: infoTechCategoryType
+      type: object
+      properties:
+        description:
+          type: string
+          xml:
+            attribute: true
+            wrapped: false
+      description: ''
+    contractActionTypeType:
+      title: contractActionTypeType
+      type: object
+      properties:
+        description:
+          type: string
+          xml:
+            attribute: true
+            wrapped: false
+        part8OrPart13:
+          type: string
+          xml:
+            attribute: true
+            wrapped: false
+      description: >-
+        Both
+
+        Both
+    claimantProgramCodeType:
+      title: claimantProgramCodeType
+      type: object
+      properties:
+        description:
+          type: string
+          xml:
+            attribute: true
+            wrapped: false
+      description: NonOT
+    documentStatusType:
+      title: documentStatusType
+      type: object
+      properties:
+        description:
+          type: string
+          xml:
+            attribute: true
+            wrapped: false
+      description: ''
+    transactionSourceType:
+      title: transactionSourceType
+      type: object
+      properties:
+        description:
+          type: string
+          xml:
+            attribute: true
+            wrapped: false
+      description: ''
+    sourceType:
+      title: sourceType
+      type: object
+      properties:
+        description:
+          type: string
+          xml:
+            attribute: true
+            wrapped: false
+      description: ''
+    statusType:
+      title: statusType
+      type: object
+      properties:
+        description:
+          type: string
+          xml:
+            attribute: true
+            wrapped: false
+      description: ''
+    localAreaSetAsideType:
+      title: localAreaSetAsideType
+      type: object
+      properties:
+        description:
+          type: string
+          xml:
+            attribute: true
+            wrapped: false
+      description: NonOT
+    commercialItemTestProgramType:
+      title: commercialItemTestProgramType
+      type: object
+      properties:
+        description:
+          type: string
+          xml:
+            attribute: true
+            wrapped: false
+      description: ''
+    availabilityTypeCodeType:
+      title: availabilityTypeCodeType
+      type: object
+      properties:
+        description:
+          type: string
+          xml:
+            attribute: true
+            wrapped: false
+      description: ''
+    initiativeType:
+      title: initiativeType
+      type: object
+      properties:
+        description:
+          type: string
+          xml:
+            attribute: true
+            wrapped: false
+      description: ''
+    contractIDType:
+      title: contractIDType
+      required:
+        - agencyID
+      type: object
+      properties:
+        agencyID:
+          $ref: '#/components/schemas/agencyIDType'
+        PIID:
+          maxLength: 50
+          type: string
+        modNumber:
+          maxLength: 25
+          type: string
+          example: 0
+      description: ''
+    contractIDSummaryType:
+      title: contractIDSummaryType
+      required:
+        - agencyID
+        - PIID
+      type: object
+      properties:
+        agencyID:
+          $ref: '#/components/schemas/agencyIDType'
+        PIID:
+          maxLength: 50
+          type: string
+        modNumber:
+          maxLength: 25
+          type: string
+          example: 0
+        transactionNumber:
+          maximum: 999999
+          type: integer
+          format: int32
+          example: 0
+      description: ''
+    referencedIDVIDType:
+      title: referencedIDVIDType
+      type: object
+      properties:
+        agencyID:
+          $ref: '#/components/schemas/agencyIDType'
+        PIID:
+          maxLength: 50
+          type: string
+          nullable: true
+        modNumber:
+          maxLength: 25
+          type: string
+          description: Both
+          example: 0
+      description: ''
+    treasuryAccountType:
+      title: treasuryAccountType
+      type: object
+      properties:
+        treasuryAccountSymbol:
+          $ref: '#/components/schemas/treasuryAccountSymbolType'
+        initiative:
+          $ref: '#/components/schemas/initiativeType'
+        obligatedAmount:
+          type: number
+          nullable: true
+      description: ''
+    treasuryAccountSymbolType:
+      title: treasuryAccountSymbolType
+      type: object
+      properties:
+        subLevelPrefixCode:
+          maxLength: 2
+          type: string
+          nullable: true
+        allocationTransferAgencyIdentifier:
+          maxLength: 3
+          type: string
+          nullable: true
+        agencyIdentifier:
+          $ref: '#/components/schemas/agencyIDType'
+        beginningPeriodOfAvailability:
+          maxLength: 4
+          type: string
+          nullable: true
+        endingPeriodOfAvailability:
+          maxLength: 4
+          type: string
+          nullable: true
+        availabilityTypeCode:
+          $ref: '#/components/schemas/availabilityTypeCodeType'
+        mainAccountCode:
+          maxLength: 4
+          type: string
+          description: Both
+          nullable: true
+        subAccountCode:
+          maxLength: 3
+          type: string
+          description: Both
+          nullable: true
+      description: ''
+    listOfTreasuryAccountsType:
+      title: listOfTreasuryAccountsType
+      type: object
+      properties:
+        count:
+          type: string
+          xml:
+            attribute: true
+            wrapped: false
+        treasuryAccount:
+          type: array
+          items:
+            $ref: '#/components/schemas/treasuryAccountType'
+          description: ''
+      description: ''
+    relevantContractDatesType:
+      title: relevantContractDatesType
+      type: object
+      properties:
+        signedDate:
+          pattern: ([0-9]{4}(-[0-9]{2})(-[0-9]{2}) ([0-9]{2})(:[0-9]{2})(:[0-9]{2}))?
+          type: string
+          nullable: true
+        effectiveDate:
+          pattern: ([0-9]{4}(-[0-9]{2})(-[0-9]{2}) ([0-9]{2})(:[0-9]{2})(:[0-9]{2}))?
+          type: string
+          description: Both
+          nullable: true
+      description: ''
+    purchaserInformationType:
+      title: purchaserInformationType
+      type: object
+      properties:
+        contractingOfficeAgencyID:
+          $ref: '#/components/schemas/agencyIDType'
+        contractingOfficeID:
+          $ref: '#/components/schemas/officeIDType'
+        fundingRequestingAgencyID:
+          $ref: '#/components/schemas/agencyIDType'
+        fundingRequestingOfficeID:
+          $ref: '#/components/schemas/officeIDType'
+        foreignFunding:
+          $ref: '#/components/schemas/foreignFundingType'
+      description: ''
+    contractDataType:
+      title: contractDataType
+      required:
+        - contractActionType
+      type: object
+      properties:
+        contractActionType:
+          $ref: '#/components/schemas/contractActionTypeType'
+        typeOfContractPricing:
+          $ref: '#/components/schemas/typeOfContractType'
+        reasonForModification:
+          $ref: '#/components/schemas/reasonForModificationType'
+        majorProgramCode:
+          maxLength: 100
+          type: string
+          nullable: true
+        nationalInterestActionCode:
+          $ref: '#/components/schemas/nationalInterestActionType'
+        costOrPricingData:
+          $ref: '#/components/schemas/pricingDataType'
+        solicitationID:
+          type: string
+          description: NonOT
+          nullable: true
+        costAccountingStandardsClause:
+          $ref: '#/components/schemas/costAccountingStandardsClauseType'
+        descriptionOfContractRequirement:
+          maxLength: 4000
+          type: string
+          description: Both
+          nullable: true
+        inherentlyGovernmentalFunction:
+          $ref: '#/components/schemas/inherentlyGovernmentalFunctionType'
+        GFE-GFP:
+          $ref: '#/components/schemas/GFE-GFPType'
+        seaTransportation:
+          $ref: '#/components/schemas/seaTransportationType'
+        undefinitizedAction:
+          $ref: '#/components/schemas/undefinitizedActionType'
+        consolidatedContract:
+          $ref: '#/components/schemas/consolidatedContractType'
+        performanceBasedServiceContract:
+          $ref: '#/components/schemas/performanceBasedServiceContractType'
+        multiYearContract:
+          $ref: '#/components/schemas/multiYearContractType'
+        contingencyHumanitarianPeacekeepingOperation:
+          $ref: '#/components/schemas/contingencyHumanitarianPeacekeepingOperationType'
+        listOfTreasuryAccounts:
+          $ref: '#/components/schemas/listOfTreasuryAccountsType'
+      description: ''
+    legislativeMandatesType:
+      title: legislativeMandatesType
+      type: object
+      properties:
+        ClingerCohenAct:
+          $ref: '#/components/schemas/ClingerCohenActType'
+        materialsSuppliesArticlesEquipment:
+          $ref: '#/components/schemas/materialsSuppliesArticlesEquipmentType'
+        laborStandards:
+          $ref: '#/components/schemas/laborStandardsType'
+        constructionWageRateRequirements:
+          $ref: '#/components/schemas/constructionWageRateRequirementsType'
+        listOfAdditionalReportingValues:
+          $ref: '#/components/schemas/listOfAdditionalReportingValuesType'
+        interagencyContractingAuthority:
+          $ref: '#/components/schemas/interagencyContractingAuthorityType'
+        otherStatutoryAuthority:
+          maxLength: 1000
+          type: string
+          nullable: true
+      description: ''
+    productOrServiceInformationType:
+      title: productOrServiceInformationType
+      type: object
+      properties:
+        productOrServiceCode:
+          $ref: '#/components/schemas/PSCCodeType'
+        contractBundling:
+          $ref: '#/components/schemas/contractBundlingType'
+        claimantProgramCode:
+          $ref: '#/components/schemas/claimantProgramCodeType'
+        idvPrincipalNAICSCode:
+          $ref: '#/components/schemas/NAICSCodeType'
+        principalNAICSCode:
+          $ref: '#/components/schemas/NAICSCodeType'
+        principalNAICSCodeSource:
+          $ref: '#/components/schemas/sourceType'
+        recoveredMaterialClauses:
+          $ref: '#/components/schemas/recoveredMaterialClausesType'
+        manufacturingOrganizationType:
+          $ref: '#/components/schemas/manufacturingOrganizationTypeType'
+      description: ''
+    contractVendorType:
+      title: contractVendorType
+      allOf:
+        - $ref: '#/components/schemas/vendorInstanceType'
+        - type: object
+          properties:
+            contractorName:
+              maxLength: 80
+              type: string
+              nullable: true
+            CCRException:
+              $ref: '#/components/schemas/CCRExceptionType'
+            idvContractingOfficerBusinessSizeDetermination:
+              $ref: '#/components/schemas/contractingOfficerBusinessSizeDeterminationType'
+            contractingOfficerBusinessSizeDeterminationSource:
+              $ref: '#/components/schemas/sourceType'
+            contractingOfficerBusinessSizeDetermination:
+              $ref: '#/components/schemas/contractingOfficerBusinessSizeDeterminationType'
+      description: ''
+    competitionType:
+      title: competitionType
+      type: object
+      properties:
+        extentCompeted:
+          $ref: '#/components/schemas/extentCompetedType'
+        competitiveProcedures:
+          maxLength: 3
+          type: string
+          nullable: true
+        solicitationProcedures:
+          $ref: '#/components/schemas/solicitationProceduresType'
+        idvTypeOfSetAside:
+          $ref: '#/components/schemas/typeOfSetAsideType'
+        typeOfSetAside:
+          $ref: '#/components/schemas/typeOfSetAsideType'
+        typeOfSetAsideSource:
+          $ref: '#/components/schemas/sourceType'
+        evaluatedPreference:
+          $ref: '#/components/schemas/evaluatedPreferenceType'
+        research:
+          $ref: '#/components/schemas/researchType'
+        statutoryExceptionToFairOpportunity:
+          $ref: '#/components/schemas/statutoryExceptionToFairOpportunityType'
+        reasonNotCompeted:
+          $ref: '#/components/schemas/reasonNotCompetedType'
+        idvNumberOfOffersReceived:
+          maximum: 999
+          type: integer
+          format: int32
+          nullable: true
+        numberOfOffersReceived:
+          maximum: 999
+          type: integer
+          format: int32
+          nullable: true
+        numberOfOffersSource:
+          $ref: '#/components/schemas/sourceType'
+        commercialItemAcquisitionProcedures:
+          $ref: '#/components/schemas/commercialItemAcquisitionProceduresType'
+        commercialItemTestProgram:
+          $ref: '#/components/schemas/commercialItemTestProgramType'
+        smallBusinessCompetitivenessDemonstrationProgram:
+          type: boolean
+          description: NonOT
+        A76Action:
+          $ref: '#/components/schemas/A76ActionType'
+        fedBizOpps:
+          $ref: '#/components/schemas/fedBizOppsType'
+        localAreaSetAside:
+          $ref: '#/components/schemas/localAreaSetAsideType'
+      description: ''
+    preferenceProgramsType:
+      title: preferenceProgramsType
+      type: object
+      properties:
+        reasonNotAwardedToSmallDisadvantagedBusiness:
+          $ref: '#/components/schemas/reasonNotAwardedType'
+        reasonNotAwardedToSmallBusiness:
+          $ref: '#/components/schemas/reasonNotAwardedType'
+        subcontractPlan:
+          $ref: '#/components/schemas/subcontractPlanType'
+      description: ''
+    transactionInformationType:
+      title: transactionInformationType
+      allOf:
+        - $ref: '#/components/schemas/auditInformationType'
+        - type: object
+          properties:
+            closedBy:
+              maxLength: 50
+              type: string
+              nullable: true
+            closedDate:
+              pattern: ([0-9]{4}(-[0-9]{2})(-[0-9]{2}) ([0-9]{2})(:[0-9]{2})(:[0-9]{2}))?
+              type: string
+              nullable: true
+            closedStatus:
+              type: string
+              nullable: true
+            status:
+              $ref: '#/components/schemas/documentStatusType'
+            transactionSource:
+              $ref: '#/components/schemas/transactionSourceType'
+      description: ''
+    contractSearchCriteriaType:
+      title: contractSearchCriteriaType
+      type: object
+      properties:
+        agencyID:
+          $ref: '#/components/schemas/agencyIDType'
+        PIID:
+          maxLength: 50
+          type: string
+          nullable: true
+        modNumber:
+          maxLength: 25
+          type: string
+          nullable: true
+          example: 0
+        referencedPIID:
+          maxLength: 50
+          type: string
+          description: Both
+          nullable: true
+        contractType:
+          maxLength: 35
+          type: string
+          nullable: true
+        contractActionType:
+          type: array
+          items:
+            $ref: '#/components/schemas/contractActionTypeType'
+          description: ''
+        descriptionOfContractRequirement:
+          maxLength: 4000
+          type: string
+          nullable: true
+        userID:
+          maxLength: 50
+          type: string
+          nullable: true
+        agencyName:
+          maxLength: 100
+          type: string
+          nullable: true
+        officeName:
+          maxLength: 100
+          type: string
+          nullable: true
+        officeCode:
+          $ref: '#/components/schemas/officeIDType'
+        status:
+          $ref: '#/components/schemas/documentStatusType'
+        vendorName:
+          maxLength: 400
+          type: string
+          nullable: true
+        NAICSCode:
+          $ref: '#/components/schemas/NAICSCodeType'
+        signedDateFrom:
+          pattern: ([0-9]{4}(-[0-9]{2})(-[0-9]{2}) ([0-9]{2})(:[0-9]{2})(:[0-9]{2}))?
+          type: string
+          nullable: true
+        signedDateTo:
+          pattern: ([0-9]{4}(-[0-9]{2})(-[0-9]{2}) ([0-9]{2})(:[0-9]{2})(:[0-9]{2}))?
+          type: string
+          nullable: true
+        baseAndAllOptionsValueFrom:
+          type: number
+        baseAndAllOptionsValueTo:
+          type: number
+        obligatedAmountFrom:
+          type: number
+        obligatedAmountTo:
+          type: number
+        startRow:
+          type: integer
+          format: int32
+          nullable: true
+        numberOfRows:
+          type: integer
+          format: int32
+          nullable: true
+        latestDocumentsOnly:
+          type: boolean
+          nullable: true
+        lastModifiedDateFrom:
+          pattern: ([0-9]{4}(-[0-9]{2})(-[0-9]{2}) ([0-9]{2})(:[0-9]{2})(:[0-9]{2}))?
+          type: string
+          nullable: true
+        lastModifiedDateTo:
+          pattern: ([0-9]{4}(-[0-9]{2})(-[0-9]{2}) ([0-9]{2})(:[0-9]{2})(:[0-9]{2}))?
+          type: string
+          nullable: true
+        transactionSource:
+          $ref: '#/components/schemas/transactionSourceType'
+        fundingRequestingAgencyID:
+          $ref: '#/components/schemas/agencyIDType'
+        fundingRequestingOfficeID:
+          $ref: '#/components/schemas/officeIDType'
+      description: ''
+    listOfContractKeysType:
+      title: listOfContractKeysType
+      type: object
+      properties:
+        contractKey:
+          type: array
+          items:
+            $ref: '#/components/schemas/contractKeyType'
+          description: ''
+      description: ''
+    contractKeyType:
+      title: contractKeyType
+      required:
+        - contractIDSummary
+      type: object
+      properties:
+        contractIDSummary:
+          $ref: '#/components/schemas/contractIDSummaryType'
+        referencedIDVID:
+          $ref: '#/components/schemas/referencedIDVIDType'
+      description: ''
+    contractSummaryType:
+      title: contractSummaryType
+      type: object
+      properties:
+        contractType:
+          maxLength: 35
+          type: string
+          nullable: true
+        contractKey:
+          $ref: '#/components/schemas/contractKeyType'
+        listOfOtherKeysForThisContract:
+          $ref: '#/components/schemas/listOfContractKeysType'
+        contractActionType:
+          $ref: '#/components/schemas/contractActionTypeType'
+        agencyName:
+          maxLength: 100
+          type: string
+          nullable: true
+        officeName:
+          maxLength: 100
+          type: string
+          nullable: true
+        vendorName:
+          maxLength: 400
+          type: string
+          nullable: true
+        NAICSCode:
+          $ref: '#/components/schemas/NAICSCodeType'
+        signedDate:
+          pattern: ([0-9]{4}(-[0-9]{2})(-[0-9]{2}) ([0-9]{2})(:[0-9]{2})(:[0-9]{2}))?
+          type: string
+          nullable: true
+        baseAndAllOptionsValue:
+          type: number
+        transactionInformation:
+          $ref: '#/components/schemas/transactionInformationType'
+        version:
+          type: string
+          nullable: true
+      description: ''
+    listOfContractSummariesType:
+      title: listOfContractSummariesType
+      allOf:
+        - $ref: '#/components/schemas/listOfSearchResults'
+        - type: object
+          properties:
+            contractSummary:
+              type: array
+              items:
+                $ref: '#/components/schemas/contractSummaryType'
+              description: ''
+      description: ''
+    contractElementType:
+      title: contractElementType
+      type: object
+      properties:
+        awardKey:
+          $ref: '#/components/schemas/awardIDType'
+        IDVKey:
+          $ref: '#/components/schemas/IDVIDType'
+        tableName:
+          type: string
+          nullable: true
+        elementName:
+          type: string
+          nullable: true
+      description: ''
+    awardIDType:
+      title: awardIDType
+      required:
+        - awardContractID
+      type: object
+      properties:
+        awardContractID:
+          $ref: '#/components/schemas/awardContractIDType'
+        referencedIDVID:
+          $ref: '#/components/schemas/referencedIDVIDType'
+      description: ''
+    IDVIDType:
+      title: IDVIDType
+      required:
+        - IDVID
+      type: object
+      properties:
+        IDVID:
+          $ref: '#/components/schemas/contractIDType'
+        referencedIDVID:
+          $ref: '#/components/schemas/referencedIDVIDType'
+      description: ''
+    contractVendorSummaryType:
+      title: contractVendorSummaryType
+      required:
+        - contractingAgencyCode
+      type: object
+      properties:
+        contractType:
+          type: string
+          nullable: true
+        agencyID:
+          $ref: '#/components/schemas/agencyIDType'
+        PIID:
+          maxLength: 50
+          type: string
+          nullable: true
+        referencedIDVAgencyID:
+          $ref: '#/components/schemas/agencyIDType'
+        referencedIDVPIID:
+          maxLength: 50
+          type: string
+          nullable: true
+        modNumber:
+          maxLength: 25
+          type: string
+          nullable: true
+        transactionNumber:
+          maximum: 999999
+          type: integer
+          format: int32
+          example: 0
+        contractActionType:
+          $ref: '#/components/schemas/contractActionTypeType'
+        contractingDepartmentID:
+          $ref: '#/components/schemas/departmentIDType'
+        contractingAgencyCode:
+          $ref: '#/components/schemas/agencyIDType'
+        contractingOfficeID:
+          $ref: '#/components/schemas/officeIDType'
+        fundingAgencyCode:
+          $ref: '#/components/schemas/agencyIDType'
+        totalObligatedAmount:
+          type: number
+          nullable: true
+        signedDate:
+          pattern: ([0-9]{4}(-[0-9]{2})(-[0-9]{2}) ([0-9]{2})(:[0-9]{2})(:[0-9]{2}))?
+          type: string
+          nullable: true
+        vendorName:
+          maxLength: 400
+          type: string
+          nullable: true
+        DUNSNumber:
+          maxLength: 13
+          type: string
+          nullable: true
+        vendorAddress:
+          $ref: '#/components/schemas/addressType'
+        vendorPhoneNo:
+          maxLength: 20
+          type: string
+          nullable: true
+        vendorFaxNo:
+          maxLength: 20
+          type: string
+          nullable: true
+        contractingOfficerBusinessSizeDetermination:
+          $ref: '#/components/schemas/contractingOfficerBusinessSizeDeterminationType'
+      description: ''
+    CODeterminationOfBusinessSizeSearchCriteriaType:
+      title: CODeterminationOfBusinessSizeSearchCriteriaType
+      type: object
+      properties:
+        contractType:
+          type: string
+          nullable: true
+        agencyID:
+          $ref: '#/components/schemas/agencyIDType'
+        PIID:
+          maxLength: 50
+          type: string
+          nullable: true
+        referencedIDVAgencyID:
+          $ref: '#/components/schemas/agencyIDType'
+        referencedIDVPIID:
+          maxLength: 50
+          type: string
+          nullable: true
+        modNumber:
+          maxLength: 25
+          type: string
+          nullable: true
+        transactionNumber:
+          maximum: 999999
+          type: integer
+          format: int32
+          example: 0
+        contractingDepartmentID:
+          $ref: '#/components/schemas/departmentIDType'
+        contractingAgencyCode:
+          $ref: '#/components/schemas/agencyIDType'
+        contractingOfficeID:
+          $ref: '#/components/schemas/officeIDType'
+        fundingAgencyCode:
+          $ref: '#/components/schemas/agencyIDType'
+        fundingOfficeCode:
+          $ref: '#/components/schemas/officeIDType'
+        DUNSNumber:
+          maxLength: 13
+          type: string
+          nullable: true
+        signedDateFrom:
+          pattern: ([0-9]{4}(-[0-9]{2})(-[0-9]{2}) ([0-9]{2})(:[0-9]{2})(:[0-9]{2}))?
+          type: string
+          nullable: true
+        signedDateTo:
+          pattern: ([0-9]{4}(-[0-9]{2})(-[0-9]{2}) ([0-9]{2})(:[0-9]{2})(:[0-9]{2}))?
+          type: string
+          nullable: true
+        contractingOfficerBusinessSizeDetermination:
+          $ref: '#/components/schemas/contractingOfficerBusinessSizeDeterminationType'
+        isActive:
+          type: boolean
+          nullable: true
+      description: ''
+    listOfContractVendorSummariesType:
+      title: listOfContractVendorSummariesType
+      allOf:
+        - $ref: '#/components/schemas/listOfSearchResults'
+        - type: object
+          properties:
+            contractVendorSummary:
+              type: array
+              items:
+                $ref: '#/components/schemas/contractVendorSummaryType'
+              description: ''
+      description: ''
+    genericStringsType:
+      title: genericStringsType
+      type: object
+      properties:
+        genericString01:
+          maxLength: 50
+          type: string
+          description: Both
+          nullable: true
+        genericString02:
+          maxLength: 50
+          type: string
+          nullable: true
+        genericString03:
+          maxLength: 50
+          type: string
+          nullable: true
+        genericString04:
+          maxLength: 50
+          type: string
+          nullable: true
+        genericString05:
+          maxLength: 50
+          type: string
+          nullable: true
+        genericString06:
+          maxLength: 50
+          type: string
+          nullable: true
+        genericString07:
+          maxLength: 50
+          type: string
+          nullable: true
+        genericString08:
+          maxLength: 50
+          type: string
+          nullable: true
+        genericString09:
+          maxLength: 50
+          type: string
+          nullable: true
+        genericString10:
+          maxLength: 50
+          type: string
+          nullable: true
+      description: ''
+    genericBooleansType:
+      title: genericBooleansType
+      type: object
+      properties:
+        genericBoolean01:
+          type: boolean
+          nullable: true
+        genericBoolean02:
+          type: boolean
+          nullable: true
+        genericBoolean03:
+          type: boolean
+          nullable: true
+        genericBoolean04:
+          type: boolean
+          nullable: true
+        genericBoolean05:
+          type: boolean
+          nullable: true
+        genericBoolean06:
+          type: boolean
+          nullable: true
+        genericBoolean07:
+          type: boolean
+          nullable: true
+        genericBoolean08:
+          type: boolean
+          nullable: true
+        genericBoolean09:
+          type: boolean
+          nullable: true
+        genericBoolean10:
+          type: boolean
+          nullable: true
+      description: ''
+    genericFloatsType:
+      title: genericFloatsType
+      type: object
+      properties:
+        genericFloat01:
+          type: number
+          nullable: true
+        genericFloat02:
+          type: number
+          nullable: true
+      description: ''
+    genericIntegersType:
+      title: genericIntegersType
+      type: object
+      properties:
+        genericInteger01:
+          type: integer
+          format: int32
+          nullable: true
+        genericInteger02:
+          type: integer
+          format: int32
+          nullable: true
+      description: ''
+    genericTagsType:
+      title: genericTagsType
+      type: object
+      properties:
+        genericStrings:
+          $ref: '#/components/schemas/genericStringsType'
+        genericBooleans:
+          $ref: '#/components/schemas/genericBooleansType'
+        genericFloats:
+          $ref: '#/components/schemas/genericFloatsType'
+        genericIntegers:
+          $ref: '#/components/schemas/genericIntegersType'
+      description: ''
+    countryCodeType:
+      title: countryCodeType
+      type: object
+      properties:
+        name:
+          maxLength: 100
+          type: string
+          xml:
+            attribute: true
+            wrapped: false
+      description: 3 letter country code
+    countryShortCodeType:
+      title: countryShortCodeType
+      type: object
+      properties:
+        name:
+          maxLength: 100
+          type: string
+          xml:
+            attribute: true
+            wrapped: false
+      description: FIPS-10 Code
+    countryType:
+      title: countryType
+      type: object
+      properties:
+        countryCode:
+          $ref: '#/components/schemas/countryCodeType'
+        countryShortCode:
+          $ref: '#/components/schemas/countryShortCodeType'
+        countryName:
+          maxLength: 100
+          type: string
+        startDate:
+          pattern: ([0-9]{4}(-[0-9]{2})(-[0-9]{2}) ([0-9]{2})(:[0-9]{2})(:[0-9]{2}))?
+          type: string
+        endDate:
+          pattern: ([0-9]{4}(-[0-9]{2})(-[0-9]{2}) ([0-9]{2})(:[0-9]{2})(:[0-9]{2}))?
+          type: string
+        auditInformation:
+          $ref: '#/components/schemas/auditInformationType'
+      description: ''
+    countryKeysType:
+      title: countryKeysType
+      type: object
+      properties:
+        countryCode:
+          $ref: '#/components/schemas/countryCodeType'
+        countryShortCode:
+          $ref: '#/components/schemas/countryShortCodeType'
+      description: ''
+    listOfCountriesType:
+      title: listOfCountriesType
+      allOf:
+        - $ref: '#/components/schemas/listOfSearchResults'
+        - type: object
+          properties:
+            country:
+              type: array
+              items:
+                $ref: '#/components/schemas/countryType'
+              description: ''
+      description: ''
+    countrySearchCriteriaType:
+      title: countrySearchCriteriaType
+      type: object
+      properties:
+        countryCode:
+          $ref: '#/components/schemas/countryCodeType'
+        countryName:
+          maxLength: 100
+          type: string
+        countryShortCode:
+          $ref: '#/components/schemas/countryShortCodeType'
+        startDate:
+          pattern: ([0-9]{4}(-[0-9]{2})(-[0-9]{2}) ([0-9]{2})(:[0-9]{2})(:[0-9]{2}))?
+          type: string
+        endDate:
+          pattern: ([0-9]{4}(-[0-9]{2})(-[0-9]{2}) ([0-9]{2})(:[0-9]{2})(:[0-9]{2}))?
+          type: string
+      description: ''
+    stateType:
+      title: stateType
+      type: object
+      properties:
+        name:
+          type: string
+          xml:
+            attribute: true
+            wrapped: false
+      description: ''
+    ZIPCodeType:
+      title: ZIPCodeType
+      type: object
+      properties:
+        county:
+          type: string
+          xml:
+            attribute: true
+            wrapped: false
+        city:
+          type: string
+          xml:
+            attribute: true
+            wrapped: false
+      description: ''
+    addressType:
+      title: addressType
+      type: object
+      properties:
+        streetAddress:
+          maxLength: 400
+          type: string
+          nullable: true
+        streetAddress2:
+          maxLength: 400
+          type: string
+          description: Both
+          nullable: true
+        streetAddress3:
+          maxLength: 400
+          type: string
+          description: NonOT
+          nullable: true
+        city:
+          maxLength: 35
+          type: string
+          nullable: true
+        state:
+          $ref: '#/components/schemas/stateType'
+        province:
+          maxLength: 2
+          type: string
+          nullable: true
+        ZIPCode:
+          $ref: '#/components/schemas/ZIPCodeType'
+        countryCode:
+          $ref: '#/components/schemas/countryCodeType'
+      description: ''
+    placeCodeType:
+      title: placeCodeType
+      type: object
+      properties:
+        locationCode:
+          maxLength: 5
+          type: string
+          description: NonOT
+          nullable: true
+        stateCode:
+          $ref: '#/components/schemas/stateType'
+        countryCode:
+          $ref: '#/components/schemas/countryShortCodeType'
+      description: NonOT
+    placeType:
+      title: placeType
+      allOf:
+        - $ref: '#/components/schemas/placeCodeType'
+        - type: object
+          properties:
+            placeName:
+              maxLength: 100
+              type: string
+              nullable: true
+            ZIPCode:
+              $ref: '#/components/schemas/ZIPCodeType'
+            startDate:
+              pattern: ([0-9]{4}(-[0-9]{2})(-[0-9]{2}) ([0-9]{2})(:[0-9]{2})(:[0-9]{2}))?
+              type: string
+              nullable: true
+            endDate:
+              pattern: ([0-9]{4}(-[0-9]{2})(-[0-9]{2}) ([0-9]{2})(:[0-9]{2})(:[0-9]{2}))?
+              type: string
+              nullable: true
+            auditInformation:
+              $ref: '#/components/schemas/auditInformationType'
+      description: ''
+    placeKeyType:
+      title: placeKeyType
+      required:
+        - locationCode
+        - stateCode
+      type: object
+      properties:
+        locationCode:
+          maxLength: 5
+          type: string
+          description: NonOT
+        stateCode:
+          $ref: '#/components/schemas/stateType'
+        countryCode:
+          $ref: '#/components/schemas/countryShortCodeType'
+      description: ''
+    listOfPlacesType:
+      title: listOfPlacesType
+      allOf:
+        - $ref: '#/components/schemas/listOfSearchResults'
+        - type: object
+          properties:
+            place:
+              type: array
+              items:
+                $ref: '#/components/schemas/placeType'
+              description: ''
+      description: ''
+    placeSearchCriteriaType:
+      title: placeSearchCriteriaType
+      type: object
+      properties:
+        stateCode:
+          $ref: '#/components/schemas/stateType'
+        locationCode:
+          maxLength: 5
+          type: string
+          nullable: true
+        placeName:
+          maxLength: 100
+          type: string
+          nullable: true
+        ZIPCode:
+          $ref: '#/components/schemas/ZIPCodeType'
+        countyCode:
+          maxLength: 3
+          type: string
+          nullable: true
+        countryCode:
+          $ref: '#/components/schemas/countryShortCodeType'
+        startDate:
+          pattern: ([0-9]{4}(-[0-9]{2})(-[0-9]{2}) ([0-9]{2})(:[0-9]{2})(:[0-9]{2}))?
+          type: string
+          nullable: true
+        endDate:
+          pattern: ([0-9]{4}(-[0-9]{2})(-[0-9]{2}) ([0-9]{2})(:[0-9]{2})(:[0-9]{2}))?
+          type: string
+          nullable: true
+      description: ''
+    NAICSCodeType:
+      title: NAICSCodeType
+      type: object
+      properties:
+        description:
+          maxLength: 2000
+          type: string
+          xml:
+            attribute: true
+            wrapped: false
+      description: 6 digit NAICS Code
+    NAICSType:
+      title: NAICSType
+      required:
+        - NAICSCode
+      type: object
+      properties:
+        NAICSCode:
+          $ref: '#/components/schemas/NAICSCodeType'
+        parentNAICSCode:
+          $ref: '#/components/schemas/NAICSCodeType'
+        NAICSName:
+          maxLength: 2000
+          type: string
+          nullable: true
+        startDate:
+          pattern: ([0-9]{4}(-[0-9]{2})(-[0-9]{2}) ([0-9]{2})(:[0-9]{2})(:[0-9]{2}))?
+          type: string
+          nullable: true
+        endDate:
+          pattern: ([0-9]{4}(-[0-9]{2})(-[0-9]{2}) ([0-9]{2})(:[0-9]{2})(:[0-9]{2}))?
+          type: string
+          nullable: true
+        auditInformation:
+          $ref: '#/components/schemas/auditInformationType'
+      description: ''
+    listOfNAICSsType:
+      title: listOfNAICSsType
+      allOf:
+        - $ref: '#/components/schemas/listOfSearchResults'
+        - type: object
+          properties:
+            NAICS:
+              type: array
+              items:
+                $ref: '#/components/schemas/NAICSType'
+              description: ''
+      description: ''
+    NAICSSearchCriteriaType:
+      title: NAICSSearchCriteriaType
+      type: object
+      properties:
+        NAICSCode:
+          $ref: '#/components/schemas/NAICSCodeType'
+        parentNAICSCode:
+          $ref: '#/components/schemas/NAICSCodeType'
+        NAICSName:
+          maxLength: 2000
+          type: string
+          nullable: true
+        canUseOnContract:
+          type: boolean
+          nullable: true
+        startDate:
+          pattern: ([0-9]{4}(-[0-9]{2})(-[0-9]{2}) ([0-9]{2})(:[0-9]{2})(:[0-9]{2}))?
+          type: string
+          nullable: true
+        endDate:
+          pattern: ([0-9]{4}(-[0-9]{2})(-[0-9]{2}) ([0-9]{2})(:[0-9]{2})(:[0-9]{2}))?
+          type: string
+          nullable: true
+      description: ''
+    PSCCodeType:
+      title: PSCCodeType
+      type: object
+      properties:
+        description:
+          maxLength: 100
+          type: string
+          xml:
+            attribute: true
+            wrapped: false
+        productOrServiceType:
+          maxLength: 10
+          type: string
+          xml:
+            attribute: true
+            wrapped: false
+      description: ''
+    PSCType:
+      title: PSCType
+      required:
+        - PSCCode
+      type: object
+      properties:
+        PSCCode:
+          $ref: '#/components/schemas/PSCCodeType'
+        parentPSCCode:
+          $ref: '#/components/schemas/PSCCodeType'
+        PSCName:
+          maxLength: 100
+          type: string
+          nullable: true
+        PSCCategory:
+          maxLength: 10
+          type: string
+          nullable: true
+        startDate:
+          pattern: ([0-9]{4}(-[0-9]{2})(-[0-9]{2}) ([0-9]{2})(:[0-9]{2})(:[0-9]{2}))?
+          type: string
+          nullable: true
+        endDate:
+          pattern: ([0-9]{4}(-[0-9]{2})(-[0-9]{2}) ([0-9]{2})(:[0-9]{2})(:[0-9]{2}))?
+          type: string
+          nullable: true
+        auditInformation:
+          $ref: '#/components/schemas/auditInformationType'
+      description: ''
+    listOfPSCsType:
+      title: listOfPSCsType
+      allOf:
+        - $ref: '#/components/schemas/listOfSearchResults'
+        - type: object
+          properties:
+            PSC:
+              type: array
+              items:
+                $ref: '#/components/schemas/PSCType'
+              description: ''
+      description: ''
+    PSCSearchCriteriaType:
+      title: PSCSearchCriteriaType
+      type: object
+      properties:
+        PSCCode:
+          $ref: '#/components/schemas/PSCCodeType'
+        parentPSCCode:
+          $ref: '#/components/schemas/PSCCodeType'
+        PSCName:
+          maxLength: 100
+          type: string
+          nullable: true
+        PSCCategory:
+          maxLength: 10
+          type: string
+          nullable: true
+        canUseOnContract:
+          type: boolean
+          nullable: true
+        startDate:
+          pattern: ([0-9]{4}(-[0-9]{2})(-[0-9]{2}) ([0-9]{2})(:[0-9]{2})(:[0-9]{2}))?
+          type: string
+          nullable: true
+        endDate:
+          pattern: ([0-9]{4}(-[0-9]{2})(-[0-9]{2}) ([0-9]{2})(:[0-9]{2})(:[0-9]{2}))?
+          type: string
+          nullable: true
+      description: ''
+    officeIDType:
+      title: officeIDType
+      type: object
+      properties:
+        name:
+          maxLength: 100
+          type: string
+          xml:
+            attribute: true
+            wrapped: false
+        regionCode:
+          maxLength: 2
+          type: string
+          xml:
+            attribute: true
+            wrapped: false
+      description: ''
+    contractingOfficeIDType:
+      title: contractingOfficeIDType
+      type: object
+      properties:
+        name:
+          maxLength: 100
+          type: string
+          xml:
+            attribute: true
+            wrapped: false
+      description: ''
+    governmentOfficeIDType:
+      title: governmentOfficeIDType
+      type: object
+      properties:
+        name:
+          maxLength: 100
+          type: string
+          xml:
+            attribute: true
+            wrapped: false
+      description: ''
+    governmentOfficeType:
+      title: governmentOfficeType
+      allOf:
+        - $ref: '#/components/schemas/addressType'
+        - required:
+            - officeID
+            - agencyID
+          type: object
+          properties:
+            governmentOfficeID:
+              $ref: '#/components/schemas/governmentOfficeIDType'
+            officeID:
+              $ref: '#/components/schemas/officeIDType'
+            agencyID:
+              $ref: '#/components/schemas/agencyIDType'
+            officeName:
+              maxLength: 100
+              type: string
+              nullable: true
+            agencyName:
+              maxLength: 100
+              type: string
+              nullable: true
+            regionCode:
+              maxLength: 2
+              type: string
+              nullable: true
+            parentOrganizationID:
+              maxLength: 20
+              type: string
+              nullable: true
+            parentOrganizationCode:
+              maxLength: 100
+              type: string
+              nullable: true
+            hierarchyOfOrganizations:
+              $ref: '#/components/schemas/hierarchyOfOrganizationsType'
+            isContractingOffice:
+              type: boolean
+              nullable: true
+            contractingOfficeID:
+              $ref: '#/components/schemas/contractingOfficeIDType'
+            contractingOfficeStartDate:
+              pattern: ([0-9]{4}(-[0-9]{2})(-[0-9]{2}) ([0-9]{2})(:[0-9]{2})(:[0-9]{2}))?
+              type: string
+              nullable: true
+            contractingOfficeEndDate:
+              pattern: ([0-9]{4}(-[0-9]{2})(-[0-9]{2}) ([0-9]{2})(:[0-9]{2})(:[0-9]{2}))?
+              type: string
+              nullable: true
+            listOfAdministrators:
+              $ref: '#/components/schemas/listOfAdministratorsType'
+            startDate:
+              pattern: ([0-9]{4}(-[0-9]{2})(-[0-9]{2}) ([0-9]{2})(:[0-9]{2})(:[0-9]{2}))?
+              type: string
+              nullable: true
+            endDate:
+              pattern: ([0-9]{4}(-[0-9]{2})(-[0-9]{2}) ([0-9]{2})(:[0-9]{2})(:[0-9]{2}))?
+              type: string
+              nullable: true
+            auditInformation:
+              $ref: '#/components/schemas/auditInformationType'
+      description: ''
+    governmentOfficeKeyType:
+      title: governmentOfficeKeyType
+      required:
+        - officeID
+        - agencyID
+      type: object
+      properties:
+        officeID:
+          $ref: '#/components/schemas/officeIDType'
+        agencyID:
+          $ref: '#/components/schemas/agencyIDType'
+      description: ''
+    listOfGovernmentOfficesType:
+      title: listOfGovernmentOfficesType
+      allOf:
+        - $ref: '#/components/schemas/listOfSearchResults'
+        - type: object
+          properties:
+            governmentOffice:
+              type: array
+              items:
+                $ref: '#/components/schemas/governmentOfficeType'
+              description: ''
+      description: ''
+    listOfGovernmentOfficeKeysType:
+      title: listOfGovernmentOfficeKeysType
+      allOf:
+        - $ref: '#/components/schemas/listOfSearchResults'
+        - type: object
+          properties:
+            governmentOfficeKey:
+              type: array
+              items:
+                $ref: '#/components/schemas/governmentOfficeKeyType'
+              description: ''
+      description: ''
+    governmentOfficeSearchCriteriaType:
+      title: governmentOfficeSearchCriteriaType
+      type: object
+      properties:
+        officeID:
+          $ref: '#/components/schemas/officeIDType'
+        officeName:
+          maxLength: 100
+          type: string
+          nullable: true
+        agencyID:
+          $ref: '#/components/schemas/agencyIDType'
+        agencyName:
+          maxLength: 100
+          type: string
+          nullable: true
+        regionCode:
+          maxLength: 2
+          type: string
+          nullable: true
+        parentOrganizationID:
+          maxLength: 20
+          type: string
+          nullable: true
+        parentOrganizationCode:
+          maxLength: 100
+          type: string
+          nullable: true
+        isContractingOffice:
+          type: boolean
+          nullable: true
+        status:
+          type: boolean
+          nullable: true
+        city:
+          maxLength: 35
+          type: string
+          nullable: true
+        state:
+          $ref: '#/components/schemas/stateType'
+        ZIPCode:
+          $ref: '#/components/schemas/ZIPCodeType'
+        countryCode:
+          $ref: '#/components/schemas/countryCodeType'
+        startDate:
+          pattern: ([0-9]{4}(-[0-9]{2})(-[0-9]{2}) ([0-9]{2})(:[0-9]{2})(:[0-9]{2}))?
+          type: string
+          nullable: true
+        endDate:
+          pattern: ([0-9]{4}(-[0-9]{2})(-[0-9]{2}) ([0-9]{2})(:[0-9]{2})(:[0-9]{2}))?
+          type: string
+          nullable: true
+      description: ''
+    updateOrganizationAssociationType:
+      title: updateOrganizationAssociationType
+      required:
+        - parentOrganizationID
+      type: object
+      properties:
+        parentOrganizationID:
+          maxLength: 20
+          type: string
+        endDate:
+          pattern: ([0-9]{4}(-[0-9]{2})(-[0-9]{2}) ([0-9]{2})(:[0-9]{2})(:[0-9]{2}))?
+          type: string
+          nullable: true
+        newParentOrganizationID:
+          maxLength: 20
+          type: string
+          nullable: true
+        newStartDate:
+          pattern: ([0-9]{4}(-[0-9]{2})(-[0-9]{2}) ([0-9]{2})(:[0-9]{2})(:[0-9]{2}))?
+          type: string
+          nullable: true
+        newEndDate:
+          pattern: ([0-9]{4}(-[0-9]{2})(-[0-9]{2}) ([0-9]{2})(:[0-9]{2})(:[0-9]{2}))?
+          type: string
+          nullable: true
+      description: ''
+    listOfUpdateOrganizationAssociationsType:
+      title: listOfUpdateOrganizationAssociationsType
+      type: object
+      properties:
+        updateOrganizationAssociation:
+          type: array
+          items:
+            $ref: '#/components/schemas/updateOrganizationAssociationType'
+          description: ''
+      description: ''
+    hierarchyOfOrganizationsType:
+      title: hierarchyOfOrganizationsType
+      type: object
+      properties:
+        organization:
+          type: array
+          items:
+            $ref: '#/components/schemas/OrgType'
+          description: ''
+        hierStartDate:
+          pattern: ([0-9]{4}(-[0-9]{2})(-[0-9]{2}) ([0-9]{2})(:[0-9]{2})(:[0-9]{2}))?
+          type: string
+          nullable: true
+        hierEndDate:
+          pattern: ([0-9]{4}(-[0-9]{2})(-[0-9]{2}) ([0-9]{2})(:[0-9]{2})(:[0-9]{2}))?
+          type: string
+          nullable: true
+      description: ''
+    OrgType:
+      title: OrgType
+      type: object
+      properties:
+        id:
+          maxLength: 20
+          type: string
+          xml:
+            attribute: true
+            wrapped: false
+        description:
+          maxLength: 100
+          type: string
+          xml:
+            attribute: true
+            wrapped: false
+        categoryID:
+          maxLength: 20
+          type: string
+          xml:
+            attribute: true
+            wrapped: false
+        categoryDesc:
+          type: string
+          xml:
+            attribute: true
+            wrapped: false
+      description: ''
+    agencyIDType:
+      title: agencyIDType
+      type: object
+      properties:
+        name:
+          maxLength: 100
+          type: string
+          xml:
+            attribute: true
+            wrapped: false
+        departmentID:
+          type: string
+          xml:
+            attribute: true
+            wrapped: false
+        departmentName:
+          maxLength: 100
+          type: string
+          xml:
+            attribute: true
+            wrapped: false
+      description: Both
+    agencyType:
+      title: agencyType
+      type: object
+      properties:
+        agencyID:
+          $ref: '#/components/schemas/agencyIDType'
+        agencyName:
+          maxLength: 100
+          type: string
+        departmentID:
+          $ref: '#/components/schemas/departmentIDType'
+        parentAgencyID:
+          $ref: '#/components/schemas/agencyIDType'
+        listOfAdministrators:
+          $ref: '#/components/schemas/listOfAdministratorsType'
+        startDate:
+          pattern: ([0-9]{4}(-[0-9]{2})(-[0-9]{2}) ([0-9]{2})(:[0-9]{2})(:[0-9]{2}))?
+          type: string
+        endDate:
+          pattern: ([0-9]{4}(-[0-9]{2})(-[0-9]{2}) ([0-9]{2})(:[0-9]{2})(:[0-9]{2}))?
+          type: string
+        auditInformation:
+          $ref: '#/components/schemas/auditInformationType'
+      description: ''
+    listOfAgenciesType:
+      title: listOfAgenciesType
+      allOf:
+        - $ref: '#/components/schemas/listOfSearchResults'
+        - type: object
+          properties:
+            agency:
+              type: array
+              items:
+                $ref: '#/components/schemas/agencyType'
+              description: ''
+      description: ''
+    agencySearchCriteriaType:
+      title: agencySearchCriteriaType
+      type: object
+      properties:
+        agencyID:
+          $ref: '#/components/schemas/agencyIDType'
+        agencyName:
+          maxLength: 100
+          type: string
+        parentAgencyID:
+          $ref: '#/components/schemas/agencyIDType'
+        parentAgencyName:
+          maxLength: 100
+          type: string
+        departmentID:
+          $ref: '#/components/schemas/departmentIDType'
+        startDate:
+          pattern: ([0-9]{4}(-[0-9]{2})(-[0-9]{2}) ([0-9]{2})(:[0-9]{2})(:[0-9]{2}))?
+          type: string
+        endDate:
+          pattern: ([0-9]{4}(-[0-9]{2})(-[0-9]{2}) ([0-9]{2})(:[0-9]{2})(:[0-9]{2}))?
+          type: string
+        organizationType:
+          type: string
+          nullable: true
+      description: ''
+    departmentIDType:
+      title: departmentIDType
+      type: object
+      properties:
+        name:
+          maxLength: 100
+          type: string
+          xml:
+            attribute: true
+            wrapped: false
+      description: ''
+    departmentType:
+      title: departmentType
+      required:
+        - departmentID
+      type: object
+      properties:
+        departmentID:
+          $ref: '#/components/schemas/departmentIDType'
+        departmentName:
+          maxLength: 100
+          type: string
+        listOfAdministrators:
+          $ref: '#/components/schemas/listOfAdministratorsType'
+        startDate:
+          pattern: ([0-9]{4}(-[0-9]{2})(-[0-9]{2}) ([0-9]{2})(:[0-9]{2})(:[0-9]{2}))?
+          type: string
+        endDate:
+          pattern: ([0-9]{4}(-[0-9]{2})(-[0-9]{2}) ([0-9]{2})(:[0-9]{2})(:[0-9]{2}))?
+          type: string
+        auditInformation:
+          $ref: '#/components/schemas/auditInformationType'
+      description: ''
+    listOfDepartmentsType:
+      title: listOfDepartmentsType
+      allOf:
+        - $ref: '#/components/schemas/listOfSearchResults'
+        - type: object
+          properties:
+            department:
+              type: array
+              items:
+                $ref: '#/components/schemas/departmentType'
+              description: ''
+      description: ''
+    departmentSearchCriteriaType:
+      title: departmentSearchCriteriaType
+      type: object
+      properties:
+        departmentID:
+          $ref: '#/components/schemas/departmentIDType'
+        departmentName:
+          maxLength: 100
+          type: string
+        startDate:
+          pattern: ([0-9]{4}(-[0-9]{2})(-[0-9]{2}) ([0-9]{2})(:[0-9]{2})(:[0-9]{2}))?
+          type: string
+        endDate:
+          pattern: ([0-9]{4}(-[0-9]{2})(-[0-9]{2}) ([0-9]{2})(:[0-9]{2})(:[0-9]{2}))?
+          type: string
+      description: ''
+    organizationType:
+      title: organizationType
+      type: object
+      properties:
+        organizationID:
+          maxLength: 20
+          type: string
+          nullable: true
+        parentOrganizationID:
+          maxLength: 20
+          type: string
+          nullable: true
+        parentOrganizationCode:
+          maxLength: 10
+          type: string
+          nullable: true
+        organizationCode:
+          maxLength: 10
+          type: string
+          nullable: true
+        organizationName:
+          maxLength: 100
+          type: string
+          nullable: true
+        organizationShortName:
+          maxLength: 100
+          type: string
+          nullable: true
+        startDate:
+          pattern: ([0-9]{4}(-[0-9]{2})(-[0-9]{2}) ([0-9]{2})(:[0-9]{2})(:[0-9]{2}))?
+          type: string
+          nullable: true
+        endDate:
+          pattern: ([0-9]{4}(-[0-9]{2})(-[0-9]{2}) ([0-9]{2})(:[0-9]{2})(:[0-9]{2}))?
+          type: string
+          nullable: true
+        organizationCategoryID:
+          maxLength: 20
+          type: string
+          nullable: true
+        listOfChildOrganizations:
+          $ref: '#/components/schemas/listOfChildOrganizationsType'
+        auditInformation:
+          $ref: '#/components/schemas/auditInformationType'
+      description: ''
+    listOfChildOrganizationsType:
+      title: listOfChildOrganizationsType
+      type: object
+      properties:
+        organization:
+          type: array
+          items:
+            $ref: '#/components/schemas/organizationType'
+          description: ''
+      description: ''
+    organizationCategoryType:
+      title: organizationCategoryType
+      type: object
+      properties:
+        organizationCategoryID:
+          maxLength: 20
+          type: string
+          nullable: true
+        organizationCategoryName:
+          maxLength: 100
+          type: string
+          nullable: true
+        organizationCategoryLevel:
+          maxLength: 10
+          type: string
+          nullable: true
+        organizationCode:
+          maxLength: 10
+          type: string
+          nullable: true
+      description: ''
+    listOfOrganizationCategoriesType:
+      title: listOfOrganizationCategoriesType
+      type: object
+      properties:
+        organizationCategory:
+          type: array
+          items:
+            $ref: '#/components/schemas/organizationCategoryType'
+          description: ''
+      description: ''
+    organizationCategorySearchCriteriaType:
+      title: organizationCategorySearchCriteriaType
+      type: object
+      properties:
+        organizationCode:
+          maxLength: 10
+          type: string
+          nullable: true
+        organizationCategoryName:
+          maxLength: 100
+          type: string
+          nullable: true
+      description: ''
+    getOrganizationTreeByDateCriteriaType:
+      title: getOrganizationTreeByDateCriteriaType
+      type: object
+      properties:
+        parentOrganizationID:
+          maxLength: 20
+          type: string
+          nullable: true
+        startDate:
+          pattern: ([0-9]{4}(-[0-9]{2})(-[0-9]{2}) ([0-9]{2})(:[0-9]{2})(:[0-9]{2}))?
+          type: string
+          nullable: true
+        endDate:
+          pattern: ([0-9]{4}(-[0-9]{2})(-[0-9]{2}) ([0-9]{2})(:[0-9]{2})(:[0-9]{2}))?
+          type: string
+          nullable: true
+      description: ''
+    organizationGetCriteriaType:
+      title: organizationGetCriteriaType
+      type: object
+      properties:
+        organizationID:
+          maxLength: 20
+          type: string
+          nullable: true
+        includeChildren:
+          type: boolean
+          example: false
+      description: ''
+    parentOrganizationType:
+      title: parentOrganizationType
+      allOf:
+        - $ref: '#/components/schemas/organizationType'
+        - type: object
+          properties:
+            parentOrganization:
+              type: array
+              items:
+                $ref: '#/components/schemas/parentOrganizationType'
+              description: ''
+      description: ''
+    listOfOrganizationsType:
+      title: listOfOrganizationsType
+      allOf:
+        - $ref: '#/components/schemas/listOfSearchResults'
+        - type: object
+          properties:
+            organization:
+              type: array
+              items:
+                $ref: '#/components/schemas/organizationType'
+              description: ''
+      description: ''
+    organizationSearchCriteriaType:
+      title: organizationSearchCriteriaType
+      type: object
+      properties:
+        organizationID:
+          maxLength: 20
+          type: string
+          nullable: true
+        organizationCode:
+          maxLength: 10
+          type: string
+          nullable: true
+        organizationName:
+          maxLength: 100
+          type: string
+          nullable: true
+        parentOrganizationID:
+          maxLength: 20
+          type: string
+          nullable: true
+        parentOrganizationCode:
+          maxLength: 10
+          type: string
+          nullable: true
+        parentOrganizationName:
+          maxLength: 100
+          type: string
+          nullable: true
+        organizationStatus:
+          maxLength: 1
+          type: string
+          nullable: true
+        includeChildren:
+          type: boolean
+          example: false
+        startDate:
+          pattern: ([0-9]{4}(-[0-9]{2})(-[0-9]{2}) ([0-9]{2})(:[0-9]{2})(:[0-9]{2}))?
+          type: string
+          nullable: true
+        endDate:
+          pattern: ([0-9]{4}(-[0-9]{2})(-[0-9]{2}) ([0-9]{2})(:[0-9]{2})(:[0-9]{2}))?
+          type: string
+          nullable: true
+      description: ''
+    vendorHeaderType:
+      title: vendorHeaderType
+      type: object
+      properties:
+        vendorName:
+          maxLength: 400
+          type: string
+          nullable: true
+        vendorAlternateName:
+          maxLength: 400
+          type: string
+          nullable: true
+        vendorLegalOrganizationName:
+          maxLength: 400
+          type: string
+          nullable: true
+        vendorDoingAsBusinessName:
+          maxLength: 400
+          type: string
+          nullable: true
+        vendorEnabled:
+          type: boolean
+          example: false
+      description: ''
+    minorityOwnedBusinessType:
+      title: minorityOwnedBusinessType
+      type: object
+      properties:
+        isMinorityOwned:
+          type: boolean
+          description: NonOT
+        isSubContinentAsianAmericanOwnedBusiness:
+          type: boolean
+          description: NonOT
+        isAsianPacificAmericanOwnedBusiness:
+          type: boolean
+          description: NonOT
+        isBlackAmericanOwnedBusiness:
+          type: boolean
+          description: NonOT
+        isHispanicAmericanOwnedBusiness:
+          type: boolean
+          description: NonOT
+        isNativeAmericanOwnedBusiness:
+          type: boolean
+          description: NonOT
+        isOtherMinorityOwned:
+          type: boolean
+      description: ''
+    vendorSocioEconomicIndicatorsType:
+      title: vendorSocioEconomicIndicatorsType
+      type: object
+      properties:
+        isAlaskanNativeOwnedCorporationOrFirm:
+          type: boolean
+        isAmericanIndianOwned:
+          type: boolean
+          description: NonOT
+        isIndianTribe:
+          type: boolean
+        isNativeHawaiianOwnedOrganizationOrFirm:
+          type: boolean
+        isTriballyOwnedFirm:
+          type: boolean
+        isSmallBusiness:
+          type: boolean
+          description: NonOT
+        isVeteranOwned:
+          type: boolean
+          description: NonOT
+        isServiceRelatedDisabledVeteranOwnedBusiness:
+          type: boolean
+          description: NonOT
+        isWomenOwned:
+          type: boolean
+          description: NonOT
+        minorityOwned:
+          $ref: '#/components/schemas/minorityOwnedBusinessType'
+        isVerySmallBusiness:
+          type: boolean
+          example: false
+        isWomenOwnedSmallBusiness:
+          type: boolean
+          description: NonOT
+          example: false
+        isEconomicallyDisadvantagedWomenOwnedSmallBusiness:
+          type: boolean
+          description: NonOT
+          example: false
+        isJointVentureWomenOwnedSmallBusiness:
+          type: boolean
+          description: NonOT
+          example: false
+        isJointVentureEconomicallyDisadvantagedWomenOwnedSmallBusiness:
+          type: boolean
+          description: NonOT
+          example: false
+      description: ''
+    federalGovernmentType:
+      title: federalGovernmentType
+      type: object
+      properties:
+        isFederalGovernment:
+          type: boolean
+          description: NonOT
+        isFederallyFundedResearchAndDevelopmentCorp:
+          type: boolean
+        isFederalGovernmentAgency:
+          type: boolean
+      description: ''
+    localGovernmentType:
+      title: localGovernmentType
+      type: object
+      properties:
+        isLocalGovernment:
+          type: boolean
+        isCityLocalGovernment:
+          type: boolean
+        isCountyLocalGovernment:
+          type: boolean
+        isInterMunicipalLocalGovernment:
+          type: boolean
+        isLocalGovernmentOwned:
+          type: boolean
+        isMunicipalityLocalGovernment:
+          type: boolean
+        isSchoolDistrictLocalGovernment:
+          type: boolean
+        isTownshipLocalGovernment:
+          type: boolean
+      description: ''
+    businessOrOrganizationTypeType:
+      title: businessOrOrganizationTypeType
+      type: object
+      properties:
+        isCorporateEntityNotTaxExempt:
+          type: boolean
+        isCorporateEntityTaxExempt:
+          type: boolean
+        isPartnershipOrLimitedLiabilityPartnership:
+          type: boolean
+        isSolePropreitorship:
+          type: boolean
+        isSmallAgriculturalCooperative:
+          type: boolean
+        isInternationalOrganization:
+          type: boolean
+        isOtherbusinessOrOrganization:
+          type: boolean
+        isUSGovernmentEntity:
+          type: boolean
+      description: ''
+    vendorBusinessTypesType:
+      title: vendorBusinessTypesType
+      type: object
+      properties:
+        isCommunityDevelopedCorporationOwnedFirm:
+          type: boolean
+        isLaborSurplusAreaFirm:
+          type: boolean
+        federalGovernment:
+          $ref: '#/components/schemas/federalGovernmentType'
+        isStateGovernment:
+          type: boolean
+          description: NonOT
+          example: false
+        localGovernment:
+          $ref: '#/components/schemas/localGovernmentType'
+        isTribalGovernment:
+          type: boolean
+          description: NonOT
+        isForeignGovernment:
+          type: boolean
+          example: false
+        businessOrOrganizationType:
+          $ref: '#/components/schemas/businessOrOrganizationTypeType'
+      description: ''
+    vendorLineOfBusinessType:
+      title: vendorLineOfBusinessType
+      type: object
+      properties:
+        isArchitectureAndEngineering:
+          type: boolean
+        isCommunityDevelopmentCorporation:
+          type: boolean
+        isConstructionFirm:
+          type: boolean
+        isDomesticShelter:
+          type: boolean
+        isEducationalInstitution:
+          type: boolean
+          description: NonOT
+        isFoundation:
+          type: boolean
+        isHospital:
+          type: boolean
+          description: NonOT
+        isManufacturerOfGoods:
+          type: boolean
+        isResearchAndDevelopment:
+          type: boolean
+        isServiceProvider:
+          type: boolean
+        isVeterinaryHospital:
+          type: boolean
+        isHispanicServicingInstitution:
+          type: boolean
+      description: ''
+    vendorRelationshipWithFederalGovernmentType:
+      title: vendorRelationshipWithFederalGovernmentType
+      type: object
+      properties:
+        receivesContracts:
+          type: boolean
+        receivesGrants:
+          type: boolean
+        receivesContractsAndGrants:
+          type: boolean
+      description: ''
+    typeOfGovernmentalEntityType:
+      title: typeOfGovernmentalEntityType
+      type: object
+      properties:
+        isAirportAuthority:
+          type: boolean
+        isCouncilOfGovernments:
+          type: boolean
+        isHousingAuthoritiesPublicOrTribal:
+          type: boolean
+        isInterstateEntity:
+          type: boolean
+        isPlanningCommission:
+          type: boolean
+        isPortAuthority:
+          type: boolean
+        isTransitAuthority:
+          type: boolean
+      description: ''
+    organizationProfitStructureType:
+      title: organizationProfitStructureType
+      type: object
+      properties:
+        isForProfitOrganization:
+          type: boolean
+          description: NonOT
+          example: false
+        isNonprofitOrganization:
+          type: boolean
+          description: NonOT
+          example: false
+        isOtherNotForProfitOrganization:
+          type: boolean
+          description: NonOT
+          example: false
+      description: ''
+    vendorOrganizationFactorsType:
+      title: vendorOrganizationFactorsType
+      type: object
+      properties:
+        isSubchapterSCorporation:
+          type: boolean
+        isLimitedLiabilityCorporation:
+          type: boolean
+        isForeignOwnedAndLocated:
+          type: boolean
+        profitStructure:
+          $ref: '#/components/schemas/organizationProfitStructureType'
+        isShelteredWorkshop:
+          type: boolean
+          description: NonOT
+        stateOfIncorporation:
+          $ref: '#/components/schemas/stateType'
+        countryOfIncorporation:
+          $ref: '#/components/schemas/countryCodeType'
+        organizationalType:
+          maxLength: 30
+          type: string
+          nullable: true
+      description: ''
+    typeOfEducationalEntityType:
+      title: typeOfEducationalEntityType
+      type: object
+      properties:
+        is1862LandGrantCollege:
+          type: boolean
+        is1890LandGrantCollege:
+          type: boolean
+        is1994LandGrantCollege:
+          type: boolean
+        isHistoricallyBlackCollegeOrUniversity:
+          type: boolean
+          description: NonOT
+        isMinorityInstitution:
+          type: boolean
+          description: NonOT
+        isPrivateUniversityOrCollege:
+          type: boolean
+        isSchoolOfForestry:
+          type: boolean
+        isStateControlledInstitutionofHigherLearning:
+          type: boolean
+        isTribalCollege:
+          type: boolean
+        isVeterinaryCollege:
+          type: boolean
+        isAlaskanNativeServicingInstitution:
+          type: boolean
+        isNativeHawaiianServicingInstitution:
+          type: boolean
+      description: ''
+    vendorCertificationsType:
+      title: vendorCertificationsType
+      type: object
+      properties:
+        isDOTCertifiedDisadvantagedBusinessEnterprise:
+          type: boolean
+        isSelfCertifiedSmallDisadvantagedBusiness:
+          type: boolean
+        isSBACertifiedSmallDisadvantagedBusiness:
+          type: boolean
+          description: NonOT
+          example: false
+        isSBACertified8AProgramParticipant:
+          type: boolean
+          description: NonOT
+        isSelfCertifiedHUBZoneJointVenture:
+          type: boolean
+        isSBACertifiedHUBZone:
+          type: boolean
+          description: NonOT
+          example: false
+        isSBACertified8AJointVenture:
+          type: boolean
+      description: ''
+    vendorLocationType:
+      title: vendorLocationType
+      allOf:
+        - $ref: '#/components/schemas/addressType'
+        - type: object
+          properties:
+            phoneNo:
+              maxLength: 20
+              type: string
+              description: Both
+              nullable: true
+            faxNo:
+              maxLength: 20
+              type: string
+              description: Both
+              nullable: true
+            congressionalDistrictCode:
+              maxLength: 6
+              type: string
+              nullable: true
+            vendorLocationDisabledFlag:
+              type: boolean
+              example: false
+      description: ''
+    listOfVendorLocationsType:
+      title: listOfVendorLocationsType
+      type: object
+      properties:
+        vendorLocation:
+          type: array
+          items:
+            $ref: '#/components/schemas/vendorLocationType'
+          description: ''
+      description: ''
+    listOfVendorDoingAsBusinessNamesType:
+      title: listOfVendorDoingAsBusinessNamesType
+      type: object
+      properties:
+        vendorDoingAsBusinessName:
+          type: array
+          items:
+            maxLength: 400
+            type: string
+          description: ''
+      description: ''
+    vendorType:
+      title: vendorType
+      type: object
+      properties:
+        vendorHeader:
+          $ref: '#/components/schemas/vendorHeaderType'
+        listOfVendorSiteDetails:
+          $ref: '#/components/schemas/listOfVendorSiteDetailsType'
+      description: ''
+    vendorInstanceType:
+      title: vendorInstanceType
+      type: object
+      properties:
+        vendorHeader:
+          $ref: '#/components/schemas/vendorHeaderType'
+        vendorSiteDetails:
+          $ref: '#/components/schemas/vendorSiteDetailsType'
+      description: ''
+    listOfVendorSiteDetailsType:
+      title: listOfVendorSiteDetailsType
+      type: object
+      properties:
+        vendorSiteDetails:
+          type: array
+          items:
+            $ref: '#/components/schemas/vendorSiteDetailsType'
+          description: ''
+      description: ''
+    ccrRegistrationDetailsType:
+      title: ccrRegistrationDetailsType
+      type: object
+      properties:
+        registrationDate:
+          pattern: ([0-9]{4}(-[0-9]{2})(-[0-9]{2}) ([0-9]{2})(:[0-9]{2})(:[0-9]{2}))?
+          type: string
+          nullable: true
+        renewalDate:
+          pattern: ([0-9]{4}(-[0-9]{2})(-[0-9]{2}) ([0-9]{2})(:[0-9]{2})(:[0-9]{2}))?
+          type: string
+          nullable: true
+      description: ''
+    vendorDUNSInformationType:
+      title: vendorDUNSInformationType
+      type: object
+      properties:
+        DUNSNumber:
+          maxLength: 13
+          type: string
+          nullable: true
+        cageCode:
+          maxLength: 13
+          type: string
+          description: NonOT
+          nullable: true
+        vendorName:
+          maxLength: 400
+          type: string
+          nullable: true
+        parentDUNSNumber:
+          maxLength: 13
+          type: string
+          nullable: true
+        parentDUNSName:
+          maxLength: 400
+          type: string
+          nullable: true
+        domesticParentDUNSNumber:
+          maxLength: 13
+          type: string
+          nullable: true
+        domesticParentDUNSName:
+          maxLength: 400
+          type: string
+          nullable: true
+        globalParentDUNSNumber:
+          maxLength: 13
+          type: string
+          nullable: true
+        globalParentDUNSName:
+          maxLength: 400
+          type: string
+          nullable: true
+      description: ''
+    vendorSiteDetailsType:
+      title: vendorSiteDetailsType
+      type: object
+      properties:
+        vendorSocioEconomicIndicators:
+          $ref: '#/components/schemas/vendorSocioEconomicIndicatorsType'
+        vendorBusinessTypes:
+          $ref: '#/components/schemas/vendorBusinessTypesType'
+        vendorLineOfBusiness:
+          $ref: '#/components/schemas/vendorLineOfBusinessType'
+        vendorRelationshipWithFederalGovernment:
+          $ref: '#/components/schemas/vendorRelationshipWithFederalGovernmentType'
+        typeOfGovernmentEntity:
+          $ref: '#/components/schemas/typeOfGovernmentalEntityType'
+        vendorOrganizationFactors:
+          $ref: '#/components/schemas/vendorOrganizationFactorsType'
+        typeOfEducationalEntity:
+          $ref: '#/components/schemas/typeOfEducationalEntityType'
+        vendorCertifications:
+          $ref: '#/components/schemas/vendorCertificationsType'
+        vendorLocation:
+          $ref: '#/components/schemas/vendorLocationType'
+        vendorSiteCode:
+          maxLength: 20
+          type: string
+          nullable: true
+        vendorAlternateSiteCode:
+          maxLength: 20
+          type: string
+          nullable: true
+        vendorDUNSInformation:
+          $ref: '#/components/schemas/vendorDUNSInformationType'
+        divisionName:
+          maxLength: 60
+          type: string
+          nullable: true
+        divisionNumberOrOfficeCode:
+          maxLength: 60
+          type: string
+          nullable: true
+        ccrRegistrationDetails:
+          $ref: '#/components/schemas/ccrRegistrationDetailsType'
+      description: ''
+    listOfVendorsType:
+      title: listOfVendorsType
+      allOf:
+        - $ref: '#/components/schemas/listOfSearchResults'
+        - type: object
+          properties:
+            vendor:
+              type: array
+              items:
+                $ref: '#/components/schemas/vendorType'
+              description: ''
+      description: ''
+    vendorSearchCriteriaType:
+      title: vendorSearchCriteriaType
+      type: object
+      properties:
+        vendorName:
+          maxLength: 400
+          type: string
+          nullable: true
+        vendorDoingAsBusinessName:
+          maxLength: 400
+          type: string
+          nullable: true
+        DUNSNumber:
+          maxLength: 13
+          type: string
+          nullable: true
+        city:
+          maxLength: 35
+          type: string
+          nullable: true
+        state:
+          $ref: '#/components/schemas/stateType'
+        isDnBSearch:
+          type: boolean
+          nullable: true
+        isInactiveSearch:
+          type: boolean
+          nullable: true
+        isAdvancedSearch:
+          type: boolean
+          nullable: true
+        ZIPCode:
+          $ref: '#/components/schemas/ZIPCodeType'
+        countryCode:
+          $ref: '#/components/schemas/countryCodeType'
+        vendorSocioEconomicIndicators:
+          $ref: '#/components/schemas/vendorSocioEconomicIndicatorsType'
+      description: ''
+    congressionalDistrictType:
+      title: congressionalDistrictType
+      required:
+        - congressionalDistrictCode
+      type: object
+      properties:
+        congressionalDistrictCode:
+          maxLength: 6
+          type: string
+          description: Both
+        congressionalDistrictDescription:
+          maxLength: 100
+          type: string
+          nullable: true
+        startDate:
+          pattern: ([0-9]{4}(-[0-9]{2})(-[0-9]{2}) ([0-9]{2})(:[0-9]{2})(:[0-9]{2}))?
+          type: string
+          nullable: true
+        endDate:
+          pattern: ([0-9]{4}(-[0-9]{2})(-[0-9]{2}) ([0-9]{2})(:[0-9]{2})(:[0-9]{2}))?
+          type: string
+          nullable: true
+        auditInformation:
+          $ref: '#/components/schemas/auditInformationType'
+      description: ''
+    listOfCongressionalDistrictsType:
+      title: listOfCongressionalDistrictsType
+      allOf:
+        - $ref: '#/components/schemas/listOfSearchResults'
+        - type: object
+          properties:
+            congressionalDistrict:
+              type: array
+              items:
+                $ref: '#/components/schemas/congressionalDistrictType'
+              description: ''
+      description: ''
+    congressionalDistrictSearchCriteriaType:
+      title: congressionalDistrictSearchCriteriaType
+      type: object
+      properties:
+        congressionalDistrictCode:
+          maxLength: 6
+          type: string
+          nullable: true
+        congressionalDistrictDescription:
+          maxLength: 100
+          type: string
+          nullable: true
+        startDate:
+          pattern: ([0-9]{4}(-[0-9]{2})(-[0-9]{2}) ([0-9]{2})(:[0-9]{2})(:[0-9]{2}))?
+          type: string
+          nullable: true
+        endDate:
+          pattern: ([0-9]{4}(-[0-9]{2})(-[0-9]{2}) ([0-9]{2})(:[0-9]{2})(:[0-9]{2}))?
+          type: string
+          nullable: true
+      description: ''
+    agencySpecificAwardElementsType:
+      title: agencySpecificAwardElementsType
+      allOf:
+        - $ref: '#/components/schemas/agencySpecificContractElementsType'
+        - type: object
+          properties:
+            NASASpecificAwardElements:
+              $ref: '#/components/schemas/NASASpecificAwardElementsType'
+            DOISpecificAwardElements:
+              $ref: '#/components/schemas/DOISpecificAwardElementsType'
+      description: ''
+    agencySpecificContractElementsType:
+      title: agencySpecificContractElementsType
+      type: object
+      properties:
+        agencyID:
+          $ref: '#/components/schemas/agencyIDType'
+      description: ''
+    DOISpecificAwardElementsType:
+      title: DOISpecificAwardElementsType
+      required:
+        - wildFireProgram
+      type: object
+      properties:
+        wildFireProgram:
+          $ref: '#/components/schemas/wildFireProgram'
+      description: ''
+    NASASpecificAwardElementsType:
+      title: NASASpecificAwardElementsType
+      type: object
+      properties:
+        offerorsProposalNumber:
+          maxLength: 18
+          type: string
+          nullable: true
+        PRNumber:
+          type: integer
+          format: int64
+          nullable: true
+        closeoutPR:
+          type: boolean
+          nullable: true
+        procurementPlacementCode:
+          maxLength: 2
+          type: string
+          nullable: true
+        solicitationIssueDate:
+          pattern: ([0-9]{4}(-[0-9]{2})(-[0-9]{2}) ([0-9]{2})(:[0-9]{2})(:[0-9]{2}))?
+          type: string
+          nullable: true
+        listOfContractAdministrationsDelegated:
+          $ref: '#/components/schemas/listOfContractAdministrationsDelegatedType'
+        advisoryOrAssistanceServicesContract:
+          type: boolean
+          nullable: true
+        supportServicesTypeContract:
+          type: boolean
+          nullable: true
+        newTechnologyOrPatentRightsClause:
+          type: boolean
+          nullable: true
+        managementReportingRequirements:
+          $ref: '#/components/schemas/managementReportingRequirementsType'
+        propertyFinancialReporting:
+          type: boolean
+          nullable: true
+        valueEngineeringClause:
+          type: boolean
+          nullable: true
+        securityCode:
+          type: boolean
+          nullable: true
+        administratorCode:
+          maxLength: 3
+          type: string
+          nullable: true
+        contractingOfficerCode:
+          maxLength: 3
+          type: string
+          nullable: true
+        negotiatorCode:
+          maxLength: 3
+          type: string
+          nullable: true
+        COTRName:
+          maxLength: 15
+          type: string
+          nullable: true
+        alternateCOTRName:
+          maxLength: 15
+          type: string
+          nullable: true
+        organizationCode:
+          maxLength: 5
+          type: string
+          nullable: true
+        contractFundCode:
+          $ref: '#/components/schemas/contractFundCodeType'
+        isPhysicallyComplete:
+          type: boolean
+          nullable: true
+        physicalCompletionDate:
+          pattern: ([0-9]{4}(-[0-9]{2})(-[0-9]{2}) ([0-9]{2})(:[0-9]{2})(:[0-9]{2}))?
+          type: string
+          nullable: true
+        installationUnique:
+          maxLength: 9
+          type: string
+          nullable: true
+        fundedThroughDate:
+          pattern: ([0-9]{4}(-[0-9]{2})(-[0-9]{2}) ([0-9]{2})(:[0-9]{2})(:[0-9]{2}))?
+          type: string
+          nullable: true
+        cancellationDate:
+          pattern: ([0-9]{4}(-[0-9]{2})(-[0-9]{2}) ([0-9]{2})(:[0-9]{2})(:[0-9]{2}))?
+          type: string
+          nullable: true
+        principalInvestigator:
+          $ref: '#/components/schemas/fullNameType'
+        alternatePrincipalInvestigator:
+          $ref: '#/components/schemas/fullNameType'
+        fieldOfScienceOrEngineering:
+          $ref: '#/components/schemas/fieldOfScienceOrEngineeringType'
+        finalInvoicePaidDate:
+          pattern: ([0-9]{4}(-[0-9]{2})(-[0-9]{2}) ([0-9]{2})(:[0-9]{2})(:[0-9]{2}))?
+          type: string
+          nullable: true
+        accessionNumber:
+          maxLength: 21
+          type: string
+          nullable: true
+        destroyDate:
+          pattern: ([0-9]{4}(-[0-9]{2})(-[0-9]{2}) ([0-9]{2})(:[0-9]{2})(:[0-9]{2}))?
+          type: string
+          nullable: true
+        accountingInstallationNumber:
+          $ref: '#/components/schemas/accountingInstallationNumberType'
+        otherStatutoryAuthority:
+          maxLength: 1000
+          type: string
+          nullable: true
+        nonFederalFundingAmount:
+          type: number
+          nullable: true
+        CFDAProgramIdentificationNumber:
+          maxLength: 20
+          type: string
+          nullable: true
+      description: ''
+    contractAdministrationDelegatedType:
+      title: contractAdministrationDelegatedType
+      type: object
+      properties:
+        description:
+          type: string
+          xml:
+            attribute: true
+            wrapped: false
+      description: ''
+    managementReportingRequirementsType:
+      title: managementReportingRequirementsType
+      type: object
+      properties:
+        description:
+          type: string
+          xml:
+            attribute: true
+            wrapped: false
+      description: ''
+    accountingInstallationNumberType:
+      title: accountingInstallationNumberType
+      type: object
+      properties:
+        description:
+          type: string
+          xml:
+            attribute: true
+            wrapped: false
+      description: ''
+    contractFundCodeType:
+      title: contractFundCodeType
+      type: object
+      properties:
+        description:
+          type: string
+          xml:
+            attribute: true
+            wrapped: false
+      description: ''
+    fieldOfScienceOrEngineeringType:
+      title: fieldOfScienceOrEngineeringType
+      type: object
+      properties:
+        description:
+          type: string
+          xml:
+            attribute: true
+            wrapped: false
+      description: ''
+    listOfContractAdministrationsDelegatedType:
+      title: listOfContractAdministrationsDelegatedType
+      type: object
+      properties:
+        contractAdministrationDelegated:
+          type: array
+          items:
+            $ref: '#/components/schemas/contractAdministrationDelegatedType'
+          description: ''
+      description: ''
+    fullNameType:
+      title: fullNameType
+      type: object
+      properties:
+        firstName:
+          maxLength: 25
+          type: string
+          nullable: true
+        middleInitial:
+          maxLength: 25
+          type: string
+          nullable: true
+        lastName:
+          maxLength: 25
+          type: string
+          nullable: true
+      description: ''
+    typeOfUserType:
+      title: typeOfUserType
+      enum:
+        - PUBLIC
+        - SYSTEM
+        - GOVERNMENT
+      type: string
+      description: Indicates type of user
+      example: PUBLIC
+    resetPasswordType:
+      title: resetPasswordType
+      type: object
+      properties:
+        userID:
+          maxLength: 50
+          type: string
+          nullable: true
+        oldPassword:
+          maxLength: 20
+          type: string
+          nullable: true
+        newPassword:
+          maxLength: 20
+          type: string
+          nullable: true
+      description: ''
+    passwordAuditInformationType:
+      title: passwordAuditInformationType
+      type: object
+      properties:
+        passwordChangeRequired:
+          type: boolean
+          nullable: true
+        passwordResetDate:
+          pattern: ([0-9]{4}(-[0-9]{2})(-[0-9]{2}) ([0-9]{2})(:[0-9]{2})(:[0-9]{2}))?
+          type: string
+          nullable: true
+      description: ''
+    systemUserProfileType:
+      title: systemUserProfileType
+      type: object
+      properties:
+        agencyID:
+          $ref: '#/components/schemas/agencyIDType'
+        contractingOfficeID:
+          $ref: '#/components/schemas/officeIDType'
+        listOfAdministrators:
+          $ref: '#/components/schemas/listOfAdministratorsType'
+      description: ''
+    userProfileType:
+      title: userProfileType
+      type: object
+      properties:
+        userTitle:
+          maxLength: 35
+          type: string
+          nullable: true
+        firstOrGivenName:
+          maxLength: 25
+          type: string
+          nullable: true
+        middleInitialOrName:
+          maxLength: 25
+          type: string
+          nullable: true
+        lastOrFamilyName:
+          maxLength: 25
+          type: string
+          nullable: true
+        emailAddress:
+          maxLength: 200
+          type: string
+          nullable: true
+        recvEmailFlag:
+          maxLength: 1
+          type: string
+          nullable: true
+        phoneNo:
+          maxLength: 20
+          type: string
+          nullable: true
+        phoneExt:
+          maxLength: 4
+          type: string
+          nullable: true
+        faxNo:
+          maxLength: 20
+          type: string
+          nullable: true
+      description: ''
+    governmentUserProfileType:
+      title: governmentUserProfileType
+      allOf:
+        - $ref: '#/components/schemas/userProfileType'
+        - type: object
+          properties:
+            agencyID:
+              $ref: '#/components/schemas/agencyIDType'
+            organizationID:
+              maxLength: 20
+              type: string
+              nullable: true
+            contractingOfficeID:
+              $ref: '#/components/schemas/officeIDType'
+            rankID:
+              maxLength: 10
+              minLength: 1
+              type: string
+              nullable: true
+            routingSymbol:
+              maxLength: 10
+              type: string
+              nullable: true
+            roomNo:
+              maxLength: 4
+              type: string
+              nullable: true
+            supervisorUserID:
+              maxLength: 50
+              type: string
+              nullable: true
+      description: ''
+    publicUserProfileType:
+      title: publicUserProfileType
+      allOf:
+        - $ref: '#/components/schemas/userProfileType'
+        - type: object
+          properties:
+            organizationName:
+              maxLength: 255
+              type: string
+              nullable: true
+            address:
+              $ref: '#/components/schemas/addressType'
+      description: ''
+    userHeaderType:
+      title: userHeaderType
+      required:
+        - userID
+      type: object
+      properties:
+        userID:
+          maxLength: 50
+          type: string
+        password:
+          maxLength: 20
+          type: string
+          nullable: true
+        typeOfUser:
+          $ref: '#/components/schemas/typeOfUserType'
+        systemUserProfile:
+          $ref: '#/components/schemas/systemUserProfileType'
+        governmentUserProfile:
+          $ref: '#/components/schemas/governmentUserProfileType'
+        publicUserProfile:
+          $ref: '#/components/schemas/publicUserProfileType'
+        isLogonUser:
+          type: boolean
+          nullable: true
+        lastLoginDate:
+          pattern: ([0-9]{4}(-[0-9]{2})(-[0-9]{2}) ([0-9]{2})(:[0-9]{2})(:[0-9]{2}))?
+          type: string
+          nullable: true
+        passwordAuditInformation:
+          $ref: '#/components/schemas/passwordAuditInformationType'
+        startDate:
+          pattern: ([0-9]{4}(-[0-9]{2})(-[0-9]{2}) ([0-9]{2})(:[0-9]{2})(:[0-9]{2}))?
+          type: string
+          nullable: true
+        endDate:
+          pattern: ([0-9]{4}(-[0-9]{2})(-[0-9]{2}) ([0-9]{2})(:[0-9]{2})(:[0-9]{2}))?
+          type: string
+          nullable: true
+        auditInformation:
+          $ref: '#/components/schemas/auditInformationType'
+      description: ''
+    userPrivilegeType:
+      title: userPrivilegeType
+      required:
+        - roleName
+        - objectName
+        - functionName
+      type: object
+      properties:
+        roleName:
+          maxLength: 35
+          type: string
+        objectName:
+          maxLength: 35
+          type: string
+        functionName:
+          maxLength: 35
+          type: string
+        roleLevel:
+          maxLength: 35
+          type: string
+          nullable: true
+        privilegeAssigned:
+          type: boolean
+          nullable: true
+        delegatable:
+          type: boolean
+          nullable: true
+      description: ''
+    listOfUserPrivilegesType:
+      title: listOfUserPrivilegesType
+      type: object
+      properties:
+        userPrivilege:
+          type: array
+          items:
+            $ref: '#/components/schemas/userPrivilegeType'
+          description: ''
+      description: ''
+    userType:
+      title: userType
+      allOf:
+        - $ref: '#/components/schemas/userHeaderType'
+        - type: object
+          properties:
+            listOfUserPrivileges:
+              $ref: '#/components/schemas/listOfUserPrivilegesType'
+            roleName:
+              maxLength: 35
+              type: string
+      description: ''
+    listOfUsersType:
+      title: listOfUsersType
+      allOf:
+        - $ref: '#/components/schemas/listOfSearchResults'
+        - type: object
+          properties:
+            user:
+              type: array
+              items:
+                $ref: '#/components/schemas/userType'
+              description: ''
+      description: ''
+    userSearchCriteriaType:
+      title: userSearchCriteriaType
+      type: object
+      properties:
+        userID:
+          maxLength: 50
+          type: string
+          nullable: true
+        typeOfUser:
+          $ref: '#/components/schemas/typeOfUserType'
+        firstOrGivenName:
+          maxLength: 25
+          type: string
+          nullable: true
+        middleInitialOrName:
+          maxLength: 25
+          type: string
+          nullable: true
+        lastOrFamilyName:
+          maxLength: 25
+          type: string
+          nullable: true
+        agencyID:
+          $ref: '#/components/schemas/agencyIDType'
+        organizationID:
+          maxLength: 20
+          type: string
+          nullable: true
+        contractingOfficeID:
+          $ref: '#/components/schemas/officeIDType'
+        organizationName:
+          maxLength: 255
+          type: string
+          nullable: true
+        rankID:
+          maxLength: 10
+          minLength: 1
+          type: string
+          nullable: true
+        routingSymbol:
+          maxLength: 10
+          type: string
+          nullable: true
+        supervisorUserID:
+          maxLength: 50
+          type: string
+          nullable: true
+        startDate:
+          pattern: ([0-9]{4}(-[0-9]{2})(-[0-9]{2}) ([0-9]{2})(:[0-9]{2})(:[0-9]{2}))?
+          type: string
+          nullable: true
+        endDate:
+          pattern: ([0-9]{4}(-[0-9]{2})(-[0-9]{2}) ([0-9]{2})(:[0-9]{2})(:[0-9]{2}))?
+          type: string
+          nullable: true
+      description: ''
+    awardTemplateType:
+      title: awardTemplateType
+      allOf:
+        - $ref: '#/components/schemas/templateType'
+        - required:
+            - award
+          type: object
+          properties:
+            award:
+              $ref: '#/components/schemas/awardType'
+      description: ''
+    templateSearchCriteriaType:
+      title: templateSearchCriteriaType
+      required:
+        - templateType
+      type: object
+      properties:
+        templateID:
+          type: integer
+          format: int32
+          nullable: true
+        templateName:
+          maxLength: 100
+          type: string
+          nullable: true
+        templateDescription:
+          maxLength: 1000
+          type: string
+          nullable: true
+        userID:
+          maxLength: 50
+          type: string
+          nullable: true
+        agencyID:
+          $ref: '#/components/schemas/agencyIDType'
+        templateType:
+          maxLength: 35
+          type: string
+        startRow:
+          type: integer
+          format: int32
+          nullable: true
+        numberOfRows:
+          type: integer
+          format: int32
+          nullable: true
+      description: ''
+    templateType:
+      title: templateType
+      required:
+        - templateName
+        - templateType
+      type: object
+      properties:
+        templateID:
+          type: integer
+          format: int32
+          nullable: true
+        templateName:
+          maxLength: 100
+          type: string
+        templateDescription:
+          maxLength: 1000
+          type: string
+          nullable: true
+        userID:
+          maxLength: 50
+          type: string
+          nullable: true
+        agencyID:
+          $ref: '#/components/schemas/agencyIDType'
+        templateType:
+          maxLength: 35
+          type: string
+        auditInformation:
+          $ref: '#/components/schemas/auditInformationType'
+      description: ''
+    templateSummaryType:
+      title: templateSummaryType
+      required:
+        - userID
+        - objectName
+      type: object
+      properties:
+        templateID:
+          type: integer
+          format: int32
+          nullable: true
+        templateName:
+          maxLength: 100
+          type: string
+          nullable: true
+        templateDescription:
+          maxLength: 1000
+          type: string
+          nullable: true
+        userID:
+          maxLength: 50
+          type: string
+        objectName:
+          maxLength: 35
+          type: string
+        auditInformation:
+          $ref: '#/components/schemas/auditInformationType'
+        version:
+          type: string
+          nullable: true
+      description: ''
+    listOfTemplateSummariesType:
+      title: listOfTemplateSummariesType
+      allOf:
+        - $ref: '#/components/schemas/listOfSearchResults'
+        - type: object
+          properties:
+            templateSummary:
+              type: array
+              items:
+                $ref: '#/components/schemas/templateSummaryType'
+              description: ''
+      description: ''
+    createAwardResponseType:
+      title: createAwardResponseType
+      allOf:
+        - $ref: '#/components/schemas/responseType'
+        - type: object
+          properties:
+            award:
+              $ref: '#/components/schemas/awardType'
+      description: ''
+    updateAwardResponseType:
+      title: updateAwardResponseType
+      allOf:
+        - $ref: '#/components/schemas/responseType'
+        - type: object
+          properties:
+            award:
+              $ref: '#/components/schemas/awardType'
+      description: ''
+    getAwardResponseType:
+      title: getAwardResponseType
+      allOf:
+        - $ref: '#/components/schemas/responseType'
+        - type: object
+          properties:
+            award:
+              $ref: '#/components/schemas/awardType'
+      description: ''
+    approveAwardResponseType:
+      title: approveAwardResponseType
+      allOf:
+        - $ref: '#/components/schemas/responseType'
+        - type: object
+          properties:
+            isApproved:
+              type: boolean
+              nullable: true
+      description: ''
+    deleteAwardResponseType:
+      title: deleteAwardResponseType
+      allOf:
+        - $ref: '#/components/schemas/responseType'
+        - type: object
+          properties:
+            isDeleted:
+              type: boolean
+              nullable: true
+      description: ''
+    existsAwardResponseType:
+      title: existsAwardResponseType
+      allOf:
+        - $ref: '#/components/schemas/responseType'
+        - type: object
+          properties:
+            isExists:
+              type: boolean
+              nullable: true
+      description: ''
+    isCompleteAwardResponseType:
+      title: isCompleteAwardResponseType
+      allOf:
+        - $ref: '#/components/schemas/responseType'
+        - type: object
+          properties:
+            isCompleted:
+              type: boolean
+              nullable: true
+      description: ''
+    isExistingAwardCompleteResponseType:
+      title: isExistingAwardCompleteResponseType
+      allOf:
+        - $ref: '#/components/schemas/responseType'
+        - type: object
+          properties:
+            isCompleted:
+              type: boolean
+              nullable: true
+      description: ''
+    getListAwardResponseType:
+      title: getListAwardResponseType
+      allOf:
+        - $ref: '#/components/schemas/responseType'
+        - type: object
+          properties:
+            listOfAwardSummaries:
+              $ref: '#/components/schemas/listOfAwardSummariesType'
+      description: ''
+    correctAwardResponseType:
+      title: correctAwardResponseType
+      allOf:
+        - $ref: '#/components/schemas/responseType'
+        - type: object
+          properties:
+            award:
+              $ref: '#/components/schemas/awardType'
+      description: ''
+    voidContractAwardResponseType:
+      title: voidContractAwardResponseType
+      allOf:
+        - $ref: '#/components/schemas/responseType'
+        - type: object
+          properties:
+            award:
+              $ref: '#/components/schemas/awardType'
+      description: ''
+    createFromTemplateAwardRequestType:
+      title: createFromTemplateAwardRequestType
+      required:
+        - templateName
+        - award
+      type: object
+      properties:
+        templateName:
+          maxLength: 100
+          type: string
+        award:
+          $ref: '#/components/schemas/awardType'
+      description: ''
+    createFromTemplateAwardResponseType:
+      title: createFromTemplateAwardResponseType
+      allOf:
+        - $ref: '#/components/schemas/responseType'
+        - type: object
+          properties:
+            award:
+              $ref: '#/components/schemas/awardType'
+      description: ''
+    getVersionAwardResponseType:
+      title: getVersionAwardResponseType
+      allOf:
+        - $ref: '#/components/schemas/responseType'
+        - type: object
+          properties:
+            versionNumber:
+              type: string
+              nullable: true
+      description: ''
+    approveInput:
+      title: approveInput
+      required:
+        - authenticationKey
+        - awardID
+      type: object
+      properties:
+        authenticationKey:
+          $ref: '#/components/schemas/userAuthenticationKeyType'
+        awardID:
+          $ref: '#/components/schemas/awardIDType'
+    approveOutput:
+      title: approveOutput
+      required:
+        - approveAwardResponse
+      type: object
+      properties:
+        approveAwardResponse:
+          $ref: '#/components/schemas/approveAwardResponseType'
+    correctInput:
+      title: correctInput
+      required:
+        - authenticationKey
+        - award
+      type: object
+      properties:
+        authenticationKey:
+          $ref: '#/components/schemas/userAuthenticationKeyType'
+        award:
+          $ref: '#/components/schemas/awardType'
+    correctOutput:
+      title: correctOutput
+      required:
+        - correctAwardResponse
+      type: object
+      properties:
+        correctAwardResponse:
+          $ref: '#/components/schemas/correctAwardResponseType'
+    createFromTemplateInput:
+      title: createFromTemplateInput
+      required:
+        - authenticationKey
+        - createFromTemplateAwardRequest
+      type: object
+      properties:
+        authenticationKey:
+          $ref: '#/components/schemas/userAuthenticationKeyType'
+        createFromTemplateAwardRequest:
+          $ref: '#/components/schemas/createFromTemplateAwardRequestType'
+    createFromTemplateOutput:
+      title: createFromTemplateOutput
+      required:
+        - createFromTemplateAwardResponse
+      type: object
+      properties:
+        createFromTemplateAwardResponse:
+          $ref: '#/components/schemas/createFromTemplateAwardResponseType'
+    createInput:
+      title: createInput
+      required:
+        - authenticationKey
+        - award
+      type: object
+      properties:
+        authenticationKey:
+          $ref: '#/components/schemas/userAuthenticationKeyType'
+        award:
+          $ref: '#/components/schemas/awardType'
+    createOutput:
+      title: createOutput
+      required:
+        - createAwardResponse
+      type: object
+      properties:
+        createAwardResponse:
+          $ref: '#/components/schemas/createAwardResponseType'
+    deleteInput:
+      title: deleteInput
+      required:
+        - authenticationKey
+        - awardID
+      type: object
+      properties:
+        authenticationKey:
+          $ref: '#/components/schemas/userAuthenticationKeyType'
+        awardID:
+          $ref: '#/components/schemas/awardIDType'
+    deleteOutput:
+      title: deleteOutput
+      required:
+        - deleteAwardResponse
+      type: object
+      properties:
+        deleteAwardResponse:
+          $ref: '#/components/schemas/deleteAwardResponseType'
+    existsInput:
+      title: existsInput
+      required:
+        - authenticationKey
+        - awardID
+      type: object
+      properties:
+        authenticationKey:
+          $ref: '#/components/schemas/userAuthenticationKeyType'
+        awardID:
+          $ref: '#/components/schemas/awardIDType'
+    existsOutput:
+      title: existsOutput
+      required:
+        - existsAwardResponse
+      type: object
+      properties:
+        existsAwardResponse:
+          $ref: '#/components/schemas/existsAwardResponseType'
+    getInput:
+      title: getInput
+      required:
+        - authenticationKey
+        - awardID
+      type: object
+      properties:
+        authenticationKey:
+          $ref: '#/components/schemas/userAuthenticationKeyType'
+        awardID:
+          $ref: '#/components/schemas/awardIDType'
+    getListInput:
+      title: getListInput
+      required:
+        - authenticationKey
+        - awardSearchCriteria
+      type: object
+      properties:
+        authenticationKey:
+          $ref: '#/components/schemas/userAuthenticationKeyType'
+        awardSearchCriteria:
+          $ref: '#/components/schemas/awardSearchCriteriaType'
+    getListOutput:
+      title: getListOutput
+      required:
+        - getListAwardResponse
+      type: object
+      properties:
+        getListAwardResponse:
+          $ref: '#/components/schemas/getListAwardResponseType'
+    getOutput:
+      title: getOutput
+      required:
+        - getAwardResponse
+      type: object
+      properties:
+        getAwardResponse:
+          $ref: '#/components/schemas/getAwardResponseType'
+    getVersionInput:
+      title: getVersionInput
+      required:
+        - authenticationKey
+        - awardID
+      type: object
+      properties:
+        authenticationKey:
+          $ref: '#/components/schemas/userAuthenticationKeyType'
+        awardID:
+          $ref: '#/components/schemas/awardIDType'
+    getVersionOutput:
+      title: getVersionOutput
+      required:
+        - getVersionAwardResponse
+      type: object
+      properties:
+        getVersionAwardResponse:
+          $ref: '#/components/schemas/getVersionAwardResponseType'
+    isCompleteInput:
+      title: isCompleteInput
+      required:
+        - authenticationKey
+        - award
+      type: object
+      properties:
+        authenticationKey:
+          $ref: '#/components/schemas/userAuthenticationKeyType'
+        award:
+          $ref: '#/components/schemas/awardType'
+    isCompleteOutput:
+      title: isCompleteOutput
+      required:
+        - isCompleteAwardResponse
+      type: object
+      properties:
+        isCompleteAwardResponse:
+          $ref: '#/components/schemas/isCompleteAwardResponseType'
+    isExistingAwardCompleteInput:
+      title: isExistingAwardCompleteInput
+      required:
+        - authenticationKey
+        - awardID
+      type: object
+      properties:
+        authenticationKey:
+          $ref: '#/components/schemas/userAuthenticationKeyType'
+        awardID:
+          $ref: '#/components/schemas/awardIDType'
+    isExistingAwardCompleteOutput:
+      title: isExistingAwardCompleteOutput
+      required:
+        - isExistingAwardCompleteResponse
+      type: object
+      properties:
+        isExistingAwardCompleteResponse:
+          $ref: '#/components/schemas/isExistingAwardCompleteResponseType'
+    updateInput:
+      title: updateInput
+      required:
+        - authenticationKey
+        - award
+      type: object
+      properties:
+        authenticationKey:
+          $ref: '#/components/schemas/userAuthenticationKeyType'
+        award:
+          $ref: '#/components/schemas/awardType'
+    updateOutput:
+      title: updateOutput
+      required:
+        - updateAwardResponse
+      type: object
+      properties:
+        updateAwardResponse:
+          $ref: '#/components/schemas/updateAwardResponseType'
+    voidContractInput:
+      title: voidContractInput
+      required:
+        - authenticationKey
+        - award
+      type: object
+      properties:
+        authenticationKey:
+          $ref: '#/components/schemas/userAuthenticationKeyType'
+        award:
+          $ref: '#/components/schemas/awardType'
+    voidContractOutput:
+      title: voidContractOutput
+      required:
+        - voidContractAwardResponse
+      type: object
+      properties:
+        voidContractAwardResponse:
+          $ref: '#/components/schemas/voidContractAwardResponseType'
+    wildFireProgram:
+      title: wildFireProgram
+      enum:
+        - WFP
+        - PRE
+        - REH
+        - WFT
+        - SUP
+        - NFT
+        - STA
+      type: string
+      description: ''
+      example: WFP
+tags:
+  - name: AwardBinding
+    description: ''
+
