@@ -1,0 +1,114 @@
+openapi: 3.0.0
+info:
+  title: ContractingOffice
+  contact: {}
+  version: '1.0'
+servers:
+- url: https://www.fpds.gov/FPDS/GUIServices/DataCollection/organizations/1.0/ContractingOffice
+  variables: {}
+paths:
+  /getNewContractingOfficeURL:
+    post:
+      tags:
+      - ContractingOfficeBinding
+      summary: getNewContractingOfficeURL
+      operationId: GetNewContractingOfficeURL
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/getNewContractingOfficeURLInput'
+        required: true
+      responses:
+        200:
+          description: ''
+          headers: {}
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/getNewContractingOfficeURLOutput'
+      deprecated: false
+  /getExistingContractingOfficeURL:
+    post:
+      tags:
+      - ContractingOfficeBinding
+      summary: getExistingContractingOfficeURL
+      operationId: GetExistingContractingOfficeURL
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/getExistingContractingOfficeURLInput'
+        required: true
+      responses:
+        200:
+          description: ''
+          headers: {}
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/getExistingContractingOfficeURLOutput'
+      deprecated: false
+components:
+  schemas:
+    getNewContractingOfficeURLResponseType:
+      title: getNewContractingOfficeURLResponseType
+      type: object
+      properties:
+        contractingOfficeURL:
+          type: string
+          nullable: true
+      description: ''
+    getExistingContractingOfficeURLResponseType:
+      title: getExistingContractingOfficeURLResponseType
+      type: object
+      properties:
+        contractingOfficeURL:
+          type: string
+          nullable: true
+      description: ''
+    getExistingContractingOfficeURLInput:
+      title: getExistingContractingOfficeURLInput
+      required:
+      - authenticationKey
+      - contractingOfficeKey
+      type: object
+      properties:
+        authenticationKey:
+          type: string
+        contractingOfficeKey:
+          type: string
+    getExistingContractingOfficeURLOutput:
+      title: getExistingContractingOfficeURLOutput
+      required:
+      - contractingOfficeURL
+      type: object
+      properties:
+        contractingOfficeURL:
+          $ref: '#/components/schemas/getExistingContractingOfficeURLResponseType'
+    getNewContractingOfficeURLInput:
+      title: getNewContractingOfficeURLInput
+      required:
+      - authenticationKey
+      - contractingOffice
+      type: object
+      properties:
+        authenticationKey:
+          type: string
+        contractingOffice:
+          type: string
+    getNewContractingOfficeURLOutput:
+      title: getNewContractingOfficeURLOutput
+      required:
+      - contractingOfficeURL
+      type: object
+      properties:
+        contractingOfficeURL:
+          $ref: '#/components/schemas/getNewContractingOfficeURLResponseType'
+tags:
+- name: ContractingOfficeBinding
+  description: ''

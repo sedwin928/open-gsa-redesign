@@ -1,0 +1,114 @@
+openapi: 3.0.0
+info:
+  title: GovernmentOffice
+  contact: {}
+  version: '1.0'
+servers:
+- url: https://www.fpds.gov/FPDS/GUIServices/DataCollection/organizations/1.2/GovernmentOffice
+  variables: {}
+paths:
+  /getNewGovernmentOfficeURL:
+    post:
+      tags:
+      - GovernmentOfficeBinding
+      summary: getNewGovernmentOfficeURL
+      operationId: GetNewGovernmentOfficeURL
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/getNewGovernmentOfficeURLInput'
+        required: true
+      responses:
+        200:
+          description: ''
+          headers: {}
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/getNewGovernmentOfficeURLOutput'
+      deprecated: false
+  /getExistingGovernmentOfficeURL:
+    post:
+      tags:
+      - GovernmentOfficeBinding
+      summary: getExistingGovernmentOfficeURL
+      operationId: GetExistingGovernmentOfficeURL
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/getExistingGovernmentOfficeURLInput'
+        required: true
+      responses:
+        200:
+          description: ''
+          headers: {}
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/getExistingGovernmentOfficeURLOutput'
+      deprecated: false
+components:
+  schemas:
+    getNewGovernmentOfficeURLResponseType:
+      title: getNewGovernmentOfficeURLResponseType
+      type: object
+      properties:
+        governmentOfficeURL:
+          type: string
+          nullable: true
+      description: ''
+    getExistingGovernmentOfficeURLResponseType:
+      title: getExistingGovernmentOfficeURLResponseType
+      type: object
+      properties:
+        governmentOfficeURL:
+          type: string
+          nullable: true
+      description: ''
+    getExistingGovernmentOfficeURLInput:
+      title: getExistingGovernmentOfficeURLInput
+      required:
+      - authenticationKey
+      - governmentOfficeKey
+      type: object
+      properties:
+        authenticationKey:
+          type: string
+        governmentOfficeKey:
+          type: string
+    getExistingGovernmentOfficeURLOutput:
+      title: getExistingGovernmentOfficeURLOutput
+      required:
+      - governmentOfficeURL
+      type: object
+      properties:
+        governmentOfficeURL:
+          $ref: '#/components/schemas/getExistingGovernmentOfficeURLResponseType'
+    getNewGovernmentOfficeURLInput:
+      title: getNewGovernmentOfficeURLInput
+      required:
+      - authenticationKey
+      - governmentOffice
+      type: object
+      properties:
+        authenticationKey:
+          type: string
+        governmentOffice:
+          type: string
+    getNewGovernmentOfficeURLOutput:
+      title: getNewGovernmentOfficeURLOutput
+      required:
+      - governmentOfficeURL
+      type: object
+      properties:
+        governmentOfficeURL:
+          $ref: '#/components/schemas/getNewGovernmentOfficeURLResponseType'
+tags:
+- name: GovernmentOfficeBinding
+  description: ''

@@ -1,0 +1,114 @@
+openapi: 3.0.0
+info:
+  title: Country
+  contact: {}
+  version: '1.0'
+servers:
+- url: https://www.fpds.gov/FPDS/GUIServices/DataCollection/locations/1.0/Country
+  variables: {}
+paths:
+  /getNewCountryURL:
+    post:
+      tags:
+      - CountryBinding
+      summary: getNewCountryURL
+      operationId: GetNewCountryURL
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/getNewCountryURLInput'
+        required: true
+      responses:
+        200:
+          description: ''
+          headers: {}
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/getNewCountryURLOutput'
+      deprecated: false
+  /getExistingCountryURL:
+    post:
+      tags:
+      - CountryBinding
+      summary: getExistingCountryURL
+      operationId: GetExistingCountryURL
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/getExistingCountryURLInput'
+        required: true
+      responses:
+        200:
+          description: ''
+          headers: {}
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/getExistingCountryURLOutput'
+      deprecated: false
+components:
+  schemas:
+    getNewCountryURLResponseType:
+      title: getNewCountryURLResponseType
+      type: object
+      properties:
+        countryURL:
+          type: string
+          nullable: true
+      description: ''
+    getExistingCountryURLResponseType:
+      title: getExistingCountryURLResponseType
+      type: object
+      properties:
+        countryURL:
+          type: string
+          nullable: true
+      description: ''
+    getExistingCountryURLInput:
+      title: getExistingCountryURLInput
+      required:
+      - authenticationKey
+      - countryKey
+      type: object
+      properties:
+        authenticationKey:
+          type: string
+        countryKey:
+          type: string
+    getExistingCountryURLOutput:
+      title: getExistingCountryURLOutput
+      required:
+      - countryURL
+      type: object
+      properties:
+        countryURL:
+          $ref: '#/components/schemas/getExistingCountryURLResponseType'
+    getNewCountryURLInput:
+      title: getNewCountryURLInput
+      required:
+      - authenticationKey
+      - country
+      type: object
+      properties:
+        authenticationKey:
+          type: string
+        country:
+          type: string
+    getNewCountryURLOutput:
+      title: getNewCountryURLOutput
+      required:
+      - countryURL
+      type: object
+      properties:
+        countryURL:
+          $ref: '#/components/schemas/getNewCountryURLResponseType'
+tags:
+- name: CountryBinding
+  description: ''

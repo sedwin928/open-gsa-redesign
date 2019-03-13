@@ -1,0 +1,114 @@
+openapi: 3.0.0
+info:
+  title: Place
+  contact: {}
+  version: '1.0'
+servers:
+- url: https://www.fpds.gov/FPDS/GUIServices/DataCollection/locations/1.0/Place
+  variables: {}
+paths:
+  /getNewPlaceURL:
+    post:
+      tags:
+      - PlaceBinding
+      summary: getNewPlaceURL
+      operationId: GetNewPlaceURL
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/getNewPlaceURLInput'
+        required: true
+      responses:
+        200:
+          description: ''
+          headers: {}
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/getNewPlaceURLOutput'
+      deprecated: false
+  /getExistingPlaceURL:
+    post:
+      tags:
+      - PlaceBinding
+      summary: getExistingPlaceURL
+      operationId: GetExistingPlaceURL
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/getExistingPlaceURLInput'
+        required: true
+      responses:
+        200:
+          description: ''
+          headers: {}
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/getExistingPlaceURLOutput'
+      deprecated: false
+components:
+  schemas:
+    getNewPlaceURLResponseType:
+      title: getNewPlaceURLResponseType
+      type: object
+      properties:
+        placeURL:
+          type: string
+          nullable: true
+      description: ''
+    getExistingPlaceURLResponseType:
+      title: getExistingPlaceURLResponseType
+      type: object
+      properties:
+        placeURL:
+          type: string
+          nullable: true
+      description: ''
+    getExistingPlaceURLInput:
+      title: getExistingPlaceURLInput
+      required:
+      - authenticationKey
+      - placeKey
+      type: object
+      properties:
+        authenticationKey:
+          type: string
+        placeKey:
+          type: string
+    getExistingPlaceURLOutput:
+      title: getExistingPlaceURLOutput
+      required:
+      - placeURL
+      type: object
+      properties:
+        placeURL:
+          $ref: '#/components/schemas/getExistingPlaceURLResponseType'
+    getNewPlaceURLInput:
+      title: getNewPlaceURLInput
+      required:
+      - authenticationKey
+      - place
+      type: object
+      properties:
+        authenticationKey:
+          type: string
+        place:
+          type: string
+    getNewPlaceURLOutput:
+      title: getNewPlaceURLOutput
+      required:
+      - placeURL
+      type: object
+      properties:
+        placeURL:
+          $ref: '#/components/schemas/getNewPlaceURLResponseType'
+tags:
+- name: PlaceBinding
+  description: ''

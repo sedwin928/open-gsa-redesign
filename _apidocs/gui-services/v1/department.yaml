@@ -1,0 +1,114 @@
+openapi: 3.0.0
+info:
+  title: Department
+  contact: {}
+  version: '1.0'
+servers:
+- url: https://www.fpds.gov/FPDS/GUIServices/DataCollection/organizations/1.0/Department
+  variables: {}
+paths:
+  /getNewDepartmentURL:
+    post:
+      tags:
+      - DepartmentBinding
+      summary: getNewDepartmentURL
+      operationId: GetNewDepartmentURL
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/getNewDepartmentURLInput'
+        required: true
+      responses:
+        200:
+          description: ''
+          headers: {}
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/getNewDepartmentURLOutput'
+      deprecated: false
+  /getExistingDepartmentURL:
+    post:
+      tags:
+      - DepartmentBinding
+      summary: getExistingDepartmentURL
+      operationId: GetExistingDepartmentURL
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/getExistingDepartmentURLInput'
+        required: true
+      responses:
+        200:
+          description: ''
+          headers: {}
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/getExistingDepartmentURLOutput'
+      deprecated: false
+components:
+  schemas:
+    getNewDepartmentURLResponseType:
+      title: getNewDepartmentURLResponseType
+      type: object
+      properties:
+        departmentURL:
+          type: string
+          nullable: true
+      description: ''
+    getExistingDepartmentURLResponseType:
+      title: getExistingDepartmentURLResponseType
+      type: object
+      properties:
+        departmentURL:
+          type: string
+          nullable: true
+      description: ''
+    getExistingDepartmentURLInput:
+      title: getExistingDepartmentURLInput
+      required:
+      - authenticationKey
+      - departmentID
+      type: object
+      properties:
+        authenticationKey:
+          type: string
+        departmentID:
+          type: string
+    getExistingDepartmentURLOutput:
+      title: getExistingDepartmentURLOutput
+      required:
+      - departmentURL
+      type: object
+      properties:
+        departmentURL:
+          $ref: '#/components/schemas/getExistingDepartmentURLResponseType'
+    getNewDepartmentURLInput:
+      title: getNewDepartmentURLInput
+      required:
+      - authenticationKey
+      - department
+      type: object
+      properties:
+        authenticationKey:
+          type: string
+        department:
+          type: string
+    getNewDepartmentURLOutput:
+      title: getNewDepartmentURLOutput
+      required:
+      - departmentURL
+      type: object
+      properties:
+        departmentURL:
+          $ref: '#/components/schemas/getNewDepartmentURLResponseType'
+tags:
+- name: DepartmentBinding
+  description: ''
