@@ -58,9 +58,9 @@ https://www.api.sam.gov/prod/FPDS/GUIServices/DataCollection/ServiceClassificati
 <code><pre>
 &lt;urn:getExistingDepartmentURL&gt;
     &lt;authenticationKey&gt;
-      &lt;fpds:userID&gt;JYOTHI-PUBLIC&lt;/fpds:userID&gt;
-      &lt;fpds:password&gt;$Cleopatra12345&lt;/fpds:password&gt;
-      &lt;fpds:serviceOriginatorID&gt;JYOTHI-PUBLIC&lt;/fpds:serviceOriginatorID&gt;
+      &lt;fpds:userID&gt;XXXXXX&lt;/fpds:userID&gt;
+      &lt;fpds:password&gt;XXXXXXX&lt;/fpds:password&gt;
+      &lt;fpds:serviceOriginatorID&gt;XXXXX&lt;/fpds:serviceOriginatorID&gt;
     &lt;/authenticationKey&gt;
     &lt;departmentID&gt;9700&lt;/departmentID&gt;
 &lt;/urn:getExistingDepartmentURL&gt;
@@ -223,9 +223,9 @@ https://www.api.sam.gov/prod/FPDS/GUIServices/DataCollection/ServiceClassificati
 <code><pre>
 &lt;urn:getExistingNAICSURL&gt;
     &lt;authenticationKey&gt;
-     &lt;fpds:userID&gt;jyothi-public&lt;/fpds:userID&gt;
-     &lt;fpds:password&gt;$Cleopatra12345&lt;/fpds:password&gt;
-     &lt;fpds:serviceOriginatorID&gt;jyothi-public&lt;/fpds:serviceOriginatorID&gt;
+     &lt;fpds:userID&gt;XXXXXXX&lt;/fpds:userID&gt;
+     &lt;fpds:password&gt;XXXXXX&lt;/fpds:password&gt;
+     &lt;fpds:serviceOriginatorID&gt;XXXXX&lt;/fpds:serviceOriginatorID&gt;
     &lt;/authenticationKey&gt;
     &lt;NAICSCode&gt;111110&lt;/NAICSCode&gt;
 &lt;/urn:getExistingNAICSURL&gt; 
