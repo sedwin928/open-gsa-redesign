@@ -321,15 +321,13 @@ Referential Data
 </details>
 
 ## OpenAPI Specification File 
-You can view the full details of this API in the OpenAPI Specification file available here: 
-
+You can view the full details of this API in the WSDL file available here: 
 
 Award, IDV, Other Transaction Award, Other Transaction IDV
 * <a href="v1/Award.wsdl">WSDL file for the Award</a>
 * <a href="v1/IDV.wsdl">WSDL file for the IDV</a>
 * <a href="v1/OtherTransactionAward.wsdl">WSDL file for the Other Transaction Award</a>
 * <a href="v1/OtherTransactionIDV.wsdl">WSDL file for the Other Transaction IDV</a>
-
 
 Referential Data
 * <a href="v1/Department.wsdl">WSDL file for the Department</a>

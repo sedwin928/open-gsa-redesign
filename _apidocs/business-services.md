@@ -924,7 +924,7 @@ The User: "&lt;serviceOriginatorID&gt;" does not have the privileges to search f
 
 
 ## WSDL File 
-You can view the full details of this API in the wsdl file available here: 
+You can view the full details of this API in the WSDL file available here: 
 
 
 For Award, IDV, Other Transaction Award, Other Transaction IDV, Contract and Contract Summary:
