@@ -48,10 +48,8 @@ Business Services to the Public Users to receive Contract and Referential data.
   if the record exists and ‘false’ if the return does not exist.
 
 
-**Endpoint Information**
+**Endpoint Information**<br>
 Web Services can be accessed from Beta via the following sample end points:
-
-For Award, IDV, Other Transaction Award, Other Transaction IDV, Contract and Contract Summary:
 *	https://www.api.sam.gov/prod/FPDS/BusinessServices/DataCollection/contracts/1.5/Award 
 *	https://www.api.sam.gov/prod/FPDS/BusinessServices/DataCollection/contracts/1.5/IDV 
 *	https://www.api.sam.gov/prod/FPDS/BusinessServices/DataCollection/contracts/1.5/OtherTransactionAward 

@@ -45,7 +45,7 @@ To facilitate the Agencies report the entire lifecycle of their Procurement Data
 * Other Transaction Award: getNewOtherTransactionAwardURL, getExistingOtherTransactionAwardURL
 * Other Transaction IDV: getNewOtherTransactionIDVURL, getExistingOtherTransactionIDVURL
 
-**Endpoint Information:**
+**Endpoint Information:**<br>
 Web Services can be accessed from Beta via the following sample end points:
 *	https://www.api.sam.gov/prod/FPDS/GUIServices/DataCollection/contracts/1.5/Award 
 *	https://www.api.sam.gov/prod/FPDS/GUIServices/DataCollection/contracts/1.5/IDV 
