@@ -932,10 +932,8 @@ For Award, IDV, Other Transaction Award, Other Transaction IDV, Contract and Con
 * <a href="v1/IDV.wsdl">Open API specification file for the IDV</a>
 * <a href="v1/OtherTransactionAward.wsdl">Open API specification file for the Other Transaction Award</a>
 * <a href="v1/OtherTransactionIDV.wsdl">Open API specification file for the Other Transaction IDV</a>
-
 * <a href="v1/ContractSummary.wsdl">Open API specification file for the Contract Summary</a>
 * <a href="v1/Contracts.wsdl">Open API specification file for the Contracts</a>
-
 * <a href="v1/PSC.wsdl">Open API specification file for the PSC</a>
 * <a href="v1/NAICS.wsdl">Open API specification file for the NAICS</a>
 * <a href="v1/ClaimantProgramCode.wsdl">Open API specification file for the Claimant Program Code</a>
@@ -944,7 +942,6 @@ For Award, IDV, Other Transaction Award, Other Transaction IDV, Contract and Con
 * <a href="v1/State.wsdl">Open API specification file for the State</a>
 * <a href="v1/Place.wsdl">Open API specification file for the Place</a>
 * <a href="v1/ZIP.wsdl">Open API specification file for the Zip</a>
-
 * <a href="v1/Organization.wsdl">Open API specification file for the Organization</a>
 * <a href="v1/Department.wsdl">Open API specification file for the Department</a>
 * <a href="v1/Agency.wsdl">Open API specification file for the Agency</a>
