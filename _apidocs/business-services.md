@@ -1,6 +1,6 @@
 ---
-title: Business Services
-banner-heading: Business Services
+title: Contract Data Business Services
+banner-heading: Contract Data Business Services
 ---
 
 <link rel="stylesheet" type="text/css" href="../../assets/swaggerui-dist/swagger-ui.css" >
@@ -14,50 +14,41 @@ Business Services to the Public Users to receive Contract and Referential data.
 
 
 ## Getting Started
-FPDS-NG offers the following Contract Data Web Services to the Public Users:
-1. Award
-2. IDV
-3. Other Transaction Award
-4. Other Transaction IDV
-
-All the Contract Data Web Services offers below API operations:
-* get : Retrieves the single searched record.
-* getList : Retrieves summarized results for the searched record.
-* getVersion : Gets the Version for the searched record.
-* exists : Checks if a searched record exists in the legacy FPDS-NG database and returns ‘true’ 
-  if the record exists and ‘false’ if the return does not exist. 
-
-FPDS-NG offers the following Referential Data Web Services to the Public Users:
-1. Department
-2. Agency
-3. Contracting Office 
-4. Government Office
-5. PSC 
-6. NAICS 
-7. System Equipment Code
-8. Claimant Program Code
-9. Locations
-    * Countries
-    * State
-    * Place
-    * Zip
-10. Vendor
-
-Referential Data Web Services offers below API operations:
-* get : Retrieves the single searched record.
-* getList : Retrieves summarized results for the searched record.
-* exists : Checks if a searched record exists in the legacy FPDS-NG database and returns ‘true’ 
-  if the record exists and ‘false’ if the return does not exist. 
-
-* Business service consumers should create new system accounts in beta.SAM.gov and procuring an API_KEY. 
-* Once they set up a new system account they can use the API_KEY to call Business web services. 
+**Authentication/Authorization in Beta SAM**
+* Contract Data Business Service consumers should create new system accounts in beta.SAM.gov and procuring an API_KEY. 
+* Once they set up a new system account they can use the API_KEY to call Contract Data Business Web Services. 
 * Below is the link to system account information:
   https://cm.usa.gov/confluence/display/ALL/System+Account+Documentation
 * Initially, authentication will be based on the API_KEY. Eventually this will be enhanced to accept authentication credentials.
 * The service can reject if incoming request doesn’t have enough privileges.   
-* A place holder in beta.SAM.gov UI will be created to place WSDL files and other FAQ related documents for business service
+* A place holder in beta.SAM.gov UI will be created to place WSDL files and other FAQ related documents for Contract Data Business Service.
+
+**Generating the API Key**
+* Registered users can request for a public API on ‘Account Details’ page.
+* Users must enter their password on ‘Account Details’ page to view the API Key information. If an incorrect password is entered, an error will be returned.
+* After the API Key is generated on ‘Account Details’ page, the API Key can be viewed on the Account Details page immediately.
+  The API Key is visible until users navigate to a different page.
+* If an error is encountered during the API Key generation/retrieval, then users will receive an error message and they can try again.
+
+**Types of Procurement Data**
+* Award – Delivery/Task Order, Purchase Order, Definitive Contract, BPA Call, Intragovernmental, Grant for Research, Funded Space Act Agreement, Training Grant and Cooperative Agreement.
+* IDV – FSS, GWAC, BOA, BPA and IDC.
+* Other Transaction Award – Other Transaction Agreement and Other Transaction Order.
+* Other Transaction IDV – Other Transaction IDV.
+
+**Sub-types of Procurement Data**
+* Base – The initial record that is represented as Modification Number = 0.
+* Modification – The modification/amendment record to the initial record that is represented as Modification Number <> 0.
+
+**Contract Data Business Services**
+* get : Retrieves the single searched record.
+* getList : Retrieves summarized results for the searched record.
+* getVersion : Gets the Version for the searched record.
+* exists : Checks if a searched record exists in the legacy FPDS-NG database and returns ‘true’ 
+  if the record exists and ‘false’ if the return does not exist.
 
 
+**Endpoint Information**
 Web Services can be accessed from Beta via the following sample end points:
 
 For Award, IDV, Other Transaction Award, Other Transaction IDV, Contract and Contract Summary:
@@ -68,31 +59,10 @@ For Award, IDV, Other Transaction Award, Other Transaction IDV, Contract and Con
 *	https://www.api.sam.gov/prod/FPDS/BusinessServices/DataCollection/contracts/1.5/ContractSummary 
 *	https://www.api.sam.gov/prod/FPDS/BusinessServices/DataCollection/contracts/1.5/Contract
 
-*	https://www.api.sam.gov/prod/FPDS/BusinessServices/DataCollection/ServiceClassifications/1.0/PSC 
-*	https://www.api.sam.gov/prod/FPDS/BusinessServices/DataCollection/ServiceClassifications/1.0/NAICS
-*	https://www.api.sam.gov/prod/FPDS/BusinessServices/DataCollection/ServiceClassifications/1.0/ClaimantProgramCode 
-*	https://www.api.sam.gov/prod/FPDS/BusinessServices/DataCollection/ServiceClassifications/1.0/SystemEquipmentCode
-*	https://www.api.sam.gov/prod/FPDS/BusinessServices/DataCollection/locations/1.0/Country 
-*	https://www.api.sam.gov/prod/FPDS/BusinessServices/DataCollection/locations/1.0/State 
-*	https://www.api.sam.gov/prod/FPDS/BusinessServices/DataCollection/locations/1.0/Place 
-*	https://www.api.sam.gov/prod/FPDS/BusinessServices/DataCollection/locations/1.0/ZIP
-
-*	https://www.api.sam.gov/prod/OrganizationalHierarchy/BusinessServices/Organization/1.0/Organization
-*	https://www.api.sam.gov/prod/FPDS/BusinessServices/DataCollection/organizations/1.0/Department
-*	https://www.api.sam.gov/prod/FPDS/BusinessServices/DataCollection/organizations/1.0/Agency
-*	https://www.api.sam.gov/prod/FPDS/BusinessServices/DataCollection/organizations/1.0/ContractingOffice
-*	https://www.api.sam.gov/prod/FPDS/BusinessServices/DataCollection/organizations/1.2/GovernmentOffice
-*	https://www.api.sam.gov/prod/FPDS/BusinessServices/DataCollection/vendors/1.0/Vendor
-
-
-For Users:
-*	https://www.api.sam.gov/prod/FPDS/BusinessServices/SystemAdministration/1.0/User
-*	https://www.api.sam.gov/prod/FPDS/BusinessServices/SystemAdministration/1.2/User
-
-
 
 ## API Description
-### Contract Data Web Services EndPoints
+
+**Contract Data Web Services EndPoints**
 
 **Endpoint:** https://www.api.sam.gov/prod/FPDS/BusinessServices/DataCollection/contracts/1.5/Award 
 <details>
@@ -105,9 +75,7 @@ For Users:
    &lt;soapenv:Body&gt;
       &lt;urn:create&gt;
          &lt;authenticationKey&gt;
-            &lt;fpds:userID /&gt;
-            &lt;fpds:password /&gt;
-            &lt;fpds:serviceOriginatorID /&gt;
+            &lt;fpds:apiKey/&gt;
          &lt;/authenticationKey&gt;
          &lt;award version="?"&gt;
             &lt;fpds:awardID&gt;
@@ -235,9 +203,7 @@ For Users:
    &lt;soapenv:Body&gt;
       &lt;urn:getVersion&gt;
          &lt;authenticationKey&gt;
-            &lt;fpds:userID /&gt;
-            &lt;fpds:password /&gt;
-            &lt;fpds:serviceOriginatorID /&gt;
+            &lt;fpds:apiKey/&gt;
          &lt;/authenticationKey&gt;
          &lt;awardID&gt;
             &lt;fpds:awardContractID&gt;
@@ -285,9 +251,7 @@ For Users:
 <code><pre>
 &lt;urn:get&gt;
    &lt;authenticationKey&gt;
-    &lt;fpds:userID&gt;&lt;/fpds:userID&gt;
-    &lt;fpds:password&gt;&lt;/fpds:password&gt;
-    &lt;fpds:serviceOriginatorID&gt;&lt;/fpds:serviceOriginatorID&gt;
+    &lt;fpds:apiKey/&gt;
    &lt;/authenticationKey&gt;
    &lt;awardID&gt;
     &lt;fpds:awardContractID&gt;
@@ -580,9 +544,7 @@ For Users:
 <code><pre>
 &lt;urn:getList&gt;
     &lt;authenticationKey&gt;
-     &lt;fpds:userID&gt;&lt;/fpds:userID&gt;
-     &lt;fpds:password&gt;&lt;/fpds:password&gt;
-     &lt;fpds:serviceOriginatorID&gt;&lt;/fpds:serviceOriginatorID&gt;
+     &lt;fpds:apiKey/&gt;
     &lt;/authenticationKey&gt;
     &lt;IDVSearchCriteria&gt;
      &lt;fpds:agencyID name="?" departmentID="?" departmentName="?"&gt;1900&lt;/fpds:agencyID&gt;
@@ -652,9 +614,7 @@ For Users:
 <code><pre>
 &lt;urn:getVersion&gt;
     &lt;authenticationKey&gt;
-     &lt;fpds:userID&gt;&lt;/fpds:userID&gt;
-     &lt;fpds:password&gt;&lt;/fpds:password&gt;
-     &lt;fpds:serviceOriginatorID&gt;&lt;/fpds:serviceOriginatorID&gt;
+     &lt;fpds:apiKey/&gt;
     &lt;/authenticationKey&gt;
      &lt;OtherTransactionAwardID&gt;
       &lt;fpds:OtherTransactionAwardContractID&gt;
@@ -698,9 +658,7 @@ For Users:
 <code><pre>
 &lt;urn:exists&gt;
     &lt;authenticationKey&gt;
-     &lt;fpds:userID&gt;&lt;/fpds:userID&gt;
-     &lt;fpds:password&gt;&lt;/fpds:password&gt;
-     &lt;fpds:serviceOriginatorID&gt;&lt;/fpds:serviceOriginatorID&gt;
+     &lt;fpds:apiKey/&gt;
     &lt;/authenticationKey&gt;
     &lt;OtherTransactionIDVID&gt;
      &lt;fpds:OtherTransactionIDVContractID&gt;
@@ -732,200 +690,8 @@ For Users:
 </details>
 
 
-
-### Referential Data Web Services EndPoints
-https://www.api.sam.gov/prod/FPDS/BusinessServices/DataCollection/ServiceClassifications/1.0/PSC 
-https://www.api.sam.gov/prod/FPDS/BusinessServices/DataCollection/ServiceClassifications/1.0/NAICS
-https://www.api.sam.gov/prod/FPDS/BusinessServices/DataCollection/ServiceClassifications/1.0/ClaimantProgramCode 
-https://www.api.sam.gov/prod/FPDS/BusinessServices/DataCollection/ServiceClassifications/1.0/SystemEquipmentCode
-https://www.api.sam.gov/prod/FPDS/BusinessServices/DataCollection/locations/1.0/Country 
-https://www.api.sam.gov/prod/FPDS/BusinessServices/DataCollection/locations/1.0/State 
-https://www.api.sam.gov/prod/FPDS/BusinessServices/DataCollection/locations/1.0/Place 
-https://www.api.sam.gov/prod/FPDS/BusinessServices/DataCollection/locations/1.0/ZIP
-https://www.api.sam.gov/prod/OrganizationalHierarchy/BusinessServices/Organization/1.0/Organization
-https://www.api.sam.gov/prod/FPDS/BusinessServices/DataCollection/organizations/1.0/Department
-https://www.api.sam.gov/prod/FPDS/BusinessServices/DataCollection/organizations/1.0/Agency
-https://www.api.sam.gov/prod/FPDS/BusinessServices/DataCollection/organizations/1.0/ContractingOffice
-https://www.api.sam.gov/prod/FPDS/BusinessServices/DataCollection/organizations/1.2/GovernmentOffice
-https://www.api.sam.gov/prod/FPDS/BusinessServices/DataCollection/vendors/1.0/Vendor
-
-
-
-**Endpoint:** https://www.api.sam.gov/prod/FPDS/BusinessServices/DataCollection/vendors/1.0/Vendor
-<details>
-<summary><b>Vendor getList  Request</b></summary>
-<p>
-<code><pre>
-&lt;urn:getList&gt;
-    &lt;authenticationKey&gt;
-     &lt;fpds:userID&gt;&lt;/fpds:userID&gt;
-     &lt;fpds:password&gt;&lt;/fpds:password&gt;
-     &lt;fpds:serviceOriginatorID&gt;&lt;/fpds:serviceOriginatorID&gt;
-    &lt;/authenticationKey&gt;
-    &lt;vendorSearchCriteria&gt;
-     &lt;fpds:DUNSNumber&gt;123456787&lt;/fpds:DUNSNumber&gt;            
-    &lt;/vendorSearchCriteria&gt;
-&lt;/urn:getList&gt;
-</pre></code></p>
-</details>
-
-<details>
-<summary><b>Vendor getList Response</b></summary>
-<p>
-<code><pre>
-&lt;?xml version="1.0" encoding="UTF-8"?&gt;
-&lt;ns1:getListVendorResponse xmlns:ns1="https://www.fpds.gov/FPDS"&gt;
-   &lt;ns1:requestNumber&gt;1430801638&lt;/ns1:requestNumber&gt;
-   &lt;ns1:confirmationNumber&gt;382471106&lt;/ns1:confirmationNumber&gt;
-   &lt;ns1:outputMessages&gt;
-      &lt;ns1:listOfErrors /&gt;
-      &lt;ns1:listOfWarnings /&gt;
-      &lt;ns1:listOfInfoMessages /&gt;
-   &lt;/ns1:outputMessages&gt;
-   &lt;ns1:listOfVendors&gt;
-      &lt;ns1:count&gt;
-         &lt;ns1:total&gt;1&lt;/ns1:total&gt;
-         &lt;ns1:fetched&gt;1&lt;/ns1:fetched&gt;
-      &lt;/ns1:count&gt;
-      &lt;ns1:vendor&gt;
-         &lt;ns1:vendorHeader&gt;
-            &lt;ns1:vendorName&gt;MISCELLANEOUS FOREIGN AWARDEES&lt;/ns1:vendorName&gt;
-            &lt;ns1:vendorDoingAsBusinessName&gt;FEDERAL EGOV IAE INITIATIVE - GENERIC DUNS&lt;/ns1:vendorDoingAsBusinessName&gt;
-         &lt;/ns1:vendorHeader&gt;
-         &lt;ns1:listOfVendorSiteDetails&gt;
-            &lt;ns1:vendorSiteDetails&gt;
-               &lt;ns1:vendorSocioEconomicIndicators /&gt;
-               &lt;ns1:vendorLocation&gt;
-                  &lt;ns1:streetAddress&gt;1800 F ST NW&lt;/ns1:streetAddress&gt;
-                  &lt;ns1:city&gt;WASHINGTON&lt;/ns1:city&gt;
-                  &lt;ns1:state&gt;DC&lt;/ns1:state&gt;
-                  &lt;ns1:ZIPCode&gt;204050001&lt;/ns1:ZIPCode&gt;
-                  &lt;ns1:countryCode&gt;USA&lt;/ns1:countryCode&gt;
-                  &lt;ns1:phoneNo&gt;2022159767&lt;/ns1:phoneNo&gt;
-                  &lt;ns1:faxNo /&gt;
-               &lt;/ns1:vendorLocation&gt;
-               &lt;ns1:vendorDUNSInformation&gt;
-                  &lt;ns1:DUNSNumber&gt;123456787&lt;/ns1:DUNSNumber&gt;
-                  &lt;ns1:cageCode&gt;35KC0&lt;/ns1:cageCode&gt;
-               &lt;/ns1:vendorDUNSInformation&gt;
-            &lt;/ns1:vendorSiteDetails&gt;
-         &lt;/ns1:listOfVendorSiteDetails&gt;
-      &lt;/ns1:vendor&gt;
-   &lt;/ns1:listOfVendors&gt;
-&lt;/ns1:getListVendorResponse&gt;
-</pre></code></p>
-</details>
-
-**Endpoint:** https://www.api.sam.gov/prod/FPDS/BusinessServices/DataCollection/ServiceClassifications/1.0/SystemEquipmentCode
-<details>
-<summary><b>System Equipment Code exists  Request</b></summary>
-<p>
-<code><pre>
-&lt;urn:exists&gt;
-    &lt;authenticationKey&gt;
-     &lt;fpds:userID&gt;&lt;/fpds:userID&gt;
-     &lt;fpds:password&gt;&lt;/fpds:password&gt;
-     &lt;fpds:serviceOriginatorID&gt;&lt;/fpds:serviceOriginatorID&gt;
-    &lt;/authenticationKey&gt;
-    &lt;systemEquipmentCode&gt;000&lt;/systemEquipmentCode&gt;
-&lt;/urn:exists&gt;
-</pre></code></p>
-</details>
- 
-<details>
-<summary><b>System Equipment Code exists Response</b></summary>
-<p>
-<code><pre>
-&lt;?xml version="1.0" encoding="UTF-8"?&gt;
-&lt;ns1:existsSystemEquipmentResponse xmlns:ns1="https://www.fpds.gov/FPDS"&gt;
-   &lt;ns1:requestNumber&gt;1430802219&lt;/ns1:requestNumber&gt;
-   &lt;ns1:confirmationNumber&gt;382471543&lt;/ns1:confirmationNumber&gt;
-   &lt;ns1:outputMessages&gt;
-      &lt;ns1:listOfErrors /&gt;
-      &lt;ns1:listOfWarnings /&gt;
-      &lt;ns1:listOfInfoMessages /&gt;
-   &lt;/ns1:outputMessages&gt;
-   &lt;ns1:isExists&gt;true&lt;/ns1:isExists&gt;
-&lt;/ns1:existsSystemEquipmentResponse&gt;
-</pre></code></p>
-</details>
-
-**Endpoint:** https://www.api.sam.gov/prod/FPDS/BusinessServices/DataCollection/organizations/1.0/Department
-<details>
-<summary><b>Department get Request</b></summary>
-<p>
-<code><pre>
-&lt;urn:get&gt;
-   &lt;authenticationKey&gt;
-    &lt;fpds:userID&gt;&lt;/fpds:userID&gt;
-    &lt;fpds:password&gt;&lt;/fpds:password&gt;
-    &lt;fpds:serviceOriginatorID&gt;&lt;/fpds:serviceOriginatorID&gt;
-   &lt;/authenticationKey&gt;
-   &lt;departmentID&gt;9700&lt;/departmentID&gt;
-&lt;/urn:get&gt; 
-</pre></code></p>
-</details>
-
-<details>
-<summary><b>Department get Response</b></summary>
-<p>
-<code><pre>
-&lt;?xml version="1.0" encoding="UTF-8"?&gt;
-&lt;ns1:getDepartmentResponse xmlns:ns1="https://www.fpds.gov/FPDS"&gt;
-   &lt;ns1:requestNumber&gt;1430803539&lt;/ns1:requestNumber&gt;
-   &lt;ns1:confirmationNumber&gt;382472539&lt;/ns1:confirmationNumber&gt;
-   &lt;ns1:outputMessages&gt;
-      &lt;ns1:listOfErrors /&gt;
-      &lt;ns1:listOfWarnings /&gt;
-      &lt;ns1:listOfInfoMessages /&gt;
-   &lt;/ns1:outputMessages&gt;
-   &lt;ns1:department&gt;
-      &lt;ns1:departmentID&gt;9700&lt;/ns1:departmentID&gt;
-      &lt;ns1:departmentName&gt;DEPT OF DEFENSE&lt;/ns1:departmentName&gt;
-   &lt;/ns1:department&gt;
-&lt;/ns1:getDepartmentResponse&gt;
-</pre></code></p>
-</details>
-
-**Endpoint:** •	https://www.api.sam.gov/prod/FPDS/BusinessServices/SystemAdministration/1.0/User
-<details>
-<summary><b>getList Request for a System user with serviceOriginatorID as a Government 
-User ID that is only authorized to search for Government users</b></summary>
-<p>
-<code><pre>
-&lt;urn:getList&gt;
-    &lt;authenticationKey&gt;
-      &lt;fpds:userID&gt;&lt;/fpds:userID&gt;
-      &lt;fpds:password&gt;&lt;/fpds:password&gt;
-      &lt;fpds:serviceOriginatorID&gt;&lt;/fpds:serviceOriginatorID&gt;
-    &lt;/authenticationKey&gt;
-    &lt;userSearchCriteria&gt;
-      &lt;fpds:userID&gt;&lt;/fpds:userID&gt;
-      &lt;fpds:typeOfUser&gt;SYSTEM&lt;/fpds:typeOfUser&gt;
-      &lt;fpds:agencyID&gt;&lt;/fpds:agencyID&gt;
-      &lt;fpds:contractingOfficeID&gt;&lt;/fpds:contractingOfficeID&gt;
-    &lt;/userSearchCriteria&gt;
-&lt;/urn:getList&gt;
-</pre></code></p>
-</details>
-
-<details>
-<summary><b>getList Response for a System user with serviceOriginatorID as a Government 
-User ID that is only authorized to search for Government users</b></summary>
-<p>
-<code><pre>
-&lt;ns1:errorCode&gt;2651&lt;/ns1:errorCode&gt;
-&lt;ns1:errorMessage&gt;
-The User: "&lt;serviceOriginatorID&gt;" does not have the privileges to search for a "SYSTEM" user.
-&lt;/ns1:errorMessage&gt;
-</pre></code></p>
-</details>
-
-
-
 ## WSDL File 
 You can view the full details of this API in the WSDL file available here: 
-
 
 For Award, IDV, Other Transaction Award, Other Transaction IDV, Contract and Contract Summary:
 * <a href="v1/Award.wsdl">Open API specification file for the Award</a>
@@ -933,26 +699,7 @@ For Award, IDV, Other Transaction Award, Other Transaction IDV, Contract and Con
 * <a href="v1/OtherTransactionAward.wsdl">Open API specification file for the Other Transaction Award</a>
 * <a href="v1/OtherTransactionIDV.wsdl">Open API specification file for the Other Transaction IDV</a>
 * <a href="v1/ContractSummary.wsdl">Open API specification file for the Contract Summary</a>
-* <a href="v1/Contracts.wsdl">Open API specification file for the Contracts</a>
-* <a href="v1/PSC.wsdl">Open API specification file for the PSC</a>
-* <a href="v1/NAICS.wsdl">Open API specification file for the NAICS</a>
-* <a href="v1/ClaimantProgramCode.wsdl">Open API specification file for the Claimant Program Code</a>
-* <a href="v1/SystemEquipmentCode.wsdl">Open API specification file for the System Equipment Code</a>
-* <a href="v1/Country.wsdl">Open API specification file for the Countries</a>
-* <a href="v1/State.wsdl">Open API specification file for the State</a>
-* <a href="v1/Place.wsdl">Open API specification file for the Place</a>
-* <a href="v1/ZIP.wsdl">Open API specification file for the Zip</a>
-* <a href="v1/Organization.wsdl">Open API specification file for the Organization</a>
-* <a href="v1/Department.wsdl">Open API specification file for the Department</a>
-* <a href="v1/Agency.wsdl">Open API specification file for the Agency</a>
-* <a href="v1/ContractingOffice.wsdl">Open API specification file for the Contracting Office</a>
-* <a href="v1/GovernmentOffice.wsdl">Open API specification file for the Government Office</a>
-* <a href="v1/Vendor.wsdl">Open API specification file for the Vendor</a>
-
-
-For Users:
-* <a href="v1/User.wsdl">Open API specification file for the User version 1.0</a>
-* <a href="v1/User-1.2.wsdl">Open API specification file for the User version 1.2</a>
+* <a href="v1/Contract.wsdl">Open API specification file for the Contract</a>
 
 
 ## HTTP Response Codes
@@ -960,6 +707,7 @@ For Users:
 | HTTP Response Code | Description |
 | ---- | ----------- |
 | 200 | Successful. |
+| 400 | <a href="v1/FPDS-NG_V1.5_Data_Validation_rules_document.doc"/>Application Level Error Messages</a>  |
 | 403 | API key is not correct or was not provided. |
 
 

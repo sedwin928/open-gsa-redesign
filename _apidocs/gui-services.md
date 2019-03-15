@@ -1,63 +1,62 @@
 ---
-title: GUI Services
-banner-heading: GUI Services
+title: Contract Data GUI Services
+banner-heading: Contract Data GUI Services
 ---
 
 <link rel="stylesheet" type="text/css" href="../../assets/swaggerui-dist/swagger-ui.css" >
 
-
 ## Overview
-GUI Services (combination of both Web Services and UI) to the Public Users for them to receive Referential data. 
+Federal Government Agencies report their Procurement Data to legacy FPDS-NG via their certified COTS/GOTS Contract Writing Systems (CWS).
+To facilitate the Agencies report the entire lifecycle of their Procurement Data,legacy FPDS-NG offers a wide variety of Web Services. 
 
 * Public Users are the type of users that are not associated with a Federal Government agency and that do not post data to FPDS-NG.
 * Public Users must send User ID, Password and Service Originator ID in their Web Service requests sent to legacy FPDS-NG.
 
 ## Getting Started
-FPDS-NG offers the following Referential Data GUI Services to the Public Users:
-
-1. Department: getExistingDepartmentURL
-2. Agency: getExistingAgencyURL
-3. Contracting Office: getExistingContractingOfficeURL
-4. Government Office: getExistingGovernmentOfficeURL
-5. Country: getExistingCountryURL
-6. Place: getExistingPlaceURL
-7. NAICS: getExistingNAICSURL
-8. PSC: getExistingPSCURL
-
-* GUI service consumers should create new system accounts in beta.SAM.gov and procuring an API_KEY. 
-* Once they set up a new system account they can use the API_KEY to call Business web services. 
+**Authentication/Authorization in Beta SAM**
+* Contract Data GUI service consumers should create new system accounts in beta.SAM.gov and procuring an API_KEY. 
+* Once they set up a new system account they can use the API_KEY to call Contract Data GUI services. 
 * Below is the link to system account information:
   https://cm.usa.gov/confluence/display/ALL/System+Account+Documentation
 * Initially, authentication will be based on the API_KEY. Eventually this will be enhanced to accept authentication credentials.
 * The service can reject if incoming request doesn’t have enough privileges.   
-* A place holder in beta.SAM.gov UI will be created to place WSDL files and other FAQ related documents for business service
+* A place holder in beta.SAM.gov UI will be created to place WSDL files and other FAQ related documents for Contract Data GUI service.
 
+**Generating the API Key**
+* Registered users can request for a public API on ‘Account Details’ page.
+* Users must enter their password on ‘Account Details’ page to view the API Key information. If an incorrect password is entered, an error will be returned.
+* After the API Key is generated on ‘Account Details’ page, the API Key can be viewed on the Account Details page immediately.
+  The API Key is visible until users navigate to a different page.
+* If an error is encountered during the API Key generation/retrieval, then users will receive an error message and they can try again.
+
+**Types of Procurement Data**
+* Award – Delivery/Task Order, Purchase Order, Definitive Contract, BPA Call, Intragovernmental, Grant for Research, Funded Space Act Agreement, Training Grant and Cooperative Agreement.
+* IDV – FSS, GWAC, BOA, BPA and IDC.
+* Other Transaction Award – Other Transaction Agreement and Other Transaction Order.
+* Other Transaction IDV – Other Transaction IDV.
+
+**Sub-types of Procurement Data**
+* Base – The initial record that is represented as Modification Number = 0.
+* Modification – The modification/amendment record to the initial record that is represented as Modification Number <> 0.
+
+**Contract Data GUI Services**
+* Award: getNewAwardURL, getNewAwardURLFromTemplate, getExistingAwardURL
+* IDV: getNewIDVURL, getNewIDVURLFromTemplate, getExistingIDVURL
+* Other Transaction Award: getNewOtherTransactionAwardURL, getExistingOtherTransactionAwardURL
+* Other Transaction IDV: getNewOtherTransactionIDVURL, getExistingOtherTransactionIDVURL
+
+**Endpoint Information:**
 Web Services can be accessed from Beta via the following sample end points:
-
-Award, IDV, Other Transaction Award, Other Transaction IDV
 *	https://www.api.sam.gov/prod/FPDS/GUIServices/DataCollection/contracts/1.5/Award 
 *	https://www.api.sam.gov/prod/FPDS/GUIServices/DataCollection/contracts/1.5/IDV 
 *	https://www.api.sam.gov/prod/FPDS/GUIServices/DataCollection/contracts/1.5/OtherTransactionAward 
 *	https://www.api.sam.gov/prod/FPDS/GUIServices/DataCollection/contracts/1.5/OtherTransactionIDV
 
-Referential Data
-*	https://www.api.sam.gov/prod/FPDS/GUIServices/DataCollection/organizations/1.0/Department
-*	https://www.api.sam.gov/prod/FPDS/GUIServices/DataCollection/organizations/1.0/Agency
-*	https://www.api.sam.gov/prod/FPDS/GUIServices/DataCollection/organizations/1.0/ContractingOffice
-*	https://www.api.sam.gov/prod/FPDS/GUIServices/DataCollection/organizations/1.0/GovernmentOffice
-*	https://www.api.sam.gov/prod/FPDS/GUIServices/DataCollection/organizations/1.2/GovernmentOffice
-*	https://www.api.sam.gov/prod/FPDS/GUIServices/DataCollection/locations/1.0/Country
-*	https://www.api.sam.gov/prod/FPDS/GUIServices/DataCollection/locations/1.0/Place
-*	https://www.api.sam.gov/prod/FPDS/GUIServices/DataCollection/ServiceClassifications/1.0/PSC
-*	https://www.api.sam.gov/prod/FPDS/GUIServices/DataCollection/ServiceClassifications/1.0/NAICS
-*	https://www.api.sam.gov/prod/FPDS/GUIServices/SystemAdministration/1.0/User
-*	https://www.api.sam.gov/prod/FPDS/GUIServices/SystemAdministration/1.2/User
-
  
 
 ## API Description
 
-**Endpoint:** https://www.api.sam.gov/prod/ FPDS/GUIServices/DataCollection/contracts/1.5/Award 
+**Endpoint:** https://www.api.sam.gov/prod/FPDS/GUIServices/DataCollection/contracts/1.5/Award 
 <details>
 <summary><b>getNewAwardURL Request</b></summary>
 <p>
@@ -68,9 +67,7 @@ Referential Data
    &lt;soapenv:Body&gt;
       &lt;urn:getNewAwardURL&gt;
          &lt;authenticationKey&gt;
-            &lt;fpds:userID /&gt;
-            &lt;fpds:password /&gt;
-            &lt;fpds:serviceOriginatorID /&gt;
+            &lt;fpds:apiKey/&gt;
          &lt;/authenticationKey&gt;
          &lt;award version="?"&gt;
             &lt;fpds:awardID&gt;
@@ -121,204 +118,6 @@ Referential Data
 </details>
 
 
-**Endpoint:** https://www.api.sam.gov/prod/FPDS/GUIServices/DataCollection/organizations/1.0/Department 
-<details>
-<summary><b>Department getExistingDepartmentURL Request</b></summary>
-<p>
-<code><pre>
-&lt;urn:getExistingDepartmentURL&gt;
-    &lt;authenticationKey&gt;
-      &lt;fpds:userID&gt;XXXXXX&lt;/fpds:userID&gt;
-      &lt;fpds:password&gt;XXXXXXX&lt;/fpds:password&gt;
-      &lt;fpds:serviceOriginatorID&gt;XXXXX&lt;/fpds:serviceOriginatorID&gt;
-    &lt;/authenticationKey&gt;
-    &lt;departmentID&gt;9700&lt;/departmentID&gt;
-&lt;/urn:getExistingDepartmentURL&gt;
-</pre></code></p>
-</details>
-
-<details>
-<summary><b>Department getExistingDepartmentURL Response</b></summary>
-<p>
-<code><pre>
-&lt;?xml version="1.0" encoding="UTF-8"?&gt;
-&lt;ns1:getExistingDepartmentURLResponse xmlns:ns1="https://www.fpds.gov/FPDS"&gt;
-   &lt;ns1:requestNumber&gt;1434306305&lt;/ns1:requestNumber&gt;
-   &lt;ns1:confirmationNumber&gt;385744666&lt;/ns1:confirmationNumber&gt;
-   &lt;ns1:outputMessages&gt;
-      &lt;ns1:listOfErrors /&gt;
-      &lt;ns1:listOfWarnings /&gt;
-      &lt;ns1:listOfInfoMessages /&gt;
-   &lt;/ns1:outputMessages&gt;
-   &lt;ns1:departmentURL&gt;https://www.fpds.gov/common/jsp/LaunchWebPage.jsp?command=execute&amp;requestid=92847204&lt;/ns1:departmentURL&gt;
-&lt;/ns1:getExistingDepartmentURLResponse&gt;
-</pre></code></p>
-</details>
-
-
-<!--**Endpoint:** https://www.api.sam.gov/prod/FPDS/GUIServices/DataCollection/organizations/1.0/Agency
-<details>
-<summary><b>Agency getExistingAgencyURL  Request</b></summary>
-<p>
-<code><pre>
-
-</pre></code></p>
-</details>
-
-<details>
-<summary><b>Agency getExistingAgencyURL Response</b></summary>
-<p>
-<code><pre>
-
-</pre></code></p>
-</details>
-
-
-
-**Endpoint:** https://www.api.sam.gov/prod/FPDS/GUIServices/DataCollection/organizations/1.0/ContractingOffice 
-<details>
-<summary><b>Contracting Office getExistingContractingOfficeURL Request</b></summary>
-<p>
-<code><pre>
-
-</pre></code></p>
-</details>
-
-<details>
-<summary><b>Contracting Office getExistingContractingOfficeURL Response</b></summary>
-<p>
-<code><pre>
-&lt;?xml version="1.0" encoding="UTF-8"?&gt;
-
-</pre></code></p>
-</details>
-
-
-
-**Endpoint:** https://www.api.sam.gov/prod/FPDS/GUIServices/DataCollection/organizations/1.0/GovernmentOffice
-<details>
-<summary><b>Government Office getExistingGovernmentOfficeURL  Request</b></summary>
-<p>
-<code><pre>
-
-</pre></code></p>
-</details>
-
-<details>
-<summary><b>Government Office getExistingGovernmentOfficeURL Response</b></summary>
-<p>
-<code><pre>
-
-</pre></code></p>
-</details>
-
-
-
-**Endpoint:** https://www.api.sam.gov/prod/FPDS/GUIServices/DataCollection/organizations/1.2/GovernmentOffice
-<details>
-<summary><b>Government Office getExistingGovernmentOfficeURL  Request</b></summary>
-<p>
-<code><pre>
-
-</pre></code></p>
-</details>
-
-<details>
-<summary><b>Government Office getExistingGovernmentOfficeURL Response</b></summary>
-<p>
-<code><pre>
-
-</pre></code></p>
-</details>
-
-
-
-**Endpoint:** https://www.api.sam.gov/prod/FPDS/GUIServices/DataCollection/locations/1.0/Country
-<details>
-<summary><b>Country getExistingCountryURL Request</b></summary>
-<p>
-<code><pre>
-
-</pre></code></p>
-</details>
- 
-<details>
-<summary><b>Country getExistingCountryURL Response</b></summary>
-<p>
-<code><pre>
-
-</pre></code></p>
-</details>
-
-
-
-**Endpoint:** https://www.api.sam.gov/prod/FPDS/GUIServices/DataCollection/locations/1.0/Place
-<details>
-<summary><b>Place getExistingPlaceURL Request</b></summary>
-<p>
-<code><pre>
-
-</pre></code></p>
-</details>
-
-<details>
-<summary><b>Place getExistingPlaceURL Response</b></summary>
-<p>
-<code><pre>
-
-</pre></code></p>
-</details>
-
-**Endpoint:** https://www.api.sam.gov/prod/FPDS/GUIServices/DataCollection/ServiceClassifications/1.0/PSC
-<details>
-<summary><b>PSC getExistingPSCURL Request</b></summary>
-<p>
-<code><pre>
-
-</pre></code></p>
-</details>
-
-<details>
-<summary><b>PSC getExistingPSCURL Response</b></summary>
-<p>
-<code><pre>
-
-</pre></code></p>
-</details>-->
-
-**Endpoint:** https://www.api.sam.gov/prod/FPDS/GUIServices/DataCollection/ServiceClassifications/1.0/NAICS
-<details>
-<summary><b>NAICS getExistingNAICSURL Request</b></summary>
-<p>
-<code><pre>
-&lt;urn:getExistingNAICSURL&gt;
-    &lt;authenticationKey&gt;
-     &lt;fpds:userID&gt;XXXXXXX&lt;/fpds:userID&gt;
-     &lt;fpds:password&gt;XXXXXX&lt;/fpds:password&gt;
-     &lt;fpds:serviceOriginatorID&gt;XXXXX&lt;/fpds:serviceOriginatorID&gt;
-    &lt;/authenticationKey&gt;
-    &lt;NAICSCode&gt;111110&lt;/NAICSCode&gt;
-&lt;/urn:getExistingNAICSURL&gt; 
-</pre></code></p>
-</details>
-
-<details>
-<summary><b>NAICS getExistingNAICSURL Response</b></summary>
-<p>
-<code><pre>
-&lt;?xml version="1.0" encoding="UTF-8"?&gt;
-&lt;ns1:getExistingNAICSURLResponse xmlns:ns1="https://www.fpds.gov/FPDS"&gt;
-   &lt;ns1:requestNumber&gt;1434304093&lt;/ns1:requestNumber&gt;
-   &lt;ns1:confirmationNumber&gt;385742977&lt;/ns1:confirmationNumber&gt;
-   &lt;ns1:outputMessages&gt;
-      &lt;ns1:listOfErrors /&gt;
-      &lt;ns1:listOfWarnings /&gt;
-      &lt;ns1:listOfInfoMessages /&gt;
-   &lt;/ns1:outputMessages&gt;
-   &lt;ns1:NAICSURL&gt;https://www.fpds.gov/common/jsp/LaunchWebPage.jsp?command=execute&amp;requestid=92846459&lt;/ns1:NAICSURL&gt;
-&lt;/ns1:getExistingNAICSURLResponse&gt;
-</pre></code></p>
-</details>
 
 ## OpenAPI Specification File 
 You can view the full details of this API in the WSDL file available here: 
@@ -329,19 +128,6 @@ Award, IDV, Other Transaction Award, Other Transaction IDV
 * <a href="v1/OtherTransactionAward.wsdl">WSDL file for the Other Transaction Award</a>
 * <a href="v1/OtherTransactionIDV.wsdl">WSDL file for the Other Transaction IDV</a>
 
-Referential Data
-
-* <a href="v1/Department.wsdl">WSDL file for the Department</a>
-* <a href="v1/Agency.wsdl">WSDL file for the Other Transaction Agency</a>
-* <a href="v1/ContractingOffice.wsdl">WSDL file for the Contracting Office</a>
-* <a href="v1/GovernmentOffice.wsdl">WSDL file for the Government Office version 1.0</a>
-* <a href="v1/GovernmentOffice-V1.2.wsdl">WSDL file for the Government Office version 1.2</a>
-* <a href="v1/Country.wsdl">WSDL file for the Country</a>
-* <a href="v1/Place.wsdl">WSDL file for the Place</a>
-* <a href="v1/PSC.wsdl">WSDL file for the PSC</a>
-* <a href="v1/NAICS.wsdl">WSDL file for the NAICS</a>
-* <a href="v1/User.wsdl">WSDL file for the User version 1.0</a>
-* <a href="v1/User.wsdl">WSDL file for the User version 1.2</a>
 
 
 ## HTTP Response Codes
@@ -349,6 +135,7 @@ Referential Data
 | HTTP Response Code | Description |
 | ---- | ----------- |
 | 200 | Successful. |
+| 400 | <a href="v1/FPDS-NG_V1.5_Data_Validation_rules_document.doc"/>Application Level Error Messages</a>  |
 | 403 | API key is not correct or was not provided. |
 
 
