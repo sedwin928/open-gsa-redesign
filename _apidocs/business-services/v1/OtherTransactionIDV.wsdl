@@ -1,0 +1,438 @@
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:FPDS="https://www.fpds.gov/FPDS" targetNamespace="https://www.fpds.gov/FPDS" name="OtherTransactionIDV">
+	<types>
+		<schema elementFormDefault="qualified" targetNamespace="https://www.fpds.gov/FPDS" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:FPDS="https://www.fpds.gov/FPDS">
+			<include schemaLocation="https://www.fpds.gov/FPDS/schema/SystemServices/1.2/Service.xsd"/>
+			<include schemaLocation="https://www.fpds.gov/FPDS/schema/DataCollection/contracts/1.5/OtherTransactionIDV.xsd"/>
+			<include schemaLocation="https://www.fpds.gov/FPDS/schema/SystemAdministration/users/1.5/User.xsd"/>
+			<complexType name="createOtherTransactionIDVResponseType">
+				<complexContent>
+					<extension base="FPDS:responseType">
+						<sequence>
+							<element name="OtherTransactionIDV" type="FPDS:OtherTransactionIDVType" nillable="true" minOccurs="0"/>
+						</sequence>
+					</extension>
+				</complexContent>
+			</complexType>
+			<complexType name="updateOtherTransactionIDVResponseType">
+				<complexContent>
+					<extension base="FPDS:responseType">
+						<sequence>
+							<element name="OtherTransactionIDV" type="FPDS:OtherTransactionIDVType" nillable="true" minOccurs="0"/>
+						</sequence>
+					</extension>
+				</complexContent>
+			</complexType>
+			<complexType name="getOtherTransactionIDVResponseType">
+				<complexContent>
+					<extension base="FPDS:responseType">
+						<sequence>
+							<element name="OtherTransactionIDV" type="FPDS:OtherTransactionIDVType" nillable="true" minOccurs="0"/>
+						</sequence>
+					</extension>
+				</complexContent>
+			</complexType>
+			<complexType name="approveOtherTransactionIDVResponseType">
+				<complexContent>
+					<extension base="FPDS:responseType">
+						<sequence>
+							<element name="isApproved" type="boolean" nillable="true" minOccurs="0"/>
+						</sequence>
+					</extension>
+				</complexContent>
+			</complexType>
+			<complexType name="deleteOtherTransactionIDVResponseType">
+				<complexContent>
+					<extension base="FPDS:responseType">
+						<sequence>
+							<element name="isDeleted" type="boolean" nillable="true" minOccurs="0"/>
+						</sequence>
+					</extension>
+				</complexContent>
+			</complexType>
+			<complexType name="existsOtherTransactionIDVResponseType">
+				<complexContent>
+					<extension base="FPDS:responseType">
+						<sequence>
+							<element name="isExists" type="boolean" nillable="true" minOccurs="0"/>
+						</sequence>
+					</extension>
+				</complexContent>
+			</complexType>
+			<complexType name="isCompleteOtherTransactionIDVResponseType">
+				<complexContent>
+					<extension base="FPDS:responseType">
+						<sequence>
+							<element name="isCompleted" type="boolean" nillable="true" minOccurs="0"/>
+						</sequence>
+					</extension>
+				</complexContent>
+			</complexType>
+			<complexType name="isExistingOtherTransactionIDVCompleteResponseType">
+				<complexContent>
+					<extension base="FPDS:responseType">
+						<sequence>
+							<element name="isCompleted" type="boolean" nillable="true" minOccurs="0"/>
+						</sequence>
+					</extension>
+				</complexContent>
+			</complexType>
+			<complexType name="getListOtherTransactionIDVResponseType">
+				<complexContent>
+					<extension base="FPDS:responseType">
+						<sequence>
+							<element name="listOfOtherTransactionIDVSummaries" type="FPDS:listOfOtherTransactionIDVSummariesType" nillable="true" minOccurs="0"/>
+						</sequence>
+					</extension>
+				</complexContent>
+			</complexType>
+			<complexType name="correctOtherTransactionIDVResponseType">
+				<complexContent>
+					<extension base="FPDS:responseType">
+						<sequence>
+							<element name="OtherTransactionIDV" type="FPDS:OtherTransactionIDVType" nillable="true" minOccurs="0"/>
+						</sequence>
+					</extension>
+				</complexContent>
+			</complexType>
+			<complexType name="voidContractOtherTransactionIDVResponseType">
+				<complexContent>
+					<extension base="FPDS:responseType">
+						<sequence>
+							<element name="OtherTransactionIDV" type="FPDS:OtherTransactionIDVType" nillable="true" minOccurs="0"/>
+						</sequence>
+					</extension>
+				</complexContent>
+			</complexType>
+			<complexType name="getVersionOtherTransactionIDVResponseType">
+				<complexContent>
+					<extension base="FPDS:responseType">
+						<sequence>
+							<element name="versionNumber" type="string" nillable="true" minOccurs="0"/>
+						</sequence>
+					</extension>
+				</complexContent>
+			</complexType>
+			<complexType name="transferOtherTransactionIDVRequestType">
+				<sequence>
+					<element name="fromOtherTransactionIDVID" type="FPDS:OtherTransactionIDVIDType"/>
+					<element name="toOtherTransactionIDVID" type="FPDS:OtherTransactionIDVIDType"/>
+				</sequence>
+			</complexType>
+			<complexType name="changePIIDOtherTransactionIDVRequestType">
+				<sequence>
+					<element name="fromOtherTransactionIDVID" type="FPDS:OtherTransactionIDVIDType"/>
+					<element name="toOtherTransactionIDVID" type="FPDS:OtherTransactionIDVIDType"/>
+					<element name="reasonForChange" type="FPDS:shortDescriptionType"/>
+				</sequence>
+			</complexType>
+			<complexType name="transferOtherTransactionIDVResponseType">
+				<complexContent>
+					<extension base="FPDS:responseType">
+						<sequence>
+							<element name="OtherTransactionIDV" type="FPDS:OtherTransactionIDVType" nillable="true" minOccurs="0"/>
+						</sequence>
+					</extension>
+				</complexContent>
+			</complexType>
+			<complexType name="changePIIDOtherTransactionIDVResponseType">
+				<complexContent>
+					<extension base="FPDS:responseType">
+						<sequence>
+							<element name="OtherTransactionIDV" type="FPDS:OtherTransactionIDVType" nillable="true" minOccurs="0"/>
+						</sequence>
+					</extension>
+				</complexContent>
+			</complexType>
+		</schema>
+	</types>
+	<message name="createInput">
+		<part name="authenticationKey" type="FPDS:userAuthenticationKeyType"/>
+		<part name="OtherTransactionIDV" type="FPDS:OtherTransactionIDVType"/>
+	</message>
+	<message name="updateInput">
+		<part name="authenticationKey" type="FPDS:userAuthenticationKeyType"/>
+		<part name="OtherTransactionIDV" type="FPDS:OtherTransactionIDVType"/>
+	</message>
+	<message name="existsInput">
+		<part name="authenticationKey" type="FPDS:userAuthenticationKeyType"/>
+		<part name="OtherTransactionIDVID" type="FPDS:OtherTransactionIDVIDType"/>
+	</message>
+	<message name="getListInput">
+		<part name="authenticationKey" type="FPDS:userAuthenticationKeyType"/>
+		<part name="OtherTransactionIDVSearchCriteria" type="FPDS:OtherTransactionIDVSearchCriteriaType"/>
+	</message>
+	<message name="getInput">
+		<part name="authenticationKey" type="FPDS:userAuthenticationKeyType"/>
+		<part name="OtherTransactionIDVID" type="FPDS:OtherTransactionIDVIDType"/>
+	</message>
+	<message name="isCompleteInput">
+		<part name="authenticationKey" type="FPDS:userAuthenticationKeyType"/>
+		<part name="OtherTransactionIDV" type="FPDS:OtherTransactionIDVType"/>
+	</message>
+	<message name="isExistingOtherTransactionIDVCompleteInput">
+		<part name="authenticationKey" type="FPDS:userAuthenticationKeyType"/>
+		<part name="OtherTransactionIDVID" type="FPDS:OtherTransactionIDVIDType"/>
+	</message>
+	<message name="deleteInput">
+		<part name="authenticationKey" type="FPDS:userAuthenticationKeyType"/>
+		<part name="OtherTransactionIDVID" type="FPDS:OtherTransactionIDVIDType"/>
+	</message>
+	<message name="correctInput">
+		<part name="authenticationKey" type="FPDS:userAuthenticationKeyType"/>
+		<part name="OtherTransactionIDV" type="FPDS:OtherTransactionIDVType"/>
+	</message>
+	<message name="voidContractInput">
+		<part name="authenticationKey" type="FPDS:userAuthenticationKeyType"/>
+		<part name="OtherTransactionIDV" type="FPDS:OtherTransactionIDVType"/>
+	</message>
+	<message name="approveInput">
+		<part name="authenticationKey" type="FPDS:userAuthenticationKeyType"/>
+		<part name="OtherTransactionIDVID" type="FPDS:OtherTransactionIDVIDType"/>
+	</message>
+	<message name="getVersionInput">
+		<part name="authenticationKey" type="FPDS:userAuthenticationKeyType"/>
+		<part name="OtherTransactionIDVID" type="FPDS:OtherTransactionIDVIDType"/>
+	</message>
+	<message name="createOutput">
+		<part name="createOtherTransactionIDVResponse" type="FPDS:createOtherTransactionIDVResponseType"/>
+	</message>
+	<message name="updateOutput">
+		<part name="updateOtherTransactionIDVResponse" type="FPDS:updateOtherTransactionIDVResponseType"/>
+	</message>
+	<message name="existsOutput">
+		<part name="existsOtherTransactionIDVResponse" type="FPDS:existsOtherTransactionIDVResponseType"/>
+	</message>
+	<message name="getListOutput">
+		<part name="getListOtherTransactionIDVResponse" type="FPDS:getListOtherTransactionIDVResponseType"/>
+	</message>
+	<message name="getOutput">
+		<part name="getOtherTransactionIDVResponse" type="FPDS:getOtherTransactionIDVResponseType"/>
+	</message>
+	<message name="isCompleteOutput">
+		<part name="isCompleteOtherTransactionIDVResponse" type="FPDS:isCompleteOtherTransactionIDVResponseType"/>
+	</message>
+	<message name="isExistingOtherTransactionIDVCompleteOutput">
+		<part name="isExistingOtherTransactionIDVCompleteResponse" type="FPDS:isExistingOtherTransactionIDVCompleteResponseType"/>
+	</message>
+	<message name="deleteOutput">
+		<part name="deleteOtherTransactionIDVResponse" type="FPDS:deleteOtherTransactionIDVResponseType"/>
+	</message>
+	<message name="correctOutput">
+		<part name="correctOtherTransactionIDVResponse" type="FPDS:correctOtherTransactionIDVResponseType"/>
+	</message>
+	<message name="voidContractOutput">
+		<part name="voidContractOtherTransactionIDVResponse" type="FPDS:voidContractOtherTransactionIDVResponseType"/>
+	</message>
+	<message name="approveOutput">
+		<part name="approveOtherTransactionIDVResponse" type="FPDS:approveOtherTransactionIDVResponseType"/>
+	</message>
+	<message name="getVersionOutput">
+		<part name="getVersionOtherTransactionIDVResponse" type="FPDS:getVersionOtherTransactionIDVResponseType"/>
+	</message>
+	<message name="transferInput">
+		<part name="authenticationKey" type="FPDS:userAuthenticationKeyType"/>
+		<part name="transferOtherTransactionIDVRequest" type="FPDS:transferOtherTransactionIDVRequestType"/>
+	</message>
+	<message name="transferOutput">
+		<part name="transferOtherTransactionIDVResponse" type="FPDS:transferOtherTransactionIDVResponseType"/>
+	</message>
+	<message name="changePIIDInput">
+		<part name="authenticationKey" type="FPDS:userAuthenticationKeyType"/>
+		<part name="changePIIDOtherTransactionIDVRequest" type="FPDS:changePIIDOtherTransactionIDVRequestType"/>
+	</message>
+	<message name="changePIIDOutput">
+		<part name="changePIIDOtherTransactionIDVResponse" type="FPDS:changePIIDOtherTransactionIDVResponseType"/>
+	</message>
+	<portType name="OtherTransactionIDVPortType">
+		<operation name="get">
+			<input message="FPDS:getInput"/>
+			<output message="FPDS:getOutput"/>
+		</operation>
+		<operation name="getList">
+			<input message="FPDS:getListInput"/>
+			<output message="FPDS:getListOutput"/>
+		</operation>
+		<operation name="create">
+			<input message="FPDS:createInput"/>
+			<output message="FPDS:createOutput"/>
+		</operation>
+		<operation name="exists">
+			<input message="FPDS:existsInput"/>
+			<output message="FPDS:existsOutput"/>
+		</operation>
+		<operation name="approve">
+			<input message="FPDS:approveInput"/>
+			<output message="FPDS:approveOutput"/>
+		</operation>
+		<operation name="delete">
+			<input message="FPDS:deleteInput"/>
+			<output message="FPDS:deleteOutput"/>
+		</operation>
+		<operation name="isComplete">
+			<input message="FPDS:isCompleteInput"/>
+			<output message="FPDS:isCompleteOutput"/>
+		</operation>
+		<operation name="isExistingOtherTransactionIDVComplete">
+			<input message="FPDS:isExistingOtherTransactionIDVCompleteInput"/>
+			<output message="FPDS:isExistingOtherTransactionIDVCompleteOutput"/>
+		</operation>
+		<operation name="update">
+			<input message="FPDS:updateInput"/>
+			<output message="FPDS:updateOutput"/>
+		</operation>
+		<operation name="correct">
+			<input message="FPDS:correctInput"/>
+			<output message="FPDS:correctOutput"/>
+		</operation>
+		<operation name="voidContract">
+			<input message="FPDS:voidContractInput"/>
+			<output message="FPDS:voidContractOutput"/>
+		</operation>
+		<operation name="getVersion">
+			<input message="FPDS:getVersionInput"/>
+			<output message="FPDS:getVersionOutput"/>
+		</operation>
+		<operation name="transfer">
+			<input message="FPDS:transferInput"/>
+			<output message="FPDS:transferOutput"/>
+		</operation>
+		<operation name="changePIID">
+			<input message="FPDS:changePIIDInput"/>
+			<output message="FPDS:changePIIDOutput"/>
+		</operation>
+	</portType>
+	<binding name="OtherTransactionIDVBinding" type="FPDS:OtherTransactionIDVPortType">
+		<soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="get">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.contracts.OtherTransactionIDV"/>
+			</input>
+			<output>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.contracts.OtherTransactionIDV"/>
+			</output>
+		</operation>
+		<operation name="getList">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.contracts.OtherTransactionIDV"/>
+			</input>
+			<output>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.contracts.OtherTransactionIDV"/>
+			</output>
+		</operation>
+		<operation name="create">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.contracts.OtherTransactionIDV"/>
+			</input>
+			<output>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.contracts.OtherTransactionIDV"/>
+			</output>
+		</operation>
+		<operation name="exists">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.contracts.OtherTransactionIDV"/>
+			</input>
+			<output>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.contracts.OtherTransactionIDV"/>
+			</output>
+		</operation>
+		<operation name="approve">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.contracts.OtherTransactionIDV"/>
+			</input>
+			<output>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.contracts.OtherTransactionIDV"/>
+			</output>
+		</operation>
+		<operation name="delete">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.contracts.OtherTransactionIDV"/>
+			</input>
+			<output>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.contracts.OtherTransactionIDV"/>
+			</output>
+		</operation>
+		<operation name="isComplete">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.contracts.OtherTransactionIDV"/>
+			</input>
+			<output>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.contracts.OtherTransactionIDV"/>
+			</output>
+		</operation>
+		<operation name="isExistingOtherTransactionIDVComplete">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.contracts.OtherTransactionIDV"/>
+			</input>
+			<output>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.contracts.OtherTransactionIDV"/>
+			</output>
+		</operation>
+		<operation name="update">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.contracts.OtherTransactionIDV"/>
+			</input>
+			<output>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.contracts.OtherTransactionIDV"/>
+			</output>
+		</operation>
+		<operation name="correct">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.contracts.OtherTransactionIDV"/>
+			</input>
+			<output>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.contracts.OtherTransactionIDV"/>
+			</output>
+		</operation>
+		<operation name="voidContract">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.contracts.OtherTransactionIDV"/>
+			</input>
+			<output>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.contracts.OtherTransactionIDV"/>
+			</output>
+		</operation>
+		<operation name="getVersion">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.contracts.OtherTransactionIDV"/>
+			</input>
+			<output>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.contracts.OtherTransactionIDV"/>
+			</output>
+		</operation>
+		<operation name="transfer">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.contracts.OtherTransactionIDV"/>
+			</input>
+			<output>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.contracts.OtherTransactionIDV"/>
+			</output>
+		</operation>
+		<operation name="changePIID">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.contracts.OtherTransactionIDV"/>
+			</input>
+			<output>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.contracts.OtherTransactionIDV"/>
+			</output>
+		</operation>
+	</binding>
+	<service name="OtherTransactionIDV">
+		<port name="OtherTransactionIDVPort" binding="FPDS:OtherTransactionIDVBinding">
+			<soap:address location="https://www.fpds.gov/FPDS/BusinessServices/DataCollection/contracts/1.5/OtherTransactionIDV"/>
+		</port>
+	</service>
+</definitions>

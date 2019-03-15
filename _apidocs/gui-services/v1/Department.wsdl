@@ -1,0 +1,80 @@
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:FPDS="http://www.fpdsng.com/FPDS" targetNamespace="http://www.fpdsng.com/FPDS" name="Department">
+	<documentation>WSDL for the Department GUI web services</documentation>
+	<types>
+		<schema elementFormDefault="qualified" version="1.0" targetNamespace="http://www.fpdsng.com/FPDS" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:FPDS="http://www.fpdsng.com/FPDS">
+			<include schemaLocation="http://www.fpdsng.com/FPDS/schema/SystemServices/1.0/Service.xsd"/>
+			<include schemaLocation="http://www.fpdsng.com/FPDS/schema/DataCollection/organizations/1.0/Department.xsd"/>
+			<include schemaLocation="http://www.fpdsng.com/FPDS/schema/common/1.0/Common.xsd"/>
+			<include schemaLocation="http://www.fpdsng.com/FPDS/schema/SystemAdministration/users/1.0/User.xsd"/>
+
+			<complexType name="getNewDepartmentURLResponseType">
+				<complexContent>
+					<extension base="FPDS:responseType">
+						<sequence>
+							<element name="departmentURL" type="FPDS:urlType" nillable="true" minOccurs="0"/>
+						</sequence>
+					</extension>
+				</complexContent>
+			</complexType>
+			<complexType name="getExistingDepartmentURLResponseType">
+				<complexContent>
+					<extension base="FPDS:responseType">
+						<sequence>
+							<element name="departmentURL" type="FPDS:urlType" nillable="true" minOccurs="0"/>
+						</sequence>
+					</extension>
+				</complexContent>
+			</complexType>
+		</schema>
+	</types>
+	<message name="getNewDepartmentURLInput">
+		<part name="authenticationKey" type="FPDS:userAuthenticationKeyType"/>
+		<part name="department" type="FPDS:departmentType"/>
+	</message>
+	<message name="getExistingDepartmentURLInput">
+		<part name="authenticationKey" type="FPDS:userAuthenticationKeyType"/>
+		<part name="departmentID" type="FPDS:departmentIDType"/>
+	</message>
+	<message name="getNewDepartmentURLOutput">
+		<part name="departmentURL" type="FPDS:getNewDepartmentURLResponseType"/>
+	</message>
+	<message name="getExistingDepartmentURLOutput">
+		<part name="departmentURL" type="FPDS:getExistingDepartmentURLResponseType"/>
+	</message>
+	<portType name="DepartmentPortType">
+		<operation name="getNewDepartmentURL">
+			<input message="FPDS:getNewDepartmentURLInput"/>
+			<output message="FPDS:getNewDepartmentURLOutput"/>
+		</operation>
+		<operation name="getExistingDepartmentURL">
+			<input message="FPDS:getExistingDepartmentURLInput"/>
+			<output message="FPDS:getExistingDepartmentURLOutput"/>
+		</operation>
+	</portType>
+	<binding name="DepartmentBinding" type="FPDS:DepartmentPortType">
+		<soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="getNewDepartmentURL">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.contracts.Department"/>
+			</input>
+			<output>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.contracts.Department"/>
+			</output>
+		</operation>
+		<operation name="getExistingDepartmentURL">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.contracts.Department"/>
+			</input>
+			<output>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.contracts.Department"/>
+			</output>
+		</operation>
+	</binding>
+	<service name="Department">
+		<port name="DepartmentPort" binding="FPDS:DepartmentBinding">
+			<soap:address location="https://www.fpds.gov/FPDS/GUIServices/DataCollection/organizations/1.0/Department"/>
+		</port>
+	</service>
+</definitions>

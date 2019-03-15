@@ -1,0 +1,438 @@
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:FPDS="https://www.fpds.gov/FPDS" targetNamespace="https://www.fpds.gov/FPDS" name="OtherTransactionAward">
+	<types>
+		<schema elementFormDefault="qualified" targetNamespace="https://www.fpds.gov/FPDS" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:FPDS="https://www.fpds.gov/FPDS">
+			<include schemaLocation="https://www.fpds.gov/FPDS/schema/SystemServices/1.2/Service.xsd"/>
+			<include schemaLocation="https://www.fpds.gov/FPDS/schema/DataCollection/contracts/1.5/OtherTransactionAward.xsd"/>
+			<include schemaLocation="https://www.fpds.gov/FPDS/schema/SystemAdministration/users/1.5/User.xsd"/>
+			<complexType name="createOtherTransactionAwardResponseType">
+				<complexContent>
+					<extension base="FPDS:responseType">
+						<sequence>
+							<element name="OtherTransactionAward" type="FPDS:OtherTransactionAwardType" nillable="true" minOccurs="0"/>
+						</sequence>
+					</extension>
+				</complexContent>
+			</complexType>
+			<complexType name="updateOtherTransactionAwardResponseType">
+				<complexContent>
+					<extension base="FPDS:responseType">
+						<sequence>
+							<element name="OtherTransactionAward" type="FPDS:OtherTransactionAwardType" nillable="true" minOccurs="0"/>
+						</sequence>
+					</extension>
+				</complexContent>
+			</complexType>
+			<complexType name="getOtherTransactionAwardResponseType">
+				<complexContent>
+					<extension base="FPDS:responseType">
+						<sequence>
+							<element name="OtherTransactionAward" type="FPDS:OtherTransactionAwardType" nillable="true" minOccurs="0"/>
+						</sequence>
+					</extension>
+				</complexContent>
+			</complexType>
+			<complexType name="approveOtherTransactionAwardResponseType">
+				<complexContent>
+					<extension base="FPDS:responseType">
+						<sequence>
+							<element name="isApproved" type="boolean" nillable="true" minOccurs="0"/>
+						</sequence>
+					</extension>
+				</complexContent>
+			</complexType>
+			<complexType name="deleteOtherTransactionAwardResponseType">
+				<complexContent>
+					<extension base="FPDS:responseType">
+						<sequence>
+							<element name="isDeleted" type="boolean" nillable="true" minOccurs="0"/>
+						</sequence>
+					</extension>
+				</complexContent>
+			</complexType>
+			<complexType name="existsOtherTransactionAwardResponseType">
+				<complexContent>
+					<extension base="FPDS:responseType">
+						<sequence>
+							<element name="isExists" type="boolean" nillable="true" minOccurs="0"/>
+						</sequence>
+					</extension>
+				</complexContent>
+			</complexType>
+			<complexType name="isCompleteOtherTransactionAwardResponseType">
+				<complexContent>
+					<extension base="FPDS:responseType">
+						<sequence>
+							<element name="isCompleted" type="boolean" nillable="true" minOccurs="0"/>
+						</sequence>
+					</extension>
+				</complexContent>
+			</complexType>
+			<complexType name="isExistingOtherTransactionAwardCompleteResponseType">
+				<complexContent>
+					<extension base="FPDS:responseType">
+						<sequence>
+							<element name="isCompleted" type="boolean" nillable="true" minOccurs="0"/>
+						</sequence>
+					</extension>
+				</complexContent>
+			</complexType>
+			<complexType name="getListOtherTransactionAwardResponseType">
+				<complexContent>
+					<extension base="FPDS:responseType">
+						<sequence>
+							<element name="listOfOtherTransactionAwardSummaries" type="FPDS:listOfOtherTransactionAwardSummariesType" nillable="true" minOccurs="0"/>
+						</sequence>
+					</extension>
+				</complexContent>
+			</complexType>
+			<complexType name="correctOtherTransactionAwardResponseType">
+				<complexContent>
+					<extension base="FPDS:responseType">
+						<sequence>
+							<element name="OtherTransactionAward" type="FPDS:OtherTransactionAwardType" nillable="true" minOccurs="0"/>
+						</sequence>
+					</extension>
+				</complexContent>
+			</complexType>
+			<complexType name="voidContractOtherTransactionAwardResponseType">
+				<complexContent>
+					<extension base="FPDS:responseType">
+						<sequence>
+							<element name="OtherTransactionAward" type="FPDS:OtherTransactionAwardType" nillable="true" minOccurs="0"/>
+						</sequence>
+					</extension>
+				</complexContent>
+			</complexType>
+			<complexType name="getVersionOtherTransactionAwardResponseType">
+				<complexContent>
+					<extension base="FPDS:responseType">
+						<sequence>
+							<element name="versionNumber" type="string" nillable="true" minOccurs="0"/>
+						</sequence>
+					</extension>
+				</complexContent>
+			</complexType>
+			<complexType name="transferOtherTransactionAwardRequestType">
+				<sequence>
+					<element name="fromOtherTransactionAwardID" type="FPDS:OtherTransactionAwardIDType"/>
+					<element name="toOtherTransactionAwardID" type="FPDS:OtherTransactionAwardIDType"/>
+				</sequence>
+			</complexType>
+			<complexType name="changePIIDOtherTransactionAwardRequestType">
+				<sequence>
+					<element name="fromOtherTransactionAwardID" type="FPDS:OtherTransactionAwardIDType"/>
+					<element name="toOtherTransactionAwardID" type="FPDS:OtherTransactionAwardIDType"/>
+					<element name="reasonForChange" type="FPDS:shortDescriptionType"/>
+				</sequence>
+			</complexType>
+			<complexType name="transferOtherTransactionAwardResponseType">
+				<complexContent>
+					<extension base="FPDS:responseType">
+						<sequence>
+							<element name="OtherTransactionAward" type="FPDS:OtherTransactionAwardType" nillable="true" minOccurs="0"/>
+						</sequence>
+					</extension>
+				</complexContent>
+			</complexType>
+			<complexType name="changePIIDOtherTransactionAwardResponseType">
+				<complexContent>
+					<extension base="FPDS:responseType">
+						<sequence>
+							<element name="OtherTransactionAward" type="FPDS:OtherTransactionAwardType" nillable="true" minOccurs="0"/>
+						</sequence>
+					</extension>
+				</complexContent>
+			</complexType>
+		</schema>
+	</types>
+	<message name="createInput">
+		<part name="authenticationKey" type="FPDS:userAuthenticationKeyType"/>
+		<part name="OtherTransactionAward" type="FPDS:OtherTransactionAwardType"/>
+	</message>
+	<message name="updateInput">
+		<part name="authenticationKey" type="FPDS:userAuthenticationKeyType"/>
+		<part name="OtherTransactionAward" type="FPDS:OtherTransactionAwardType"/>
+	</message>
+	<message name="existsInput">
+		<part name="authenticationKey" type="FPDS:userAuthenticationKeyType"/>
+		<part name="OtherTransactionAwardID" type="FPDS:OtherTransactionAwardIDType"/>
+	</message>
+	<message name="getListInput">
+		<part name="authenticationKey" type="FPDS:userAuthenticationKeyType"/>
+		<part name="OtherTransactionAwardSearchCriteria" type="FPDS:OtherTransactionAwardSearchCriteriaType"/>
+	</message>
+	<message name="getInput">
+		<part name="authenticationKey" type="FPDS:userAuthenticationKeyType"/>
+		<part name="OtherTransactionAwardID" type="FPDS:OtherTransactionAwardIDType"/>
+	</message>
+	<message name="isCompleteInput">
+		<part name="authenticationKey" type="FPDS:userAuthenticationKeyType"/>
+		<part name="OtherTransactionAward" type="FPDS:OtherTransactionAwardType"/>
+	</message>
+	<message name="isExistingOtherTransactionAwardCompleteInput">
+		<part name="authenticationKey" type="FPDS:userAuthenticationKeyType"/>
+		<part name="OtherTransactionAwardID" type="FPDS:OtherTransactionAwardIDType"/>
+	</message>
+	<message name="deleteInput">
+		<part name="authenticationKey" type="FPDS:userAuthenticationKeyType"/>
+		<part name="OtherTransactionAwardID" type="FPDS:OtherTransactionAwardIDType"/>
+	</message>
+	<message name="correctInput">
+		<part name="authenticationKey" type="FPDS:userAuthenticationKeyType"/>
+		<part name="OtherTransactionAward" type="FPDS:OtherTransactionAwardType"/>
+	</message>
+	<message name="approveInput">
+		<part name="authenticationKey" type="FPDS:userAuthenticationKeyType"/>
+		<part name="OtherTransactionAwardID" type="FPDS:OtherTransactionAwardIDType"/>
+	</message>
+	<message name="voidContractInput">
+		<part name="authenticationKey" type="FPDS:userAuthenticationKeyType"/>
+		<part name="OtherTransactionAward" type="FPDS:OtherTransactionAwardType"/>
+	</message>
+	<message name="getVersionInput">
+		<part name="authenticationKey" type="FPDS:userAuthenticationKeyType"/>
+		<part name="OtherTransactionAwardID" type="FPDS:OtherTransactionAwardIDType"/>
+	</message>
+	<message name="createOutput">
+		<part name="createOtherTransactionAwardResponse" type="FPDS:createOtherTransactionAwardResponseType"/>
+	</message>
+	<message name="updateOutput">
+		<part name="updateOtherTransactionAwardResponse" type="FPDS:updateOtherTransactionAwardResponseType"/>
+	</message>
+	<message name="existsOutput">
+		<part name="existsOtherTransactionAwardResponse" type="FPDS:existsOtherTransactionAwardResponseType"/>
+	</message>
+	<message name="getListOutput">
+		<part name="getListOtherTransactionAwardResponse" type="FPDS:getListOtherTransactionAwardResponseType"/>
+	</message>
+	<message name="getOutput">
+		<part name="getOtherTransactionAwardResponse" type="FPDS:getOtherTransactionAwardResponseType"/>
+	</message>
+	<message name="isCompleteOutput">
+		<part name="isCompleteOtherTransactionAwardResponse" type="FPDS:isCompleteOtherTransactionAwardResponseType"/>
+	</message>
+	<message name="isExistingOtherTransactionAwardCompleteOutput">
+		<part name="isExistingOtherTransactionAwardCompleteResponse" type="FPDS:isExistingOtherTransactionAwardCompleteResponseType"/>
+	</message>
+	<message name="deleteOutput">
+		<part name="deleteOtherTransactionAwardResponse" type="FPDS:deleteOtherTransactionAwardResponseType"/>
+	</message>
+	<message name="correctOutput">
+		<part name="correctOtherTransactionAwardResponse" type="FPDS:correctOtherTransactionAwardResponseType"/>
+	</message>
+	<message name="approveOutput">
+		<part name="approveOtherTransactionAwardResponse" type="FPDS:approveOtherTransactionAwardResponseType"/>
+	</message>
+	<message name="voidContractOutput">
+		<part name="voidContractOtherTransactionAwardResponse" type="FPDS:voidContractOtherTransactionAwardResponseType"/>
+	</message>
+	<message name="getVersionOutput">
+		<part name="getVersionOtherTransactionAwardResponse" type="FPDS:getVersionOtherTransactionAwardResponseType"/>
+	</message>
+	<message name="transferInput">
+		<part name="authenticationKey" type="FPDS:userAuthenticationKeyType"/>
+		<part name="transferOtherTransactionAwardRequest" type="FPDS:transferOtherTransactionAwardRequestType"/>
+	</message>
+	<message name="transferOutput">
+		<part name="transferOtherTransactionAwardResponse" type="FPDS:transferOtherTransactionAwardResponseType"/>
+	</message>
+	<message name="changePIIDInput">
+		<part name="authenticationKey" type="FPDS:userAuthenticationKeyType"/>
+		<part name="changePIIDOtherTransactionAwardRequest" type="FPDS:changePIIDOtherTransactionAwardRequestType"/>
+	</message>
+	<message name="changePIIDOutput">
+		<part name="changePIIDOtherTransactionAwardResponse" type="FPDS:changePIIDOtherTransactionAwardResponseType"/>
+	</message>
+	<portType name="OtherTransactionAwardPortType">
+		<operation name="get">
+			<input message="FPDS:getInput"/>
+			<output message="FPDS:getOutput"/>
+		</operation>
+		<operation name="getList">
+			<input message="FPDS:getListInput"/>
+			<output message="FPDS:getListOutput"/>
+		</operation>
+		<operation name="create">
+			<input message="FPDS:createInput"/>
+			<output message="FPDS:createOutput"/>
+		</operation>
+		<operation name="exists">
+			<input message="FPDS:existsInput"/>
+			<output message="FPDS:existsOutput"/>
+		</operation>
+		<operation name="approve">
+			<input message="FPDS:approveInput"/>
+			<output message="FPDS:approveOutput"/>
+		</operation>
+		<operation name="delete">
+			<input message="FPDS:deleteInput"/>
+			<output message="FPDS:deleteOutput"/>
+		</operation>
+		<operation name="isComplete">
+			<input message="FPDS:isCompleteInput"/>
+			<output message="FPDS:isCompleteOutput"/>
+		</operation>
+		<operation name="isExistingOtherTransactionAwardComplete">
+			<input message="FPDS:isExistingOtherTransactionAwardCompleteInput"/>
+			<output message="FPDS:isExistingOtherTransactionAwardCompleteOutput"/>
+		</operation>
+		<operation name="update">
+			<input message="FPDS:updateInput"/>
+			<output message="FPDS:updateOutput"/>
+		</operation>
+		<operation name="correct">
+			<input message="FPDS:correctInput"/>
+			<output message="FPDS:correctOutput"/>
+		</operation>
+		<operation name="voidContract">
+			<input message="FPDS:voidContractInput"/>
+			<output message="FPDS:voidContractOutput"/>
+		</operation>
+		<operation name="getVersion">
+			<input message="FPDS:getVersionInput"/>
+			<output message="FPDS:getVersionOutput"/>
+		</operation>
+		<operation name="transfer">
+			<input message="FPDS:transferInput"/>
+			<output message="FPDS:transferOutput"/>
+		</operation>
+		<operation name="changePIID">
+			<input message="FPDS:changePIIDInput"/>
+			<output message="FPDS:changePIIDOutput"/>
+		</operation>
+	</portType>
+	<binding name="OtherTransactionAwardBinding" type="FPDS:OtherTransactionAwardPortType">
+		<soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="getList">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.contracts.OtherTransactionAward"/>
+			</input>
+			<output>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.contracts.OtherTransactionAward"/>
+			</output>
+		</operation>
+		<operation name="create">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.contracts.OtherTransactionAward"/>
+			</input>
+			<output>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.contracts.OtherTransactionAward"/>
+			</output>
+		</operation>
+		<operation name="exists">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.contracts.OtherTransactionAward"/>
+			</input>
+			<output>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.contracts.OtherTransactionAward"/>
+			</output>
+		</operation>
+		<operation name="approve">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.contracts.OtherTransactionAward"/>
+			</input>
+			<output>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.contracts.OtherTransactionAward"/>
+			</output>
+		</operation>
+		<operation name="delete">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.contracts.OtherTransactionAward"/>
+			</input>
+			<output>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.contracts.OtherTransactionAward"/>
+			</output>
+		</operation>
+		<operation name="isComplete">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.contracts.OtherTransactionAward"/>
+			</input>
+			<output>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.contracts.OtherTransactionAward"/>
+			</output>
+		</operation>
+		<operation name="isExistingOtherTransactionAwardComplete">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.contracts.OtherTransactionAward"/>
+			</input>
+			<output>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.contracts.OtherTransactionAward"/>
+			</output>
+		</operation>
+		<operation name="update">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.contracts.OtherTransactionAward"/>
+			</input>
+			<output>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.contracts.OtherTransactionAward"/>
+			</output>
+		</operation>
+		<operation name="correct">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.contracts.OtherTransactionAward"/>
+			</input>
+			<output>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.contracts.OtherTransactionAward"/>
+			</output>
+		</operation>
+		<operation name="get">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.contracts.OtherTransactionAward"/>
+			</input>
+			<output>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.contracts.OtherTransactionAward"/>
+			</output>
+		</operation>
+		<operation name="voidContract">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.contracts.OtherTransactionAward"/>
+			</input>
+			<output>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.contracts.OtherTransactionAward"/>
+			</output>
+		</operation>
+		<operation name="getVersion">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.contracts.OtherTransactionAward"/>
+			</input>
+			<output>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.contracts.OtherTransactionAward"/>
+			</output>
+		</operation>
+		<operation name="transfer">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.contracts.OtherTransactionAward"/>
+			</input>
+			<output>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.contracts.OtherTransactionAward"/>
+			</output>
+		</operation>
+		<operation name="changePIID">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.contracts.OtherTransactionAward"/>
+			</input>
+			<output>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.contracts.OtherTransactionAward"/>
+			</output>
+		</operation>
+	</binding>
+	<service name="OtherTransactionAward">
+		<port name="OtherTransactionAwardPort" binding="FPDS:OtherTransactionAwardBinding">
+			<soap:address location="https://www.fpds.gov/FPDS/BusinessServices/DataCollection/contracts/1.5/OtherTransactionAward"/>
+		</port>
+	</service>
+</definitions>

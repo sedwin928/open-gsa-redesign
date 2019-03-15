@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:FPDS="https://www.fpds.gov/FPDS" targetNamespace="https://www.fpds.gov/FPDS" name="ContractSummary">
+	<types>
+		<schema elementFormDefault="qualified" targetNamespace="https://www.fpds.gov/FPDS" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:FPDS="https://www.fpds.gov/FPDS">
+			<include schemaLocation="https://www.fpds.gov/FPDS/schema/SystemServices/1.2/Service.xsd"/>
+			<include schemaLocation="https://www.fpds.gov/FPDS/schema/SystemAdministration/users/1.3/User.xsd"/>
+			<include schemaLocation="https://www.fpds.gov/FPDS/schema/DataCollection/contracts/1.5/ContractSummary.xsd"/>
+			<complexType name="getListContractSummaryResponseType">
+				<complexContent>
+					<extension base="FPDS:responseType">
+						<sequence>
+							<element name="listOfContractSummariesData" type="FPDS:listOfContractSummariesDataType" nillable="true" minOccurs="0"/>
+						</sequence>
+					</extension>
+				</complexContent>
+			</complexType>
+			<complexType name="getListWithHistoryContractSummaryResponseType">
+				<complexContent>
+					<extension base="FPDS:responseType">
+						<sequence>
+							<element name="listOfContractSummariesWithHistory" type="FPDS:listOfContractSummariesWithHistoryType" nillable="true" minOccurs="0"/>
+						</sequence>
+					</extension>
+				</complexContent>
+			</complexType>
+		</schema>
+	</types>
+	<message name="getListInput">
+		<part name="authenticationKey" type="FPDS:userAuthenticationKeyType"/>
+		<part name="contractSummaryDataSearchCriteria" type="FPDS:contractSummaryDataSearchCriteriaType"/>
+	</message>
+	<message name="getListOutput">
+		<part name="getListContractSummaryResponse" type="FPDS:getListContractSummaryResponseType"/>
+	</message>
+	<message name="getListWithHistoryInput">
+		<part name="authenticationKey" type="FPDS:userAuthenticationKeyType"/>
+		<part name="contractSummaryWithHistorySearchCriteria" type="FPDS:contractSummaryWithHistorySearchCriteriaType"/>
+	</message>
+	<message name="getListWithHistoryOutput">
+		<part name="getListWithHistoryContractSummaryResponse" type="FPDS:getListWithHistoryContractSummaryResponseType"/>
+	</message>
+	<portType name="contractSummaryPortType">
+		<operation name="getList">
+			<input message="FPDS:getListInput"/>
+			<output message="FPDS:getListOutput"/>
+		</operation>
+		<operation name="getListWithHistory">
+			<input message="FPDS:getListWithHistoryInput"/>
+			<output message="FPDS:getListWithHistoryOutput"/>
+		</operation>
+	</portType>
+	<binding name="contractSummaryBinding" type="FPDS:contractSummaryPortType">
+		<soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="getList">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.contracts.ContractSummary"/>
+			</input>
+			<output>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.contracts.ContractSummary"/>
+			</output>
+		</operation>
+		<operation name="getListWithHistory">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.contracts.ContractSummary"/>
+			</input>
+			<output>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.contracts.ContractSummary"/>
+			</output>
+		</operation>
+	</binding>
+	<service name="ContractSummary">
+		<port name="contractSummaryPort" binding="FPDS:contractSummaryBinding">
+			<soap:address location="https://www.fpds.gov/FPDS/BusinessServices/DataCollection/contracts/1.5/ContractSummary"/>
+		</port>
+	</service>
+</definitions>

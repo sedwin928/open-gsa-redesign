@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:FPDS="https://www.fpds.gov/FPDS" targetNamespace="https://www.fpds.gov/FPDS" name="Award">
+	<types>
+		<schema elementFormDefault="qualified" targetNamespace="https://www.fpds.gov/FPDS" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:FPDS="https://www.fpds.gov/FPDS">
+			<include schemaLocation="https://www.fpds.gov/FPDS/schema/SystemServices/1.2/Service.xsd"/>
+			<include schemaLocation="https://www.fpds.gov/FPDS/schema/DataCollection/contracts/1.5/Award.xsd"/>
+			<include schemaLocation="https://www.fpds.gov/FPDS/schema/SystemAdministration/users/1.5/User.xsd"/>
+			<include schemaLocation="https://www.fpds.gov/FPDS/schema/common/1.4/Template.xsd"/>
+			<complexType name="getNewAwardURLResponseType">
+				<complexContent>
+					<extension base="FPDS:responseType">
+						<sequence>
+							<element name="awardURL" type="FPDS:urlType" nillable="true" minOccurs="0"/>
+						</sequence>
+					</extension>
+				</complexContent>
+			</complexType>
+			<complexType name="getExistingAwardURLResponseType">
+				<complexContent>
+					<extension base="FPDS:responseType">
+						<sequence>
+							<element name="awardURL" type="FPDS:urlType" nillable="true" minOccurs="0"/>
+						</sequence>
+					</extension>
+				</complexContent>
+			</complexType>
+			<complexType name="getNewAwardURLFromTemplateRequestType">
+				<sequence>
+					<element name="templateName" type="FPDS:templateNameType"/>
+					<element name="award" type="FPDS:awardType"/>
+				</sequence>
+			</complexType>
+			<complexType name="getNewAwardURLFromTemplateResponseType">
+				<complexContent>
+					<extension base="FPDS:responseType">
+						<sequence>
+							<element name="awardURL" type="FPDS:urlType" nillable="true" minOccurs="0"/>
+						</sequence>
+					</extension>
+				</complexContent>
+			</complexType>
+		</schema>
+	</types>
+	<message name="getNewAwardURLInput">
+		<part name="authenticationKey" type="FPDS:userAuthenticationKeyType"/>
+		<part name="award" type="FPDS:awardType"/>
+	</message>
+	<message name="getExistingAwardURLInput">
+		<part name="authenticationKey" type="FPDS:userAuthenticationKeyType"/>
+		<part name="awardID" type="FPDS:awardIDType"/>
+	</message>
+	<message name="getNewAwardURLOutput">
+		<part name="getNewAwardURLResponse" type="FPDS:getNewAwardURLResponseType"/>
+	</message>
+	<message name="getExistingAwardURLOutput">
+		<part name="getExistingAwardURLResponse" type="FPDS:getExistingAwardURLResponseType"/>
+	</message>
+	<message name="getNewAwardURLFromTemplateInput">
+		<part name="authenticationKey" type="FPDS:userAuthenticationKeyType"/>
+		<part name="getNewAwardURLFromTemplateRequest" type="FPDS:getNewAwardURLFromTemplateRequestType"/>
+	</message>
+	<message name="getNewAwardURLFromTemplateOutput">
+		<part name="getNewAwardURLFromTemplateResponse" type="FPDS:getNewAwardURLFromTemplateResponseType"/>
+	</message>
+	<portType name="AwardPortType">
+		<operation name="getNewAwardURL">
+			<input message="FPDS:getNewAwardURLInput"/>
+			<output message="FPDS:getNewAwardURLOutput"/>
+		</operation>
+		<operation name="getNewAwardURLFromTemplate">
+			<input message="FPDS:getNewAwardURLFromTemplateInput"/>
+			<output message="FPDS:getNewAwardURLFromTemplateOutput"/>
+		</operation>
+		<operation name="getExistingAwardURL">
+			<input message="FPDS:getExistingAwardURLInput"/>
+			<output message="FPDS:getExistingAwardURLOutput"/>
+		</operation>
+	</portType>
+	<binding name="AwardBinding" type="FPDS:AwardPortType">
+		<soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="getNewAwardURL">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.GUIServices.DataCollection.contracts.Award"/>
+			</input>
+			<output>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.GUIServices.DataCollection.contracts.Award"/>
+			</output>
+		</operation>
+		<operation name="getNewAwardURLFromTemplate">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.GUIServices.DataCollection.contracts.Award"/>
+			</input>
+			<output>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.GUIServices.DataCollection.contracts.Award"/>
+			</output>
+		</operation>
+		<operation name="getExistingAwardURL">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.GUIServices.DataCollection.contracts.Award"/>
+			</input>
+			<output>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.GUIServices.DataCollection.contracts.Award"/>
+			</output>
+		</operation>
+	</binding>
+	<service name="Award">
+		<port name="AwardPort" binding="FPDS:AwardBinding">
+			<soap:address location="https://www.fpds.gov/FPDS/GUIServices/DataCollection/contracts/1.5/Award"/>
+		</port>
+	</service>
+</definitions>

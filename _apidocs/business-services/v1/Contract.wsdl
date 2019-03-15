@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:FPDS="https://www.fpds.gov/FPDS" targetNamespace="https://www.fpds.gov/FPDS" name="Contract">
+	<types>
+		<schema elementFormDefault="qualified" version="1.0" targetNamespace="https://www.fpds.gov/FPDS" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:FPDS="https://www.fpds.gov/FPDS">
+			<include schemaLocation="https://www.fpds.gov/FPDS/schema/SystemServices/1.2/Service.xsd"/>
+			<include schemaLocation="https://www.fpds.gov/FPDS/schema/DataCollection/contracts/1.5/Award.xsd"/>
+			<include schemaLocation="https://www.fpds.gov/FPDS/schema/DataCollection/contracts/1.5/IDV.xsd"/>
+			<include schemaLocation="https://www.fpds.gov/FPDS/schema/SystemAdministration/users/1.5/User.xsd"/>
+			<include schemaLocation="https://www.fpds.gov/FPDS/schema/DataCollection/contracts/1.5/Contract.xsd"/>
+			<complexType name="getContractResponseType">
+				<complexContent>
+					<extension base="FPDS:responseType">
+						<sequence>
+							<choice>
+								<element name="award" type="FPDS:awardType" nillable="true" minOccurs="0"/>
+								<element name="IDV" type="FPDS:IDVType" nillable="true" minOccurs="0"/>
+							</choice>
+						</sequence>
+					</extension>
+				</complexContent>
+			</complexType>
+			<complexType name="getListContractResponseType">
+				<complexContent>
+					<extension base="FPDS:responseType">
+						<sequence>
+							<element name="listOfContractSummaries" type="FPDS:listOfContractSummariesType" nillable="true" minOccurs="0"/>
+						</sequence>
+					</extension>
+				</complexContent>
+			</complexType>
+			<complexType name="getContractElementResponseType">
+				<complexContent>
+					<extension base="FPDS:responseType">
+						<sequence>
+							<element name="elementName" type="string" nillable="true" minOccurs="0"/>
+							<element name="elementValue" type="string" nillable="true" minOccurs="0"/>
+						</sequence>
+					</extension>
+				</complexContent>
+			</complexType>
+			<complexType name="getCODeterminationOfBusinessSizeContractResponseType">
+				<complexContent>
+					<extension base="FPDS:responseType">
+						<sequence>
+							<element name="contractVendorSummary" type="FPDS:contractVendorSummaryType" nillable="true" minOccurs="0"/>
+						</sequence>
+					</extension>
+				</complexContent>
+			</complexType>
+			<complexType name="getListCODeterminationOfBusinessSizeContractResponseType">
+				<complexContent>
+					<extension base="FPDS:responseType">
+						<sequence>
+							<element name="downloadURL" type="FPDS:urlType" nillable="true" minOccurs="0"/>
+						</sequence>
+					</extension>
+				</complexContent>
+			</complexType>
+		</schema>
+	</types>
+	<message name="getListInput">
+		<part name="authenticationKey" type="FPDS:userAuthenticationKeyType"/>
+		<part name="contractSearchCriteria" type="FPDS:contractSearchCriteriaType"/>
+	</message>
+	<message name="getListOutput">
+		<part name="getListContractResponse" type="FPDS:getListContractResponseType"/>
+	</message>
+	<message name="getInput">
+		<part name="authenticationKey" type="FPDS:userAuthenticationKeyType"/>
+		<part name="contractID" type="FPDS:contractIDType"/>
+	</message>
+	<message name="getOutput">
+		<part name="getContractResponse" type="FPDS:getContractResponseType"/>
+	</message>
+	<message name="getContractElementInput">
+		<part name="authenticationKey" type="FPDS:userAuthenticationKeyType"/>
+		<part name="contractElement" type="FPDS:contractElementType"/>
+	</message>
+	<message name="getContractElementOutput">
+		<part name="getContractResponse" type="FPDS:getContractElementResponseType"/>
+	</message>
+	<message name="getCODeterminationOfBusinessSizeInput">
+		<part name="authenticationKey" type="FPDS:userAuthenticationKeyType"/>
+		<part name="CODeterminationOfBusinessSizeSearchCriteria" type="FPDS:CODeterminationOfBusinessSizeSearchCriteriaType"/>
+	</message>
+	<message name="getCODeterminationOfBusinessSizeOutput">
+		<part name="getCODeterminationOfBusinessSizeContractResponse" type="FPDS:getCODeterminationOfBusinessSizeContractResponseType"/>
+	</message>
+	<message name="getListCODeterminationOfBusinessSizeInput">
+		<part name="authenticationKey" type="FPDS:userAuthenticationKeyType"/>
+		<part name="CODeterminationOfBusinessSizeSearchCriteria" type="FPDS:CODeterminationOfBusinessSizeSearchCriteriaType"/>
+	</message>
+	<message name="getListCODeterminationOfBusinessSizeOutput">
+		<part name="getListCODeterminationOfBusinessSizeContractResponse" type="FPDS:getListCODeterminationOfBusinessSizeContractResponseType"/>
+	</message>
+	<portType name="ContractPortType">
+		<operation name="get">
+			<input message="FPDS:getInput"/>
+			<output message="FPDS:getOutput"/>
+		</operation>
+		<operation name="getList">
+			<input message="FPDS:getListInput"/>
+			<output message="FPDS:getListOutput"/>
+		</operation>
+		<operation name="getContractElement">
+			<input message="FPDS:getContractElementInput"/>
+			<output message="FPDS:getContractElementOutput"/>
+		</operation>
+		<operation name="getCODeterminationOfBusinessSize">
+			<input message="FPDS:getCODeterminationOfBusinessSizeInput"/>
+			<output message="FPDS:getCODeterminationOfBusinessSizeOutput"/>
+		</operation>
+		<operation name="getListCODeterminationOfBusinessSize">
+			<input message="FPDS:getListCODeterminationOfBusinessSizeInput"/>
+			<output message="FPDS:getListCODeterminationOfBusinessSizeOutput"/>
+		</operation>
+	</portType>
+	<binding name="ContractBinding" type="FPDS:ContractPortType">
+		<soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="getList">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.contracts.Contract"/>
+			</input>
+			<output>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.contracts.Contract"/>
+			</output>
+		</operation>
+		<operation name="get">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.contracts.Contract"/>
+			</input>
+			<output>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.contracts.Contract"/>
+			</output>
+		</operation>
+		<operation name="getContractElement">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.contracts.Contract"/>
+			</input>
+			<output>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.contracts.Contract"/>
+			</output>
+		</operation>
+		<operation name="getCODeterminationOfBusinessSize">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.contracts.Contract"/>
+			</input>
+			<output>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.contracts.Contract"/>
+			</output>
+		</operation>
+		<operation name="getListCODeterminationOfBusinessSize">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.contracts.Contract"/>
+			</input>
+			<output>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.contracts.Contract"/>
+			</output>
+		</operation>
+	</binding>
+	<service name="Contract">
+		<port name="ContractPort" binding="FPDS:ContractBinding">
+			<soap:address location="https://www.fpds.gov/FPDS/BusinessServices/DataCollection/contracts/1.5/Contract"/>
+		</port>
+	</service>
+</definitions>

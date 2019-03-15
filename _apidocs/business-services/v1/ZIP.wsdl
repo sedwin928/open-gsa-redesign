@@ -1,0 +1,166 @@
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:FPDS="http://www.fpdsng.com/FPDS" targetNamespace="http://www.fpdsng.com/FPDS" name="Award">
+	<documentation>WSDL for the ZIP web services</documentation>
+	<types>
+		<schema elementFormDefault="qualified" version="1.0" targetNamespace="http://www.fpdsng.com/FPDS" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:FPDS="http://www.fpdsng.com/FPDS">
+			<include schemaLocation="http://www.fpdsng.com/FPDS/schema/SystemServices/1.0/Service.xsd"/>
+			<include schemaLocation="http://www.fpdsng.com/FPDS/schema/DataCollection/locations/1.1/ZIP.xsd"/>
+			<include schemaLocation="http://www.fpdsng.com/FPDS/schema/SystemAdministration/users/1.0/User.xsd"/>
+
+			<complexType name="getListZIPResponseType">
+				<complexContent>
+					<extension base="FPDS:responseType">
+						<sequence>
+							<element name="listOfZIPCodes" type="FPDS:listOfZIPCodesType" nillable="true" minOccurs="0"/>
+						</sequence>
+					</extension>
+				</complexContent>
+			</complexType>
+			<complexType name="getZIPResponseType">
+				<complexContent>
+					<extension base="FPDS:responseType">
+						<sequence>
+							<element name="zip" type="FPDS:ZIPType" nillable="true" minOccurs="0"/>
+						</sequence>
+					</extension>
+				</complexContent>
+			</complexType>
+			<complexType name="createZIPResponseType">
+				<complexContent>
+					<extension base="FPDS:responseType">
+						<sequence>
+							<element name="zip" type="FPDS:ZIPType" nillable="true" minOccurs="0"/>
+						</sequence>
+					</extension>
+				</complexContent>
+			</complexType>
+			<complexType name="updateZIPResponseType">
+				<complexContent>
+					<extension base="FPDS:responseType">
+						<sequence>
+							<element name="zip" type="FPDS:ZIPType" nillable="true" minOccurs="0"/>
+						</sequence>
+					</extension>
+				</complexContent>
+			</complexType>
+			<complexType name="existsZIPResponseType">
+				<complexContent>
+					<extension base="FPDS:responseType">
+						<sequence>
+							<element name="isExists" type="boolean" nillable="true" minOccurs="0"/>
+						</sequence>
+					</extension>
+				</complexContent>
+			</complexType>
+		</schema>
+	</types>
+	<message name="getListInput">
+		<part name="authenticationKey" type="FPDS:userAuthenticationKeyType"/>
+		<part name="ZIPCodeSearchCriteria" type="FPDS:ZIPCodeSearchCriteriaType"/>
+	</message>
+	<message name="getListOutput">
+		<part name="getListZIPResponse" type="FPDS:getListZIPResponseType"/>
+	</message>
+	<message name="getInput">
+		<part name="authenticationKey" type="FPDS:userAuthenticationKeyType"/>
+		<part name="ZIP" type="FPDS:ZIPType"/>
+	</message>
+	<message name="getOutput">
+		<part name="getZIPResponse" type="FPDS:getZIPResponseType"/>
+	</message>
+	<message name="createInput">
+		<part name="authenticationKey" type="FPDS:userAuthenticationKeyType"/>
+		<part name="ZIP" type="FPDS:ZIPType"/>
+	</message>
+	<message name="createOutput">
+		<part name="createZIPResponse" type="FPDS:createZIPResponseType"/>
+	</message>
+	<message name="updateInput">
+		<part name="authenticationKey" type="FPDS:userAuthenticationKeyType"/>
+		<part name="ZIP" type="FPDS:ZIPType"/>
+	</message>
+	<message name="updateOutput">
+		<part name="updateZIPResponse" type="FPDS:updateZIPResponseType"/>
+	</message>
+	<message name="existsInput">
+		<part name="authenticationKey" type="FPDS:userAuthenticationKeyType"/>
+		<part name="ZIP" type="FPDS:ZIPType"/>
+	</message>
+	<message name="existsOutput">
+		<part name="existsZIPResponse" type="FPDS:existsZIPResponseType"/>
+	</message>
+	<portType name="ZIPPortType">
+		<operation name="getList">
+			<input message="FPDS:getListInput"/>
+			<output message="FPDS:getListOutput"/>
+		</operation>
+		<operation name="get">
+			<input message="FPDS:getInput"/>
+			<output message="FPDS:getOutput"/>
+		</operation>
+		<operation name="create">
+			<input message="FPDS:createInput"/>
+			<output message="FPDS:createOutput"/>
+		</operation>
+		<operation name="update">
+			<input message="FPDS:createInput"/>
+			<output message="FPDS:createOutput"/>
+		</operation>
+		<operation name="exists">
+			<input message="FPDS:existsInput"/>
+			<output message="FPDS:existsOutput"/>
+		</operation>
+	</portType>
+	<binding name="ZIPBinding" type="FPDS:ZIPPortType">
+		<soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="getList">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.locations.ZIP"/>
+			</input>
+			<output>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.locations.ZIP"/>
+			</output>
+		</operation>
+		<operation name="get">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.locations.ZIP"/>
+			</input>
+			<output>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.locations.ZIP"/>
+			</output>
+		</operation>
+		<operation name="create">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.locations.ZIP"/>
+			</input>
+			<output>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.locations.ZIP"/>
+			</output>
+		</operation>
+		<operation name="update">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.locations.ZIP"/>
+			</input>
+			<output>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.locations.ZIP"/>
+			</output>
+		</operation>
+		<operation name="exists">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.locations.ZIP"/>
+			</input>
+			<output>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.locations.ZIP"/>
+			</output>
+		</operation>
+	</binding>
+	<service name="ZIP">
+		<port name="ZIPPort" binding="FPDS:ZIPBinding">
+			<soap:address location="https://www.fpds.gov/FPDS/BusinessServices/DataCollection/locations/1.0/ZIP"/>
+		</port>
+	</service>
+</definitions>

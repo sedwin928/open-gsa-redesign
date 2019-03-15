@@ -1,0 +1,79 @@
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:FPDS="http://www.fpdsng.com/FPDS" targetNamespace="http://www.fpdsng.com/FPDS" name="ContractingOffice" version="1.0">
+	<import namespace="http://www.fpdsng.com/FPDS" location="http://www.fpdsng.com/FPDS/schema/SystemServices/1.0/Service.xsd"/>
+	<import namespace="http://www.fpdsng.com/FPDS" location="http://www.fpdsng.com/FPDS/schema/DataCollection/organizations/1.0/ContractingOffice.xsd"/>
+	<import namespace="http://www.fpdsng.com/FPDS" location="http://www.fpdsng.com/FPDS/schema/common/1.0/Common.xsd"/>
+	<import namespace="http://www.fpdsng.com/FPDS" location="http://www.fpdsng.com/FPDS/schema/SystemAdministration/users/1.0/User.xsd"/>
+	<types>
+		<schema elementFormDefault="qualified" version="1.0" targetNamespace="http://www.fpdsng.com/FPDS" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:FPDS="http://www.fpdsng.com/FPDS">
+			<complexType name="getNewContractingOfficeURLResponseType">
+				<complexContent>
+					<extension base="FPDS:responseType">
+						<sequence>
+							<element name="contractingOfficeURL" type="FPDS:urlType" nillable="true" minOccurs="0"/>
+						</sequence>
+					</extension>
+				</complexContent>
+			</complexType>
+			<complexType name="getExistingContractingOfficeURLResponseType">
+				<complexContent>
+					<extension base="FPDS:responseType">
+						<sequence>
+							<element name="contractingOfficeURL" type="FPDS:urlType" nillable="true" minOccurs="0"/>
+						</sequence>
+					</extension>
+				</complexContent>
+			</complexType>
+		</schema>
+	</types>
+	<message name="getNewContractingOfficeURLInput">
+		<part name="authenticationKey" type="FPDS:userAuthenticationKeyType"/>
+		<part name="contractingOffice" type="FPDS:contractingOfficeType"/>
+	</message>
+	<message name="getExistingContractingOfficeURLInput">
+		<part name="authenticationKey" type="FPDS:userAuthenticationKeyType"/>
+		<part name="contractingOfficeKey" type="FPDS:contractingOfficeKeyType"/>
+	</message>
+	<message name="getNewContractingOfficeURLOutput">
+		<part name="contractingOfficeURL" type="FPDS:getNewContractingOfficeURLResponseType"/>
+	</message>
+	<message name="getExistingContractingOfficeURLOutput">
+		<part name="contractingOfficeURL" type="FPDS:getExistingContractingOfficeURLResponseType"/>
+	</message>
+	<portType name="ContractingOfficePortType">
+		<operation name="getNewContractingOfficeURL">
+			<input message="FPDS:getNewContractingOfficeURLInput"/>
+			<output message="FPDS:getNewContractingOfficeURLOutput"/>
+		</operation>
+		<operation name="getExistingContractingOfficeURL">
+			<input message="FPDS:getExistingContractingOfficeURLInput"/>
+			<output message="FPDS:getExistingContractingOfficeURLOutput"/>
+		</operation>
+	</portType>
+	<binding name="ContractingOfficeBinding" type="FPDS:ContractingOfficePortType">
+		<soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="getNewContractingOfficeURL">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.contracts.ContractingOffice"/>
+			</input>
+			<output>
+				<soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.contracts.ContractingOffice"/>
+			</output>
+		</operation>
+		<operation name="getExistingContractingOfficeURL">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.contracts.ContractingOffice"/>
+			</input>
+			<output>
+				<soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.contracts.ContractingOffice"/>
+			</output>
+		</operation>
+	</binding>
+	<service name="ContractingOffice">
+		<port name="ContractingOfficePort" binding="FPDS:ContractingOfficeBinding">
+			<soap:address location="https://www.fpds.gov/FPDS/GUIServices/DataCollection/organizations/1.0/ContractingOffice"/>
+		</port>
+	</service>
+	<documentation>WSDL for the ContractingOffice GUI web services</documentation>
+</definitions>

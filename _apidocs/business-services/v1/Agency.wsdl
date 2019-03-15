@@ -1,0 +1,253 @@
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:FPDS="http://www.fpdsng.com/FPDS" targetNamespace="http://www.fpdsng.com/FPDS" name="Award">
+	<documentation>WSDL for the Agency web services</documentation>
+	<types>
+		<schema elementFormDefault="qualified" version="1.0" targetNamespace="http://www.fpdsng.com/FPDS" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:FPDS="http://www.fpdsng.com/FPDS">
+			<include schemaLocation="http://www.fpdsng.com/FPDS/schema/SystemServices/1.0/Service.xsd"/>
+			<include schemaLocation="http://www.fpdsng.com/FPDS/schema/DataCollection/organizations/1.0/Agency.xsd"/>
+			<include schemaLocation="http://www.fpdsng.com/FPDS/schema/SystemAdministration/users/1.0/User.xsd"/>
+
+			<complexType name="createAgencyResponseType">
+				<complexContent>
+					<extension base="FPDS:responseType">
+						<sequence>
+							<element name="agency" type="FPDS:agencyType" nillable="true" minOccurs="0"/>
+						</sequence>
+					</extension>
+				</complexContent>
+			</complexType>
+			<complexType name="updateAgencyResponseType">
+				<complexContent>
+					<extension base="FPDS:responseType">
+						<sequence>
+							<element name="agency" type="FPDS:agencyType" nillable="true" minOccurs="0"/>
+						</sequence>
+					</extension>
+				</complexContent>
+			</complexType>
+			<complexType name="getAgencyResponseType">
+				<complexContent>
+					<extension base="FPDS:responseType">
+						<sequence>
+							<element name="agency" type="FPDS:agencyType" nillable="true" minOccurs="0"/>
+						</sequence>
+					</extension>
+				</complexContent>
+			</complexType>
+			<complexType name="deleteAgencyResponseType">
+				<complexContent>
+					<extension base="FPDS:responseType">
+						<sequence>
+							<element name="isDeleted" type="boolean" nillable="true" minOccurs="0"/>
+						</sequence>
+					</extension>
+				</complexContent>
+			</complexType>
+			<complexType name="enableAgencyResponseType">
+				<complexContent>
+					<extension base="FPDS:responseType">
+						<sequence>
+							<element name="isEnabled" type="boolean" nillable="true" minOccurs="0"/>
+						</sequence>
+					</extension>
+				</complexContent>
+			</complexType>
+			<complexType name="disableAgencyResponseType">
+				<complexContent>
+					<extension base="FPDS:responseType">
+						<sequence>
+							<element name="isDisabled" type="boolean" nillable="true" minOccurs="0"/>
+						</sequence>
+					</extension>
+				</complexContent>
+			</complexType>
+			<complexType name="existsAgencyResponseType">
+				<complexContent>
+					<extension base="FPDS:responseType">
+						<sequence>
+							<element name="isExists" type="boolean" nillable="true" minOccurs="0"/>
+						</sequence>
+					</extension>
+				</complexContent>
+			</complexType>
+			<complexType name="getListAgencyResponseType">
+				<complexContent>
+					<extension base="FPDS:responseType">
+						<sequence>
+							<element name="listOfAgencies" type="FPDS:listOfAgenciesType" nillable="true" minOccurs="0"/>
+						</sequence>
+					</extension>
+				</complexContent>
+			</complexType>
+		</schema>
+	</types>
+	<message name="createInput">
+		<part name="authenticationKey" type="FPDS:userAuthenticationKeyType"/>
+		<part name="agency" type="FPDS:agencyType"/>
+	</message>
+	<message name="updateInput">
+		<part name="authenticationKey" type="FPDS:userAuthenticationKeyType"/>
+		<part name="agency" type="FPDS:agencyType"/>
+	</message>
+	<message name="getInput">
+		<part name="authenticationKey" type="FPDS:userAuthenticationKeyType"/>
+		<part name="agencyID" type="FPDS:agencyIDType"/>
+	</message>
+	<message name="getListInput">
+		<part name="authenticationKey" type="FPDS:userAuthenticationKeyType"/>
+		<part name="agencySearchCriteria" type="FPDS:agencySearchCriteriaType"/>
+	</message>
+	<message name="existsInput">
+		<part name="authenticationKey" type="FPDS:userAuthenticationKeyType"/>
+		<part name="agencyID" type="FPDS:agencyIDType"/>
+	</message>
+	<message name="deleteInput">
+		<part name="authenticationKey" type="FPDS:userAuthenticationKeyType"/>
+		<part name="agencyID" type="FPDS:agencyIDType"/>
+	</message>
+	<message name="disableInput">
+		<part name="authenticationKey" type="FPDS:userAuthenticationKeyType"/>
+		<part name="agencyID" type="FPDS:agencyIDType"/>
+	</message>
+	<message name="enableInput">
+		<part name="authenticationKey" type="FPDS:userAuthenticationKeyType"/>
+		<part name="agencyID" type="FPDS:agencyIDType"/>
+	</message>
+	<message name="createOutput">
+		<part name="createAgencyResponse" type="FPDS:createAgencyResponseType"/>
+	</message>
+	<message name="updateOutput">
+		<part name="updateAgencyResponse" type="FPDS:updateAgencyResponseType"/>
+	</message>
+	<message name="getOutput">
+		<part name="getAgencyResponse" type="FPDS:getAgencyResponseType"/>
+	</message>
+	<message name="getListOutput">
+		<part name="getListAgencyResponse" type="FPDS:getListAgencyResponseType"/>
+	</message>
+	<message name="existsOutput">
+		<part name="existsAgencyResponse" type="FPDS:existsAgencyResponseType"/>
+	</message>
+	<message name="deleteOutput">
+		<part name="deleteAgencyResponse" type="FPDS:deleteAgencyResponseType"/>
+	</message>
+	<message name="disableOutput">
+		<part name="disableAgencyResponse" type="FPDS:disableAgencyResponseType"/>
+	</message>
+	<message name="enableOutput">
+		<part name="enableAgencyResponse" type="FPDS:enableAgencyResponseType"/>
+	</message>
+	<portType name="AgencyPortType">
+		<operation name="create">
+			<input message="FPDS:createInput"/>
+			<output message="FPDS:createOutput"/>
+		</operation>
+		<operation name="update">
+			<input message="FPDS:updateInput"/>
+			<output message="FPDS:updateOutput"/>
+		</operation>
+		<operation name="get">
+			<input message="FPDS:getInput"/>
+			<output message="FPDS:getOutput"/>
+		</operation>
+		<operation name="getList">
+			<input message="FPDS:getListInput"/>
+			<output message="FPDS:getListOutput"/>
+		</operation>
+		<operation name="exists">
+			<input message="FPDS:existsInput"/>
+			<output message="FPDS:existsOutput"/>
+		</operation>
+		<operation name="delete">
+			<input message="FPDS:deleteInput"/>
+			<output message="FPDS:deleteOutput"/>
+		</operation>
+		<operation name="disable">
+			<input message="FPDS:disableInput"/>
+			<output message="FPDS:disableOutput"/>
+		</operation>
+		<operation name="enable">
+			<input message="FPDS:enableInput"/>
+			<output message="FPDS:enableOutput"/>
+		</operation>
+	</portType>
+	<binding name="AgencyBinding" type="FPDS:AgencyPortType">
+		<soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="create">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.organizations.Agency"/>
+			</input>
+			<output>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.organizations.Agency"/>
+			</output>
+		</operation>
+		<operation name="update">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.organizations.Agency"/>
+			</input>
+			<output>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.organizations.Agency"/>
+			</output>
+		</operation>
+		<operation name="get">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.organizations.Agency"/>
+			</input>
+			<output>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.organizations.Agency"/>
+			</output>
+		</operation>
+		<operation name="getList">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.organizations.Agency"/>
+			</input>
+			<output>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.organizations.Agency"/>
+			</output>
+		</operation>
+		<operation name="exists">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.organizations.Agency"/>
+			</input>
+			<output>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.organizations.Agency"/>
+			</output>
+		</operation>
+		<operation name="delete">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.organizations.Agency"/>
+			</input>
+			<output>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.organizations.Agency"/>
+			</output>
+		</operation>
+		<operation name="disable">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.organizations.Agency"/>
+			</input>
+			<output>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.organizations.Agency"/>
+			</output>
+		</operation>
+		<operation name="enable">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.organizations.Agency"/>
+			</input>
+			<output>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.organizations.Agency"/>
+			</output>
+		</operation>
+	</binding>
+	<service name="Agency">
+		<port name="AgencyPort" binding="FPDS:AgencyBinding">
+			<soap:address location="https://www.fpds.gov/FPDS/BusinessServices/DataCollection/organizations/1.0/Agency"/>
+		</port>
+	</service>
+</definitions>

@@ -1,0 +1,402 @@
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:FPDS="http://www.fpdsng.com/FPDS" targetNamespace="http://www.fpdsng.com/FPDS" name="User" version="1.2">
+	<documentation>WSDL for the User web services</documentation>
+	<types>
+		<schema elementFormDefault="qualified" version="1.0" targetNamespace="http://www.fpdsng.com/FPDS" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:FPDS="http://www.fpdsng.com/FPDS">
+			<include schemaLocation="http://www.fpdsng.com/FPDS/schema/SystemServices/1.0/Service.xsd"/>
+			<include schemaLocation="http://www.fpdsng.com/FPDS/schema/SystemAdministration/users/1.2/User.xsd"/>
+			<include schemaLocation="http://www.fpdsng.com/FPDS/schema/DataCollection/contracts/1.0/Award.xsd"/>
+
+			<complexType name="createUserResponseType">
+				<complexContent>
+					<extension base="FPDS:responseType">
+						<sequence>
+							<element name="user" type="FPDS:userType" nillable="true" minOccurs="0"/>
+						</sequence>
+					</extension>
+				</complexContent>
+			</complexType>
+			<complexType name="updateUserResponseType">
+				<complexContent>
+					<extension base="FPDS:responseType">
+						<sequence>
+							<element name="user" type="FPDS:userType" nillable="true" minOccurs="0"/>
+						</sequence>
+					</extension>
+				</complexContent>
+			</complexType>
+			<complexType name="getUserResponseType">
+				<complexContent>
+					<extension base="FPDS:responseType">
+						<sequence>
+							<element name="user" type="FPDS:userType" nillable="true" minOccurs="0"/>
+						</sequence>
+					</extension>
+				</complexContent>
+			</complexType>
+			<complexType name="getListUserResponseType">
+				<complexContent>
+					<extension base="FPDS:responseType">
+						<sequence>
+							<element name="listOfUsers" type="FPDS:listOfUsersType" nillable="true" minOccurs="0"/>
+						</sequence>
+					</extension>
+				</complexContent>
+			</complexType>
+			<complexType name="getListUserPrivilegesResponseType">
+				<complexContent>
+					<extension base="FPDS:responseType">
+						<sequence>
+							<element name="listOfUserPrivileges" type="FPDS:listOfUserPrivilegesType" nillable="true" minOccurs="0"/>
+						</sequence>
+					</extension>
+				</complexContent>
+			</complexType>
+			<complexType name="getObjectPrivilegeResponseType">
+				<complexContent>
+					<extension base="FPDS:responseType">
+						<sequence>
+							<element name="listOfUserPrivileges" type="FPDS:listOfUserPrivilegesType" nillable="true" minOccurs="0"/>
+						</sequence>
+					</extension>
+				</complexContent>
+			</complexType>
+			<complexType name="existsUserResponseType">
+				<complexContent>
+					<extension base="FPDS:responseType">
+						<sequence>
+							<element name="isExists" type="boolean" nillable="true" minOccurs="0"/>
+						</sequence>
+					</extension>
+				</complexContent>
+			</complexType>
+			<complexType name="enableUserResponseType">
+				<complexContent>
+					<extension base="FPDS:responseType">
+						<sequence>
+							<element name="isEnabled" type="boolean" nillable="true" minOccurs="0"/>
+						</sequence>
+					</extension>
+				</complexContent>
+			</complexType>
+			<complexType name="disableUserResponseType">
+				<complexContent>
+					<extension base="FPDS:responseType">
+						<sequence>
+							<element name="isDisabled" type="boolean" nillable="true" minOccurs="0"/>
+						</sequence>
+					</extension>
+				</complexContent>
+			</complexType>
+			<complexType name="authenticateUserResponseType">
+				<complexContent>
+					<extension base="FPDS:responseType">
+						<sequence>
+							<element name="isAuthenticated" type="boolean" nillable="true" minOccurs="0"/>
+						</sequence>
+					</extension>
+				</complexContent>
+			</complexType>
+			<complexType name="isAuthorizedUserResponseType">
+				<complexContent>
+					<extension base="FPDS:responseType">
+						<sequence>
+							<element name="isAuthorized" type="boolean" nillable="true" minOccurs="0"/>
+						</sequence>
+					</extension>
+				</complexContent>
+			</complexType>
+			<complexType name="getObjectPrivilegesInputType">
+				<sequence>
+					<choice>
+						<element name="awardID" type="FPDS:awardIDType" nillable="true" minOccurs="0"/>
+						<element name="IDVID" type="FPDS:contractIDType" nillable="true" minOccurs="0"/>
+					</choice>
+					<element name="objectName" type="FPDS:objectNameType"/>
+				</sequence>
+			</complexType>
+			<complexType name="isAuthorizedUserInputType">
+				<sequence>
+					<element name="objectName" type="FPDS:objectNameType"/>
+					<element name="functionName" type="FPDS:functionNameType"/>
+				</sequence>
+			</complexType>
+			<complexType name="getForgotPasswordUserInputType">
+				<sequence>
+					<element name="userID" type="FPDS:userIDType"/>
+				</sequence>
+			</complexType>
+			<complexType name="getForgotPasswordUserResponseType">
+				<complexContent>
+					<extension base="FPDS:responseType"/>
+				</complexContent>
+			</complexType>
+			<complexType name="resetPasswordUserInputType">
+				<sequence>
+					<element name="userID" type="FPDS:userIDType"/>
+					<element name="oldPassword" type="FPDS:passwordType"/>
+					<element name="newPassword" type="FPDS:passwordType"/>
+				</sequence>					
+			</complexType>
+			<complexType name="resetPasswordUserResponseType">
+				<complexContent>
+					<extension base="FPDS:responseType">
+						<sequence>
+							<element name="resetPasswordResult" type="boolean" nillable="true" minOccurs="0"/>
+						</sequence>
+					</extension>
+				</complexContent>
+			</complexType>
+		</schema>
+	</types>
+	<message name="existsInput">
+		<part name="authenticationKey" type="FPDS:userAuthenticationKeyType"/>
+		<part name="userID" type="FPDS:userIDType"/>
+	</message>
+	<message name="existsOutput">
+		<part name="existsUserResponse" type="FPDS:existsUserResponseType"/>
+	</message>
+	<message name="disableInput">
+		<part name="authenticationKey" type="FPDS:userAuthenticationKeyType"/>
+		<part name="userID" type="FPDS:userIDType"/>
+	</message>
+	<message name="disableOutput">
+		<part name="disableUserResponse" type="FPDS:disableUserResponseType"/>
+	</message>
+	<message name="createInput">
+		<part name="authenticationKey" type="FPDS:userAuthenticationKeyType"/>
+		<part name="user" type="FPDS:userType"/>
+	</message>
+	<message name="createOutput">
+		<part name="createUserResponse" type="FPDS:createUserResponseType"/>
+	</message>
+	<message name="updateInput">
+		<part name="authenticationKey" type="FPDS:userAuthenticationKeyType"/>
+		<part name="user" type="FPDS:userType"/>
+	</message>
+	<message name="updateOutput">
+		<part name="updateUserResponse" type="FPDS:updateUserResponseType"/>
+	</message>
+	<message name="getInput">
+		<part name="authenticationKey" type="FPDS:userAuthenticationKeyType"/>
+		<part name="userID" type="FPDS:userIDType"/>
+	</message>
+	<message name="getOutput">
+		<part name="getUserResponse" type="FPDS:getUserResponseType"/>
+	</message>
+	<message name="getListInput">
+		<part name="authenticationKey" type="FPDS:userAuthenticationKeyType"/>
+		<part name="userSearchCriteria" type="FPDS:userSearchCriteriaType"/>
+	</message>
+	<message name="getListOutput">
+		<part name="getListUserResponse" type="FPDS:getListUserResponseType"/>
+	</message>
+	<message name="authenticateInput">
+		<part name="authenticationKey" type="FPDS:userAuthenticationKeyType"/>
+		<part name="userID" type="FPDS:userIDType"/>
+	</message>
+	<message name="authenticateOutput">
+		<part name="authenticateUserResponse" type="FPDS:authenticateUserResponseType"/>
+	</message>
+	<message name="isAuthorizedInput">
+		<part name="authenticationKey" type="FPDS:userAuthenticationKeyType"/>
+		<part name="isAuthorizedUserInput" type="FPDS:isAuthorizedUserInputType"/>
+	</message>
+	<message name="isAuthorizedOutput">
+		<part name="isAuthorizedUserResponse" type="FPDS:isAuthorizedUserResponseType"/>
+	</message>
+	<message name="getObjectPrivilegeInput">
+		<part name="authenticationKey" type="FPDS:userAuthenticationKeyType"/>
+		<part name="getObjectPrivilegesInput" type="FPDS:getObjectPrivilegesInputType"/>
+	</message>
+	<message name="getObjectPrivilegeOutput">
+		<part name="getObjectPrivilegeResponse" type="FPDS:getObjectPrivilegeResponseType"/>
+	</message>
+	<message name="getForgotPasswordInput">
+		<part name="authenticationKey" type="FPDS:userAuthenticationKeyType"/>
+		<part name="getForgotPasswordUserInput" type="FPDS:getForgotPasswordUserInputType"/>
+	</message>
+	<message name="getForgotPasswordOutput">
+		<part name="getForgotPasswordResponse" type="FPDS:getForgotPasswordUserResponseType"/>
+	</message>
+	<!-- generate password types -->
+	<message name="resetPasswordInput">
+		<part name="authenticationKey" type="FPDS:userAuthenticationKeyType"/>
+		<part name="resetPasswordUserInput" type="FPDS:resetPasswordUserInputType"/>
+	</message>
+	<message name="resetPasswordOutput">
+		<part name="resetPasswordUserResponse" type="FPDS:resetPasswordUserResponseType"/>
+	</message>
+	<message name="enableInput">
+		<part name="authenticationKey" type="FPDS:userAuthenticationKeyType"/>
+		<part name="userID" type="FPDS:userIDType"/>
+	</message>
+	<message name="enableOutput">
+		<part name="enableUserResponse" type="FPDS:enableUserResponseType"/>
+	</message>
+	<portType name="UserPortType">
+		<operation name="disable">
+			<input message="FPDS:disableInput"/>
+			<output message="FPDS:disableOutput"/>
+		</operation>
+		<operation name="enable">
+			<input message="FPDS:enableInput"/>
+			<output message="FPDS:enableOutput"/>
+		</operation>
+		<operation name="update">
+			<input message="FPDS:updateInput"/>
+			<output message="FPDS:updateOutput"/>
+		</operation>
+		<operation name="authenticate">
+			<input message="FPDS:authenticateInput"/>
+			<output message="FPDS:authenticateOutput"/>
+		</operation>
+		<operation name="create">
+			<input message="FPDS:createInput"/>
+			<output message="FPDS:createOutput"/>
+		</operation>
+		<operation name="get">
+			<input message="FPDS:getInput"/>
+			<output message="FPDS:getOutput"/>
+		</operation>
+		<operation name="getList">
+			<input message="FPDS:getListInput"/>
+			<output message="FPDS:getListOutput"/>
+		</operation>
+		<operation name="exists">
+			<input message="FPDS:existsInput"/>
+			<output message="FPDS:existsOutput"/>
+		</operation>
+		<operation name="isAuthorized">
+			<input message="FPDS:isAuthorizedInput"/>
+			<output message="FPDS:isAuthorizedOutput"/>
+		</operation>
+		<operation name="getObjectPrivilege">
+			<input message="FPDS:getObjectPrivilegeInput"/>
+			<output message="FPDS:getObjectPrivilegeOutput"/>
+		</operation>
+		<operation name="getForgotPassword">
+			<input message="FPDS:getForgotPasswordInput"/>
+			<output message="FPDS:getForgotPasswordOutput"/>
+		</operation>
+		<operation name="resetPassword">
+			<input message="FPDS:resetPasswordInput"/>
+			<output message="FPDS:resetPasswordOutput"/>
+		</operation>
+	</portType>
+	<binding name="UserBinding" type="FPDS:UserPortType">
+		<soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="create">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.SystemAdministration.User"/>
+			</input>
+			<output>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.SystemAdministration.User"/>
+			</output>
+		</operation>
+		<operation name="update">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.SystemAdministration.User"/>
+			</input>
+			<output>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.SystemAdministration.User"/>
+			</output>
+		</operation>
+		<operation name="authenticate">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.SystemAdministration.User"/>
+			</input>
+			<output>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.SystemAdministration.User"/>
+			</output>
+		</operation>
+		<operation name="enable">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.SystemAdministration.User"/>
+			</input>
+			<output>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.SystemAdministration.User"/>
+			</output>
+		</operation>
+		<operation name="disable">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.SystemAdministration.User"/>
+			</input>
+			<output>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.SystemAdministration.User"/>
+			</output>
+		</operation>
+		<operation name="get">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.SystemAdministration.User"/>
+			</input>
+			<output>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.SystemAdministration.User"/>
+			</output>
+		</operation>
+		<operation name="getList">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.SystemAdministration.User"/>
+			</input>
+			<output>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.SystemAdministration.User"/>
+			</output>
+		</operation>
+		<operation name="exists">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.SystemAdministration.User"/>
+			</input>
+			<output>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.SystemAdministration.User"/>
+			</output>
+		</operation>
+		<operation name="isAuthorized">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.SystemAdministration.User"/>
+			</input>
+			<output>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.SystemAdministration.User"/>
+			</output>
+		</operation>
+		<operation name="getObjectPrivilege">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.SystemAdministration.User"/>
+			</input>
+			<output>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.SystemAdministration.User"/>
+			</output>
+		</operation>
+		<operation name="getForgotPassword">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.SystemAdministration.User"/>
+			</input>
+			<output>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.SystemAdministration.User"/>
+			</output>
+		</operation>
+		<operation name="resetPassword">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.SystemAdministration.User"/>
+			</input>
+			<output>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.SystemAdministration.User"/>
+			</output>
+		</operation>
+	</binding>
+	<service name="User">
+		<port name="UserPort" binding="FPDS:UserBinding">
+			<soap:address location="https://www.fpds.gov/FPDS/BusinessServices/SystemAdministration/1.2/User"/>
+		</port>
+	</service>
+</definitions>

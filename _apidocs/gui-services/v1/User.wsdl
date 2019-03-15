@@ -1,0 +1,79 @@
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:FPDS="http://www.fpdsng.com/FPDS" targetNamespace="http://www.fpdsng.com/FPDS" name="User">
+	<documentation>WSDL for the User GUI web services</documentation>
+	<types>
+		<schema elementFormDefault="qualified" version="1.0" targetNamespace="http://www.fpdsng.com/FPDS" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:FPDS="http://www.fpdsng.com/FPDS">
+			<include schemaLocation="http://www.fpdsng.com/FPDS/schema/SystemServices/1.0/Service.xsd"/>
+			<include schemaLocation="http://www.fpdsng.com/FPDS/schema/SystemAdministration/users/1.0/User.xsd"/>
+			<include schemaLocation="http://www.fpdsng.com/fpds/schema/common/1.0/Common.xsd"/>
+
+			<complexType name="getNewUserURLResponseType">
+				<complexContent>
+					<extension base="FPDS:responseType">
+						<sequence>
+							<element name="userURL" type="FPDS:urlType" nillable="true" minOccurs="0"/>
+						</sequence>
+					</extension>
+				</complexContent>
+			</complexType>
+			<complexType name="getExistingUserURLResponseType">
+				<complexContent>
+					<extension base="FPDS:responseType">
+						<sequence>
+							<element name="userURL" type="FPDS:urlType" nillable="true" minOccurs="0"/>
+						</sequence>
+					</extension>
+				</complexContent>
+			</complexType>
+		</schema>
+	</types>
+	<message name="getNewUserURLInput">
+		<part name="authenticationKey" type="FPDS:userAuthenticationKeyType"/>
+		<part name="user" type="FPDS:userType"/>
+	</message>
+	<message name="getExistingUserURLInput">
+		<part name="authenticationKey" type="FPDS:userAuthenticationKeyType"/>
+		<part name="userID" type="FPDS:userIDType"/>
+	</message>
+	<message name="getNewUserURLOutput">
+		<part name="userURL" type="FPDS:getNewUserURLResponseType"/>
+	</message>
+	<message name="getExistingUserURLOutput">
+		<part name="userURL" type="FPDS:getExistingUserURLResponseType"/>
+	</message>
+	<portType name="UserPortType">
+		<operation name="getNewUserURL">
+			<input message="FPDS:getNewUserURLInput"/>
+			<output message="FPDS:getNewUserURLOutput"/>
+		</operation>
+		<operation name="getExistingUserURL">
+			<input message="FPDS:getExistingUserURLInput"/>
+			<output message="FPDS:getExistingUserURLOutput"/>
+		</operation>
+	</portType>
+	<binding name="UserBinding" type="FPDS:UserPortType">
+		<soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="getNewUserURL">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.SystemAdministration.User"/>
+			</input>
+			<output>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.SystemAdministration.User"/>
+			</output>
+		</operation>
+		<operation name="getExistingUserURL">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.SystemAdministration.User"/>
+			</input>
+			<output>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.SystemAdministration.User"/>
+			</output>
+		</operation>
+	</binding>
+	<service name="User">
+		<port name="UserPort" binding="FPDS:UserBinding">
+			<soap:address location="https://www.fpds.gov/FPDS/GUIServices/SystemAdministration/1.0/User"/>
+		</port>
+	</service>
+</definitions>

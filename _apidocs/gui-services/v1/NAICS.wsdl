@@ -1,0 +1,85 @@
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:FPDS="http://www.fpdsng.com/FPDS" targetNamespace="http://www.fpdsng.com/FPDS" name="NAICS" version="1.0">
+	<types>
+	<schema elementFormDefault="qualified" version="1.0" targetNamespace="http://www.fpdsng.com/FPDS" 
+    xmlns="http://www.w3.org/2001/XMLSchema"
+    xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding"
+    xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+    xmlns:FPDS="http://www.fpdsng.com/FPDS">
+   <import namespace ="http://www.fpdsng.com/FPDS/schema/SystemServices/1.0/Service.xsd"/>
+    <import namespace ="http://www.fpdsng.com/FPDS/schema/DataCollection/ServiceClassifications/1.0/NAICS.xsd"/>
+    <import namespace ="http://www.fpdsng.com/fpds/schema/common/1.0/Common.xsd"/>
+  <import namespace ="http://www.fpdsng.com/FPDS/schema/SystemAdministration/users/1.0/User.xsd"/>
+	<complexType name="getNewNAICSURLResponseType">
+			<complexContent>
+				<extension base="FPDS:responseType">
+					<sequence>
+						<element name="NAICSURL" type="FPDS:urlType" />
+					</sequence>
+				</extension>
+			</complexContent>
+	</complexType>
+	<complexType name="getExistingNAICSURLResponseType">
+			<complexContent>
+				<extension base="FPDS:responseType">
+					<sequence>
+						<element name="NAICSURL" type="FPDS:urlType" />
+					</sequence>
+				</extension>
+			</complexContent>
+	</complexType>
+	</schema>
+	</types>
+
+	<message name="getNewNAICSURLInput">
+		<part name="authenticationKey" type="FPDS:userAuthenticationKeyType"/>
+		<part name="NAICS" type="FPDS:NAICSType"/>
+	</message>
+	<message name="getExistingNAICSURLInput">
+		<part name="authenticationKey" type="FPDS:userAuthenticationKeyType"/>
+		<part name="NAICSCode" type="FPDS:NAICSCodeType"/>
+	</message>
+	<message name="getNewNAICSURLOutput">
+		<part name="NAICSURL" type="FPDS:getNewNAICSURLResponseType"/>
+	</message>
+	<message name="getExistingNAICSURLOutput">
+		<part name="NAICSURL" type="FPDS:getExistingNAICSURLResponseType"/>
+	</message>
+	
+	<portType name="NAICSPortType">
+		<operation name="getNewNAICSURL">
+			<input message="FPDS:getNewNAICSURLInput"/>
+			<output message="FPDS:getNewNAICSURLOutput"/>
+		</operation>
+		<operation name="getExistingNAICSURL">
+			<input message="FPDS:getExistingNAICSURLInput"/>
+			<output message="FPDS:getExistingNAICSURLOutput"/>
+		</operation>
+	</portType>
+	<binding name="NAICSBinding" type="FPDS:NAICSPortType">
+		<soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="getNewNAICSURL">
+			<soap:operation/>
+			<input>
+				<soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.contracts.NAICS"/>
+			</input>
+			<output>
+				<soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.contracts.NAICS"/>
+			</output>
+		</operation>
+		<operation name="getExistingNAICSURL">
+			<soap:operation/>
+			<input>
+				<soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.contracts.NAICS"/>
+			</input>
+			<output>
+				<soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.contracts.NAICS"/>
+			</output>
+		</operation>
+	</binding>
+	<service name="NAICS">
+		<port name="NAICSPort" binding="FPDS:NAICSBinding">
+			<soap:address location="http://www.fpdsng.com/FPDS/BusinessServices/DataCollection/contracts/1.0/NAICS"/>
+		</port>
+	</service>
+	<documentation>WSDL for the NAICS GUI web services</documentation>
+</definitions>

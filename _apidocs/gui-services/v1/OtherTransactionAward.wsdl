@@ -1,0 +1,77 @@
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:FPDS="https://www.fpds.gov/FPDS" targetNamespace="https://www.fpds.gov/FPDS" name="OtherTransactionAward">
+	<types>
+		<schema elementFormDefault="qualified" targetNamespace="https://www.fpds.gov/FPDS" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:FPDS="https://www.fpds.gov/FPDS">
+			<include schemaLocation="https://www.fpds.gov/FPDS/schema/SystemServices/1.2/Service.xsd"/>
+			<include schemaLocation="https://www.fpds.gov/FPDS/schema/DataCollection/contracts/1.5/OtherTransactionAward.xsd"/>
+			<include schemaLocation="https://www.fpds.gov/FPDS/schema/SystemAdministration/users/1.5/User.xsd"/>
+			<complexType name="getNewOtherTransactionAwardURLResponseType">
+				<complexContent>
+					<extension base="FPDS:responseType">
+						<sequence>
+							<element name="otherTransactionAwardURL" type="FPDS:urlType" nillable="true" minOccurs="0"/>
+						</sequence>
+					</extension>
+				</complexContent>
+			</complexType>
+			<complexType name="getExistingOtherTransactionAwardURLResponseType">
+				<complexContent>
+					<extension base="FPDS:responseType">
+						<sequence>
+							<element name="otherTransactionAwardURL" type="FPDS:urlType" nillable="true" minOccurs="0"/>
+						</sequence>
+					</extension>
+				</complexContent>
+			</complexType>
+		</schema>
+	</types>
+	<message name="getNewOtherTransactionAwardURLInput">
+		<part name="authenticationKey" type="FPDS:userAuthenticationKeyType"/>
+		<part name="OtherTransactionAward" type="FPDS:OtherTransactionAwardType"/>
+	</message>
+	<message name="getExistingOtherTransactionAwardURLInput">
+		<part name="authenticationKey" type="FPDS:userAuthenticationKeyType"/>
+		<part name="OtherTransactionAwardID" type="FPDS:OtherTransactionAwardIDType"/>
+	</message>
+	<message name="getNewOtherTransactionAwardURLOutput">
+		<part name="getNewOtherTransactionAwardURLResponse" type="FPDS:getNewOtherTransactionAwardURLResponseType"/>
+	</message>
+	<message name="getExistingOtherTransactionAwardURLOutput">
+		<part name="getExistingOtherTransactionAwardURLResponse" type="FPDS:getExistingOtherTransactionAwardURLResponseType"/>
+	</message>
+	<portType name="OtherTransactionAwardPortType">
+		<operation name="getNewOtherTransactionAwardURL">
+			<input message="FPDS:getNewOtherTransactionAwardURLInput"/>
+			<output message="FPDS:getNewOtherTransactionAwardURLOutput"/>
+		</operation>
+		<operation name="getExistingOtherTransactionAwardURL">
+			<input message="FPDS:getExistingOtherTransactionAwardURLInput"/>
+			<output message="FPDS:getExistingOtherTransactionAwardURLOutput"/>
+		</operation>
+	</portType>
+	<binding name="OtherTransactionAwardBinding" type="FPDS:OtherTransactionAwardPortType">
+		<soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="getNewOtherTransactionAwardURL">
+			<soap:operation soapAction=""/> 
+			<input>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.GUIServices.DataCollection.contracts.OtherTransactionAward"/>
+			</input>
+			<output>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.GUIServices.DataCollection.contracts.OtherTransactionAward"/>
+			</output>
+		</operation>
+		<operation name="getExistingOtherTransactionAwardURL">
+			<soap:operation soapAction=""/> 
+			<input>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.GUIServices.DataCollection.contracts.OtherTransactionAward"/>
+			</input>
+			<output>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.GUIServices.DataCollection.contracts.OtherTransactionAward"/>
+			</output>
+		</operation>
+	</binding>
+	<service name="OtherTransactionAward">
+		<port name="OtherTransactionAwardPort" binding="FPDS:OtherTransactionAwardBinding">
+			<soap:address location="https://www.fpds.gov/FPDS/GUIServices/DataCollection/contracts/1.5/OtherTransactionAward"/>
+		</port>
+	</service>
+</definitions>

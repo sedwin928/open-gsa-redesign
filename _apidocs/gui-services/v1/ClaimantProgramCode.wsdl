@@ -1,0 +1,79 @@
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:FPDS="http://www.fpdsng.com/FPDS" targetNamespace="http://www.fpdsng.com/FPDS" name="Award">
+	<documentation>WSDL for the Claimant Program Code GUI web services</documentation>
+	<types>
+		<schema elementFormDefault="qualified" version="1.0" targetNamespace="http://www.fpdsng.com/FPDS" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:FPDS="http://www.fpdsng.com/FPDS">
+			<include schemaLocation="http://www.fpdsng.com/FPDS/schema/SystemServices/1.0/Service.xsd"/>
+			<include schemaLocation="http://www.fpdsng.com/FPDS/schema/SystemAdministration/users/1.0/User.xsd"/>
+			<include schemaLocation="http://www.fpdsng.com/FPDS/schema/DataCollection/ServiceClassifications/1.0/ClaimantProgramCode.xsd"/>
+
+			<complexType name="getNewClaimantProgramCodeURLResponseType">
+				<complexContent>
+					<extension base="FPDS:responseType">
+						<sequence>
+							<element name="ClaimantProgramCodeURL" type="FPDS:urlType" nillable="true" minOccurs="0"/>
+						</sequence>
+					</extension>
+				</complexContent>
+			</complexType>
+			<complexType name="getExistingClaimantProgramCodeURLResponseType">
+				<complexContent>
+					<extension base="FPDS:responseType">
+						<sequence>
+							<element name="ClaimantProgramCodeURL" type="FPDS:urlType" nillable="true" minOccurs="0"/>
+						</sequence>
+					</extension>
+				</complexContent>
+			</complexType>
+		</schema>
+	</types>
+	<message name="getNewClaimantProgramCodeURLInput">
+		<part name="authenticationKey" type="FPDS:userAuthenticationKeyType"/>
+		<part name="ClaimantProgram" type="FPDS:claimantProgramType"/>
+	</message>
+	<message name="getExistingClaimantProgramCodeURLInput">
+		<part name="authenticationKey" type="FPDS:userAuthenticationKeyType"/>
+		<part name="ClaimantProgram" type="FPDS:claimantProgramType"/>
+	</message>
+	<message name="getNewClaimantProgramCodeURLOutput">
+		<part name="ClaimantProgramCodeURL" type="FPDS:getNewClaimantProgramCodeURLResponseType"/>
+	</message>
+	<message name="getExistingClaimantProgramCodeURLOutput">
+		<part name="ClaimantProgramCodeURL" type="FPDS:getExistingClaimantProgramCodeURLResponseType"/>
+	</message>
+	<portType name="ClaimantProgramCodePortType">
+		<operation name="getNewClaimantProgramCodeURL">
+			<input message="FPDS:getNewClaimantProgramCodeURLInput"/>
+			<output message="FPDS:getNewClaimantProgramCodeURLOutput"/>
+		</operation>
+		<operation name="getExistingClaimantProgramCodeURL">
+			<input message="FPDS:getExistingClaimantProgramCodeURLInput"/>
+			<output message="FPDS:getExistingClaimantProgramCodeURLOutput"/>
+		</operation>
+	</portType>
+	<binding name="ClaimantProgramCodeBinding" type="FPDS:ClaimantProgramCodePortType">
+		<soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="getNewClaimantProgramCodeURL">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.contracts.ClaimantProgramCode"/>
+			</input>
+			<output>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.contracts.ClaimantProgramCode"/>
+			</output>
+		</operation>
+		<operation name="getExistingClaimantProgramCodeURL">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.contracts.ClaimantProgramCode"/>
+			</input>
+			<output>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.contracts.ClaimantProgramCode"/>
+			</output>
+		</operation>
+	</binding>
+	<service name="ClaimantProgramCode">
+		<port name="ClaimantProgramCodePort" binding="FPDS:ClaimantProgramCodeBinding">
+			<soap:address location="https://www.fpds.gov/FPDS/GUIServices/DataCollection/ServiceClassifications/1.0/ClaimantProgramCode"/>
+		</port>
+	</service>
+</definitions>

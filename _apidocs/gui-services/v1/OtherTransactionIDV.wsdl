@@ -1,0 +1,77 @@
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:FPDS="https://www.fpds.gov/FPDS" targetNamespace="https://www.fpds.gov/FPDS" name="OtherTransactionIDV">
+	<types>
+		<schema elementFormDefault="qualified" targetNamespace="https://www.fpds.gov/FPDS" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:FPDS="https://www.fpds.gov/FPDS">
+			<include schemaLocation="https://www.fpds.gov/FPDS/schema/SystemServices/1.2/Service.xsd"/>
+			<include schemaLocation="https://www.fpds.gov/FPDS/schema/DataCollection/contracts/1.5/OtherTransactionIDV.xsd"/>
+			<include schemaLocation="https://www.fpds.gov/FPDS/schema/SystemAdministration/users/1.5/User.xsd"/>
+			<complexType name="getNewOtherTransactionIDVURLResponseType">
+				<complexContent>
+					<extension base="FPDS:responseType">
+						<sequence>
+							<element name="otherTransactionIDVURL" type="FPDS:urlType" nillable="true" minOccurs="0"/>
+						</sequence>
+					</extension>
+				</complexContent>
+			</complexType>
+			<complexType name="getExistingOtherTransactionIDVURLResponseType">
+				<complexContent>
+					<extension base="FPDS:responseType">
+						<sequence>
+							<element name="otherTransactionIDVURL" type="FPDS:urlType" nillable="true" minOccurs="0"/>
+						</sequence>
+					</extension>
+				</complexContent>
+			</complexType>
+		</schema>
+	</types>
+	<message name="getNewOtherTransactionIDVURLInput">
+		<part name="authenticationKey" type="FPDS:userAuthenticationKeyType"/>
+		<part name="OtherTransactionIDV" type="FPDS:OtherTransactionIDVType"/>
+	</message>
+	<message name="getExistingOtherTransactionIDVURLInput">
+		<part name="authenticationKey" type="FPDS:userAuthenticationKeyType"/>
+		<part name="OtherTransactionIDVID" type="FPDS:OtherTransactionIDVIDType"/>
+	</message>
+	<message name="getNewOtherTransactionIDVURLOutput">
+		<part name="getNewOtherTransactionIDVURLResponse" type="FPDS:getNewOtherTransactionIDVURLResponseType"/>
+	</message>
+	<message name="getExistingOtherTransactionIDVURLOutput">
+		<part name="getExistingOtherTransactionIDVURLResponse" type="FPDS:getExistingOtherTransactionIDVURLResponseType"/>
+	</message>
+	<portType name="OtherTransactionIDVPortType">
+		<operation name="getNewOtherTransactionIDVURL">
+			<input message="FPDS:getNewOtherTransactionIDVURLInput"/>
+			<output message="FPDS:getNewOtherTransactionIDVURLOutput"/>
+		</operation>
+		<operation name="getExistingOtherTransactionIDVURL">
+			<input message="FPDS:getExistingOtherTransactionIDVURLInput"/>
+			<output message="FPDS:getExistingOtherTransactionIDVURLOutput"/>
+		</operation>
+	</portType>
+	<binding name="OtherTransactionIDVBinding" type="FPDS:OtherTransactionIDVPortType">
+		<soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="getNewOtherTransactionIDVURL">
+			<soap:operation soapAction=""/> 
+			<input>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.GUIServices.DataCollection.contracts.OtherTransactionIDV"/>
+			</input>
+			<output>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.GUIServices.DataCollection.contracts.OtherTransactionIDV"/>
+			</output>
+		</operation>
+		<operation name="getExistingOtherTransactionIDVURL">
+			<soap:operation soapAction=""/> 
+			<input>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.GUIServices.DataCollection.contracts.OtherTransactionIDV"/>
+			</input>
+			<output>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.GUIServices.DataCollection.contracts.OtherTransactionIDV"/>
+			</output>
+		</operation>
+	</binding>
+	<service name="OtherTransactionIDV">
+		<port name="OtherTransactionIDVPort" binding="FPDS:OtherTransactionIDVBinding">
+			<soap:address location="https://www.fpds.gov/FPDS/GUIServices/DataCollection/contracts/1.5/OtherTransactionIDV"/>
+		</port>
+	</service>
+</definitions>

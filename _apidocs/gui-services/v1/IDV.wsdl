@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:FPDS="https://www.fpds.gov/FPDS" targetNamespace="https://www.fpds.gov/FPDS" name="IDV">
+	<types>
+		<schema elementFormDefault="qualified" targetNamespace="https://www.fpds.gov/FPDS" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:FPDS="https://www.fpds.gov/FPDS">
+			<include schemaLocation="https://www.fpds.gov/FPDS/schema/SystemServices/1.2/Service.xsd"/>
+			<include schemaLocation="https://www.fpds.gov/FPDS/schema/DataCollection/contracts/1.5/IDV.xsd"/>
+			<include schemaLocation="https://www.fpds.gov/FPDS/schema/SystemAdministration/users/1.5/User.xsd"/>
+			<include schemaLocation="https://www.fpds.gov/FPDS/schema/common/1.4/Template.xsd"/>
+			<complexType name="getNewIDVURLResponseType">
+				<complexContent>
+					<extension base="FPDS:responseType">
+						<sequence>
+							<element name="IDVURL" type="FPDS:urlType" nillable="true" minOccurs="0"/>
+						</sequence>
+					</extension>
+				</complexContent>
+			</complexType>
+			<complexType name="getExistingIDVURLResponseType">
+				<complexContent>
+					<extension base="FPDS:responseType">
+						<sequence>
+							<element name="IDVURL" type="FPDS:urlType" nillable="true" minOccurs="0"/>
+						</sequence>
+					</extension>
+				</complexContent>
+			</complexType>
+			<complexType name="getNewIDVURLFromTemplateRequestType">
+				<sequence>
+					<element name="templateName" type="FPDS:templateNameType"/>
+					<element name="IDV" type="FPDS:IDVType"/>
+				</sequence>
+			</complexType>
+			<complexType name="getNewIDVURLFromTemplateResponseType">
+				<complexContent>
+					<extension base="FPDS:responseType">
+						<sequence>
+							<element name="IDVURL" type="FPDS:urlType" nillable="true" minOccurs="0"/>
+						</sequence>
+					</extension>
+				</complexContent>
+			</complexType>
+		</schema>
+	</types>
+	<message name="getNewIDVURLInput">
+		<part name="authenticationKey" type="FPDS:userAuthenticationKeyType"/>
+		<part name="IDV" type="FPDS:IDVType"/>
+	</message>
+	<message name="getExistingIDVURLInput">
+		<part name="authenticationKey" type="FPDS:userAuthenticationKeyType"/>
+		<part name="IDVID" type="FPDS:contractIDType"/>
+	</message>
+	<message name="getNewIDVURLOutput">
+		<part name="getNewIDVURLResponse" type="FPDS:getNewIDVURLResponseType"/>
+	</message>
+	<message name="getExistingIDVURLOutput">
+		<part name="getExistingIDVURLResponse" type="FPDS:getExistingIDVURLResponseType"/>
+	</message>
+	<message name="getNewIDVURLFromTemplateInput">
+		<part name="authenticationKey" type="FPDS:userAuthenticationKeyType"/>
+		<part name="getNewIDVURLFromTemplateRequest" type="FPDS:getNewIDVURLFromTemplateRequestType"/>
+	</message>
+	<message name="getNewIDVURLFromTemplateOutput">
+		<part name="getNewIDVURLFromTemplateResponse" type="FPDS:getNewIDVURLFromTemplateResponseType"/>
+	</message>
+	<portType name="IDVPortType">
+		<operation name="getNewIDVURL">
+			<input message="FPDS:getNewIDVURLInput"/>
+			<output message="FPDS:getNewIDVURLOutput"/>
+		</operation>
+		<operation name="getExistingIDVURL">
+			<input message="FPDS:getExistingIDVURLInput"/>
+			<output message="FPDS:getExistingIDVURLOutput"/>
+		</operation>
+		<operation name="getNewIDVURLFromTemplate">
+			<input message="FPDS:getNewIDVURLFromTemplateInput"/>
+			<output message="FPDS:getNewIDVURLFromTemplateOutput"/>
+		</operation>
+	</portType>
+	<binding name="IDVBinding" type="FPDS:IDVPortType">
+		<soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="getNewIDVURL">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.GUIServices.DataCollection.contracts.IDV"/>
+			</input>
+			<output>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.GUIServices.DataCollection.contracts.IDV"/>
+			</output>
+		</operation>
+		<operation name="getExistingIDVURL">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.GUIServices.DataCollection.contracts.IDV"/>
+			</input>
+			<output>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.GUIServices.DataCollection.contracts.IDV"/>
+			</output>
+		</operation>
+		<operation name="getNewIDVURLFromTemplate">
+			<soap:operation  soapAction=""/>
+			<input>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.GUIServices.DataCollection.contracts.IDV"/>
+			</input>
+			<output>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.GUIServices.DataCollection.contracts.IDV"/>
+			</output>
+		</operation>
+	</binding>
+	<service name="IDV">
+		<port name="IDVPort" binding="FPDS:IDVBinding">
+			<soap:address location="https://www.fpds.gov/FPDS/GUIServices/DataCollection/contracts/1.5/IDV"/>
+		</port>
+	</service>
+</definitions>

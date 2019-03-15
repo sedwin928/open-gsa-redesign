@@ -1,0 +1,307 @@
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:FPDS="http://www.fpdsng.com/FPDS" targetNamespace="http://www.fpdsng.com/FPDS" name="Award">
+	<documentation>WSDL for the GovernmentOffice web services</documentation>
+	<types>
+		<schema elementFormDefault="qualified" version="1.0" targetNamespace="http://www.fpdsng.com/FPDS" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:FPDS="http://www.fpdsng.com/FPDS">
+			<include schemaLocation="http://www.fpdsng.com/FPDS/schema/SystemServices/1.1/Service.xsd"/>
+			<include schemaLocation="http://www.fpdsng.com/FPDS/schema/DataCollection/organizations/1.2/GovernmentOffice.xsd"/>
+			<include schemaLocation="http://www.fpdsng.com/FPDS/schema/SystemAdministration/users/1.2/User.xsd"/>
+
+			<complexType name="createGovernmentOfficeResponseType">
+				<complexContent>
+					<extension base="FPDS:responseType">
+						<sequence>
+							<element name="governmentOffice" type="FPDS:governmentOfficeType" nillable="true" minOccurs="0"/>
+						</sequence>
+					</extension>
+				</complexContent>
+			</complexType>
+			<complexType name="updateGovernmentOfficeResponseType">
+				<complexContent>
+					<extension base="FPDS:responseType">
+						<sequence>
+							<element name="governmentOffice" type="FPDS:governmentOfficeType" nillable="true" minOccurs="0"/>
+						</sequence>
+					</extension>
+				</complexContent>
+			</complexType>
+			<complexType name="getGovernmentOfficeResponseType">
+				<complexContent>
+					<extension base="FPDS:responseType">
+						<sequence>
+							<element name="governmentOffice" type="FPDS:governmentOfficeType" nillable="true" minOccurs="0"/>
+						</sequence>
+					</extension>
+				</complexContent>
+			</complexType>
+			<complexType name="deleteGovernmentOfficeResponseType">
+				<complexContent>
+					<extension base="FPDS:responseType">
+						<sequence>
+							<element name="isDeleted" type="boolean" nillable="true" minOccurs="0"/>
+						</sequence>
+					</extension>
+				</complexContent>
+			</complexType>
+			<complexType name="enableGovernmentOfficeResponseType">
+				<complexContent>
+					<extension base="FPDS:responseType">
+						<sequence>
+							<element name="isEnabled" type="boolean" nillable="true" minOccurs="0"/>
+						</sequence>
+					</extension>
+				</complexContent>
+			</complexType>
+			<complexType name="disableGovernmentOfficeResponseType">
+				<complexContent>
+					<extension base="FPDS:responseType">
+						<sequence>
+							<element name="isDisabled" type="boolean" nillable="true" minOccurs="0"/>
+						</sequence>
+					</extension>
+				</complexContent>
+			</complexType>
+			<complexType name="existsGovernmentOfficeResponseType">
+				<complexContent>
+					<extension base="FPDS:responseType">
+						<sequence>
+							<element name="isExists" type="boolean" nillable="true" minOccurs="0"/>
+						</sequence>
+					</extension>
+				</complexContent>
+			</complexType>
+			<complexType name="getListGovernmentOfficeResponseType">
+				<complexContent>
+					<extension base="FPDS:responseType">
+						<sequence>
+							<element name="listOfGovernmentOffices" type="FPDS:listOfGovernmentOfficesType" nillable="true" minOccurs="0"/>
+						</sequence>
+					</extension>
+				</complexContent>
+			</complexType>
+			<complexType name="updateOrganizationAssociationsResponseType">
+				<complexContent>
+					<extension base="FPDS:responseType">
+						<sequence>
+							<element name="isUpdated" type="boolean" nillable="true" minOccurs="0"/>
+						</sequence>
+					</extension>
+				</complexContent>
+			</complexType>
+		</schema>
+	</types>
+	<message name="createInput">
+		<part name="authenticationKey" type="FPDS:userAuthenticationKeyType"/>
+		<part name="governmentOffice" type="FPDS:governmentOfficeType"/>
+	</message>
+	<message name="createContractingOfficeInput">
+			<part name="authenticationKey" type="FPDS:userAuthenticationKeyType"/>
+			<part name="governmentOffice" type="FPDS:governmentOfficeType"/>
+	</message>
+	<message name="updateInput">
+		<part name="authenticationKey" type="FPDS:userAuthenticationKeyType"/>
+		<part name="governmentOffice" type="FPDS:governmentOfficeType"/>
+	</message>
+	<message name="getInput">
+		<part name="authenticationKey" type="FPDS:userAuthenticationKeyType"/>
+		<part name="governmentOfficeKey" type="FPDS:governmentOfficeKeyType"/>
+	</message>
+	<message name="getListInput">
+		<part name="authenticationKey" type="FPDS:userAuthenticationKeyType"/>
+		<part name="governmentOfficeSearchCriteria" type="FPDS:governmentOfficeSearchCriteriaType"/>
+	</message>
+	<message name="existsInput">
+		<part name="authenticationKey" type="FPDS:userAuthenticationKeyType"/>
+		<part name="governmentOfficeKey" type="FPDS:governmentOfficeKeyType"/>
+	</message>
+	<message name="deleteInput">
+		<part name="authenticationKey" type="FPDS:userAuthenticationKeyType"/>
+		<part name="governmentOfficeKey" type="FPDS:governmentOfficeKeyType"/>
+	</message>
+	<message name="disableInput">
+		<part name="authenticationKey" type="FPDS:userAuthenticationKeyType"/>
+		<part name="governmentOfficeKey" type="FPDS:governmentOfficeKeyType"/>
+	</message>
+	<message name="enableInput">
+		<part name="authenticationKey" type="FPDS:userAuthenticationKeyType"/>
+		<part name="governmentOfficeKey" type="FPDS:governmentOfficeKeyType"/>
+	</message>
+	<message name="updateOrganizationAssociationsInput">
+		<part name="authenticationKey" type="FPDS:userAuthenticationKeyType"/>
+		<part name="listOfUpdateOrganizationAssociations" type="FPDS:listOfUpdateOrganizationAssociationsType"/>
+	</message>
+
+	
+	<message name="createOutput">
+		<part name="createGovernmentOfficeResponse" type="FPDS:createGovernmentOfficeResponseType"/>
+	</message>
+	<message name="createContractingOfficeOutput">
+		<part name="createGovernmentOfficeResponse" type="FPDS:createGovernmentOfficeResponseType"/>
+	</message>
+	<message name="updateOutput">
+		<part name="updateGovernmentOfficeResponse" type="FPDS:updateGovernmentOfficeResponseType"/>
+	</message>
+	<message name="getOutput">
+		<part name="getGovernmentOfficeResponse" type="FPDS:getGovernmentOfficeResponseType"/>
+	</message>
+	<message name="getListOutput">
+		<part name="getListGovernmentOfficeResponse" type="FPDS:getListGovernmentOfficeResponseType"/>
+	</message>
+	<message name="existsOutput">
+		<part name="existsGovernmentOfficeResponse" type="FPDS:existsGovernmentOfficeResponseType"/>
+	</message>
+	<message name="deleteOutput">
+		<part name="deleteGovernmentOfficeResponse" type="FPDS:deleteGovernmentOfficeResponseType"/>
+	</message>
+	<message name="disableOutput">
+		<part name="disableGovernmentOfficeResponse" type="FPDS:disableGovernmentOfficeResponseType"/>
+	</message>
+	<message name="enableOutput">
+		<part name="enableGovernmentOfficeResponse" type="FPDS:enableGovernmentOfficeResponseType"/>
+	</message>
+	<message name="updateOrganizationAssociationsOutput">
+		<part name="updateOrganizationAssociationsResponse" type="FPDS:updateOrganizationAssociationsResponseType"/>
+	</message>
+	
+	
+	<portType name="GovernmentOfficePortType">
+		<operation name="create">
+			<input message="FPDS:createInput"/>
+			<output message="FPDS:createOutput"/>
+		</operation>
+		<operation name="createContractingOffice">
+			<input message="FPDS:createContractingOfficeInput"/>
+			<output message="FPDS:createContractingOfficeOutput"/>
+		</operation>
+		<operation name="update">
+			<input message="FPDS:updateInput"/>
+			<output message="FPDS:updateOutput"/>
+		</operation>
+		<operation name="get">
+			<input message="FPDS:getInput"/>
+			<output message="FPDS:getOutput"/>
+		</operation>
+		<operation name="getList">
+			<input message="FPDS:getListInput"/>
+			<output message="FPDS:getListOutput"/>
+		</operation>
+		<operation name="exists">
+			<input message="FPDS:existsInput"/>
+			<output message="FPDS:existsOutput"/>
+		</operation>
+		<operation name="delete">
+			<input message="FPDS:deleteInput"/>
+			<output message="FPDS:deleteOutput"/>
+		</operation>
+		<operation name="disable">
+			<input message="FPDS:disableInput"/>
+			<output message="FPDS:disableOutput"/>
+		</operation>
+		<operation name="enable">
+			<input message="FPDS:enableInput"/>
+			<output message="FPDS:enableOutput"/>
+		</operation>
+		<operation name="updateOrganizationAssociations">
+			<input message="FPDS:updateOrganizationAssociationsInput"/>
+			<output message="FPDS:updateOrganizationAssociationsOutput"/>
+		</operation>
+		
+	</portType>
+	<binding name="GovernmentOfficeBinding" type="FPDS:GovernmentOfficePortType">
+		<soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="create">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.organizations.GovernmentOffice"/>
+			</input>
+			<output>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.organizations.GovernmentOffice"/>
+			</output>
+		</operation>
+		<operation name="createContractingOffice">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.organizations.GovernmentOffice"/>
+			</input>
+			<output>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.organizations.GovernmentOffice"/>
+			</output>
+		</operation>
+		<operation name="update">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.organizations.GovernmentOffice"/>
+			</input>
+			<output>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.organizations.GovernmentOffice"/>
+			</output>
+		</operation>
+		<operation name="get">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.organizations.GovernmentOffice"/>
+			</input>
+			<output>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.organizations.GovernmentOffice"/>
+			</output>
+		</operation>
+		<operation name="getList">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.organizations.GovernmentOffice"/>
+			</input>
+			<output>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.organizations.GovernmentOffice"/>
+			</output>
+		</operation>
+		<operation name="exists">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.organizations.GovernmentOffice"/>
+			</input>
+			<output>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.organizations.GovernmentOffice"/>
+			</output>
+		</operation>
+		<operation name="delete">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.organizations.GovernmentOffice"/>
+			</input>
+			<output>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.organizations.GovernmentOffice"/>
+			</output>
+		</operation>
+		<operation name="disable">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.organizations.GovernmentOffice"/>
+			</input>
+			<output>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.organizations.GovernmentOffice"/>
+			</output>
+		</operation>
+		<operation name="enable">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.organizations.GovernmentOffice"/>
+			</input>
+			<output>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.organizations.GovernmentOffice"/>
+			</output>
+		</operation>
+		<operation name="updateOrganizationAssociations">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.organizations.GovernmentOffice"/>
+			</input>
+			<output>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.organizations.GovernmentOffice"/>
+			</output>
+		</operation>
+	</binding>
+	<service name="GovernmentOffice">
+		<port name="GovernmentOfficePort" binding="FPDS:GovernmentOfficeBinding">
+			<soap:address location="https://www.fpds.gov/FPDS/BusinessServices/DataCollection/organizations/1.2/GovernmentOffice"/>
+		</port>
+	</service>
+</definitions>

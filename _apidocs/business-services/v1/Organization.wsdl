@@ -1,0 +1,278 @@
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:FPDS="http://www.fpdsng.com/FPDS" targetNamespace="http://www.fpdsng.com/FPDS" name="OrganizationalHierarchy">
+	<types>
+		<schema elementFormDefault="qualified" version="1.0" targetNamespace="http://www.fpdsng.com/FPDS" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:FPDS="http://www.fpdsng.com/FPDS">
+			<include schemaLocation="http://www.fpdsng.com/OrganizationalHierarchy/schema/Organization/1.0/Organization.xsd"/>
+			<include schemaLocation="http://www.fpdsng.com/FPDS/schema/SystemServices/1.1/Service.xsd"/>
+			<!--include schemaLocation="http://www.fpdsng.com/FPDS/schema/SystemAdministration/users/1.1/User.xsd"/-->
+			<complexType name="createOrganizationResponseType">
+				<complexContent>
+					<extension base="FPDS:responseType">
+						<sequence>
+							<element name="organization" type="FPDS:organizationType" nillable="true" minOccurs="0"/>
+						</sequence>
+					</extension>
+				</complexContent>
+			</complexType>
+			<complexType name="updateOrganizationResponseType">
+				<complexContent>
+					<extension base="FPDS:responseType">
+						<sequence>
+							<element name="organization" type="FPDS:organizationType" nillable="true" minOccurs="0"/>
+						</sequence>
+					</extension>
+				</complexContent>
+			</complexType>
+			<complexType name="reassignOrganizationResponseType">
+				<complexContent>
+					<extension base="FPDS:responseType">
+						<sequence>
+							<element name="organization" type="FPDS:organizationType" nillable="true" minOccurs="0"/>
+						</sequence>
+					</extension>
+				</complexContent>
+			</complexType>
+			<complexType name="getOrganizationResponseType">
+				<complexContent>
+					<extension base="FPDS:responseType">
+						<sequence>
+							<element name="organization" type="FPDS:organizationType" nillable="true" minOccurs="0"/>
+						</sequence>
+					</extension>
+				</complexContent>
+			</complexType>
+			<complexType name="deleteOrganizationResponseType">
+				<complexContent>
+					<extension base="FPDS:responseType">
+						<sequence>
+							<element name="isDeleted" type="boolean" nillable="true" minOccurs="0"/>
+						</sequence>
+					</extension>
+				</complexContent>
+			</complexType>
+			<complexType name="enableOrganizationResponseType">
+				<complexContent>
+					<extension base="FPDS:responseType">
+						<sequence>
+							<element name="isEnabled" type="boolean" nillable="true" minOccurs="0"/>
+						</sequence>
+					</extension>
+				</complexContent>
+			</complexType>
+			<complexType name="disableOrganizationResponseType">
+				<complexContent>
+					<extension base="FPDS:responseType">
+						<sequence>
+							<element name="isDisabled" type="boolean" nillable="true" minOccurs="0"/>
+						</sequence>
+					</extension>
+				</complexContent>
+			</complexType>
+			<complexType name="existsOrganizationResponseType">
+				<complexContent>
+					<extension base="FPDS:responseType">
+						<sequence>
+							<element name="isExists" type="boolean" nillable="true" minOccurs="0"/>
+						</sequence>
+					</extension>
+				</complexContent>
+			</complexType>
+			<complexType name="getListOrganizationResponseType">
+				<complexContent>
+					<extension base="FPDS:responseType">
+						<sequence>
+							<element name="listOfOrganizations" type="FPDS:listOfOrganizationsType" nillable="true" minOccurs="0"/>
+						</sequence>
+					</extension>
+				</complexContent>
+			</complexType>
+			<complexType name="getAncestorsResponseType">
+				<complexContent>
+					<extension base="FPDS:responseType">
+						<sequence>
+							<element name="parentOrganization" type="FPDS:parentOrganizationType" nillable="true" minOccurs="0"/>
+						</sequence>
+					</extension>
+				</complexContent>
+			</complexType>
+			<complexType name="getListOfOrganizationCategoriesResponseType">
+				<complexContent>
+					<extension base="FPDS:responseType">
+						<sequence>
+							<element name="listOfOrganizationCategories" type="FPDS:listOfOrganizationCategoriesType" nillable="true" minOccurs="0"/>
+						</sequence>
+					</extension>
+				</complexContent>
+			</complexType>
+		</schema>
+	</types>
+	<message name="createInput">
+		<part name="authenticationKey" type="FPDS:userAuthenticationKeyType"/>
+		<part name="organization" type="FPDS:organizationType"/>
+	</message>
+	<message name="updateInput">
+		<part name="authenticationKey" type="FPDS:userAuthenticationKeyType"/>
+		<part name="organization" type="FPDS:organizationType"/>
+	</message>
+	<message name="reassignInput">
+		<part name="authenticationKey" type="FPDS:userAuthenticationKeyType"/>
+		<part name="organization" type="FPDS:organizationType"/>
+	</message>
+	<message name="getInput">
+		<part name="authenticationKey" type="FPDS:userAuthenticationKeyType"/>
+		<part name="organizationGetCriteria" type="FPDS:organizationGetCriteriaType"/>
+	</message>
+	<message name="getListInput">
+		<part name="authenticationKey" type="FPDS:userAuthenticationKeyType"/>
+		<part name="organizationSearchCriteria" type="FPDS:organizationSearchCriteriaType"/>
+	</message>
+	<message name="createOutput">
+		<part name="createOrganizationResponse" type="FPDS:createOrganizationResponseType"/>
+	</message>
+	<message name="updateOutput">
+		<part name="updateOrganizationResponse" type="FPDS:updateOrganizationResponseType"/>
+	</message>
+	<message name="reassignOutput">
+		<part name="reassignOrganizationResponse" type="FPDS:reassignOrganizationResponseType"/>
+	</message>
+	<message name="getOutput">
+		<part name="getOrganizationResponse" type="FPDS:getOrganizationResponseType"/>
+	</message>
+	<message name="getListOutput">
+		<part name="getListOrganizationResponse" type="FPDS:getListOrganizationResponseType"/>
+	</message>
+	<message name="getAncestorsOutput">
+		<part name="getAncestorsOutput" type="FPDS:getAncestorsResponseType"/>
+	</message>
+	<message name="getAncestorsInput">
+		<part name="authenticationKey" type="FPDS:userAuthenticationKeyType"/>
+		<part name="getAncestorsOrganization" type="FPDS:organizationGetCriteriaType"/>
+	</message>
+	<message name="getListOfOrganizationCategoriesOutput">
+		<part name="getListOfOrganizationCategoriesOutput" type="FPDS:getListOfOrganizationCategoriesResponseType"/>
+	</message>
+	<message name="getListOfOrganizationCategoriesInput">
+		<part name="authenticationKey" type="FPDS:userAuthenticationKeyType"/>
+		<part name="organizationCategorySearchCriteria" type="FPDS:organizationCategorySearchCriteriaType"/>
+	</message>
+	<message name="getOrganizationTreeByDateInput">
+		<part name="authenticationKey" type="FPDS:userAuthenticationKeyType"/>
+		<part name="getOrganizationTreeByDateCriteria" type="FPDS:getOrganizationTreeByDateCriteriaType"/>
+	</message>
+	<message name="getOrganizationTreeByDateOutput">
+		<part name="getOrganizationTreeByDateResponse" type="FPDS:getListOrganizationResponseType"/>
+	</message>
+	<portType name="OrganizationPortType">
+		<operation name="create">
+			<input message="FPDS:createInput"/>
+			<output message="FPDS:createOutput"/>
+		</operation>
+		<operation name="update">
+			<input message="FPDS:updateInput"/>
+			<output message="FPDS:updateOutput"/>
+		</operation>
+		<operation name="reassign">
+			<input message="FPDS:reassignInput"/>
+			<output message="FPDS:reassignOutput"/>
+		</operation>
+		<operation name="get">
+			<input message="FPDS:getInput"/>
+			<output message="FPDS:getOutput"/>
+		</operation>
+		<operation name="getList">
+			<input message="FPDS:getListInput"/>
+			<output message="FPDS:getListOutput"/>
+		</operation>
+		<operation name="getAncestors">
+			<input message="FPDS:getAncestorsInput"/>
+			<output message="FPDS:getAncestorsOutput"/>
+		</operation>
+		<operation name="getListOfOrganizationCategories">
+			<input message="FPDS:getListOfOrganizationCategoriesInput"/>
+			<output message="FPDS:getListOfOrganizationCategoriesOutput"/>
+		</operation>
+				<operation name="getOrganizationTreeByDate">
+			<input message="FPDS:getOrganizationTreeByDateInput"/>
+			<output message="FPDS:getOrganizationTreeByDateOutput"/>
+		</operation>
+	</portType>
+	<binding name="OrganizationBinding" type="FPDS:OrganizationPortType">
+		<soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="create">
+			<soap:operation/>
+			<input>
+				<soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:OrganizationalHierarchy.BusinessServices.Organization.Organization"/>
+			</input>
+			<output>
+				<soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:OrganizationalHierarchy.BusinessServices.Organization.Organization"/>
+			</output>
+		</operation>
+		<operation name="update">
+			<soap:operation/>
+			<input>
+				<soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:OrganizationalHierarchy.BusinessServices.Organization.Organization"/>
+			</input>
+			<output>
+				<soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:OrganizationalHierarchy.BusinessServices.Organization.Organization"/>
+			</output>
+		</operation>
+		<operation name="reassign">
+			<soap:operation/>
+			<input>
+				<soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:OrganizationalHierarchy.BusinessServices.Organization.Organization"/>
+			</input>
+			<output>
+				<soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:OrganizationalHierarchy.BusinessServices.Organization.Organization"/>
+			</output>
+		</operation>
+		<operation name="get">
+			<soap:operation/>
+			<input>
+				<soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:OrganizationalHierarchy.BusinessServices.Organization.Organization"/>
+			</input>
+			<output>
+				<soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:OrganizationalHierarchy.BusinessServices.Organization.Organization"/>
+			</output>
+		</operation>
+		<operation name="getList">
+			<soap:operation/>
+			<input>
+				<soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:OrganizationalHierarchy.BusinessServices.Organization.Organization"/>
+			</input>
+			<output>
+				<soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:OrganizationalHierarchy.BusinessServices.Organization.Organization"/>
+			</output>
+		</operation>
+		<operation name="getAncestors">
+			<soap:operation/>
+			<input>
+				<soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:OrganizationalHierarchy.BusinessServices.Organization.Organization"/>
+			</input>
+			<output>
+				<soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:OrganizationalHierarchy.BusinessServices.Organization.Organization"/>
+			</output>
+		</operation>
+		<operation name="getListOfOrganizationCategories">
+			<soap:operation/>
+			<input>
+				<soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:OrganizationalHierarchy.BusinessServices.Organization.Organization"/>
+			</input>
+			<output>
+				<soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:OrganizationalHierarchy.BusinessServices.Organization.Organization"/>
+			</output>
+		</operation>
+		<operation name="getOrganizationTreeByDate">
+			<soap:operation/>
+			<input>
+				<soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:OrganizationalHierarchy.BusinessServices.Organization.Organization"/>
+			</input>
+			<output>
+				<soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:OrganizationalHierarchy.BusinessServices.Organization.Organization"/>
+			</output>
+		</operation>
+	</binding>
+	<service name="Organization">
+		<port name="OrganizationPort" binding="FPDS:OrganizationBinding">
+			<soap:address location="https://www.fpds.gov/OrganizationalHierarchy/BusinessServices/Organization/1.0/Organization"/>
+		</port>
+	</service>
+</definitions>

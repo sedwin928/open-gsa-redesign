@@ -1,0 +1,80 @@
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:FPDS="http://www.fpdsng.com/FPDS" targetNamespace="http://www.fpdsng.com/FPDS" name="GovernmentOffice">
+	<documentation>WSDL for the GovernmentOffice GUI web services</documentation>
+	<types>
+		<schema elementFormDefault="qualified" version="1.0" targetNamespace="http://www.fpdsng.com/FPDS" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:FPDS="http://www.fpdsng.com/FPDS">
+			<include schemaLocation="http://www.fpdsng.com/FPDS/schema/SystemServices/1.0/Service.xsd"/>
+			<include schemaLocation="http://www.fpdsng.com/FPDS/schema/DataCollection/organizations/1.0/GovernmentOffice.xsd"/>
+			<include schemaLocation="http://www.fpdsng.com/FPDS/schema/common/1.0/Common.xsd"/>
+			<include schemaLocation="http://www.fpdsng.com/FPDS/schema/SystemAdministration/users/1.0/User.xsd"/>
+
+			<complexType name="getNewGovernmentOfficeURLResponseType">
+				<complexContent>
+					<extension base="FPDS:responseType">
+						<sequence>
+							<element name="governmentOfficeURL" type="FPDS:urlType" nillable="true" minOccurs="0"/>
+						</sequence>
+					</extension>
+				</complexContent>
+			</complexType>
+			<complexType name="getExistingGovernmentOfficeURLResponseType">
+				<complexContent>
+					<extension base="FPDS:responseType">
+						<sequence>
+							<element name="governmentOfficeURL" type="FPDS:urlType" nillable="true" minOccurs="0"/>
+						</sequence>
+					</extension>
+				</complexContent>
+			</complexType>
+		</schema>
+	</types>
+	<message name="getNewGovernmentOfficeURLInput">
+		<part name="authenticationKey" type="FPDS:userAuthenticationKeyType"/>
+		<part name="governmentOffice" type="FPDS:governmentOfficeType"/>
+	</message>
+	<message name="getExistingGovernmentOfficeURLInput">
+		<part name="authenticationKey" type="FPDS:userAuthenticationKeyType"/>
+		<part name="governmentOfficeKey" type="FPDS:governmentOfficeKeyType"/>
+	</message>
+	<message name="getNewGovernmentOfficeURLOutput">
+		<part name="governmentOfficeURL" type="FPDS:getNewGovernmentOfficeURLResponseType"/>
+	</message>
+	<message name="getExistingGovernmentOfficeURLOutput">
+		<part name="governmentOfficeURL" type="FPDS:getExistingGovernmentOfficeURLResponseType"/>
+	</message>
+	<portType name="GovernmentOfficePortType">
+		<operation name="getNewGovernmentOfficeURL">
+			<input message="FPDS:getNewGovernmentOfficeURLInput"/>
+			<output message="FPDS:getNewGovernmentOfficeURLOutput"/>
+		</operation>
+		<operation name="getExistingGovernmentOfficeURL">
+			<input message="FPDS:getExistingGovernmentOfficeURLInput"/>
+			<output message="FPDS:getExistingGovernmentOfficeURLOutput"/>
+		</operation>
+	</portType>
+	<binding name="GovernmentOfficeBinding" type="FPDS:GovernmentOfficePortType">
+		<soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="getNewGovernmentOfficeURL">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.contracts.GovernmentOffice"/>
+			</input>
+			<output>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.contracts.GovernmentOffice"/>
+			</output>
+		</operation>
+		<operation name="getExistingGovernmentOfficeURL">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.contracts.GovernmentOffice"/>
+			</input>
+			<output>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.contracts.GovernmentOffice"/>
+			</output>
+		</operation>
+	</binding>
+	<service name="GovernmentOffice">
+		<port name="GovernmentOfficePort" binding="FPDS:GovernmentOfficeBinding">
+			<soap:address location="https://www.fpds.gov/FPDS/GUIServices/DataCollection/organizations/1.0/GovernmentOffice"/>
+		</port>
+	</service>
+</definitions>
