@@ -7,10 +7,9 @@ banner-heading: Contract Data Business Services
 
 
 ## Overview
-Business Services to the Public Users to receive Contract and Referential data. 
-
-* Public Users are the type of users that are not associated with a Federal Government agency and that do not post data to FPDS-NG.
-* Public Users must send User ID, Password and Service Originator ID in their Web Service requests sent to legacy FPDS-NG.
+Federal Government Agencies report their Procurement Data to legacy FPDS-NG via their certified COTS/GOTS Contract Writing Systems (CWS).
+Both Federal Government Agencies and Public Users search for Procurement Data and Referential Data in legacy FPDS-NG. Legacy FPDS-NG accepts 
+User ID, Password and Service Originator ID from the users, and performs User Authentication and Authorization.
 
 
 ## Getting Started
@@ -20,7 +19,7 @@ Business Services to the Public Users to receive Contract and Referential data.
 * Below is the link to system account information:
   https://cm.usa.gov/confluence/display/ALL/System+Account+Documentation
 * Initially, authentication will be based on the API_KEY. Eventually this will be enhanced to accept authentication credentials.
-* The service can reject if incoming request doesn’t have enough privileges.   
+* Contract Data Business Service can reject if incoming request doesn’t have enough privileges or authentication credentials.   
 * A place holder in beta.SAM.gov UI will be created to place WSDL files and other FAQ related documents for Contract Data Business Service.
 
 **Generating the API Key**
@@ -41,11 +40,22 @@ Business Services to the Public Users to receive Contract and Referential data.
 * Modification – The modification/amendment record to the initial record that is represented as Modification Number <> 0.
 
 **Contract Data Business Services**
+Services for Public Users: 
 * get : Retrieves the single searched record.
 * getList : Retrieves summarized results for the searched record.
 * getVersion : Gets the Version for the searched record.
 * exists : Checks if a searched record exists in the legacy FPDS-NG database and returns ‘true’ 
   if the record exists and ‘false’ if the return does not exist.
+
+Services for Federal Government Agencies-CWS: 
+* create, createFromTemplate – Creates a unique record from scratch and also creates a unique record by making use of an existing record as template respectively.
+* update – Updates/changes data on an already created V 1.5 DRAFT record. The record will continue to have a DRAFT status.
+* isComplete – Validates if the data submitted on a V 1.5 record is compliant with the Data Dictionary and Data Validation Rules specifications. 
+  This function, if performed prior to creating a record, will not automatically save the record. The record will have a NEW or a DRAFT status.
+* approve – Approves a V 1.5 DRAFT record that has passed validations. The record will move into the FINAL status.
+* correct – Corrects the data on a FINAL record. The record will continue to have the FINAL status.
+* close – Closes the FINAL record family.
+* delete – Deletes a DRAFT or a FINAL record.
 
 
 **Endpoint Information**<br>
@@ -57,6 +67,7 @@ Web Services can be accessed from Beta via the following sample end points:
 *	https://www.api.sam.gov/prod/FPDS/BusinessServices/DataCollection/contracts/1.5/ContractSummary 
 *	https://www.api.sam.gov/prod/FPDS/BusinessServices/DataCollection/contracts/1.5/Contract
 
+**Note:** Endpoint Information and also API Description section will be updated with appropriate content when services are developed.
 
 ## API Description
 

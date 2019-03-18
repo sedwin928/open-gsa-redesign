@@ -7,19 +7,17 @@ banner-heading: Contract Data GUI Services
 
 ## Overview
 Federal Government Agencies report their Procurement Data to legacy FPDS-NG via their certified COTS/GOTS Contract Writing Systems (CWS).
-To facilitate the Agencies report the entire lifecycle of their Procurement Data,legacy FPDS-NG offers a wide variety of Web Services. 
-
-* Public Users are the type of users that are not associated with a Federal Government agency and that do not post data to FPDS-NG.
-* Public Users must send User ID, Password and Service Originator ID in their Web Service requests sent to legacy FPDS-NG.
+Both Federal Government Agencies and Public Users search for Procurement Data and Referential Data in legacy FPDS-NG. Legacy FPDS-NG accepts 
+User ID, Password and Service Originator ID from the users, and performs User Authentication and Authorization.
 
 ## Getting Started
 **Authentication/Authorization in Beta SAM**
-* Contract Data GUI service consumers should create new system accounts in beta.SAM.gov and procuring an API_KEY. 
+* Contract Data GUI service consumers should create new system accounts in beta.SAM.gov and procure an API_KEY. 
 * Once they set up a new system account they can use the API_KEY to call Contract Data GUI services. 
 * Below is the link to system account information:
   https://cm.usa.gov/confluence/display/ALL/System+Account+Documentation
 * Initially, authentication will be based on the API_KEY. Eventually this will be enhanced to accept authentication credentials.
-* The service can reject if incoming request doesn’t have enough privileges.   
+* Contract Data GUI Service will reject if incoming request doesn’t have enough privileges or authentication credentials.   
 * A place holder in beta.SAM.gov UI will be created to place WSDL files and other FAQ related documents for Contract Data GUI service.
 
 **Generating the API Key**
@@ -53,6 +51,7 @@ Web Services can be accessed from Beta via the following sample end points:
 *	https://www.api.sam.gov/prod/FPDS/GUIServices/DataCollection/contracts/1.5/OtherTransactionIDV
 
  
+**Note:** Endpoint Information and also API Description section will be updated with appropriate content when services are developed.
 
 ## API Description
 
