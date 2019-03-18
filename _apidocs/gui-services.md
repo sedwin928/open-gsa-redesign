@@ -10,6 +10,7 @@ Legacy FPDS-NG is a GSA owned system to facilitate Federal Government Agencies r
 COTS/GOTS Contract Writing Systems (CWS). Additionally, this system also facilitates both Federal Government Agencies and Public Users 
 search for Procurement Data and Referential Data. Legacy FPDS-NG accepts User ID, Password and Service Originator ID from the users, and 
 performs User Authentication and Authorization.
+<br>
 The beta.sam.gov is an official no-cost U.S. government website for people who make, receive, and manage federal awards. 
 GSA has taken up an initiative of merging ten "legacy" award sites (CFDA, CPARS, eSRS, FBO, FFATA, FPDS-NG, FAPIIS, PPIRS, SAM and WDOL) 
 into this system by offering equivalent services that the legacy systems are currently offering. 

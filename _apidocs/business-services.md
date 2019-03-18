@@ -11,6 +11,7 @@ Legacy FPDS-NG is a GSA owned system to facilitate Federal Government Agencies r
 COTS/GOTS Contract Writing Systems (CWS). Additionally, this system also facilitates both Federal Government Agencies and Public Users 
 search for Procurement Data and Referential Data. Legacy FPDS-NG accepts User ID, Password and Service Originator ID from the users, and 
 performs User Authentication and Authorization.
+<br>
 The beta.sam.gov is an official no-cost U.S. government website for people who make, receive, and manage federal awards. 
 GSA has taken up an initiative of merging ten "legacy" award sites (CFDA, CPARS, eSRS, FBO, FFATA, FPDS-NG, FAPIIS, PPIRS, SAM and WDOL) 
 into this system by offering equivalent services that the legacy systems are currently offering. 
@@ -44,15 +45,6 @@ into this system by offering equivalent services that the legacy systems are cur
 
 **Contract Data Business Services**
 
-Services for Federal Government Agencies-CWS:
-* create, createFromTemplate – Creates a unique record from scratch and also creates a unique record by making use of an existing record as template respectively.
-* update – Updates/changes data on an already created V 1.5 DRAFT record. The record will continue to have a DRAFT status.
-* isComplete – Validates if the data submitted on a V 1.5 record is compliant with the Data Dictionary and Data Validation Rules specifications. This function, if performed prior to creating a record, will not automatically save the record. The record will have a NEW or a DRAFT status.
-* approve – Approves a V 1.5 DRAFT record that has passed validations. The record will move into the FINAL status.
-* correct – Corrects the data on a FINAL record. The record will continue to have the FINAL status.
-* close – Closes the FINAL record family.
-* delete – Deletes a DRAFT or a FINAL record." to the one below (i will send it shortly) 
-
 Contract Data Business Services available for both Government and Public Users:
 * get : Retrieves the single searched record.
 * getList : Retrieves summarized results for the searched record.
@@ -67,7 +59,7 @@ Contract Data Business Services available for Government Users:
 * approve – Approves a DRAFT record that has passed validations. The record will move into the FINAL status.
 * correct – Corrects the data on a FINAL record. The record will continue to have the FINAL status.
 * close – Closes the FINAL record family.
-* delete – Deletes a DRAFT or a FINAL record." 
+* delete – Deletes a DRAFT or a FINAL record. 
 
 
 **Endpoint Information**<br>
