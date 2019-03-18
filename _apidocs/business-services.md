@@ -688,7 +688,7 @@ Web Services can be accessed from Beta via the following sample end points:
 </details>
 
 
-## WSDL File 
+## WSDL File Information
 You can view the full details of this API in the WSDL file available here: 
 
 For Award, IDV, Other Transaction Award, Other Transaction IDV, Contract and Contract Summary:
@@ -705,7 +705,7 @@ For Award, IDV, Other Transaction Award, Other Transaction IDV, Contract and Con
 | HTTP Response Code | Description |
 | ---- | ----------- |
 | 200 | Successful. |
-| 400 | <a href="v1/FPDS-NG_V1.5_Data_Validation_rules_document.doc"/>Application Level Error Messages</a>  |
+| 400 | <a href="v1/FPDS-NG_V1.5_Data_Validation_rules_document.doc">Application Level Error Messages</a>  |
 | 403 | API key is not correct or was not provided. |
 
 
