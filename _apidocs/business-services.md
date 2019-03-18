@@ -7,10 +7,13 @@ banner-heading: Contract Data Business Services
 
 
 ## Overview
-Federal Government Agencies report their Procurement Data to legacy FPDS-NG via their certified COTS/GOTS Contract Writing Systems (CWS).
-Both Federal Government Agencies and Public Users search for Procurement Data and Referential Data in legacy FPDS-NG. Legacy FPDS-NG accepts 
-User ID, Password and Service Originator ID from the users, and performs User Authentication and Authorization.
-
+Legacy FPDS-NG is a GSA owned system to facilitate Federal Government Agencies report their Procurement Data via their certified
+COTS/GOTS Contract Writing Systems (CWS). Additionally, this system also facilitates both Federal Government Agencies and Public Users 
+search for Procurement Data and Referential Data. Legacy FPDS-NG accepts User ID, Password and Service Originator ID from the users, and 
+performs User Authentication and Authorization.
+The beta.sam.gov is an official no-cost U.S. government website for people who make, receive, and manage federal awards. 
+GSA has taken up an initiative of merging ten "legacy" award sites (CFDA, CPARS, eSRS, FBO, FFATA, FPDS-NG, FAPIIS, PPIRS, SAM and WDOL) 
+into this system by offering equivalent services that the legacy systems are currently offering. 
 
 ## Getting Started
 **Authentication/Authorization in Beta SAM**
@@ -40,22 +43,31 @@ User ID, Password and Service Originator ID from the users, and performs User Au
 * Modification – The modification/amendment record to the initial record that is represented as Modification Number <> 0.
 
 **Contract Data Business Services**
-Services for Public Users: 
-* get : Retrieves the single searched record.
-* getList : Retrieves summarized results for the searched record.
-* getVersion : Gets the Version for the searched record.
-* exists : Checks if a searched record exists in the legacy FPDS-NG database and returns ‘true’ 
-  if the record exists and ‘false’ if the return does not exist.
 
-Services for Federal Government Agencies-CWS: 
+Services for Federal Government Agencies-CWS:
 * create, createFromTemplate – Creates a unique record from scratch and also creates a unique record by making use of an existing record as template respectively.
 * update – Updates/changes data on an already created V 1.5 DRAFT record. The record will continue to have a DRAFT status.
-* isComplete – Validates if the data submitted on a V 1.5 record is compliant with the Data Dictionary and Data Validation Rules specifications. 
-  This function, if performed prior to creating a record, will not automatically save the record. The record will have a NEW or a DRAFT status.
+* isComplete – Validates if the data submitted on a V 1.5 record is compliant with the Data Dictionary and Data Validation Rules specifications. This function, if performed prior to creating a record, will not automatically save the record. The record will have a NEW or a DRAFT status.
 * approve – Approves a V 1.5 DRAFT record that has passed validations. The record will move into the FINAL status.
 * correct – Corrects the data on a FINAL record. The record will continue to have the FINAL status.
 * close – Closes the FINAL record family.
-* delete – Deletes a DRAFT or a FINAL record.
+* delete – Deletes a DRAFT or a FINAL record." to the one below (i will send it shortly) 
+
+Contract Data Business Services available for both Government and Public Users:
+* get : Retrieves the single searched record.
+* getList : Retrieves summarized results for the searched record.
+* getVersion : Gets the Version for the searched record.
+* exists : Checks if a searched record exists in the legacy FPDS-NG database and returns 
+  ‘true’ if the record exists and ‘false’ if the return does not exist.
+
+Contract Data Business Services available for Government Users:
+* create, createFromTemplate – Creates a unique record from scratch, and also creates a unique record by making use of an existing record as template respectively.
+* update – Updates/changes data on an already created DRAFT record. The record will continue to have a DRAFT status.
+* isComplete – Validates if the data submitted on a record is compliant with the Data Dictionary and Data Validation Rules specifications. This function, if performed prior to creating a record, will not automatically save the record. The record will have a NEW or a DRAFT status.
+* approve – Approves a DRAFT record that has passed validations. The record will move into the FINAL status.
+* correct – Corrects the data on a FINAL record. The record will continue to have the FINAL status.
+* close – Closes the FINAL record family.
+* delete – Deletes a DRAFT or a FINAL record." 
 
 
 **Endpoint Information**<br>
@@ -67,7 +79,7 @@ Web Services can be accessed from Beta via the following sample end points:
 *	https://www.api.sam.gov/prod/FPDS/BusinessServices/DataCollection/contracts/1.5/ContractSummary 
 *	https://www.api.sam.gov/prod/FPDS/BusinessServices/DataCollection/contracts/1.5/Contract
 
-**Note:** Endpoint Information and also API Description section will be updated with appropriate content when services are developed.
+<p><small><a href="#">Back to top</a></small></p>
 
 ## API Description
 
@@ -698,6 +710,9 @@ Web Services can be accessed from Beta via the following sample end points:
 </pre></code></p>
 </details>
 
+**Note:**  **Endpoint Information and also API Description section will be updated with appropriate content when services are developed.**
+
+<p><small><a href="#">Back to top</a></small></p>
 
 ## WSDL File Information
 You can view the full details of this API in the WSDL file available here: 
@@ -710,6 +725,7 @@ For Award, IDV, Other Transaction Award, Other Transaction IDV, Contract and Con
 * <a href="v1/ContractSummary.wsdl">Open API specification file for the Contract Summary</a>
 * <a href="v1/Contract.wsdl">Open API specification file for the Contract</a>
 
+<p><small><a href="#">Back to top</a></small></p>
 
 ## HTTP Response Codes
 
@@ -719,5 +735,6 @@ For Award, IDV, Other Transaction Award, Other Transaction IDV, Contract and Con
 | 400 | <a href="v1/FPDS-NG_V1.5_Data_Validation_rules_document.doc">Application Level Error Messages</a>  |
 | 403 | API key is not correct or was not provided. |
 
+<p><small><a href="#">Back to top</a></small></p>
 
 ## Contact Us

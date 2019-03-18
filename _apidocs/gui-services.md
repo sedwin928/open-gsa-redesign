@@ -6,9 +6,14 @@ banner-heading: Contract Data GUI Services
 <link rel="stylesheet" type="text/css" href="../../assets/swaggerui-dist/swagger-ui.css" >
 
 ## Overview
-Federal Government Agencies report their Procurement Data to legacy FPDS-NG via their certified COTS/GOTS Contract Writing Systems (CWS).
-Both Federal Government Agencies and Public Users search for Procurement Data and Referential Data in legacy FPDS-NG. Legacy FPDS-NG accepts 
-User ID, Password and Service Originator ID from the users, and performs User Authentication and Authorization.
+Legacy FPDS-NG is a GSA owned system to facilitate Federal Government Agencies report their Procurement Data via their certified
+COTS/GOTS Contract Writing Systems (CWS). Additionally, this system also facilitates both Federal Government Agencies and Public Users 
+search for Procurement Data and Referential Data. Legacy FPDS-NG accepts User ID, Password and Service Originator ID from the users, and 
+performs User Authentication and Authorization.
+The beta.sam.gov is an official no-cost U.S. government website for people who make, receive, and manage federal awards. 
+GSA has taken up an initiative of merging ten "legacy" award sites (CFDA, CPARS, eSRS, FBO, FFATA, FPDS-NG, FAPIIS, PPIRS, SAM and WDOL) 
+into this system by offering equivalent services that the legacy systems are currently offering. 
+
 
 ## Getting Started
 **Authentication/Authorization in Beta SAM**
@@ -50,8 +55,8 @@ Web Services can be accessed from Beta via the following sample end points:
 *	https://www.api.sam.gov/prod/FPDS/GUIServices/DataCollection/contracts/1.5/OtherTransactionAward 
 *	https://www.api.sam.gov/prod/FPDS/GUIServices/DataCollection/contracts/1.5/OtherTransactionIDV
 
- 
-**Note:** Endpoint Information and also API Description section will be updated with appropriate content when services are developed.
+ <p><small><a href="#">Back to top</a></small></p>
+
 
 ## API Description
 
@@ -117,6 +122,9 @@ Web Services can be accessed from Beta via the following sample end points:
 </details>
 
 
+**Note:**  **Endpoint Information and also API Description section will be updated with appropriate content when services are developed.**
+
+<p><small><a href="#">Back to top</a></small></p>
 
 ## WSDL File Information
 You can view the full details of this API in the WSDL file available here: 
@@ -127,6 +135,7 @@ Award, IDV, Other Transaction Award, Other Transaction IDV
 * <a href="v1/OtherTransactionAward.wsdl">WSDL file for the Other Transaction Award</a>
 * <a href="v1/OtherTransactionIDV.wsdl">WSDL file for the Other Transaction IDV</a>
 
+<p><small><a href="#">Back to top</a></small></p>
 
 
 ## HTTP Response Codes
@@ -137,5 +146,6 @@ Award, IDV, Other Transaction Award, Other Transaction IDV
 | 400 | <a href="v1/FPDS-NG_V1.5_Data_Validation_rules_document.doc">Application Level Error Messages</a>  |
 | 403 | API key is not correct or was not provided. |
 
+<p><small><a href="#">Back to top</a></small></p>
 
 ## Contact Us
