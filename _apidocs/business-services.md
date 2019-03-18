@@ -716,11 +716,11 @@ For Award, IDV, Other Transaction Award, Other Transaction IDV, Contract and Con
 * <a href="v1/OtherTransactionIDV.wsdl">Open API specification file for the Other Transaction IDV</a>
 * <a href="v1/ContractSummary.wsdl">Open API specification file for the Contract Summary</a>
 * <a href="v1/Contract.wsdl">Open API specification file for the Contract</a>
-* <a href="v1/AwardSummary.wsdl">Open API specification file for the Award</a>
-* <a href="v1/AwardTemplate.wsdl">Open API specification file for the IDV</a>
-* <a href="v1/Close.wsdl">Open API specification file for the Other Transaction Award</a>
-* <a href="v1/IDVSummary.wsdl">Open API specification file for the Other Transaction IDV</a>
-* <a href="v1/IDVTemplate.wsdl">Open API specification file for the Contract Summary</a>
+* <a href="v1/AwardSummary.wsdl">Open API specification file for the Award Summary</a>
+* <a href="v1/AwardTemplate.wsdl">Open API specification file for the Award Template</a>
+* <a href="v1/Close.wsdl">Open API specification file for the Close</a>
+* <a href="v1/IDVSummary.wsdl">Open API specification file for the IDV Summary</a>
+* <a href="v1/IDVTemplate.wsdl">Open API specification file for the IDV Template</a>
 
 <p><small><a href="#">Back to top</a></small></p>
 
