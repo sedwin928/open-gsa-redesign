@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:FPDS="https://www.fpds.gov/FPDS" targetNamespace="https://www.fpds.gov/FPDS" name="IDVTemplate">
+	<types>
+		<schema elementFormDefault="qualified" targetNamespace="https://www.fpds.gov/FPDS" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:FPDS="https://www.fpds.gov/FPDS">
+			<include schemaLocation="https://www.fpds.gov/FPDS/schema/SystemServices/1.2/Service.xsd"/>
+			<include schemaLocation="https://www.fpds.gov/FPDS/schema/DataCollection/contracts/1.5/IDVTemplate.xsd"/>
+			<include schemaLocation="https://www.fpds.gov/FPDS/schema/SystemAdministration/users/1.5/User.xsd"/>
+			<complexType name="createIDVTemplateResponseType">
+				<complexContent>
+					<extension base="FPDS:responseType">
+						<sequence>
+							<element name="IDVTemplate" type="FPDS:IDVTemplateType" nillable="true" minOccurs="0"/>
+						</sequence>
+					</extension>
+				</complexContent>
+			</complexType>
+			<complexType name="updateIDVTemplateResponseType">
+				<complexContent>
+					<extension base="FPDS:responseType">
+						<sequence>
+							<element name="IDVTemplate" type="FPDS:IDVTemplateType" nillable="true" minOccurs="0"/>
+						</sequence>
+					</extension>
+				</complexContent>
+			</complexType>
+			<complexType name="getIDVTemplateResponseType">
+				<complexContent>
+					<extension base="FPDS:responseType">
+						<sequence>
+							<element name="IDVTemplate" type="FPDS:IDVTemplateType" nillable="true" minOccurs="0"/>
+						</sequence>
+					</extension>
+				</complexContent>
+			</complexType>
+			<complexType name="deleteIDVTemplateResponseType">
+				<complexContent>
+					<extension base="FPDS:responseType">
+						<sequence>
+							<element name="isDeleted" type="boolean" nillable="true" minOccurs="0"/>
+						</sequence>
+					</extension>
+				</complexContent>
+			</complexType>
+			<complexType name="existsIDVTemplateResponseType">
+				<complexContent>
+					<extension base="FPDS:responseType">
+						<sequence>
+							<element name="isExists" type="boolean" nillable="true" minOccurs="0"/>
+						</sequence>
+					</extension>
+				</complexContent>
+			</complexType>
+			<complexType name="getListIDVTemplateResponseType">
+				<complexContent>
+					<extension base="FPDS:responseType">
+						<sequence>
+							<element name="listOfTemplateSummaries" type="FPDS:listOfTemplateSummariesType" nillable="true" minOccurs="0"/>
+						</sequence>
+					</extension>
+				</complexContent>
+			</complexType>
+		</schema>
+	</types>
+	<message name="createInput">
+		<part name="authenticationKey" type="FPDS:userAuthenticationKeyType"/>
+		<part name="IDVTemplate" type="FPDS:IDVTemplateType"/>
+	</message>
+	<message name="updateInput">
+		<part name="authenticationKey" type="FPDS:userAuthenticationKeyType"/>
+		<part name="IDVTemplate" type="FPDS:IDVTemplateType"/>
+	</message>
+	<message name="existsInput">
+		<part name="authenticationKey" type="FPDS:userAuthenticationKeyType"/>
+		<part name="templateName" type="FPDS:templateNameType"/>
+	</message>
+	<message name="getListInput">
+		<part name="authenticationKey" type="FPDS:userAuthenticationKeyType"/>
+		<part name="templateSearchCriteria" type="FPDS:templateSearchCriteriaType"/>
+	</message>
+	<message name="getInput">
+		<part name="authenticationKey" type="FPDS:userAuthenticationKeyType"/>
+		<part name="templateName" type="FPDS:templateNameType"/>
+	</message>
+	<message name="deleteInput">
+		<part name="authenticationKey" type="FPDS:userAuthenticationKeyType"/>
+		<part name="templateName" type="FPDS:templateNameType"/>
+	</message>
+	<message name="createOutput">
+		<part name="createIDVTemplateResponse" type="FPDS:createIDVTemplateResponseType"/>
+	</message>
+	<message name="updateOutput">
+		<part name="updateIDVTemplateResponse" type="FPDS:updateIDVTemplateResponseType"/>
+	</message>
+	<message name="existsOutput">
+		<part name="existsIDVTemplateResponse" type="FPDS:existsIDVTemplateResponseType"/>
+	</message>
+	<message name="getListOutput">
+		<part name="getListIDVTemplateResponse" type="FPDS:getListIDVTemplateResponseType"/>
+	</message>
+	<message name="getOutput">
+		<part name="getIDVTemplateResponse" type="FPDS:getIDVTemplateResponseType"/>
+	</message>
+	<message name="deleteOutput">
+		<part name="deleteIDVTemplateResponse" type="FPDS:deleteIDVTemplateResponseType"/>
+	</message>
+	<portType name="IDVTemplatePortType">
+		<operation name="get">
+			<input message="FPDS:getInput"/>
+			<output message="FPDS:getOutput"/>
+		</operation>
+		<operation name="getList">
+			<input message="FPDS:getListInput"/>
+			<output message="FPDS:getListOutput"/>
+		</operation>
+		<operation name="create">
+			<input message="FPDS:createInput"/>
+			<output message="FPDS:createOutput"/>
+		</operation>
+		<operation name="exists">
+			<input message="FPDS:existsInput"/>
+			<output message="FPDS:existsOutput"/>
+		</operation>
+		<operation name="delete">
+			<input message="FPDS:deleteInput"/>
+			<output message="FPDS:deleteOutput"/>
+		</operation>
+		<operation name="update">
+			<input message="FPDS:updateInput"/>
+			<output message="FPDS:updateOutput"/>
+		</operation>
+	</portType>
+	<binding name="IDVTemplateBinding" type="FPDS:IDVTemplatePortType">
+		<soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="getList">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.contracts.IDVTemplate"/>
+			</input>
+			<output>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.contracts.IDVTemplate"/>
+			</output>
+		</operation>
+		<operation name="create">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.contracts.IDVTemplate"/>
+			</input>
+			<output>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.contracts.IDVTemplate"/>
+			</output>
+		</operation>
+		<operation name="exists">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.contracts.IDVTemplate"/>
+			</input>
+			<output>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.contracts.IDVTemplate"/>
+			</output>
+		</operation>
+		<operation name="delete">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.contracts.IDVTemplate"/>
+			</input>
+			<output>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.contracts.IDVTemplate"/>
+			</output>
+		</operation>
+		<operation name="update">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.contracts.IDVTemplate"/>
+			</input>
+			<output>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.contracts.IDVTemplate"/>
+			</output>
+		</operation>
+		<operation name="get">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.contracts.IDVTemplate"/>
+			</input>
+			<output>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.contracts.IDVTemplate"/>
+			</output>
+		</operation>
+	</binding>
+	<service name="IDVTemplate">
+		<port name="IDVTemplatePort" binding="FPDS:IDVTemplateBinding">
+			<soap:address location="https://www.fpds.gov/FPDS/BusinessServices/DataCollection/contracts/1.5/IDVTemplate"/>
+		</port>
+	</service>
+</definitions>

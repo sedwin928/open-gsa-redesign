@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:FPDS="https://www.fpds.gov/FPDS" targetNamespace="https://www.fpds.gov/FPDS" name="Close">
+	<types>
+		<schema elementFormDefault="qualified" targetNamespace="https://www.fpds.gov/FPDS" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:FPDS="https://www.fpds.gov/FPDS">
+			<include schemaLocation="https://www.fpds.gov/FPDS/schema/SystemServices/1.2/Service.xsd"/>
+			<include schemaLocation="https://www.fpds.gov/FPDS/schema/SystemAdministration/users/1.5/User.xsd"/>
+			<include schemaLocation="https://www.fpds.gov/FPDS/schema/DataCollection/contracts/1.5/Contract.xsd"/>
+			<complexType name="closeResponseType">
+				<complexContent>
+					<extension base="FPDS:responseType">
+						<sequence>
+							<element name="isClosed" type="boolean" nillable="true" minOccurs="0"/>
+							<element name="closedDate" type="FPDS:FPDSDateType" nillable="true" minOccurs="0"/>
+						</sequence>
+					</extension>
+				</complexContent>
+			</complexType>	
+			<complexType name="closeRequestType">
+				<sequence>
+					<element name="agencyID" type="FPDS:agencyIDType"/>
+					<element name="PIID" type="FPDS:agencyContractIDType" minOccurs="0"/>
+					<element name="referencedIDVAgencyID" type="FPDS:agencyIDType" minOccurs="0"/>	
+					<element name="referencedIDVID" type="FPDS:agencyContractIDType" minOccurs="0"/>
+					<element name="contractActionType" type="FPDS:contractActionTypeType" minOccurs="0"/>			
+					<element name="awardOrIDV" type="string" nillable="true" minOccurs="0"/>
+				</sequence>
+			</complexType>
+		</schema>
+	</types>
+	<message name="closeInput">
+		<part name="authenticationKey" type="FPDS:userAuthenticationKeyType"/>
+		<part name="closeRequest" type="FPDS:closeRequestType"/>
+	</message>
+	<message name="closeOutput">
+		<part name="closeResponse" type="FPDS:closeResponseType"/>
+	</message>	
+	<portType name="ClosePortType">
+		<operation name="close">
+			<input message="FPDS:closeInput"/>
+			<output message="FPDS:closeOutput"/>
+		</operation>
+	</portType>
+	<binding name="CloseBinding" type="FPDS:ClosePortType">
+		<soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="close">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.contracts.Close"/>
+			</input>
+			<output>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.contracts.Close"/>
+			</output>
+		</operation>
+	</binding>
+	<service name="Close">
+		<port name="ClosePort" binding="FPDS:CloseBinding">
+			<soap:address location="https://www.fpds.gov/FPDS/BusinessServices/DataCollection/contracts/1.5/Close"/>
+		</port>
+	</service>
+</definitions>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:FPDS="https://www.fpds.gov/FPDS" targetNamespace="https://www.fpds.gov/FPDS" name="AwardSummary">
+	<types>
+		<schema elementFormDefault="qualified" targetNamespace="https://www.fpds.gov/FPDS" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:FPDS="https://www.fpds.gov/FPDS">
+			<include schemaLocation="https://www.fpds.gov/FPDS/schema/SystemServices/1.2/Service.xsd"/>
+			<include schemaLocation="https://www.fpds.gov/FPDS/schema/DataCollection/contracts/1.5/ContractSummary.xsd"/>
+			<include schemaLocation="https://www.fpds.gov/FPDS/schema/SystemAdministration/users/1.5/User.xsd"/>
+		</schema>
+	</types>
+	<message name="getInput">
+		<part name="authenticationKey" type="FPDS:userAuthenticationKeyType"/>
+		<part name="awardID" type="FPDS:awardIDType"/>
+	</message>
+	<message name="getOutput">
+		<part name="getAwardSummaryDataResponse" type="FPDS:getAwardSummaryDataResponseType"/>
+	</message>
+	<portType name="awardSummaryPortType">
+		<operation name="get">
+			<input message="FPDS:getInput"/>
+			<output message="FPDS:getOutput"/>
+		</operation>
+	</portType>
+	<binding name="awardSummaryBinding" type="FPDS:awardSummaryPortType">
+		<soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="get">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.contracts.AwardSummary"/>
+			</input>
+			<output>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.contracts.AwardSummary"/>
+			</output>
+		</operation>
+	</binding>
+	<service name="AwardSummary">
+		<port name="awardSummaryPort" binding="FPDS:awardSummaryBinding">
+			<soap:address location="https://www.fpds.gov/FPDS/BusinessServices/DataCollection/contracts/1.5/AwardSummary"/>
+		</port>
+	</service>
+</definitions>

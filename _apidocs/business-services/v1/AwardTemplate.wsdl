@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:FPDS="https://www.fpds.gov/FPDS" targetNamespace="https://www.fpds.gov/FPDS" name="AwardTemplate">
+	<types>
+		<schema elementFormDefault="qualified" targetNamespace="https://www.fpds.gov/FPDS" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:FPDS="https://www.fpds.gov/FPDS">
+			<include schemaLocation="https://www.fpds.gov/FPDS/schema/SystemServices/1.2/Service.xsd"/>
+			<include schemaLocation="https://www.fpds.gov/FPDS/schema/DataCollection/contracts/1.5/AwardTemplate.xsd"/>
+			<include schemaLocation="https://www.fpds.gov/FPDS/schema/SystemAdministration/users/1.5/User.xsd"/>
+			<complexType name="createAwardTemplateResponseType">
+				<complexContent>
+					<extension base="FPDS:responseType">
+						<sequence>
+							<element name="awardTemplate" type="FPDS:awardTemplateType" nillable="true" minOccurs="0"/>
+						</sequence>
+					</extension>
+				</complexContent>
+			</complexType>
+			<complexType name="updateAwardTemplateResponseType">
+				<complexContent>
+					<extension base="FPDS:responseType">
+						<sequence>
+							<element name="awardTemplate" type="FPDS:awardTemplateType" nillable="true" minOccurs="0"/>
+						</sequence>
+					</extension>
+				</complexContent>
+			</complexType>
+			<complexType name="getAwardTemplateResponseType">
+				<complexContent>
+					<extension base="FPDS:responseType">
+						<sequence>
+							<element name="awardTemplate" type="FPDS:awardTemplateType" nillable="true" minOccurs="0"/>
+						</sequence>
+					</extension>
+				</complexContent>
+			</complexType>
+			<complexType name="deleteAwardTemplateResponseType">
+				<complexContent>
+					<extension base="FPDS:responseType">
+						<sequence>
+							<element name="isDeleted" type="boolean" nillable="true" minOccurs="0"/>
+						</sequence>
+					</extension>
+				</complexContent>
+			</complexType>
+			<complexType name="existsAwardTemplateResponseType">
+				<complexContent>
+					<extension base="FPDS:responseType">
+						<sequence>
+							<element name="isExists" type="boolean" nillable="true" minOccurs="0"/>
+						</sequence>
+					</extension>
+				</complexContent>
+			</complexType>
+			<complexType name="getListAwardTemplateResponseType">
+				<complexContent>
+					<extension base="FPDS:responseType">
+						<sequence>
+							<element name="listOfTemplateSummaries" type="FPDS:listOfTemplateSummariesType" nillable="true" minOccurs="0"/>
+						</sequence>
+					</extension>
+				</complexContent>
+			</complexType>
+		</schema>
+	</types>
+	<message name="createInput">
+		<part name="authenticationKey" type="FPDS:userAuthenticationKeyType"/>
+		<part name="awardTemplate" type="FPDS:awardTemplateType"/>
+	</message>
+	<message name="updateInput">
+		<part name="authenticationKey" type="FPDS:userAuthenticationKeyType"/>
+		<part name="awardTemplate" type="FPDS:awardTemplateType"/>
+	</message>
+	<message name="existsInput">
+		<part name="authenticationKey" type="FPDS:userAuthenticationKeyType"/>
+		<part name="templateID" type="FPDS:templateNameType"/>
+	</message>
+	<message name="getListInput">
+		<part name="authenticationKey" type="FPDS:userAuthenticationKeyType"/>
+		<part name="templateSearchCriteria" type="FPDS:templateSearchCriteriaType"/>
+	</message>
+	<message name="getInput">
+		<part name="authenticationKey" type="FPDS:userAuthenticationKeyType"/>
+		<part name="templateName" type="FPDS:templateNameType"/>
+	</message>
+	<message name="deleteInput">
+		<part name="authenticationKey" type="FPDS:userAuthenticationKeyType"/>
+		<part name="templateName" type="FPDS:templateNameType"/>
+	</message>
+	<message name="createOutput">
+		<part name="createAwardTemplateResponse" type="FPDS:createAwardTemplateResponseType"/>
+	</message>
+	<message name="updateOutput">
+		<part name="updateAwardTemplateResponse" type="FPDS:updateAwardTemplateResponseType"/>
+	</message>
+	<message name="existsOutput">
+		<part name="existsAwardTemplateResponse" type="FPDS:existsAwardTemplateResponseType"/>
+	</message>
+	<message name="getListOutput">
+		<part name="getListAwardTemplateResponse" type="FPDS:getListAwardTemplateResponseType"/>
+	</message>
+	<message name="getOutput">
+		<part name="getAwardTemplateResponse" type="FPDS:getAwardTemplateResponseType"/>
+	</message>
+	<message name="deleteOutput">
+		<part name="deleteAwardTemplateResponse" type="FPDS:deleteAwardTemplateResponseType"/>
+	</message>
+	<portType name="AwardTemplatePortType">
+		<operation name="get">
+			<input message="FPDS:getInput"/>
+			<output message="FPDS:getOutput"/>
+		</operation>
+		<operation name="getList">
+			<input message="FPDS:getListInput"/>
+			<output message="FPDS:getListOutput"/>
+		</operation>
+		<operation name="create">
+			<input message="FPDS:createInput"/>
+			<output message="FPDS:createOutput"/>
+		</operation>
+		<operation name="exists">
+			<input message="FPDS:existsInput"/>
+			<output message="FPDS:existsOutput"/>
+		</operation>
+		<operation name="delete">
+			<input message="FPDS:deleteInput"/>
+			<output message="FPDS:deleteOutput"/>
+		</operation>
+		<operation name="update">
+			<input message="FPDS:updateInput"/>
+			<output message="FPDS:updateOutput"/>
+		</operation>
+	</portType>
+	<binding name="AwardTemplateBinding" type="FPDS:AwardTemplatePortType">
+		<soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="getList">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.contracts.AwardTemplate"/>
+			</input>
+			<output>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.contracts.AwardTemplate"/>
+			</output>
+		</operation>
+		<operation name="create">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.contracts.AwardTemplate"/>
+			</input>
+			<output>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.contracts.AwardTemplate"/>
+			</output>
+		</operation>
+		<operation name="exists">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.contracts.AwardTemplate"/>
+			</input>
+			<output>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.contracts.AwardTemplate"/>
+			</output>
+		</operation>
+		<operation name="delete">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.contracts.AwardTemplate"/>
+			</input>
+			<output>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.contracts.AwardTemplate"/>
+			</output>
+		</operation>
+		<operation name="update">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.contracts.AwardTemplate"/>
+			</input>
+			<output>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.contracts.AwardTemplate"/>
+			</output>
+		</operation>
+		<operation name="get">
+			<soap:operation soapAction=""/>
+			<input>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.contracts.AwardTemplate"/>
+			</input>
+			<output>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:FPDS.BusinessServices.DataCollection.contracts.AwardTemplate"/>
+			</output>
+		</operation>
+	</binding>
+	<service name="AwardTemplate">
+		<port name="AwardTemplatePort" binding="FPDS:AwardTemplateBinding">
+			<soap:address location="https://www.fpds.gov/FPDS/BusinessServices/DataCollection/contracts/1.5/AwardTemplate"/>
+		</port>
+	</service>
+</definitions>
