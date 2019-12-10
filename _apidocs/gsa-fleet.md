@@ -32,32 +32,15 @@ Once you receive an API key, you will need to provide this API key in the `x-api
 
 This API provides the following information:
 
-| Class/Tag |	City |
-| Fund Code | VIN |
-| State |	BLDACCT No 1 |
-| Color | Zip | 
-| BLDACCT No 2 | State Tag |	
-| Contact	| Equipment Code | 
-| Model Name | Phone |	
-| Unique Rate Indicator | Model Year |	
-| Phone Extension |	Rent Rate Monthly | 
-| Inventory Change Date | Alternate Phone |	
-| Mileage Rate | Previous Class/Tag |	
-| Alternate Phone Ext |	Bill Option Code | 
-| STD Item # | Fax |	
-| AR Rent Rate Monthly | Fuel Type |	
-| Internet Address |	AR Rent Rate Mileage |
-| Gas Tank Size |	Agency Indicator |	
-| Vehicle Type | Engine Code |	
-| Agency Bureau |	Garage State | 
-| GVWR | Current Month End Mileage |	
-| Garage Zip | Customer # |	
-| Prev Month End Mileage | Covered MSA | 
-| Address 1 | Average Miles |	
-| Law Enforcement | Address 2 |	
-| Description |	Manufacturer Name | 
-| Address 3 |	Trans Date |	
-| BOAC |
+| Class/Tag |	City | Fund Code | VIN | State |	BLDACCT No 1 |
+| Color | Zip | BLDACCT No 2 | State Tag |	Contact	| Equipment Code | 
+| Model Name | Phone |	Unique Rate Indicator | Model Year |	Phone Extension |	Rent Rate Monthly | 
+| Inventory Change Date | Alternate Phone |	Mileage Rate | Previous Class/Tag |	Alternate Phone Ext |	Bill Option Code | 
+| STD Item # | Fax |	AR Rent Rate Monthly | Fuel Type |	Internet Address |	AR Rent Rate Mileage |
+| Gas Tank Size |	Agency Indicator |	Vehicle Type | Engine Code |	Agency Bureau |	Garage State | 
+| GVWR | Current Month End Mileage |	Garage Zip | Customer # |	Prev Month End Mileage | Covered MSA | 
+| Address 1 | Average Miles |	Law Enforcement | Address 2 |	Description |	Manufacturer Name | 
+| Address 3 |	Trans Date |	BOAC |
 
 
 
