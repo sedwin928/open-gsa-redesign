@@ -47,6 +47,8 @@ This API provides the following information:
 
 
 
+
+
 **Endpoint 1:** https://api.gsa.gov/travel/citypairs/v0/airfares
 
 **Description**   Negotiated airfares
@@ -63,29 +65,56 @@ This API provides the following information:
 
 | Name  | Description |
 | ---- | ----------- |
-| ID (integer, optional) | Generated unique identifier. |
-| ITEM_NUM (string, optional) | Item number. |
-| AWARD_YEAR (string, optional) | Award Year. |
-| ORIGIN_AIRPORT_ABBREV (string, optional) | Origin Airport Abbreviation. |
-| DESTINATION_AIRPORT_ABBREV (string, optional) | Destinatoin Airport Abbreviation. |
-| ORIGIN_CITY_NAME (string, optional) | Original City Name. |
-| ORIGIN_STATE (string, optional) | Origin State. |
-| ORIGIN_COUNTRY (string, optional) | Origin Country. |
-| DESTINATION_CITY_NAME (string, optional) | Destination City Name. |
-| DESTINATION_STATE (string, optional) | Destination State. |
-| DESTINATION_COUNTRY (string, optional) | Destination Country. |
-| AIRLINE_ABBREV (string, optional) | Airline Abbreviation. |
-| AWARDED_SERV (string, optional) | Awarded Serv. |
-| PAX_COUNT (string, optional) | PAX Count. |
-| YCA_FARE (integer, optional) | YCA Fare. |
-| XCA_FARE (integer, optional) | XCA Fare. |
-| BUSINESS_FARE (integer, optional) | Business Fare. |
-| ORIGIN_AIRPORT_LOCATION (string, optional) | Origin Airport Location. |
-| DESTINATION_AIRPORT_LOCATION (string, optional) | Destination Airport Location. |
-| ORIGIN_CITY_STATE_AIRPORT (string, optional) | Origin City State Airport. |
-| DESTINATION_CITY_STATE_AIRPORT (string, optional) | Destination City State Airport. |
-| EFFECTIVE_DATE (string, optional) | Expiration Date. |
-| EXPIRATION_DATE (string, optional) | Expiration Date. |
+| VehClassTag (integer) | G10-XXXXX |
+| VehVIN (string) | 3XADPXL38XR11X686 |
+| VehColor (string) | Red |
+| VehStateTag (string) |  |
+| VehManfName (string) | Ford |
+| VehModelName (string) | FUSIONHEV |
+| VehModelYear (string) | 2011 |
+| VehInvChgDate (interger) | 20101001 |
+| VehPrevClassTag (string) | G11-XXXXX |
+| VehSTDitem (string) | 9H |
+| VehFuelType (string) | GASOLINE HYBRID ELECTRIC |
+| VehGasTankSize (string) | 18.0 |
+| VehEngineCode (string) | 4.0 |
+| VehGVWR (integer) | 4701 |
+| CustBoac (string) | XX4525 |
+| CustomerNo (string) | 11-55-00-XX4525-001 |
+| CustomerAddr1 (string) | Customer Address |
+| CustomerAddr2 (string) | Customer Address 2 |
+| CustomerAddr3 (string) | Customer Address 3 |
+| CustomerCity (string) | Fairfax |
+| CustomerState (string) | VA |
+| CustomerZipCode (string) | 22402-5506 |
+| CustomerContact (string) | Alfred E. Newman |
+| CustPhone (string) | 703-554-8856 |
+| CustPhoneExt (integer) | 5525 |
+| CustAltPhone (string) | 703-554-9654 |
+| CustAltPhoneExt (integer) | 5535 |
+| CustFaxNo (string) | 703-662-4245 |
+| CusAgencyInd (string) | 50 |
+| CusAgencyBureau (integer) | 99 50 |
+| CurrMoEndMiles (integer) | 41523 |
+| PrevMoEndMiles (integer) | 40552 |
+| AvgMoMiles (integer) | 216 |
+| IncomeDetlDesc1 (string) | Mileage Entry |
+| FundCode (string) | 5500 |
+| BldActNo1 (string) | Jefferies |
+| BldActNo2 (string) | Garrison  |
+| EquipCode (string) | 120205 |
+| UniqueRateInd (string) | K |
+| RRrentRateMly (string) | 206.00 |
+| RRmileageRate (string) | 0.110 |
+| BillOptCode (string) | A |
+| ARrentRateMly (string) | 0.00 |
+| ARrentRateMile (string) | 0.000 |
+| VehType (string) | Sedan/St Wgn Compact |
+| VehGarageState (string) | VA |
+| VehGarageZipCd (integer) | 22402 |
+| CoveredMSA (string) | Y |
+| LawEnforce (string) | N |
+
 
 
 
