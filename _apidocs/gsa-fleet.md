@@ -6,15 +6,45 @@ banner-heading: GSA Fleet API
 
 ## Overview
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non augue tortor. In sit amet ligula sem. Cras id convallis nisi. Vivamus porta accumsan tempus. Nunc congue gravida quam in tristique. Quisque pharetra massa arcu, eu dictum ante pretium non. Fusce et est elementum, molestie sapien quis, convallis ipsum. Integer rutrum semper lacus et iaculis. Fusce vel dolor posuere, luctus velit ac, tempus mauris. Morbi diam nulla, tristique quis sapien a, egestas semper massa. Etiam accumsan semper nisl non ultrices. Cras nec vehicula nisi. Nunc accumsan urna mauris, vitae bibendum magna ornare eu. Vivamus non sagittis dui, in tincidunt elit. Donec sagittis nulla mauris, eget volutpat quam faucibus sed. Cras lobortis arcu vel odio vehicula congue.
+The GSA Fleet API consists of GSA leased vehicle inventory information, and is intended for consumption by the owning federal agency.  The GSA Fleet API will provide the following information: 
+
+| Class/Tag |	City |
+| Fund Code | VIN |
+| State |	BLDACCT No 1 |
+| Color | Zip | 
+| BLDACCT No 2 | State Tag |	
+| Contact	| Equipment Code | 
+| Model Name | Phone |	
+| Unique Rate Indicator | Model Year |	
+| Phone Extension |	Rent Rate Monthly | 
+| Inventory Change Date | Alternate Phone |	
+| Mileage Rate | Previous Class/Tag |	
+| Alternate Phone Ext |	Bill Option Code | 
+| STD Item # | Fax |	
+| AR Rent Rate Monthly | Fuel Type |	
+| Internet Address |	AR Rent Rate Mileage |
+| Gas Tank Size |	Agency Indicator |	
+| Vehicle Type | Engine Code |	
+| Agency Bureau |	Garage State | 
+| GVWR | Current Month End Mileage |	
+| Garage Zip | Customer # |	
+| Prev Month End Mileage | Covered MSA | 
+| Address 1 | Average Miles |	
+| Law Enforcement | Address 2 |	
+| Description |	Manufacturer Name | 
+| Address 3 |	Trans Date |	
+| BOAC |
+
+
+
 
 <p><small><a href="#">Back to top</a></small></p>
 
 ## Getting Started
 
-To begin using this API, you will need to register for an API Key. You can sign up for an API key here: [API key signup page on api.data.gov](https://api.data.gov/signup/).
+To begin using this API, you will need to send an email to FMSSupportAlert@gsa.gov requsting an API key be created for you.  Access to this information is srictly limited to the owning agency only and any API key will be configured to only the onwing agency's data.  
 
-After registration, you will need to provide this API key in the `x-api-key` HTTP header with every API request.
+Once you receive an API key, you will need to provide this API key in the `x-api-key` HTTP header with every API request.
 
 | HTTP Header Name | Description |
 | ---- | ----------- |
@@ -109,14 +139,8 @@ The API will return one of the following responses:
 <p><small><a href="#">Back to top</a></small></p>
 
 
-## FAQ
-
-Integer velit ex, sollicitudin sed dolor vitae, consectetur cursus urna. Quisque lacus urna, vulputate non efficitur ut, ornare ac leo. Sed varius, lacus vitae mollis semper, magna lorem pretium erat, non maximus elit justo pretium dolor. Phasellus pellentesque bibendum turpis, eu venenatis eros facilisis sit amet. Pellentesque aliquet dolor ac metus luctus interdum. Vivamus est nibh, blandit non finibus id, tincidunt sed justo. Integer ullamcorper sapien neque, ut lobortis risus interdum ac. Aenean finibus, nibh vitae molestie viverra, nibh mi iaculis lacus, interdum dictum ipsum magna sit amet est. Phasellus vitae faucibus felis. Vivamus non molestie felis, at suscipit lectus. Phasellus ac pulvinar purus, luctus porta elit. Morbi a aliquet tellus. Vivamus mollis, ligula sed egestas euismod, elit lacus auctor dolor, sit amet facilisis purus eros ac augue.
-
-<p><small><a href="#">Back to top</a></small></p>
-
 ## Contact Us
 
-Praesent id cursus magna, sodales rutrum mauris. Nulla eget quam at nisl iaculis interdum. In condimentum, mi nec blandit consequat, velit nulla dictum lorem, non scelerisque ex nulla non ex. Sed vitae sem semper, pharetra massa at, vulputate urna. Pellentesque dapibus a ex sit amet pellentesque. Sed eget risus ut felis fringilla ullamcorper vitae a ligula. Aliquam finibus vitae ex sed vehicula.
+If you have any questions about this API, please contact FMSSupportAlert@gsa.gov.
 
 <p><small><a href="#">Back to top</a></small></p>
