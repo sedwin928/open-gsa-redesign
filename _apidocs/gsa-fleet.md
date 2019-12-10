@@ -49,9 +49,9 @@ This API provides the following information:
 
 
 
-**Endpoint 1:** https://api.gsa.gov/travel/citypairs/v0/airfares
+**Endpoint 1:** 
 
-**Description**   Negotiated airfares
+**Description**   
 
 **Query String Parameters**
 
@@ -118,9 +118,9 @@ This API provides the following information:
 
 
 
-**Endpoint 2:** https://api.gsa.gov/travel/citypairs/v0/airfares/{id}
+**Endpoint 2:** 
 
-**Description**   Individual airfare by ID
+**Description**   
 
 **Query String Parameters**
 
