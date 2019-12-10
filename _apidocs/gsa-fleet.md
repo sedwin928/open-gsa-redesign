@@ -8,6 +8,30 @@ banner-heading: GSA Fleet API
 
 The GSA Fleet API consists of GSA leased vehicle inventory information, and is intended for consumption by the owning federal agency.  The GSA Fleet API will provide the following information: 
 
+
+<p><small><a href="#">Back to top</a></small></p>
+
+## Getting Started
+
+To begin using this API, you will need to send an email to FMSSupportAlert@gsa.gov requsting an API key be created for you.  Access to this information is srictly limited to the owning agency only and any API key will be configured to only the onwing agency's data.  
+
+Once you receive an API key, you will need to provide this API key in the `x-api-key` HTTP header with every API request.
+
+| HTTP Header Name | Description |
+| ---- | ----------- |
+| x-api-key | API key from api.data.gov.  For sample purposes, you can use `DEMO_KEY` as an API key. |
+
+
+
+
+<p><small><a href="#">Back to top</a></small></p>
+
+## API Description
+
+
+
+This API provides the following information:
+
 | Class/Tag |	City |
 | Fund Code | VIN |
 | State |	BLDACCT No 1 |
@@ -38,28 +62,7 @@ The GSA Fleet API consists of GSA leased vehicle inventory information, and is i
 
 
 
-<p><small><a href="#">Back to top</a></small></p>
 
-## Getting Started
-
-To begin using this API, you will need to send an email to FMSSupportAlert@gsa.gov requsting an API key be created for you.  Access to this information is srictly limited to the owning agency only and any API key will be configured to only the onwing agency's data.  
-
-Once you receive an API key, you will need to provide this API key in the `x-api-key` HTTP header with every API request.
-
-| HTTP Header Name | Description |
-| ---- | ----------- |
-| x-api-key | API key from api.data.gov.  For sample purposes, you can use `DEMO_KEY` as an API key. |
-
-
-
-
-<p><small><a href="#">Back to top</a></small></p>
-
-## API Description
-
-
-
-This API has two primary endpoints:
 
 **Endpoint 1:** https://api.gsa.gov/travel/citypairs/v0/airfares
 
