@@ -44,12 +44,7 @@ This API provides the following information:
 
 
 
-
-
-
-
-
-**Endpoint 1:** 
+**Endpoint 1:** Not sure what to put here
 
 **Description**   
 
@@ -57,9 +52,9 @@ This API provides the following information:
 
 | Parameter Name | Description |
 | ---- | ----------- |
-| award_year string | Year of airfare award. Example: '2017' |
-| origin_airport_abbrev string | Origin airport abbreviation. Example: 'ABQ'. Must include either this or the destination airport abbreviation. |
-| destination_airport_abbrev | Destination airport abbreviation. Example: 'BWI'. Must include either this or the origination airport abbreviation. |
+| ----- | --------------------- |
+| --------------------- | --------------------------- |
+
 
 **Expected Result**
 
@@ -118,7 +113,7 @@ This API provides the following information:
 
 
 
-**Endpoint 2:** 
+**Endpoint 2:** Not sure what to put here
 
 **Description**   
 
