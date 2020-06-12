@@ -6,7 +6,7 @@ banner-heading: Sample API
 
 ## Overview
 
-This sample API returns City Pirs information from the GSA CityPairs program.
+This sample API returns City Pairs information from the GSA City Pairs program.
 
 <p><small><a href="#">Back to top</a></small></p>
 
