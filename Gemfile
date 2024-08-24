@@ -1,12 +1,12 @@
 source 'https://rubygems.org'
 
-gem 'jekyll'
+gem 'jekyll', '>= 3.9.2'
 gem 'kramdown-parser-gfm'
 
 group :jekyll_plugins do
   gem 'jekyll_pages_api', git: 'https://github.com/18F/jekyll_pages_api'
   gem 'hawkins'
-  gem 'jekyll-toc'
+  gem 'jekyll-toc', '>= 0.18.0'
 end
 
 group :development, :test do
