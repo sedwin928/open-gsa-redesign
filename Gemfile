@@ -11,7 +11,7 @@ end
 
 group :development, :test do
   gem 'rake'
-  gem 'html-proofer', '~> 3.12.0'
+  gem 'html-proofer', '~> 3.15.0'
   gem 'eslintrb'
   gem 'test-unit'
   gem 'json-schema'
